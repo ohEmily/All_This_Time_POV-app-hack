@@ -13,7 +13,7 @@ def scrape_keyword(search_term):
 	# new years day scroll cursor https://twitter.com/PPDCrimeScene/status/550877054544412672
 	# chrismas eve scroll cursor https://twitter.com/fckali/status/547366341439942656
 
-	for x in xrange(1, 3):
+	for x in xrange(1, 30):
 		# this should run until a condition
 		# the tweets are sequential so you can find tweets between 5439459345793453 and 923492743237442
 		# for tweets in a time period
@@ -39,16 +39,18 @@ def scrape_keyword(search_term):
 			#print(profile.get('data-screen-name')) # username
 			#print "***********************************"
 			item = {}
-			item["ID"] = tweettimestamp.get('href')
+			item["ID"] = profile.get('data-item-id')
+			#item["ID"] = tweettimestamp.get('href')
 			item["tweet"] = tweettext.text
-			item["time"] = timestamp.get('data-time-ms')
+			#item["time"] = timestamp.get('data-time-ms')
+			item["time"] = tweettimestamp.get('title')
 			item["username"] = profile.get('data-screen-name')
 			mongo_list.append(item)
 			#print len(mongo_list)
 
 	return mongo_list
 
-print scrape_keyword("imissyougrandma")
+print scrape_keyword("i miss you grandma")
 
 
 
