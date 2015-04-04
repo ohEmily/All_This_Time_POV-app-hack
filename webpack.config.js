@@ -9,7 +9,7 @@ module.exports = function() {
       "components": ["./src/scripts/js/components.js"]
     },
     output: {
-      path: __dirname+'/www-dev/',
+      path: __dirname+'/www/',
       filename: "./scripts/js/[name].min.js", 
       chunkFilename: "./scripts/js/main.min-[chunkhash].js"
     },

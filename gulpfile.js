@@ -13,7 +13,7 @@ var minify = false;
 
 var bases = {
  src: __dirname+'/src/',
- dist: __dirname+'/www-dev/',
+ dist: __dirname+'/www/',
  distDevelopment: __dirname+'/www-dev/',
  distProduction: __dirname+'/www/'
 };
