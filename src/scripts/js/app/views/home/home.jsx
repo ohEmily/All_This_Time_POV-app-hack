@@ -1,5 +1,7 @@
 var React = require("react");
 var HomeNav = require("./nav.jsx");
+var HomeContentStart = require('./home-content-start.jsx');
+var HomeContentMenu = require('./home-content-menu.jsx');
 var Q = require('q');
 var Components = require("../../../components/index.jsx");
 var HomePageBackground = require("../../../../../assets/images/home/hero.jpg");
@@ -13,9 +15,11 @@ module.exports = React.createClass({
 
   // --------------------------------------------------
   // EVENTS
-  
+
   onStartClick: function() {
-    alert("on start click");
+    this.setState({
+      displayContentMenu: true
+    })
   },
 
   // --------------------------------------------------
@@ -38,7 +42,8 @@ module.exports = React.createClass({
       bgActive: false,
       navActive: false,
       ctaActive: false,
-      loadingActive: true
+      loadingActive: true,
+      displayContentMenu: false
     }
   },
 
@@ -189,11 +194,13 @@ module.exports = React.createClass({
     var blockHomeIntro = <Components.Blocks.BlockHomeLogo></Components.Blocks.BlockHomeLogo>;
 
     var bodyPartial = null;
-    bodyPartial = (<div className="home-page__body">
-                    <Components.Blocks.BlockAlign>
-                      {blockHomeIntro}
-                     </Components.Blocks.BlockAlign>
-                  </div>);
+    // bodyPartial = (<div className="home-page__body">
+    //                 <Components.Blocks.BlockAlign>
+    //                   {blockHomeIntro}
+    //                  </Components.Blocks.BlockAlign>
+    //               </div>);
+
+    bodyPartial = (this.state.displayContentMenu) ? <HomeContentMenu key="menu" />: <HomeContentStart key="start" />;
 
     // var loaderPartial = (<div className={React.addons.classSet(loadingClassSet)}>
     //             <div className="home-page__loading__loader">
@@ -209,7 +216,11 @@ module.exports = React.createClass({
               <div className={React.addons.classSet(bgClassSet)}>
                 {videoPartial}
               </div>
-              {bodyPartial}
+              <div className="home-page__body">
+                <React.addons.CSSTransitionGroup transitionName="global-animation__transition-alpha">
+                  {bodyPartial}
+                </React.addons.CSSTransitionGroup>
+              </div>
               <div className={React.addons.classSet(ctaClassSet)}>
                 <Components.Buttons.ButtonAlpha onClick={this.onStartClick}>Start</Components.Buttons.ButtonAlpha>
               </div>
