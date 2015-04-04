@@ -6,8 +6,12 @@ def scrape_keyword(search_term):
 
 	url_stub = 'https://twitter.com/i/search/timeline?f=realtime&q='+ search_term.replace(" ", "%20") + '&include_available_features=1&include_entities=1&scroll_cursor='
 	scroll_cursor = "TWEET-583784383259127808-583784383259127808-B"
+	scroll_cursor = "TWEET-550877054544412672-550877054544412672-B"
 
 	mongo_list = []
+	# today scroll cursor 583784383259127808
+	# new years day scroll cursor https://twitter.com/PPDCrimeScene/status/550877054544412672
+	# chrismas eve scroll cursor https://twitter.com/fckali/status/547366341439942656
 
 	for x in xrange(1, 3):
 		# this should run until a condition
@@ -27,7 +31,7 @@ def scrape_keyword(search_term):
 			#print(tweettext.text) # tweet content
 			#print(tweettimestamp.get('href')) # tweet permalink
 			#print(timestamp.get('data-time-ms')) # tweet unix time
-			#print(tweettimestamp.get('title')) # tweet human readable time
+			print(tweettimestamp.get('title')) # tweet human readable time
 			profile = last_a_tag.find(class_="tweet");
 			avatar = last_a_tag.find(class_="avatar");
 			#print(avatar.get('src')) # profile pic
