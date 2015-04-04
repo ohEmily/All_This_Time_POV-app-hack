@@ -89,7 +89,7 @@ webpackJsonp([3],[
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var css = __webpack_require__(26);
+	var css = __webpack_require__(27);
 	var React = __webpack_require__(5);
 	var App = __webpack_require__(13);
 	var Fluxxor = __webpack_require__(23);
@@ -154,7 +154,7 @@ webpackJsonp([3],[
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(18);
+	var React = __webpack_require__(12);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -190,7 +190,7 @@ webpackJsonp([3],[
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(18);
+	var React = __webpack_require__(12);
 	__webpack_require__(32);
 	__webpack_require__(24);
 	var Q = __webpack_require__(25);
@@ -417,7 +417,7 @@ webpackJsonp([3],[
 
 
 	*/
-	var React = __webpack_require__(18);
+	var React = __webpack_require__(12);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -518,7 +518,7 @@ webpackJsonp([3],[
 
 	*/
 
-	var React = __webpack_require__(18);
+	var React = __webpack_require__(12);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -553,7 +553,13 @@ webpackJsonp([3],[
 	})
 
 /***/ },
-/* 12 */,
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(26);
+
+
+/***/ },
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -921,13 +927,7 @@ webpackJsonp([3],[
 	]
 
 /***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(31);
-
-
-/***/ },
+/* 18 */,
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -954,7 +954,7 @@ webpackJsonp([3],[
 
 
 	*/
-	var React = __webpack_require__(18);
+	var React = __webpack_require__(12);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -1022,7 +1022,7 @@ webpackJsonp([3],[
 
 	*/
 
-	var React = __webpack_require__(18);
+	var React = __webpack_require__(12);
 	var BlockStarRating = __webpack_require__(33);
 
 	module.exports = React.createClass({displayName: "exports",
@@ -1102,7 +1102,7 @@ webpackJsonp([3],[
 
 	*/
 
-	var React = __webpack_require__(18);
+	var React = __webpack_require__(12);
 
 	module.exports = React.createClass({displayName: "exports",
 	  
@@ -3453,10 +3453,67 @@ webpackJsonp([3],[
 /* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactWithAddons
+	 */
+
+	/**
+	 * This module exists purely in the open source project, and is meant as a way
+	 * to create a separate standalone build of React. This build has "addons", or
+	 * functionality we've built and think might be useful but doesn't have a good
+	 * place to live inside React core.
+	 */
+
+	"use strict";
+
+	var LinkedStateMixin = __webpack_require__(69);
+	var React = __webpack_require__(22);
+	var ReactComponentWithPureRenderMixin =
+	  __webpack_require__(70);
+	var ReactCSSTransitionGroup = __webpack_require__(71);
+	var ReactTransitionGroup = __webpack_require__(72);
+	var ReactUpdates = __webpack_require__(73);
+
+	var cx = __webpack_require__(74);
+	var cloneWithProps = __webpack_require__(75);
+	var update = __webpack_require__(76);
+
+	React.addons = {
+	  CSSTransitionGroup: ReactCSSTransitionGroup,
+	  LinkedStateMixin: LinkedStateMixin,
+	  PureRenderMixin: ReactComponentWithPureRenderMixin,
+	  TransitionGroup: ReactTransitionGroup,
+
+	  batchedUpdates: ReactUpdates.batchedUpdates,
+	  classSet: cx,
+	  cloneWithProps: cloneWithProps,
+	  update: update
+	};
+
+	if ("production" !== process.env.NODE_ENV) {
+	  React.addons.Perf = __webpack_require__(77);
+	  React.addons.TestUtils = __webpack_require__(78);
+	}
+
+	module.exports = React;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(27);
+	var content = __webpack_require__(28);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(58)(content, {});
@@ -3473,19 +3530,18 @@ webpackJsonp([3],[
 	}
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(69)();
+	exports = module.exports = __webpack_require__(79)();
 	exports.push([module.id, "@charset \"UTF-8\";\n/*\n * Gridism\n * A simple, responsive, and handy CSS grid by @cobyism\n * https://github.com/cobyism/gridism\n */\n/* Preserve some sanity */\n.grid, .unit {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/* Set up some rules to govern the grid */\n.grid {\n  display: block;\n  clear: both; }\n\n.grid .unit {\n  float: left;\n  width: 100%;\n  padding: 0px; }\n\n/* This ensures the outer gutters are equal to the (doubled) inner gutters. */\n/* Nested grids already have padding though, so let’s nuke it */\n/* Let people nuke the gutters/padding completely in a couple of ways */\n.no-gutters > .unit, .unit.no-gutters {\n  padding: 0 !important; }\n\n/* Wrapping at a maximum width is optional */\n.wrap .grid, .grid.wrap {\n  max-width: 978px;\n  margin: 0 auto; }\n\n/* Width classes also have shorthand versions numbered as fractions\n * For example: for a grid unit 1/3 (one third) of the parent width,\n * simply apply class=\"w-1-3\" to the element. */\n.grid .whole, .grid .w-1-1 {\n  width: 100%; }\n\n.grid .half, .grid .w-1-2 {\n  width: 50%; }\n\n.grid .one-third, .grid .w-1-3 {\n  width: 33.3332%; }\n\n.grid .two-thirds, .grid .w-2-3 {\n  width: 66.6665%; }\n\n.grid .one-quarter, .grid .w-1-4 {\n  width: 25%; }\n\n.grid .three-quarters, .grid .w-3-4 {\n  width: 75%; }\n\n.grid .one-fifth, .grid .w-1-5 {\n  width: 20%; }\n\n.grid .two-fifths, .grid .w-2-5 {\n  width: 40%; }\n\n.grid .three-fifths, .grid .w-3-5 {\n  width: 60%; }\n\n.grid .four-fifths, .grid .w-4-5 {\n  width: 80%; }\n\n.grid .golden-small, .grid .w-g-s {\n  width: 38.2716%; }\n\n/* Golden section: smaller piece */\n.grid .golden-large, .grid .w-g-l {\n  width: 61.7283%; }\n\n/* Golden section: larger piece */\n/* Clearfix after every .grid */\n.grid {\n  *zoom: 1; }\n\n.grid:before, .grid:after {\n  display: table;\n  content: \"\";\n  line-height: 0; }\n\n.grid:after {\n  clear: both; }\n\n/* Utility classes */\n.align-center {\n  text-align: center; }\n\n.align-left {\n  text-align: left; }\n\n.align-right {\n  text-align: right; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n/* Responsive Stuff */\n@media screen and (max-width: 568px) {\n  /* Stack anything that isn’t full-width on smaller screens */\n  .grid .unit {\n    width: 100% !important;\n    padding-left: 20px;\n    padding-right: 20px; }\n  .unit .grid .unit {\n    padding-left: 0px;\n    padding-right: 0px; }\n  /* Sometimes, you just want to be different on small screens */\n  .center-on-mobiles {\n    text-align: center !important; }\n  .hide-on-mobiles {\n    display: none !important; } }\n\n/* Expand the wrap a bit further on larger screens */\n@media screen and (min-width: 1180px) {\n  .wider .grid {\n    max-width: 1180px;\n    margin: 0 auto; } }\n\n/*doc\n---\ntitle: Text Colors\nname: text colors\ncategory: Base CSS\n---\n\nWe have a few background colors that can be used in various contexts.\nThese are not for use as the entire page background but instead for\nspecific components and modules on the page.\n\n```html_example_table\n<p class=\"text-color--base\">Text Color Base</p>\n<p class=\"text-color--alpha\">Text Color Alpha</p>\n```\n\n*/\n.text-color--base {\n  color: #efefef; }\n\n.text-color--alpha {\n  color: #d2cdbf; }\n\n/* apply a natural box layout model to all elements */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nhtml {\n  font-size: 16px; }\n\nbody {\n  text-rendering: optimizeLegibility;\n  font-feature-settings: \"kern\";\n  -webkit-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern=1\";\n  text-rendering: optimizeLegibility;\n  /* optional: for older browsers */\n  -webkit-font-variant-ligatures: common-ligatures;\n  /* for iOS and Safari 6 */\n  font-variant-ligatures: common-ligatures;\n  /* for up-to-date browsers, including IE10 and Opera 21 */ }\n\n/*doc\n---\ntitle: Typography\nname: typography\ncategory: Base CSS\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<h1>h1 24px</h1>\n\n<h2>h2 18px</h2>\n\n<h3>h3 16px</h3>\n\n<h4>h4 14px</h4>\n\n<h5>h5 13px</h5>\n\n<p>This is an example of our base font style 15px. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n```\n\n*/\nh1, h2, h3, h4, h5, h6 {\n  font-weight: 500;\n  overflow: visible;\n  padding: 0px;\n  margin: 0px;\n  color: #efefef; }\n\nh1 {\n  font-family: 'Lora', serif;\n  font-style: italic;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 24px;\n  font-size: 1.5rem; }\n\nh2 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 18px;\n  font-size: 1.125rem; }\n\nh3 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 16px;\n  font-size: 1rem; }\n\nh4 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 14px;\n  font-size: 0.875rem; }\n\nh5 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 13px;\n  font-size: 0.8125rem; }\n\nbody, p {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 2px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 16px;\n  font-size: 1rem;\n  line-height: 24px;\n  line-height: 1.5rem;\n  color: #ffffff;\n  margin: 15px 0px;\n  text-rendering: optimizeLegibility;\n  font-feature-settings: \"kern\";\n  -webkit-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern=1\"; }\n\np {\n  line-height: 33px;\n  line-height: 2.0625rem; }\n\na, button {\n  color: inherit;\n  cursor: pointer;\n  text-decoration: none;\n  -webkit-transition-property: color;\n  -moz-transition-property: color;\n  transition-property: color;\n  -webkit-transition-duration: 0.15s;\n  -moz-transition-duration: 0.15s;\n  transition-duration: 0.15s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear; }\n  a:hover, button:hover {\n    color: #efefef; }\n\n*, a, a:active button, button:active {\n  -webkit-tap-highlight-color: transparent;\n  -webkit-tap-highlight-color: transparent;\n  /* For some Androids */\n  outline: none;\n  text-decoration: none; }\n\nem {\n  font-style: normal; }\n\n::-moz-selection {\n  background-color: gray;\n  color: inherit; }\n\n::selection {\n  background-color: gray;\n  color: inherit; }\n\n.align-left {\n  text-align: left; }\n\n.align-right {\n  text-align: right; }\n\n.global-animation__transition-alpha-enter {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .3s;\n  -moz-transition-duration: .3s;\n  transition-duration: .3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-alpha-enter.global-animation__transition-alpha-enter-active {\n    opacity: 1; }\n\n.global-animation__transition-alpha-leave {\n  opacity: 1;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .3s;\n  -moz-transition-duration: .3s;\n  transition-duration: .3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-alpha-leave.global-animation__transition-alpha-leave-active {\n    opacity: 0; }\n\n.global-animation__transition-beta-enter {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-beta-enter.global-animation__transition-beta-enter-active {\n    -webkit-transition-delay: 0.4s;\n    -moz-transition-delay: 0.4s;\n    transition-delay: 0.4s;\n    opacity: 1; }\n\n.global-animation__transition-beta-leave {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-beta-leave.global-animation__transition-beta-leave-active {\n    opacity: 0;\n    -webkit-transition-delay: 0s;\n    -moz-transition-delay: 0s;\n    transition-delay: 0s; }\n\n.animation-fade-in-alpha {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .3s;\n  -moz-transition-duration: .3s;\n  transition-duration: .3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .animation-fade-in-alpha.global-animation__transition-alpha-enter-active {\n    opacity: 1; }\n\n@-webkit-keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n@-webkit-keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n.button {\n  display: inline-block;\n  background-color: transparent;\n  box-sizing: border-box;\n  cursor: pointer;\n  border: none;\n  padding: 0px;\n  margin: 0px;\n  text-align: left;\n  outline: none;\n  outline-offset: 0;\n  outline-color: transparent;\n  -webkit-appearance: none; }\n  .button::-moz-focus-inner, .button::-moz-focus-inner {\n    border: none;\n    padding: 0; }\n\n/*doc\n---\ntitle: Alpha Button\nname: alpha button\ncategory: Buttons\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<button class=\"button button-alpha\">\n  <span class=\"button-alpha__label\">\n    <span class=\"label label-alpha\">Button Alpha</span>\n  </span>\n</button>\n```\n\n```html_example_table\n<button class=\"button button-alpha button-alpha--large\">\n  <span class=\"button-alpha__label\">\n    <span class=\"label label-zeta button-alpha__label\">Watch the movie</span>\n    <span class=\"label label-eta button-alpha__label\">Available December 24th</span>\n  </span>\n</button>\n```\n\n*/\n.button.button-alpha {\n  padding: 10px 15px;\n  border: 1px solid #ffffff;\n  -webkit-transition-property: background-color;\n  -moz-transition-property: background-color;\n  transition-property: background-color;\n  -webkit-transition-duration: .15s;\n  -moz-transition-duration: .15s;\n  transition-duration: .15s;\n  -webkit-transition-timing-function: ease-in;\n  -moz-transition-timing-function: ease-in;\n  transition-timing-function: ease-in;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s;\n  color: #ffffff;\n  background-color: rgba(255, 255, 255, 0.1);\n  text-align: center; }\n  .button.button-alpha > .button-alpha__label > .label {\n    display: block; }\n  .no-touch .button.button-alpha:hover {\n    background-color: #ffffff;\n    color: #000000; }\n  .touch .button.button-alpha {\n    background-color: #ffffff;\n    color: #000000; }\n  .button.button-alpha.button-alpha--large {\n    padding: 20px; }\n\n.input-slider {\n  background-color: rgba(255, 255, 255, 0.1);\n  width: 4px;\n  height: 100%;\n  min-height: 80px; }\n\n/*doc\n---\ntitle: Block Home Logo\nname: block home logo\ncategory: CSS Components\n---\n\n```html_example_table\n  <div class=\"block-home-logo\">\n    <span class=\"block-home-logo__content\">\n    </span>\n  </div>\n```\n\n*/\n@-webkit-keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n.block-home-logo {\n  display: inline-block;\n  text-align: center;\n  width: 780px;\n  height: 85px;\n  position: relative;\n  -webkit-transform: translateZ(0px);\n  -moz-transform: translateZ(0px);\n  -ms-transform: translateZ(0px);\n  -o-transform: translateZ(0px);\n  transform: translateZ(0px); }\n  .block-home-logo.block-home-logo--animate {\n    opacity: 0; }\n  .block-home-logo.block-home-logo--animate-in {\n    opacity: 1;\n    -webkit-animation-name: blockHomeLogoFadeIn;\n    -moz-animation-name: blockHomeLogoFadeIn;\n    animation-name: blockHomeLogoFadeIn; }\n\n/*doc\n---\ntitle: Block Align\nname: block align\ncategory: CSS Components\n---\n\n```html_example_table\n<div class=\"block-align\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n```html_example_table\n<div class=\"block-align block-align--top\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n```html_example_table\n<div class=\"block-align block-align--bottom\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n\n```html_example_table\n<div class=\"block-align block-align--left block-align--bottom\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n\n```html_example_table\n<div class=\"block-align block-align--right block-align--top\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n*/\n.block-align {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  box-align: center;\n  -webkit-align-items: center;\n  -moz-align-items: center;\n  -ms-align-items: center;\n  -o-align-items: center;\n  align-items: center;\n  -ms-flex-align: center;\n  -webkit-box-pack: center;\n  -moz-box-pack: center;\n  box-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  -ms-justify-content: center;\n  -o-justify-content: center;\n  justify-content: center;\n  -ms-flex-pack: center; }\n  .block-align > .block-align__content {\n    max-width: 100%; }\n  .block-align.block-align--left {\n    -webkit-box-pack: start;\n    -moz-box-pack: start;\n    box-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    -ms-justify-content: flex-start;\n    -o-justify-content: flex-start;\n    justify-content: flex-start;\n    -ms-flex-pack: start; }\n  .block-align.block-align--right {\n    -webkit-box-pack: end;\n    -moz-box-pack: end;\n    box-pack: end;\n    -webkit-justify-content: flex-end;\n    -moz-justify-content: flex-end;\n    -ms-justify-content: flex-end;\n    -o-justify-content: flex-end;\n    justify-content: flex-end;\n    -ms-flex-pack: end; }\n  .block-align.block-align--top > .block-align__content {\n    -webkit-align-self: flex-start;\n    -moz-align-self: flex-start;\n    align-self: flex-start;\n    -ms-flex-item-align: start; }\n  .block-align.block-align--bottom > .block-align__content {\n    -webkit-align-self: flex-end;\n    -moz-align-self: flex-end;\n    align-self: flex-end;\n    -ms-flex-item-align: end; }\n\nbody {\n  overflow: hidden;\n  margin: 0px;\n  padding: 0px; }\n\n.app {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n\n.app__content {\n  -webkit-transition-property: -webkit-transform;\n  -moz-transition-property: -moz-transform;\n  transition-property: transform;\n  -webkit-transition-duration: .9s;\n  -moz-transition-duration: .9s;\n  transition-duration: .9s;\n  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n\n.hud {\n  position: fixed;\n  left: 0px;\n  top: 0px;\n  z-index: 99; }\n\n.hud-header {\n  position: fixed;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 0px; }\n  .hud-header.hud-header--animate {\n    -webkit-animation-name: fadeInAlpha;\n    -moz-animation-name: fadeInAlpha;\n    animation-name: fadeInAlpha;\n    -webkit-animation-duration: .3s;\n    -moz-animation-duration: .3s;\n    animation-duration: .3s;\n    -webkit-animation-timing-function: ease-in;\n    -moz-animation-timing-function: ease-in;\n    animation-timing-function: ease-in;\n    -webkit-animation-play-state: paused;\n    -moz-animation-play-state: paused;\n    animation-play-state: paused; }\n  .hud-header.hud-header--animate-in {\n    -webkit-animation-play-state: running;\n    -moz-animation-play-state: running;\n    animation-play-state: running; }\n  .hud-header .hud-header__left {\n    float: left; }\n  .hud-header .hud-header__right {\n    float: right; }\n  .hud-header .hud-header__left, .hud-header .hud-header__right {\n    margin: 26px 26px 0px 26px; }\n    @media only screen and (max-width: 1280px) and (max-height: 768px) {\n      .hud-header .hud-header__left, .hud-header .hud-header__right {\n        margin: 20px 20px 0px 20px; } }\n  .hud-header .hud-header__right__item {\n    margin: 0px 0px;\n    display: inline-block;\n    vertical-align: top; }\n\n.hud-footer {\n  position: fixed;\n  left: 0px;\n  bottom: -100px;\n  width: 100%;\n  -webkit-transition-property: -webkit-transform;\n  -moz-transition-property: -moz-transform;\n  transition-property: transform;\n  -webkit-transition-duration: .9s;\n  -moz-transition-duration: .9s;\n  transition-duration: .9s;\n  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .hud-footer.hud-footer--expanded {\n    -webkit-transform: translateY(-100px);\n    -moz-transform: translateY(-100px);\n    -ms-transform: translateY(-100px);\n    -o-transform: translateY(-100px);\n    transform: translateY(-100px); }\n  .hud-footer .hud-footer__left {\n    float: left; }\n    .hud-footer .hud-footer__left.hud-footer__left--animate {\n      -webkit-animation-name: fadeInAlpha;\n      -moz-animation-name: fadeInAlpha;\n      animation-name: fadeInAlpha;\n      -webkit-animation-duration: .3s;\n      -moz-animation-duration: .3s;\n      animation-duration: .3s;\n      -webkit-animation-timing-function: ease-in;\n      -moz-animation-timing-function: ease-in;\n      animation-timing-function: ease-in;\n      -webkit-animation-play-state: paused;\n      -moz-animation-play-state: paused;\n      animation-play-state: paused; }\n    .hud-footer .hud-footer__left.hud-footer__left--animate-in {\n      -webkit-animation-play-state: running;\n      -moz-animation-play-state: running;\n      animation-play-state: running; }\n  .hud-footer .hud-footer__right {\n    float: right; }\n    .hud-footer .hud-footer__right.hud-footer__right--animate {\n      -webkit-animation-name: fadeInAlpha;\n      -moz-animation-name: fadeInAlpha;\n      animation-name: fadeInAlpha;\n      -webkit-animation-duration: .3s;\n      -moz-animation-duration: .3s;\n      animation-duration: .3s;\n      -webkit-animation-timing-function: ease-in;\n      -moz-animation-timing-function: ease-in;\n      animation-timing-function: ease-in;\n      -webkit-animation-play-state: paused;\n      -moz-animation-play-state: paused;\n      animation-play-state: paused; }\n    .hud-footer .hud-footer__right.hud-footer__right--animate-in {\n      -webkit-animation-play-state: running;\n      -moz-animation-play-state: running;\n      animation-play-state: running; }\n  .hud-footer .hud-footer__left, .hud-footer .hud-footer__right {\n    padding: 0px 26px 26px 26px; }\n    @media only screen and (max-width: 1280px) and (max-height: 768px) {\n      .hud-footer .hud-footer__left, .hud-footer .hud-footer__right {\n        padding: 0px 20px 20px 20px; } }\n  .hud-footer .hud-footer__right__item {\n    margin: 0px 10px;\n    display: inline-block;\n    vertical-align: top; }\n    .hud-footer .hud-footer__right__item:first-child {\n      margin-left: 0px; }\n    .hud-footer .hud-footer__right__item:last-child {\n      margin-right: 0px; }\n  .hud-footer .hud-footer__end {\n    clear: both;\n    width: 100%;\n    height: 100px;\n    overflow: hidden; }\n    .hud-footer .hud-footer__end .hud-footer__end__left {\n      float: left;\n      width: 210px;\n      height: 100%;\n      padding-left: 26px; }\n      @media only screen and (max-width: 1280px) and (max-height: 768px) {\n        .hud-footer .hud-footer__end .hud-footer__end__left {\n          padding-left: 20px; } }\n    .hud-footer .hud-footer__end .hud-footer__end__right {\n      float: right;\n      display: table;\n      height: 100%; }\n    .hud-footer .hud-footer__end .hud-footer__end__copyright {\n      display: table-cell;\n      vertical-align: middle;\n      color: #ffffff;\n      padding: 0px 26px; }\n      @media only screen and (max-width: 1280px) and (max-height: 768px) {\n        .hud-footer .hud-footer__end .hud-footer__end__copyright {\n          padding: 0px 20px; } }\n\n.scroll-container {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  overflow: auto; }\n\n.pages {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 300%;\n  overflow: hidden; }\n\n.page {\n  position: relative;\n  height: 33.33333%;\n  width: 100%;\n  overflow: hidden; }\n\n.home-page {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  background-position: center center;\n  background-size: cover;\n  background-repeat: no-repeat; }\n\n.home-page__bg {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  background-image: url("+__webpack_require__(81)+");\n  background-position: center center;\n  background-size: cover;\n  background-repeat: no-repeat;\n  opacity: 0.3; }\n  .home-page__bg:after {\n    content: \"\";\n    position: absolute;\n    left: -200%;\n    top: 0px;\n    width: 400%;\n    height: 100%;\n    display: none;\n    background-color: transparent;\n    background-image: -webkit-linear-gradient(-360deg, transparent 0%, #000000 50%, #000000 100%);\n    background-image: linear-gradient(90deg,transparent 0%, black 50%, black 100%); }\n  .home-page__bg.home-page__bg--animate:after {\n    display: block;\n    -webkit-transition-property: -webkit-transform, opacity;\n    -moz-transition-property: -moz-transform, opacity;\n    transition-property: transform, opacity;\n    -webkit-transition-duration: 4s, 0.3s;\n    -moz-transition-duration: 4s, 0.3s;\n    transition-duration: 4s, 0.3s;\n    -webkit-transition-timing-function: ease-in, linear;\n    -moz-transition-timing-function: ease-in, linear;\n    transition-timing-function: ease-in, linear;\n    -webkit-transition-delay: 0s, 3.5s;\n    -moz-transition-delay: 0s, 3.5s;\n    transition-delay: 0s, 3.5s;\n    -webkit-transform: translateX(0%);\n    -moz-transform: translateX(0%);\n    -ms-transform: translateX(0%);\n    -o-transform: translateX(0%);\n    transform: translateX(0%); }\n  .home-page__bg.home-page__bg--animate-in:after {\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n    transform: translateX(100%);\n    opacity: 0; }\n  .home-page__bg video {\n    object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n.home-page__nav {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: auto;\n  margin-top: 26px;\n  text-align: center;\n  z-index: 2; }\n  @media only screen and (max-width: 1280px) and (max-height: 768px) {\n    .home-page__nav {\n      margin-top: 20px; } }\n  .home-page__nav.home-page__nav--animate {\n    opacity: 0;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 1.5s;\n    -moz-transition-duration: 1.5s;\n    transition-duration: 1.5s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 1s;\n    -moz-transition-delay: 1s;\n    transition-delay: 1s; }\n  .home-page__nav.home-page__nav--animate-in {\n    opacity: 1; }\n\n.home-page__body {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.home-page__loading {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  z-index: 2; }\n  .home-page__loading .home-page__loading__loader {\n    position: absolute;\n    bottom: 10%;\n    left: 10%; }\n  .home-page__loading .home-page__loading__logo {\n    position: absolute;\n    bottom: 10%;\n    right: 10%;\n    height: 84px; }\n  .home-page__loading.home-page__loading--animate {\n    opacity: 1;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 0.3s;\n    -moz-transition-duration: 0.3s;\n    transition-duration: 0.3s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 0s;\n    -moz-transition-delay: 0s;\n    transition-delay: 0s; }\n  .home-page__loading.home-page__loading--animate-out {\n    opacity: 0;\n    z-index: 0; }\n\n.home-page__cta {\n  position: absolute;\n  z-index: 99;\n  bottom: 10%;\n  width: 100%;\n  height: auto;\n  text-align: center; }\n  .home-page__cta.home-page__cta--animate {\n    opacity: 0;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 1.5s;\n    -moz-transition-duration: 1.5s;\n    transition-duration: 1.5s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 1s;\n    -moz-transition-delay: 1s;\n    transition-delay: 1s; }\n  .home-page__cta.home-page__cta--animate-in {\n    opacity: 1; }\n", ""]);
 
 /***/ },
-/* 28 */,
 /* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(5);
-	var HomeNav = __webpack_require__(70);
+	var HomeNav = __webpack_require__(80);
 	var Q = __webpack_require__(25);
 	var Components = __webpack_require__(4);
 	var HomePageBackground = __webpack_require__(81);
@@ -3727,63 +3783,7 @@ webpackJsonp([3],[
 	}
 
 /***/ },
-/* 31 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactWithAddons
-	 */
-
-	/**
-	 * This module exists purely in the open source project, and is meant as a way
-	 * to create a separate standalone build of React. This build has "addons", or
-	 * functionality we've built and think might be useful but doesn't have a good
-	 * place to live inside React core.
-	 */
-
-	"use strict";
-
-	var LinkedStateMixin = __webpack_require__(71);
-	var React = __webpack_require__(22);
-	var ReactComponentWithPureRenderMixin =
-	  __webpack_require__(72);
-	var ReactCSSTransitionGroup = __webpack_require__(73);
-	var ReactTransitionGroup = __webpack_require__(74);
-	var ReactUpdates = __webpack_require__(75);
-
-	var cx = __webpack_require__(76);
-	var cloneWithProps = __webpack_require__(77);
-	var update = __webpack_require__(78);
-
-	React.addons = {
-	  CSSTransitionGroup: ReactCSSTransitionGroup,
-	  LinkedStateMixin: LinkedStateMixin,
-	  PureRenderMixin: ReactComponentWithPureRenderMixin,
-	  TransitionGroup: ReactTransitionGroup,
-
-	  batchedUpdates: ReactUpdates.batchedUpdates,
-	  classSet: cx,
-	  cloneWithProps: cloneWithProps,
-	  update: update
-	};
-
-	if ("production" !== process.env.NODE_ENV) {
-	  React.addons.Perf = __webpack_require__(79);
-	  React.addons.TestUtils = __webpack_require__(80);
-	}
-
-	module.exports = React;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
-
-/***/ },
+/* 31 */,
 /* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -11036,7 +11036,7 @@ webpackJsonp([3],[
 
 	*/
 
-	var React = __webpack_require__(18);
+	var React = __webpack_require__(12);
 
 	module.exports = React.createClass({displayName: "exports",
 	  
@@ -11666,7 +11666,7 @@ webpackJsonp([3],[
 
 	var ReactElement = __webpack_require__(41);
 	var ReactOwner = __webpack_require__(90);
-	var ReactUpdates = __webpack_require__(75);
+	var ReactUpdates = __webpack_require__(73);
 
 	var assign = __webpack_require__(54);
 	var invariant = __webpack_require__(87);
@@ -12123,7 +12123,7 @@ webpackJsonp([3],[
 	var ReactPropTransferer = __webpack_require__(94);
 	var ReactPropTypeLocations = __webpack_require__(95);
 	var ReactPropTypeLocationNames = __webpack_require__(96);
-	var ReactUpdates = __webpack_require__(75);
+	var ReactUpdates = __webpack_require__(73);
 
 	var assign = __webpack_require__(54);
 	var instantiateReactComponent = __webpack_require__(97);
@@ -14970,7 +14970,7 @@ webpackJsonp([3],[
 	  if ("production" !== process.env.NODE_ENV) {
 	    var url = (ExecutionEnvironment.canUseDOM && window.location.href) || '';
 	    if ((/[?&]react_perf\b/).test(url)) {
-	      var ReactDefaultPerf = __webpack_require__(79);
+	      var ReactDefaultPerf = __webpack_require__(77);
 	      ReactDefaultPerf.start();
 	    }
 	  }
@@ -19341,44 +19341,6 @@ webpackJsonp([3],[
 /* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = function() {
-		var list = [];
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-		return list;
-	}
-
-/***/ },
-/* 70 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(5);
-	var Components = __webpack_require__(4);
-
-	module.exports = React.createClass({displayName: "exports",
-
-	  render: function() {
-	    return (React.createElement("div", {className: "home-nav"}, 
-	              React.createElement(Components.Blocks.BlockTopNav, null)
-	            ));
-	  }
-
-	})
-
-/***/ },
-/* 71 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -19421,7 +19383,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 72 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19437,7 +19399,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var shallowEqual = __webpack_require__(143);
+	var shallowEqual = __webpack_require__(142);
 
 	/**
 	 * If your React component's render function is "pure", e.g. it will render the
@@ -19474,7 +19436,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 73 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19496,10 +19458,10 @@ webpackJsonp([3],[
 	var assign = __webpack_require__(54);
 
 	var ReactTransitionGroup = React.createFactory(
-	  __webpack_require__(74)
+	  __webpack_require__(72)
 	);
 	var ReactCSSTransitionGroupChild = React.createFactory(
-	  __webpack_require__(142)
+	  __webpack_require__(143)
 	);
 
 	var ReactCSSTransitionGroup = React.createClass({
@@ -19545,7 +19507,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 74 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19562,10 +19524,10 @@ webpackJsonp([3],[
 	"use strict";
 
 	var React = __webpack_require__(22);
-	var ReactTransitionChildMapping = __webpack_require__(146);
+	var ReactTransitionChildMapping = __webpack_require__(144);
 
 	var assign = __webpack_require__(54);
-	var cloneWithProps = __webpack_require__(77);
+	var cloneWithProps = __webpack_require__(75);
 	var emptyFunction = __webpack_require__(135);
 
 	var ReactTransitionGroup = React.createClass({
@@ -19738,7 +19700,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 75 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -19754,11 +19716,11 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var CallbackQueue = __webpack_require__(144);
+	var CallbackQueue = __webpack_require__(145);
 	var PooledClass = __webpack_require__(88);
 	var ReactCurrentOwner = __webpack_require__(40);
 	var ReactPerf = __webpack_require__(50);
-	var Transaction = __webpack_require__(145);
+	var Transaction = __webpack_require__(146);
 
 	var assign = __webpack_require__(54);
 	var invariant = __webpack_require__(87);
@@ -20031,7 +19993,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 76 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20074,7 +20036,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 77 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -20136,7 +20098,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 78 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -20307,7 +20269,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 79 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20325,11 +20287,11 @@ webpackJsonp([3],[
 	"use strict";
 
 	var DOMProperty = __webpack_require__(82);
-	var ReactDefaultPerfAnalysis = __webpack_require__(147);
+	var ReactDefaultPerfAnalysis = __webpack_require__(150);
 	var ReactMount = __webpack_require__(48);
 	var ReactPerf = __webpack_require__(50);
 
-	var performanceNow = __webpack_require__(148);
+	var performanceNow = __webpack_require__(151);
 
 	function roundFloat(val) {
 	  return Math.floor(val * 100) / 100;
@@ -20571,7 +20533,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 80 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20588,15 +20550,15 @@ webpackJsonp([3],[
 	"use strict";
 
 	var EventConstants = __webpack_require__(86);
-	var EventPluginHub = __webpack_require__(149);
-	var EventPropagators = __webpack_require__(150);
+	var EventPluginHub = __webpack_require__(147);
+	var EventPropagators = __webpack_require__(148);
 	var React = __webpack_require__(22);
 	var ReactElement = __webpack_require__(41);
 	var ReactBrowserEventEmitter = __webpack_require__(104);
 	var ReactMount = __webpack_require__(48);
 	var ReactTextComponent = __webpack_require__(53);
-	var ReactUpdates = __webpack_require__(75);
-	var SyntheticEvent = __webpack_require__(151);
+	var ReactUpdates = __webpack_require__(73);
+	var SyntheticEvent = __webpack_require__(149);
 
 	var assign = __webpack_require__(54);
 
@@ -20985,6 +20947,44 @@ webpackJsonp([3],[
 
 	module.exports = ReactTestUtils;
 
+
+/***/ },
+/* 79 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function() {
+		var list = [];
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+		return list;
+	}
+
+/***/ },
+/* 80 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(5);
+	var Components = __webpack_require__(4);
+
+	module.exports = React.createClass({displayName: "exports",
+
+	  render: function() {
+	    return (React.createElement("div", {className: "home-nav"}, 
+	              React.createElement(Components.Blocks.BlockTopNav, null)
+	            ));
+	  }
+
+	})
 
 /***/ },
 /* 81 */
@@ -22924,7 +22924,7 @@ webpackJsonp([3],[
 	"use strict";
 
 	var EventConstants = __webpack_require__(86);
-	var EventPluginHub = __webpack_require__(149);
+	var EventPluginHub = __webpack_require__(147);
 	var EventPluginRegistry = __webpack_require__(159);
 	var ReactEventEmitterMixin = __webpack_require__(160);
 	var ViewportMetrics = __webpack_require__(161);
@@ -23352,9 +23352,9 @@ webpackJsonp([3],[
 	"use strict";
 
 	var EventConstants = __webpack_require__(86);
-	var EventPropagators = __webpack_require__(150);
+	var EventPropagators = __webpack_require__(148);
 	var ExecutionEnvironment = __webpack_require__(57);
-	var SyntheticInputEvent = __webpack_require__(163);
+	var SyntheticInputEvent = __webpack_require__(162);
 
 	var keyOf = __webpack_require__(98);
 
@@ -23577,14 +23577,14 @@ webpackJsonp([3],[
 	"use strict";
 
 	var EventConstants = __webpack_require__(86);
-	var EventPluginHub = __webpack_require__(149);
-	var EventPropagators = __webpack_require__(150);
+	var EventPluginHub = __webpack_require__(147);
+	var EventPropagators = __webpack_require__(148);
 	var ExecutionEnvironment = __webpack_require__(57);
-	var ReactUpdates = __webpack_require__(75);
-	var SyntheticEvent = __webpack_require__(151);
+	var ReactUpdates = __webpack_require__(73);
+	var SyntheticEvent = __webpack_require__(149);
 
 	var isEventSupported = __webpack_require__(105);
-	var isTextInputElement = __webpack_require__(162);
+	var isTextInputElement = __webpack_require__(163);
 	var keyOf = __webpack_require__(98);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -23993,7 +23993,7 @@ webpackJsonp([3],[
 	"use strict";
 
 	var EventConstants = __webpack_require__(86);
-	var EventPropagators = __webpack_require__(150);
+	var EventPropagators = __webpack_require__(148);
 	var ExecutionEnvironment = __webpack_require__(57);
 	var ReactInputSelection = __webpack_require__(164);
 	var SyntheticCompositionEvent = __webpack_require__(165);
@@ -24300,7 +24300,7 @@ webpackJsonp([3],[
 	"use strict";
 
 	var EventConstants = __webpack_require__(86);
-	var EventPropagators = __webpack_require__(150);
+	var EventPropagators = __webpack_require__(148);
 	var SyntheticMouseEvent = __webpack_require__(167);
 
 	var ReactMount = __webpack_require__(48);
@@ -24825,8 +24825,8 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var ReactUpdates = __webpack_require__(75);
-	var Transaction = __webpack_require__(145);
+	var ReactUpdates = __webpack_require__(73);
+	var Transaction = __webpack_require__(146);
 
 	var assign = __webpack_require__(54);
 	var emptyFunction = __webpack_require__(135);
@@ -25085,7 +25085,7 @@ webpackJsonp([3],[
 	var ReactElement = __webpack_require__(41);
 	var ReactDOM = __webpack_require__(43);
 	var ReactMount = __webpack_require__(48);
-	var ReactUpdates = __webpack_require__(75);
+	var ReactUpdates = __webpack_require__(73);
 
 	var assign = __webpack_require__(54);
 	var invariant = __webpack_require__(87);
@@ -25320,7 +25320,7 @@ webpackJsonp([3],[
 	var ReactCompositeComponent = __webpack_require__(38);
 	var ReactElement = __webpack_require__(41);
 	var ReactDOM = __webpack_require__(43);
-	var ReactUpdates = __webpack_require__(75);
+	var ReactUpdates = __webpack_require__(73);
 
 	var assign = __webpack_require__(54);
 
@@ -25509,7 +25509,7 @@ webpackJsonp([3],[
 	var ReactCompositeComponent = __webpack_require__(38);
 	var ReactElement = __webpack_require__(41);
 	var ReactDOM = __webpack_require__(43);
-	var ReactUpdates = __webpack_require__(75);
+	var ReactUpdates = __webpack_require__(73);
 
 	var assign = __webpack_require__(54);
 	var invariant = __webpack_require__(87);
@@ -25652,7 +25652,7 @@ webpackJsonp([3],[
 	var PooledClass = __webpack_require__(88);
 	var ReactInstanceHandles = __webpack_require__(46);
 	var ReactMount = __webpack_require__(48);
-	var ReactUpdates = __webpack_require__(75);
+	var ReactUpdates = __webpack_require__(73);
 
 	var assign = __webpack_require__(54);
 	var getEventTarget = __webpack_require__(175);
@@ -25835,7 +25835,7 @@ webpackJsonp([3],[
 	"use strict";
 
 	var DOMProperty = __webpack_require__(82);
-	var EventPluginHub = __webpack_require__(149);
+	var EventPluginHub = __webpack_require__(147);
 	var ReactComponent = __webpack_require__(37);
 	var ReactCompositeComponent = __webpack_require__(38);
 	var ReactEmptyComponent = __webpack_require__(92);
@@ -25843,7 +25843,7 @@ webpackJsonp([3],[
 	var ReactNativeComponent = __webpack_require__(154);
 	var ReactPerf = __webpack_require__(50);
 	var ReactRootIndex = __webpack_require__(130);
-	var ReactUpdates = __webpack_require__(75);
+	var ReactUpdates = __webpack_require__(73);
 
 	var ReactInjection = {
 	  Component: ReactComponent.injection,
@@ -25879,14 +25879,14 @@ webpackJsonp([3],[
 	"use strict";
 
 	var EventConstants = __webpack_require__(86);
-	var EventPropagators = __webpack_require__(150);
+	var EventPropagators = __webpack_require__(148);
 	var ReactInputSelection = __webpack_require__(164);
-	var SyntheticEvent = __webpack_require__(151);
+	var SyntheticEvent = __webpack_require__(149);
 
-	var getActiveElement = __webpack_require__(185);
-	var isTextInputElement = __webpack_require__(162);
+	var getActiveElement = __webpack_require__(177);
+	var isTextInputElement = __webpack_require__(163);
 	var keyOf = __webpack_require__(98);
-	var shallowEqual = __webpack_require__(143);
+	var shallowEqual = __webpack_require__(142);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -26114,18 +26114,18 @@ webpackJsonp([3],[
 
 	var EventConstants = __webpack_require__(86);
 	var EventPluginUtils = __webpack_require__(35);
-	var EventPropagators = __webpack_require__(150);
-	var SyntheticClipboardEvent = __webpack_require__(177);
-	var SyntheticEvent = __webpack_require__(151);
-	var SyntheticFocusEvent = __webpack_require__(178);
-	var SyntheticKeyboardEvent = __webpack_require__(179);
+	var EventPropagators = __webpack_require__(148);
+	var SyntheticClipboardEvent = __webpack_require__(178);
+	var SyntheticEvent = __webpack_require__(149);
+	var SyntheticFocusEvent = __webpack_require__(179);
+	var SyntheticKeyboardEvent = __webpack_require__(180);
 	var SyntheticMouseEvent = __webpack_require__(167);
-	var SyntheticDragEvent = __webpack_require__(180);
-	var SyntheticTouchEvent = __webpack_require__(181);
-	var SyntheticUIEvent = __webpack_require__(182);
-	var SyntheticWheelEvent = __webpack_require__(183);
+	var SyntheticDragEvent = __webpack_require__(181);
+	var SyntheticTouchEvent = __webpack_require__(182);
+	var SyntheticUIEvent = __webpack_require__(183);
+	var SyntheticWheelEvent = __webpack_require__(184);
 
-	var getEventCharCode = __webpack_require__(184);
+	var getEventCharCode = __webpack_require__(185);
 
 	var invariant = __webpack_require__(87);
 	var keyOf = __webpack_require__(98);
@@ -27026,9 +27026,9 @@ webpackJsonp([3],[
 	"use strict";
 
 	var PooledClass = __webpack_require__(88);
-	var CallbackQueue = __webpack_require__(144);
+	var CallbackQueue = __webpack_require__(145);
 	var ReactPutListenerQueue = __webpack_require__(188);
-	var Transaction = __webpack_require__(145);
+	var Transaction = __webpack_require__(146);
 
 	var assign = __webpack_require__(54);
 	var emptyFunction = __webpack_require__(135);
@@ -27473,6 +27473,54 @@ webpackJsonp([3],[
 /* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule shallowEqual
+	 */
+
+	"use strict";
+
+	/**
+	 * Performs equality by iterating through keys on an object and returning
+	 * false when any key has values which are not strictly equal between
+	 * objA and objB. Returns true when the values of all keys are strictly equal.
+	 *
+	 * @return {boolean}
+	 */
+	function shallowEqual(objA, objB) {
+	  if (objA === objB) {
+	    return true;
+	  }
+	  var key;
+	  // Test for A's keys different from B.
+	  for (key in objA) {
+	    if (objA.hasOwnProperty(key) &&
+	        (!objB.hasOwnProperty(key) || objA[key] !== objB[key])) {
+	      return false;
+	    }
+	  }
+	  // Test for B's keys missing from A.
+	  for (key in objB) {
+	    if (objB.hasOwnProperty(key) && !objA.hasOwnProperty(key)) {
+	      return false;
+	    }
+	  }
+	  return true;
+	}
+
+	module.exports = shallowEqual;
+
+
+/***/ },
+/* 143 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -27608,7 +27656,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 143 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27619,44 +27667,101 @@ webpackJsonp([3],[
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule shallowEqual
+	 * @typechecks static-only
+	 * @providesModule ReactTransitionChildMapping
 	 */
 
 	"use strict";
 
-	/**
-	 * Performs equality by iterating through keys on an object and returning
-	 * false when any key has values which are not strictly equal between
-	 * objA and objB. Returns true when the values of all keys are strictly equal.
-	 *
-	 * @return {boolean}
-	 */
-	function shallowEqual(objA, objB) {
-	  if (objA === objB) {
-	    return true;
-	  }
-	  var key;
-	  // Test for A's keys different from B.
-	  for (key in objA) {
-	    if (objA.hasOwnProperty(key) &&
-	        (!objB.hasOwnProperty(key) || objA[key] !== objB[key])) {
-	      return false;
-	    }
-	  }
-	  // Test for B's keys missing from A.
-	  for (key in objB) {
-	    if (objB.hasOwnProperty(key) && !objA.hasOwnProperty(key)) {
-	      return false;
-	    }
-	  }
-	  return true;
-	}
+	var ReactChildren = __webpack_require__(36);
 
-	module.exports = shallowEqual;
+	var ReactTransitionChildMapping = {
+	  /**
+	   * Given `this.props.children`, return an object mapping key to child. Just
+	   * simple syntactic sugar around ReactChildren.map().
+	   *
+	   * @param {*} children `this.props.children`
+	   * @return {object} Mapping of key to child
+	   */
+	  getChildMapping: function(children) {
+	    return ReactChildren.map(children, function(child) {
+	      return child;
+	    });
+	  },
+
+	  /**
+	   * When you're adding or removing children some may be added or removed in the
+	   * same render pass. We want to show *both* since we want to simultaneously
+	   * animate elements in and out. This function takes a previous set of keys
+	   * and a new set of keys and merges them with its best guess of the correct
+	   * ordering. In the future we may expose some of the utilities in
+	   * ReactMultiChild to make this easy, but for now React itself does not
+	   * directly have this concept of the union of prevChildren and nextChildren
+	   * so we implement it here.
+	   *
+	   * @param {object} prev prev children as returned from
+	   * `ReactTransitionChildMapping.getChildMapping()`.
+	   * @param {object} next next children as returned from
+	   * `ReactTransitionChildMapping.getChildMapping()`.
+	   * @return {object} a key set that contains all keys in `prev` and all keys
+	   * in `next` in a reasonable order.
+	   */
+	  mergeChildMappings: function(prev, next) {
+	    prev = prev || {};
+	    next = next || {};
+
+	    function getValueForKey(key) {
+	      if (next.hasOwnProperty(key)) {
+	        return next[key];
+	      } else {
+	        return prev[key];
+	      }
+	    }
+
+	    // For each key of `next`, the list of keys to insert before that key in
+	    // the combined list
+	    var nextKeysPending = {};
+
+	    var pendingKeys = [];
+	    for (var prevKey in prev) {
+	      if (next.hasOwnProperty(prevKey)) {
+	        if (pendingKeys.length) {
+	          nextKeysPending[prevKey] = pendingKeys;
+	          pendingKeys = [];
+	        }
+	      } else {
+	        pendingKeys.push(prevKey);
+	      }
+	    }
+
+	    var i;
+	    var childMapping = {};
+	    for (var nextKey in next) {
+	      if (nextKeysPending.hasOwnProperty(nextKey)) {
+	        for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+	          var pendingNextKey = nextKeysPending[nextKey][i];
+	          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(
+	            pendingNextKey
+	          );
+	        }
+	      }
+	      childMapping[nextKey] = getValueForKey(nextKey);
+	    }
+
+	    // Finally, add the keys which didn't appear before any key in `next`
+	    for (i = 0; i < pendingKeys.length; i++) {
+	      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+	    }
+
+	    return childMapping;
+	  }
+	};
+
+	module.exports = ReactTransitionChildMapping;
 
 
 /***/ },
-/* 144 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27759,7 +27864,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28003,354 +28108,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 146 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @typechecks static-only
-	 * @providesModule ReactTransitionChildMapping
-	 */
-
-	"use strict";
-
-	var ReactChildren = __webpack_require__(36);
-
-	var ReactTransitionChildMapping = {
-	  /**
-	   * Given `this.props.children`, return an object mapping key to child. Just
-	   * simple syntactic sugar around ReactChildren.map().
-	   *
-	   * @param {*} children `this.props.children`
-	   * @return {object} Mapping of key to child
-	   */
-	  getChildMapping: function(children) {
-	    return ReactChildren.map(children, function(child) {
-	      return child;
-	    });
-	  },
-
-	  /**
-	   * When you're adding or removing children some may be added or removed in the
-	   * same render pass. We want to show *both* since we want to simultaneously
-	   * animate elements in and out. This function takes a previous set of keys
-	   * and a new set of keys and merges them with its best guess of the correct
-	   * ordering. In the future we may expose some of the utilities in
-	   * ReactMultiChild to make this easy, but for now React itself does not
-	   * directly have this concept of the union of prevChildren and nextChildren
-	   * so we implement it here.
-	   *
-	   * @param {object} prev prev children as returned from
-	   * `ReactTransitionChildMapping.getChildMapping()`.
-	   * @param {object} next next children as returned from
-	   * `ReactTransitionChildMapping.getChildMapping()`.
-	   * @return {object} a key set that contains all keys in `prev` and all keys
-	   * in `next` in a reasonable order.
-	   */
-	  mergeChildMappings: function(prev, next) {
-	    prev = prev || {};
-	    next = next || {};
-
-	    function getValueForKey(key) {
-	      if (next.hasOwnProperty(key)) {
-	        return next[key];
-	      } else {
-	        return prev[key];
-	      }
-	    }
-
-	    // For each key of `next`, the list of keys to insert before that key in
-	    // the combined list
-	    var nextKeysPending = {};
-
-	    var pendingKeys = [];
-	    for (var prevKey in prev) {
-	      if (next.hasOwnProperty(prevKey)) {
-	        if (pendingKeys.length) {
-	          nextKeysPending[prevKey] = pendingKeys;
-	          pendingKeys = [];
-	        }
-	      } else {
-	        pendingKeys.push(prevKey);
-	      }
-	    }
-
-	    var i;
-	    var childMapping = {};
-	    for (var nextKey in next) {
-	      if (nextKeysPending.hasOwnProperty(nextKey)) {
-	        for (i = 0; i < nextKeysPending[nextKey].length; i++) {
-	          var pendingNextKey = nextKeysPending[nextKey][i];
-	          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(
-	            pendingNextKey
-	          );
-	        }
-	      }
-	      childMapping[nextKey] = getValueForKey(nextKey);
-	    }
-
-	    // Finally, add the keys which didn't appear before any key in `next`
-	    for (i = 0; i < pendingKeys.length; i++) {
-	      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
-	    }
-
-	    return childMapping;
-	  }
-	};
-
-	module.exports = ReactTransitionChildMapping;
-
-
-/***/ },
 /* 147 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactDefaultPerfAnalysis
-	 */
-
-	var assign = __webpack_require__(54);
-
-	// Don't try to save users less than 1.2ms (a number I made up)
-	var DONT_CARE_THRESHOLD = 1.2;
-	var DOM_OPERATION_TYPES = {
-	  'mountImageIntoNode': 'set innerHTML',
-	  INSERT_MARKUP: 'set innerHTML',
-	  MOVE_EXISTING: 'move',
-	  REMOVE_NODE: 'remove',
-	  TEXT_CONTENT: 'set textContent',
-	  'updatePropertyByID': 'update attribute',
-	  'deletePropertyByID': 'delete attribute',
-	  'updateStylesByID': 'update styles',
-	  'updateInnerHTMLByID': 'set innerHTML',
-	  'dangerouslyReplaceNodeWithMarkupByID': 'replace'
-	};
-
-	function getTotalTime(measurements) {
-	  // TODO: return number of DOM ops? could be misleading.
-	  // TODO: measure dropped frames after reconcile?
-	  // TODO: log total time of each reconcile and the top-level component
-	  // class that triggered it.
-	  var totalTime = 0;
-	  for (var i = 0; i < measurements.length; i++) {
-	    var measurement = measurements[i];
-	    totalTime += measurement.totalTime;
-	  }
-	  return totalTime;
-	}
-
-	function getDOMSummary(measurements) {
-	  var items = [];
-	  for (var i = 0; i < measurements.length; i++) {
-	    var measurement = measurements[i];
-	    var id;
-
-	    for (id in measurement.writes) {
-	      measurement.writes[id].forEach(function(write) {
-	        items.push({
-	          id: id,
-	          type: DOM_OPERATION_TYPES[write.type] || write.type,
-	          args: write.args
-	        });
-	      });
-	    }
-	  }
-	  return items;
-	}
-
-	function getExclusiveSummary(measurements) {
-	  var candidates = {};
-	  var displayName;
-
-	  for (var i = 0; i < measurements.length; i++) {
-	    var measurement = measurements[i];
-	    var allIDs = assign(
-	      {},
-	      measurement.exclusive,
-	      measurement.inclusive
-	    );
-
-	    for (var id in allIDs) {
-	      displayName = measurement.displayNames[id].current;
-
-	      candidates[displayName] = candidates[displayName] || {
-	        componentName: displayName,
-	        inclusive: 0,
-	        exclusive: 0,
-	        render: 0,
-	        count: 0
-	      };
-	      if (measurement.render[id]) {
-	        candidates[displayName].render += measurement.render[id];
-	      }
-	      if (measurement.exclusive[id]) {
-	        candidates[displayName].exclusive += measurement.exclusive[id];
-	      }
-	      if (measurement.inclusive[id]) {
-	        candidates[displayName].inclusive += measurement.inclusive[id];
-	      }
-	      if (measurement.counts[id]) {
-	        candidates[displayName].count += measurement.counts[id];
-	      }
-	    }
-	  }
-
-	  // Now make a sorted array with the results.
-	  var arr = [];
-	  for (displayName in candidates) {
-	    if (candidates[displayName].exclusive >= DONT_CARE_THRESHOLD) {
-	      arr.push(candidates[displayName]);
-	    }
-	  }
-
-	  arr.sort(function(a, b) {
-	    return b.exclusive - a.exclusive;
-	  });
-
-	  return arr;
-	}
-
-	function getInclusiveSummary(measurements, onlyClean) {
-	  var candidates = {};
-	  var inclusiveKey;
-
-	  for (var i = 0; i < measurements.length; i++) {
-	    var measurement = measurements[i];
-	    var allIDs = assign(
-	      {},
-	      measurement.exclusive,
-	      measurement.inclusive
-	    );
-	    var cleanComponents;
-
-	    if (onlyClean) {
-	      cleanComponents = getUnchangedComponents(measurement);
-	    }
-
-	    for (var id in allIDs) {
-	      if (onlyClean && !cleanComponents[id]) {
-	        continue;
-	      }
-
-	      var displayName = measurement.displayNames[id];
-
-	      // Inclusive time is not useful for many components without knowing where
-	      // they are instantiated. So we aggregate inclusive time with both the
-	      // owner and current displayName as the key.
-	      inclusiveKey = displayName.owner + ' > ' + displayName.current;
-
-	      candidates[inclusiveKey] = candidates[inclusiveKey] || {
-	        componentName: inclusiveKey,
-	        time: 0,
-	        count: 0
-	      };
-
-	      if (measurement.inclusive[id]) {
-	        candidates[inclusiveKey].time += measurement.inclusive[id];
-	      }
-	      if (measurement.counts[id]) {
-	        candidates[inclusiveKey].count += measurement.counts[id];
-	      }
-	    }
-	  }
-
-	  // Now make a sorted array with the results.
-	  var arr = [];
-	  for (inclusiveKey in candidates) {
-	    if (candidates[inclusiveKey].time >= DONT_CARE_THRESHOLD) {
-	      arr.push(candidates[inclusiveKey]);
-	    }
-	  }
-
-	  arr.sort(function(a, b) {
-	    return b.time - a.time;
-	  });
-
-	  return arr;
-	}
-
-	function getUnchangedComponents(measurement) {
-	  // For a given reconcile, look at which components did not actually
-	  // render anything to the DOM and return a mapping of their ID to
-	  // the amount of time it took to render the entire subtree.
-	  var cleanComponents = {};
-	  var dirtyLeafIDs = Object.keys(measurement.writes);
-	  var allIDs = assign({}, measurement.exclusive, measurement.inclusive);
-
-	  for (var id in allIDs) {
-	    var isDirty = false;
-	    // For each component that rendered, see if a component that triggered
-	    // a DOM op is in its subtree.
-	    for (var i = 0; i < dirtyLeafIDs.length; i++) {
-	      if (dirtyLeafIDs[i].indexOf(id) === 0) {
-	        isDirty = true;
-	        break;
-	      }
-	    }
-	    if (!isDirty && measurement.counts[id] > 0) {
-	      cleanComponents[id] = true;
-	    }
-	  }
-	  return cleanComponents;
-	}
-
-	var ReactDefaultPerfAnalysis = {
-	  getExclusiveSummary: getExclusiveSummary,
-	  getInclusiveSummary: getInclusiveSummary,
-	  getDOMSummary: getDOMSummary,
-	  getTotalTime: getTotalTime
-	};
-
-	module.exports = ReactDefaultPerfAnalysis;
-
-
-/***/ },
-/* 148 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule performanceNow
-	 * @typechecks
-	 */
-
-	var performance = __webpack_require__(208);
-
-	/**
-	 * Detect if we can use `window.performance.now()` and gracefully fallback to
-	 * `Date.now()` if it doesn't exist. We need to support Firefox < 15 for now
-	 * because of Facebook's testing infrastructure.
-	 */
-	if (!performance || !performance.now) {
-	  performance = Date;
-	}
-
-	var performanceNow = performance.now.bind(performance);
-
-	module.exports = performanceNow;
-
-
-/***/ },
-/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28369,8 +28127,8 @@ webpackJsonp([3],[
 	var EventPluginRegistry = __webpack_require__(159);
 	var EventPluginUtils = __webpack_require__(35);
 
-	var accumulateInto = __webpack_require__(209);
-	var forEachAccumulated = __webpack_require__(210);
+	var accumulateInto = __webpack_require__(208);
+	var forEachAccumulated = __webpack_require__(209);
 	var invariant = __webpack_require__(87);
 
 	/**
@@ -28629,7 +28387,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 150 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28646,10 +28404,10 @@ webpackJsonp([3],[
 	"use strict";
 
 	var EventConstants = __webpack_require__(86);
-	var EventPluginHub = __webpack_require__(149);
+	var EventPluginHub = __webpack_require__(147);
 
-	var accumulateInto = __webpack_require__(209);
-	var forEachAccumulated = __webpack_require__(210);
+	var accumulateInto = __webpack_require__(208);
+	var forEachAccumulated = __webpack_require__(209);
 
 	var PropagationPhases = EventConstants.PropagationPhases;
 	var getListener = EventPluginHub.getListener;
@@ -28774,7 +28532,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 151 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28933,6 +28691,248 @@ webpackJsonp([3],[
 	PooledClass.addPoolingTo(SyntheticEvent, PooledClass.threeArgumentPooler);
 
 	module.exports = SyntheticEvent;
+
+
+/***/ },
+/* 150 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactDefaultPerfAnalysis
+	 */
+
+	var assign = __webpack_require__(54);
+
+	// Don't try to save users less than 1.2ms (a number I made up)
+	var DONT_CARE_THRESHOLD = 1.2;
+	var DOM_OPERATION_TYPES = {
+	  'mountImageIntoNode': 'set innerHTML',
+	  INSERT_MARKUP: 'set innerHTML',
+	  MOVE_EXISTING: 'move',
+	  REMOVE_NODE: 'remove',
+	  TEXT_CONTENT: 'set textContent',
+	  'updatePropertyByID': 'update attribute',
+	  'deletePropertyByID': 'delete attribute',
+	  'updateStylesByID': 'update styles',
+	  'updateInnerHTMLByID': 'set innerHTML',
+	  'dangerouslyReplaceNodeWithMarkupByID': 'replace'
+	};
+
+	function getTotalTime(measurements) {
+	  // TODO: return number of DOM ops? could be misleading.
+	  // TODO: measure dropped frames after reconcile?
+	  // TODO: log total time of each reconcile and the top-level component
+	  // class that triggered it.
+	  var totalTime = 0;
+	  for (var i = 0; i < measurements.length; i++) {
+	    var measurement = measurements[i];
+	    totalTime += measurement.totalTime;
+	  }
+	  return totalTime;
+	}
+
+	function getDOMSummary(measurements) {
+	  var items = [];
+	  for (var i = 0; i < measurements.length; i++) {
+	    var measurement = measurements[i];
+	    var id;
+
+	    for (id in measurement.writes) {
+	      measurement.writes[id].forEach(function(write) {
+	        items.push({
+	          id: id,
+	          type: DOM_OPERATION_TYPES[write.type] || write.type,
+	          args: write.args
+	        });
+	      });
+	    }
+	  }
+	  return items;
+	}
+
+	function getExclusiveSummary(measurements) {
+	  var candidates = {};
+	  var displayName;
+
+	  for (var i = 0; i < measurements.length; i++) {
+	    var measurement = measurements[i];
+	    var allIDs = assign(
+	      {},
+	      measurement.exclusive,
+	      measurement.inclusive
+	    );
+
+	    for (var id in allIDs) {
+	      displayName = measurement.displayNames[id].current;
+
+	      candidates[displayName] = candidates[displayName] || {
+	        componentName: displayName,
+	        inclusive: 0,
+	        exclusive: 0,
+	        render: 0,
+	        count: 0
+	      };
+	      if (measurement.render[id]) {
+	        candidates[displayName].render += measurement.render[id];
+	      }
+	      if (measurement.exclusive[id]) {
+	        candidates[displayName].exclusive += measurement.exclusive[id];
+	      }
+	      if (measurement.inclusive[id]) {
+	        candidates[displayName].inclusive += measurement.inclusive[id];
+	      }
+	      if (measurement.counts[id]) {
+	        candidates[displayName].count += measurement.counts[id];
+	      }
+	    }
+	  }
+
+	  // Now make a sorted array with the results.
+	  var arr = [];
+	  for (displayName in candidates) {
+	    if (candidates[displayName].exclusive >= DONT_CARE_THRESHOLD) {
+	      arr.push(candidates[displayName]);
+	    }
+	  }
+
+	  arr.sort(function(a, b) {
+	    return b.exclusive - a.exclusive;
+	  });
+
+	  return arr;
+	}
+
+	function getInclusiveSummary(measurements, onlyClean) {
+	  var candidates = {};
+	  var inclusiveKey;
+
+	  for (var i = 0; i < measurements.length; i++) {
+	    var measurement = measurements[i];
+	    var allIDs = assign(
+	      {},
+	      measurement.exclusive,
+	      measurement.inclusive
+	    );
+	    var cleanComponents;
+
+	    if (onlyClean) {
+	      cleanComponents = getUnchangedComponents(measurement);
+	    }
+
+	    for (var id in allIDs) {
+	      if (onlyClean && !cleanComponents[id]) {
+	        continue;
+	      }
+
+	      var displayName = measurement.displayNames[id];
+
+	      // Inclusive time is not useful for many components without knowing where
+	      // they are instantiated. So we aggregate inclusive time with both the
+	      // owner and current displayName as the key.
+	      inclusiveKey = displayName.owner + ' > ' + displayName.current;
+
+	      candidates[inclusiveKey] = candidates[inclusiveKey] || {
+	        componentName: inclusiveKey,
+	        time: 0,
+	        count: 0
+	      };
+
+	      if (measurement.inclusive[id]) {
+	        candidates[inclusiveKey].time += measurement.inclusive[id];
+	      }
+	      if (measurement.counts[id]) {
+	        candidates[inclusiveKey].count += measurement.counts[id];
+	      }
+	    }
+	  }
+
+	  // Now make a sorted array with the results.
+	  var arr = [];
+	  for (inclusiveKey in candidates) {
+	    if (candidates[inclusiveKey].time >= DONT_CARE_THRESHOLD) {
+	      arr.push(candidates[inclusiveKey]);
+	    }
+	  }
+
+	  arr.sort(function(a, b) {
+	    return b.time - a.time;
+	  });
+
+	  return arr;
+	}
+
+	function getUnchangedComponents(measurement) {
+	  // For a given reconcile, look at which components did not actually
+	  // render anything to the DOM and return a mapping of their ID to
+	  // the amount of time it took to render the entire subtree.
+	  var cleanComponents = {};
+	  var dirtyLeafIDs = Object.keys(measurement.writes);
+	  var allIDs = assign({}, measurement.exclusive, measurement.inclusive);
+
+	  for (var id in allIDs) {
+	    var isDirty = false;
+	    // For each component that rendered, see if a component that triggered
+	    // a DOM op is in its subtree.
+	    for (var i = 0; i < dirtyLeafIDs.length; i++) {
+	      if (dirtyLeafIDs[i].indexOf(id) === 0) {
+	        isDirty = true;
+	        break;
+	      }
+	    }
+	    if (!isDirty && measurement.counts[id] > 0) {
+	      cleanComponents[id] = true;
+	    }
+	  }
+	  return cleanComponents;
+	}
+
+	var ReactDefaultPerfAnalysis = {
+	  getExclusiveSummary: getExclusiveSummary,
+	  getInclusiveSummary: getInclusiveSummary,
+	  getDOMSummary: getDOMSummary,
+	  getTotalTime: getTotalTime
+	};
+
+	module.exports = ReactDefaultPerfAnalysis;
+
+
+/***/ },
+/* 151 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule performanceNow
+	 * @typechecks
+	 */
+
+	var performance = __webpack_require__(210);
+
+	/**
+	 * Detect if we can use `window.performance.now()` and gracefully fallback to
+	 * `Date.now()` if it doesn't exist. We need to support Firefox < 15 for now
+	 * because of Facebook's testing infrastructure.
+	 */
+	if (!performance || !performance.now) {
+	  performance = Date;
+	}
+
+	var performanceNow = performance.now.bind(performance);
+
+	module.exports = performanceNow;
 
 
 /***/ },
@@ -29659,7 +29659,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var EventPluginHub = __webpack_require__(149);
+	var EventPluginHub = __webpack_require__(147);
 
 	function runEventQueueInBatch(events) {
 	  EventPluginHub.enqueueEvents(events);
@@ -29737,6 +29737,57 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
+	 * Copyright 2013 Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule SyntheticInputEvent
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var SyntheticEvent = __webpack_require__(149);
+
+	/**
+	 * @interface Event
+	 * @see http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
+	 *      /#events-inputevents
+	 */
+	var InputEventInterface = {
+	  data: null
+	};
+
+	/**
+	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param {object} nativeEvent Native browser event.
+	 * @extends {SyntheticUIEvent}
+	 */
+	function SyntheticInputEvent(
+	  dispatchConfig,
+	  dispatchMarker,
+	  nativeEvent) {
+	  SyntheticEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent);
+	}
+
+	SyntheticEvent.augmentClass(
+	  SyntheticInputEvent,
+	  InputEventInterface
+	);
+
+	module.exports = SyntheticInputEvent;
+
+
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -29781,57 +29832,6 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 163 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013 Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule SyntheticInputEvent
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var SyntheticEvent = __webpack_require__(151);
-
-	/**
-	 * @interface Event
-	 * @see http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
-	 *      /#events-inputevents
-	 */
-	var InputEventInterface = {
-	  data: null
-	};
-
-	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
-	 * @extends {SyntheticUIEvent}
-	 */
-	function SyntheticInputEvent(
-	  dispatchConfig,
-	  dispatchMarker,
-	  nativeEvent) {
-	  SyntheticEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent);
-	}
-
-	SyntheticEvent.augmentClass(
-	  SyntheticInputEvent,
-	  InputEventInterface
-	);
-
-	module.exports = SyntheticInputEvent;
-
-
-
-/***/ },
 /* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -29852,7 +29852,7 @@ webpackJsonp([3],[
 
 	var containsNode = __webpack_require__(131);
 	var focusNode = __webpack_require__(214);
-	var getActiveElement = __webpack_require__(185);
+	var getActiveElement = __webpack_require__(177);
 
 	function isInDocument(node) {
 	  return containsNode(document.documentElement, node);
@@ -29989,7 +29989,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(151);
+	var SyntheticEvent = __webpack_require__(149);
 
 	/**
 	 * @interface Event
@@ -30080,7 +30080,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(182);
+	var SyntheticUIEvent = __webpack_require__(183);
 	var ViewportMetrics = __webpack_require__(161);
 
 	var getEventModifierState = __webpack_require__(215);
@@ -30356,12 +30356,12 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var CallbackQueue = __webpack_require__(144);
+	var CallbackQueue = __webpack_require__(145);
 	var PooledClass = __webpack_require__(88);
 	var ReactBrowserEventEmitter = __webpack_require__(104);
 	var ReactInputSelection = __webpack_require__(164);
 	var ReactPutListenerQueue = __webpack_require__(188);
-	var Transaction = __webpack_require__(145);
+	var Transaction = __webpack_require__(146);
 
 	var assign = __webpack_require__(54);
 
@@ -30650,8 +30650,8 @@ webpackJsonp([3],[
 
 	var ReactBrowserEventEmitter = __webpack_require__(104);
 
-	var accumulateInto = __webpack_require__(209);
-	var forEachAccumulated = __webpack_require__(210);
+	var accumulateInto = __webpack_require__(208);
+	var forEachAccumulated = __webpack_require__(209);
 	var invariant = __webpack_require__(87);
 
 	function remove(event) {
@@ -31027,13 +31027,46 @@ webpackJsonp([3],[
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
+	 * @providesModule getActiveElement
+	 * @typechecks
+	 */
+
+	/**
+	 * Same as document.activeElement but wraps in a try-catch block. In IE it is
+	 * not safe to call document.activeElement if there is nothing focused.
+	 *
+	 * The activeElement will be null only if the document body is not yet defined.
+	 */
+	function getActiveElement() /*?DOMElement*/ {
+	  try {
+	    return document.activeElement || document.body;
+	  } catch (e) {
+	    return document.body;
+	  }
+	}
+
+	module.exports = getActiveElement;
+
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
 	 * @providesModule SyntheticClipboardEvent
 	 * @typechecks static-only
 	 */
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(151);
+	var SyntheticEvent = __webpack_require__(149);
 
 	/**
 	 * @interface Event
@@ -31066,7 +31099,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31083,7 +31116,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(182);
+	var SyntheticUIEvent = __webpack_require__(183);
 
 	/**
 	 * @interface FocusEvent
@@ -31109,7 +31142,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31126,9 +31159,9 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(182);
+	var SyntheticUIEvent = __webpack_require__(183);
 
-	var getEventCharCode = __webpack_require__(184);
+	var getEventCharCode = __webpack_require__(185);
 	var getEventKey = __webpack_require__(217);
 	var getEventModifierState = __webpack_require__(215);
 
@@ -31200,7 +31233,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31243,7 +31276,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31260,7 +31293,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(182);
+	var SyntheticUIEvent = __webpack_require__(183);
 
 	var getEventModifierState = __webpack_require__(215);
 
@@ -31295,7 +31328,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31312,7 +31345,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(151);
+	var SyntheticEvent = __webpack_require__(149);
 
 	var getEventTarget = __webpack_require__(175);
 
@@ -31361,7 +31394,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31426,7 +31459,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31479,39 +31512,6 @@ webpackJsonp([3],[
 	}
 
 	module.exports = getEventCharCode;
-
-
-/***/ },
-/* 185 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule getActiveElement
-	 * @typechecks
-	 */
-
-	/**
-	 * Same as document.activeElement but wraps in a try-catch block. In IE it is
-	 * not safe to call document.activeElement if there is nothing focused.
-	 *
-	 * The activeElement will be null only if the document body is not yet defined.
-	 */
-	function getActiveElement() /*?DOMElement*/ {
-	  try {
-	    return document.activeElement || document.body;
-	  } catch (e) {
-	    return document.body;
-	  }
-	}
-
-	module.exports = getActiveElement;
 
 
 /***/ },
@@ -32155,9 +32155,9 @@ webpackJsonp([3],[
 /* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseClone = __webpack_require__(235),
-	    bindCallback = __webpack_require__(236),
-	    isIterateeCall = __webpack_require__(237);
+	var baseClone = __webpack_require__(234),
+	    bindCallback = __webpack_require__(235),
+	    isIterateeCall = __webpack_require__(236);
 
 	/**
 	 * Creates a clone of `value`. If `isDeep` is `true` nested objects are cloned,
@@ -32230,7 +32230,7 @@ webpackJsonp([3],[
 /* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {var baseIsFunction = __webpack_require__(234),
+	/* WEBPACK VAR INJECTION */(function(global) {var baseIsFunction = __webpack_require__(237),
 	    isNative = __webpack_require__(219);
 
 	/** `Object#toString` result references. */
@@ -32420,10 +32420,10 @@ webpackJsonp([3],[
 /* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(223),
+	var isLength = __webpack_require__(224),
 	    isNative = __webpack_require__(219),
 	    isObject = __webpack_require__(205),
-	    shimKeys = __webpack_require__(224);
+	    shimKeys = __webpack_require__(225);
 
 	/* Native method references for those with the same name as other `lodash` methods. */
 	var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
@@ -32475,7 +32475,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseForOwn = __webpack_require__(221),
-	    createFindKey = __webpack_require__(225);
+	    createFindKey = __webpack_require__(223);
 
 	/**
 	 * This method is like `_.find` except that it returns the key of the first
@@ -32534,10 +32534,10 @@ webpackJsonp([3],[
 /* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIndexOf = __webpack_require__(239),
-	    cacheIndexOf = __webpack_require__(240),
-	    createCache = __webpack_require__(241),
-	    isArguments = __webpack_require__(242),
+	var baseIndexOf = __webpack_require__(241),
+	    cacheIndexOf = __webpack_require__(242),
+	    createCache = __webpack_require__(243),
+	    isArguments = __webpack_require__(244),
 	    isArray = __webpack_require__(226);
 
 	/**
@@ -32607,9 +32607,9 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseCallback = __webpack_require__(220),
-	    baseUniq = __webpack_require__(243),
-	    isIterateeCall = __webpack_require__(237),
-	    sortedUniq = __webpack_require__(244);
+	    baseUniq = __webpack_require__(239),
+	    isIterateeCall = __webpack_require__(236),
+	    sortedUniq = __webpack_require__(240);
 
 	/**
 	 * Creates a duplicate-value-free version of an array using `SameValueZero`
@@ -32802,7 +32802,7 @@ webpackJsonp([3],[
 /* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(223),
+	var isLength = __webpack_require__(224),
 	    keys = __webpack_require__(197);
 
 	/**
@@ -33150,38 +33150,6 @@ webpackJsonp([3],[
 /* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule performance
-	 * @typechecks
-	 */
-
-	"use strict";
-
-	var ExecutionEnvironment = __webpack_require__(57);
-
-	var performance;
-
-	if (ExecutionEnvironment.canUseDOM) {
-	  performance =
-	    window.performance ||
-	    window.msPerformance ||
-	    window.webkitPerformance;
-	}
-
-	module.exports = performance || {};
-
-
-/***/ },
-/* 209 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014, Facebook, Inc.
 	 * All rights reserved.
@@ -33248,7 +33216,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ },
-/* 210 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33280,6 +33248,38 @@ webpackJsonp([3],[
 	};
 
 	module.exports = forEachAccumulated;
+
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule performance
+	 * @typechecks
+	 */
+
+	"use strict";
+
+	var ExecutionEnvironment = __webpack_require__(57);
+
+	var performance;
+
+	if (ExecutionEnvironment.canUseDOM) {
+	  performance =
+	    window.performance ||
+	    window.msPerformance ||
+	    window.webkitPerformance;
+	}
+
+	module.exports = performance || {};
 
 
 /***/ },
@@ -33848,7 +33848,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var getEventCharCode = __webpack_require__(184);
+	var getEventCharCode = __webpack_require__(185);
 
 	/**
 	 * Normalization of deprecated HTML5 `key` values
@@ -34038,7 +34038,7 @@ webpackJsonp([3],[
 	var baseMatches = __webpack_require__(248),
 	    baseMatchesProperty = __webpack_require__(249),
 	    baseProperty = __webpack_require__(250),
-	    bindCallback = __webpack_require__(236),
+	    bindCallback = __webpack_require__(235),
 	    identity = __webpack_require__(251);
 
 	/**
@@ -34099,7 +34099,7 @@ webpackJsonp([3],[
 /* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bindCallback = __webpack_require__(236);
+	var bindCallback = __webpack_require__(235);
 
 	/**
 	 * Creates a function for `_.forOwn` or `_.forOwnRight`.
@@ -34122,6 +34122,30 @@ webpackJsonp([3],[
 
 /***/ },
 /* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var baseCallback = __webpack_require__(220),
+	    baseFind = __webpack_require__(253);
+
+	/**
+	 * Creates a `_.findKey` or `_.findLastKey` function.
+	 *
+	 * @private
+	 * @param {Function} objectFunc The function to iterate over an object.
+	 * @returns {Function} Returns the new find function.
+	 */
+	function createFindKey(objectFunc) {
+	  return function(object, predicate, thisArg) {
+	    predicate = baseCallback(predicate, thisArg, 3);
+	    return baseFind(object, predicate, objectFunc, true);
+	  };
+	}
+
+	module.exports = createFindKey;
+
+
+/***/ },
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34147,15 +34171,15 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isArguments = __webpack_require__(242),
+	var isArguments = __webpack_require__(244),
 	    isArray = __webpack_require__(226),
-	    isIndex = __webpack_require__(253),
-	    isLength = __webpack_require__(223),
-	    keysIn = __webpack_require__(254),
-	    support = __webpack_require__(255);
+	    isIndex = __webpack_require__(254),
+	    isLength = __webpack_require__(224),
+	    keysIn = __webpack_require__(255),
+	    support = __webpack_require__(256);
 
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -34195,34 +34219,10 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 225 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseCallback = __webpack_require__(220),
-	    baseFind = __webpack_require__(256);
-
-	/**
-	 * Creates a `_.findKey` or `_.findLastKey` function.
-	 *
-	 * @private
-	 * @param {Function} objectFunc The function to iterate over an object.
-	 * @returns {Function} Returns the new find function.
-	 */
-	function createFindKey(objectFunc) {
-	  return function(object, predicate, thisArg) {
-	    predicate = baseCallback(predicate, thisArg, 3);
-	    return baseFind(object, predicate, objectFunc, true);
-	  };
-	}
-
-	module.exports = createFindKey;
-
-
-/***/ },
 /* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(223),
+	var isLength = __webpack_require__(224),
 	    isNative = __webpack_require__(219),
 	    isObjectLike = __webpack_require__(238);
 
@@ -34370,7 +34370,7 @@ webpackJsonp([3],[
 /* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bindCallback = __webpack_require__(236),
+	var bindCallback = __webpack_require__(235),
 	    isArray = __webpack_require__(226);
 
 	/**
@@ -34454,27 +34454,6 @@ webpackJsonp([3],[
 
 /***/ },
 /* 234 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * The base implementation of `_.isFunction` without support for environments
-	 * with incorrect `typeof` results.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
-	 */
-	function baseIsFunction(value) {
-	  // Avoid a Chakra JIT bug in compatibility modes of IE 11.
-	  // See https://github.com/jashkenas/underscore/issues/1621 for more details.
-	  return typeof value == 'function' || false;
-	}
-
-	module.exports = baseIsFunction;
-
-
-/***/ },
-/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var arrayCopy = __webpack_require__(259),
@@ -34609,7 +34588,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 236 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var identity = __webpack_require__(251);
@@ -34654,11 +34633,11 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 237 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isIndex = __webpack_require__(253),
-	    isLength = __webpack_require__(223),
+	var isIndex = __webpack_require__(254),
+	    isLength = __webpack_require__(224),
 	    isObject = __webpack_require__(205);
 
 	/**
@@ -34692,6 +34671,27 @@ webpackJsonp([3],[
 
 
 /***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * The base implementation of `_.isFunction` without support for environments
+	 * with incorrect `typeof` results.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+	 */
+	function baseIsFunction(value) {
+	  // Avoid a Chakra JIT bug in compatibility modes of IE 11.
+	  // See https://github.com/jashkenas/underscore/issues/1621 for more details.
+	  return typeof value == 'function' || false;
+	}
+
+	module.exports = baseIsFunction;
+
+
+/***/ },
 /* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -34713,139 +34713,9 @@ webpackJsonp([3],[
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var indexOfNaN = __webpack_require__(264);
-
-	/**
-	 * The base implementation of `_.indexOf` without support for binary searches.
-	 *
-	 * @private
-	 * @param {Array} array The array to search.
-	 * @param {*} value The value to search for.
-	 * @param {number} fromIndex The index to search from.
-	 * @returns {number} Returns the index of the matched value, else `-1`.
-	 */
-	function baseIndexOf(array, value, fromIndex) {
-	  if (value !== value) {
-	    return indexOfNaN(array, fromIndex);
-	  }
-	  var index = fromIndex - 1,
-	      length = array.length;
-
-	  while (++index < length) {
-	    if (array[index] === value) {
-	      return index;
-	    }
-	  }
-	  return -1;
-	}
-
-	module.exports = baseIndexOf;
-
-
-/***/ },
-/* 240 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(205);
-
-	/**
-	 * Checks if `value` is in `cache` mimicking the return signature of
-	 * `_.indexOf` by returning `0` if the value is found, else `-1`.
-	 *
-	 * @private
-	 * @param {Object} cache The cache to search.
-	 * @param {*} value The value to search for.
-	 * @returns {number} Returns `0` if `value` is found, else `-1`.
-	 */
-	function cacheIndexOf(cache, value) {
-	  var data = cache.data,
-	      result = (typeof value == 'string' || isObject(value)) ? data.set.has(value) : data.hash[value];
-
-	  return result ? 0 : -1;
-	}
-
-	module.exports = cacheIndexOf;
-
-
-/***/ },
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {var SetCache = __webpack_require__(265),
-	    constant = __webpack_require__(266),
-	    isNative = __webpack_require__(219);
-
-	/** Native method references. */
-	var Set = isNative(Set = global.Set) && Set;
-
-	/* Native method references for those with the same name as other `lodash` methods. */
-	var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
-
-	/**
-	 * Creates a `Set` cache object to optimize linear searches of large arrays.
-	 *
-	 * @private
-	 * @param {Array} [values] The values to cache.
-	 * @returns {null|Object} Returns the new cache object if `Set` is supported, else `null`.
-	 */
-	var createCache = !(nativeCreate && Set) ? constant(null) : function(values) {
-	  return new SetCache(values);
-	};
-
-	module.exports = createCache;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 242 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isLength = __webpack_require__(223),
-	    isObjectLike = __webpack_require__(238);
-
-	/** `Object#toString` result references. */
-	var argsTag = '[object Arguments]';
-
-	/** Used for native method references. */
-	var objectProto = Object.prototype;
-
-	/**
-	 * Used to resolve the [`toStringTag`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objToString = objectProto.toString;
-
-	/**
-	 * Checks if `value` is classified as an `arguments` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
-	 * @example
-	 *
-	 * _.isArguments(function() { return arguments; }());
-	 * // => true
-	 *
-	 * _.isArguments([1, 2, 3]);
-	 * // => false
-	 */
-	function isArguments(value) {
-	  var length = isObjectLike(value) ? value.length : undefined;
-	  return isLength(length) && objToString.call(value) == argsTag;
-	}
-
-	module.exports = isArguments;
-
-
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseIndexOf = __webpack_require__(239),
-	    cacheIndexOf = __webpack_require__(240),
-	    createCache = __webpack_require__(241);
+	var baseIndexOf = __webpack_require__(241),
+	    cacheIndexOf = __webpack_require__(242),
+	    createCache = __webpack_require__(243);
 
 	/**
 	 * The base implementation of `_.uniq` without support for callback shorthands
@@ -34903,7 +34773,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 244 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34935,6 +34805,136 @@ webpackJsonp([3],[
 	}
 
 	module.exports = sortedUniq;
+
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var indexOfNaN = __webpack_require__(264);
+
+	/**
+	 * The base implementation of `_.indexOf` without support for binary searches.
+	 *
+	 * @private
+	 * @param {Array} array The array to search.
+	 * @param {*} value The value to search for.
+	 * @param {number} fromIndex The index to search from.
+	 * @returns {number} Returns the index of the matched value, else `-1`.
+	 */
+	function baseIndexOf(array, value, fromIndex) {
+	  if (value !== value) {
+	    return indexOfNaN(array, fromIndex);
+	  }
+	  var index = fromIndex - 1,
+	      length = array.length;
+
+	  while (++index < length) {
+	    if (array[index] === value) {
+	      return index;
+	    }
+	  }
+	  return -1;
+	}
+
+	module.exports = baseIndexOf;
+
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isObject = __webpack_require__(205);
+
+	/**
+	 * Checks if `value` is in `cache` mimicking the return signature of
+	 * `_.indexOf` by returning `0` if the value is found, else `-1`.
+	 *
+	 * @private
+	 * @param {Object} cache The cache to search.
+	 * @param {*} value The value to search for.
+	 * @returns {number} Returns `0` if `value` is found, else `-1`.
+	 */
+	function cacheIndexOf(cache, value) {
+	  var data = cache.data,
+	      result = (typeof value == 'string' || isObject(value)) ? data.set.has(value) : data.hash[value];
+
+	  return result ? 0 : -1;
+	}
+
+	module.exports = cacheIndexOf;
+
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {var SetCache = __webpack_require__(265),
+	    constant = __webpack_require__(266),
+	    isNative = __webpack_require__(219);
+
+	/** Native method references. */
+	var Set = isNative(Set = global.Set) && Set;
+
+	/* Native method references for those with the same name as other `lodash` methods. */
+	var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
+
+	/**
+	 * Creates a `Set` cache object to optimize linear searches of large arrays.
+	 *
+	 * @private
+	 * @param {Array} [values] The values to cache.
+	 * @returns {null|Object} Returns the new cache object if `Set` is supported, else `null`.
+	 */
+	var createCache = !(nativeCreate && Set) ? constant(null) : function(values) {
+	  return new SetCache(values);
+	};
+
+	module.exports = createCache;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isLength = __webpack_require__(224),
+	    isObjectLike = __webpack_require__(238);
+
+	/** `Object#toString` result references. */
+	var argsTag = '[object Arguments]';
+
+	/** Used for native method references. */
+	var objectProto = Object.prototype;
+
+	/**
+	 * Used to resolve the [`toStringTag`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.prototype.tostring)
+	 * of values.
+	 */
+	var objToString = objectProto.toString;
+
+	/**
+	 * Checks if `value` is classified as an `arguments` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+	 * @example
+	 *
+	 * _.isArguments(function() { return arguments; }());
+	 * // => true
+	 *
+	 * _.isArguments([1, 2, 3]);
+	 * // => false
+	 */
+	function isArguments(value) {
+	  var length = isObjectLike(value) ? value.length : undefined;
+	  return isLength(length) && objToString.call(value) == argsTag;
+	}
+
+	module.exports = isArguments;
 
 
 /***/ },
@@ -35209,7 +35209,7 @@ webpackJsonp([3],[
 /* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseToString = __webpack_require__(275);
+	var baseToString = __webpack_require__(276);
 
 	/**
 	 * Used to match `RegExp` [special characters](http://www.regular-expressions.info/characters.html#special).
@@ -35400,6 +35400,37 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
+	 * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
+	 * without support for callback shorthands and `this` binding, which iterates
+	 * over `collection` using the provided `eachFunc`.
+	 *
+	 * @private
+	 * @param {Array|Object|string} collection The collection to search.
+	 * @param {Function} predicate The function invoked per iteration.
+	 * @param {Function} eachFunc The function to iterate over `collection`.
+	 * @param {boolean} [retKey] Specify returning the key of the found element
+	 *  instead of the element itself.
+	 * @returns {*} Returns the found element or its key, else `undefined`.
+	 */
+	function baseFind(collection, predicate, eachFunc, retKey) {
+	  var result;
+	  eachFunc(collection, function(value, key, collection) {
+	    if (predicate(value, key, collection)) {
+	      result = retKey ? key : value;
+	      return false;
+	    }
+	  });
+	  return result;
+	}
+
+	module.exports = baseFind;
+
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
 	 * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
 	 * of an array-like value.
 	 */
@@ -35423,15 +35454,15 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isArguments = __webpack_require__(242),
+	var isArguments = __webpack_require__(244),
 	    isArray = __webpack_require__(226),
-	    isIndex = __webpack_require__(253),
-	    isLength = __webpack_require__(223),
+	    isIndex = __webpack_require__(254),
+	    isLength = __webpack_require__(224),
 	    isObject = __webpack_require__(205),
-	    support = __webpack_require__(255);
+	    support = __webpack_require__(256);
 
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -35494,7 +35525,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Used for native method references. */
@@ -35571,41 +35602,10 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 256 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
-	 * without support for callback shorthands and `this` binding, which iterates
-	 * over `collection` using the provided `eachFunc`.
-	 *
-	 * @private
-	 * @param {Array|Object|string} collection The collection to search.
-	 * @param {Function} predicate The function invoked per iteration.
-	 * @param {Function} eachFunc The function to iterate over `collection`.
-	 * @param {boolean} [retKey] Specify returning the key of the found element
-	 *  instead of the element itself.
-	 * @returns {*} Returns the found element or its key, else `undefined`.
-	 */
-	function baseFind(collection, predicate, eachFunc, retKey) {
-	  var result;
-	  eachFunc(collection, function(value, key, collection) {
-	    if (predicate(value, key, collection)) {
-	      result = retKey ? key : value;
-	      return false;
-	    }
-	  });
-	  return result;
-	}
-
-	module.exports = baseFind;
-
-
-/***/ },
 /* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(223),
+	var isLength = __webpack_require__(224),
 	    toObject = __webpack_require__(271);
 
 	/**
@@ -35881,7 +35881,7 @@ webpackJsonp([3],[
 /* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {var cachePush = __webpack_require__(276),
+	/* WEBPACK VAR INJECTION */(function(global) {var cachePush = __webpack_require__(275),
 	    isNative = __webpack_require__(219);
 
 	/** Native method references. */
@@ -36390,28 +36390,6 @@ webpackJsonp([3],[
 /* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Converts `value` to a string if it is not one. An empty string is returned
-	 * for `null` or `undefined` values.
-	 *
-	 * @private
-	 * @param {*} value The value to process.
-	 * @returns {string} Returns the string.
-	 */
-	function baseToString(value) {
-	  if (typeof value == 'string') {
-	    return value;
-	  }
-	  return value == null ? '' : (value + '');
-	}
-
-	module.exports = baseToString;
-
-
-/***/ },
-/* 276 */
-/***/ function(module, exports, __webpack_require__) {
-
 	var isObject = __webpack_require__(205);
 
 	/**
@@ -36432,6 +36410,28 @@ webpackJsonp([3],[
 	}
 
 	module.exports = cachePush;
+
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Converts `value` to a string if it is not one. An empty string is returned
+	 * for `null` or `undefined` values.
+	 *
+	 * @private
+	 * @param {*} value The value to process.
+	 * @returns {string} Returns the string.
+	 */
+	function baseToString(value) {
+	  if (typeof value == 'string') {
+	    return value;
+	  }
+	  return value == null ? '' : (value + '');
+	}
+
+	module.exports = baseToString;
 
 
 /***/ },
@@ -36911,7 +36911,7 @@ webpackJsonp([3],[
 /* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(223),
+	var isLength = __webpack_require__(224),
 	    isObjectLike = __webpack_require__(238);
 
 	/** `Object#toString` result references. */

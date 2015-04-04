@@ -94,11 +94,11 @@ gulp.task("webpack:build", function(callback) {
   // minify = true;
 
   if(minify===true) {
-    // myConfig.plugins = myConfig.plugins || [];
-    // myConfig.plugins = myConfig.plugins.concat(
-    //   new webpack.optimize.DedupePlugin(),
-    //   new webpack.optimize.UglifyJsPlugin({ output: {comments: false} })
-    // );
+    myConfig.plugins = myConfig.plugins || [];
+    myConfig.plugins = myConfig.plugins.concat(
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.UglifyJsPlugin({ output: {comments: false} })
+    );
     myConfig.plugins = myConfig.plugins.concat(
       new webpack.DefinePlugin({
         "process.env": {
@@ -141,9 +141,12 @@ gulp.task('sass', function () {
 // ------------------------------------------------
 // BUILD HOLOGRAM STYLEGUIDE
 // ------------------------------------------------
-gulp.task('hologram', ['sass'], function() {
-        gulp.src('hologram_config.yml')
+gulp.task('hologram', ['sass'], function(callback) {
+  if(!minify) {
+      return gulp.src('hologram_config.yml')
                 .pipe(hologram({logging:true}));
+  }
+  callback();
 });
 
 
@@ -165,6 +168,5 @@ gulp.task('build:dev:watch', ['build:dev'], function(callback) {
 gulp.task('build:dev', ['move'], function(callback) {
   callback();
 });
-
 
 
