@@ -21,7 +21,7 @@ These are the heading sizes that you can use site wide.
 */
 
 .button.button-beta {
-  opacity: 0.3;
+  opacity: 0.8;
   @include transition-property(opacity);
   @include transition-duration(.15s);
   @include transition-timing-function(ease-in);

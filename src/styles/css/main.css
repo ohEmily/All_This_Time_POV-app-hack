@@ -316,15 +316,15 @@ em {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: .3s;
-  -moz-transition-duration: .3s;
-  transition-duration: .3s;
+  -webkit-transition-duration: .5s;
+  -moz-transition-duration: .5s;
+  transition-duration: .5s;
   -webkit-transition-timing-function: linear;
   -moz-transition-timing-function: linear;
   transition-timing-function: linear;
-  -webkit-transition-delay: 0s;
-  -moz-transition-delay: 0s;
-  transition-delay: 0s; }
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  transition-delay: 0.5s; }
   .global-animation__transition-alpha-enter.global-animation__transition-alpha-enter-active {
     opacity: 1; }
 
@@ -333,9 +333,9 @@ em {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: .3s;
-  -moz-transition-duration: .3s;
-  transition-duration: .3s;
+  -webkit-transition-duration: .5s;
+  -moz-transition-duration: .5s;
+  transition-duration: .5s;
   -webkit-transition-timing-function: linear;
   -moz-transition-timing-function: linear;
   transition-timing-function: linear;
@@ -472,6 +472,103 @@ em {
     -o-transform: translateZ(0px);
     transform: translateZ(0px); } }
 
+.label {
+  margin: 0px;
+  padding: 0px; }
+
+/*doc
+---
+title: Alpha Label
+name: alpha label
+category: labels
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<span class="label label-alpha">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+```
+
+```html_example_table
+<span class="label label-alpha label-alpha--large">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+```
+
+```html_example_table
+<span class="label label-alpha label-alpha--small">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+```
+
+```html_example_table
+<span class="label label-alpha label-alpha--blockquote">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+```
+
+*/
+.label.label-alpha {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 21px;
+  line-height: 1.3125rem;
+  color: inherit;
+  vertical-align: bottom;
+  position: relative; }
+  .label.label-alpha.label-alpha--large {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 23px;
+    line-height: 1.4375rem;
+    letter-spacing: 4px; }
+  .label.label-alpha.label-alpha--small {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 16px;
+    line-height: 1rem;
+    letter-spacing: 2px; }
+  .label.label-alpha.label-alpha--blockquote {
+    padding-left: 14px;
+    overflow: visible; }
+    .label.label-alpha.label-alpha--blockquote:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 15%;
+      width: 1px;
+      height: 70%;
+      background-color: #ffffff; }
+
+/*doc
+---
+title: Beta Label
+name: beta label
+category: labels
+---
+
+These are the labels used for the top navigation.
+
+```html_example_table
+  <span class="label label-beta">home</span>
+```
+
+*/
+.label.label-beta {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 21px;
+  line-height: 1.3125rem;
+  color: inherit;
+  vertical-align: bottom;
+  position: relative; }
+
 .button {
   display: inline-block;
   background-color: transparent;
@@ -544,6 +641,48 @@ These are the heading sizes that you can use site wide.
     color: #000000; }
   .button.button-alpha.button-alpha--large {
     padding: 20px; }
+
+/*doc
+---
+title: Beta Button
+name: beta button
+category: Buttons
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<a class="button button-beta">
+  <span class="label label-beta button-beta__label">Home</span>
+</a>
+```
+```html_example_table
+<a class="button button-beta button-beta--active">
+  <span class="label label-beta button-beta__label">Home</span>
+</a>
+```
+
+*/
+.button.button-beta {
+  opacity: 0.8;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: .15s;
+  -moz-transition-duration: .15s;
+  transition-duration: .15s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  transition-delay: 0s; }
+  .button.button-beta.button-beta--active {
+    opacity: 1; }
+  .no-touch .button.button-beta:hover {
+    opacity: 1; }
+  .touch .button.button-beta {
+    opacity: 1; }
 
 .input-slider {
   background-color: rgba(255, 255, 255, 0.1);
@@ -1112,6 +1251,21 @@ body {
   height: 100%;
   text-align: center;
   z-index: 1; }
+
+.home-content-menu__list {
+  display: block;
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
+
+.home-content-menu__list__item {
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  list-style: none;
+  margin-bottom: 50px; }
+  .home-content-menu__list__item:last-child {
+    margin-bottom: 0px; }
 
 .home-content-start {
   position: absolute;

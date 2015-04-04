@@ -10,7 +10,7 @@ source:
   - ./src/scripts/js/components
 
 # Directory to build the styleguide
-destination: ./www-dev/styleguide
+destination: ./www/styleguide
 
 # Hologram theme
 documentation_assets: ./styleguide_assets/Cortana

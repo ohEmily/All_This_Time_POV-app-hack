@@ -165,6 +165,24 @@
   z-index: 1;
 }
 
+.home-content-menu__list {
+  display: block;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.home-content-menu__list__item {
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  list-style: none;
+  margin-bottom: 50px;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
 .home-content-start {
   position: absolute;
   top: 0px;

@@ -6,7 +6,7 @@ webpackJsonp([2],{
 /***/ 6:
 /***/ function(module, exports, __webpack_require__) {
 
-	var appLoaderLogo = __webpack_require__(12);
+	var appLoaderLogo = __webpack_require__(13);
 
 	module.exports = {
 
@@ -52,7 +52,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 12:
+/***/ 13:
 /***/ function(module, exports, __webpack_require__) {
 
 	var StackBlurRGBA = __webpack_require__(29);

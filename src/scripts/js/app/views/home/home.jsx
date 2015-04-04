@@ -172,7 +172,7 @@ module.exports = React.createClass({
     var ctaClassSet = {
       "home-page__cta": true,
       "home-page__cta--animate": this.state.ctaAnimate,
-      "home-page__cta--animate-in": this.state.ctaActive,
+      "home-page__cta--animate-in": this.state.ctaActive && !this.state.displayContentMenu,
     }
 
     // var loadingClassSet = {

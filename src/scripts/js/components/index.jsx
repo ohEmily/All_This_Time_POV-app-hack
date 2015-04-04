@@ -4,7 +4,7 @@ module.exports = {
   Buttons: {
     ButtonAlpha: require("./buttons/button-alpha.jsx"),
     // ButtonAlphaLarge: require("./buttons/button-alpha-large.jsx"),
-    // ButtonBeta: require("./buttons/button-beta.jsx"),
+    ButtonBeta: require("./buttons/button-beta.jsx"),
     // ButtonGamma: require("./buttons/button-gamma.jsx"),
     // ButtonDelta: require("./buttons/button-delta.jsx"),
     // ButtonEpsilon: require("./buttons/button-epsilon.jsx"),
