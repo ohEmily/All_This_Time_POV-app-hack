@@ -1,0 +1,21 @@
+/*doc
+---
+title: Beta Label
+name: beta label
+category: labels
+---
+
+These are the labels used for the top navigation.
+
+```html_example_table
+  <span class="label label-beta">home</span>
+```
+
+*/
+
+.label.label-beta {
+  @include font($font-futura-lt-heavy, $transform: uppercase, $letter-spacing: 0px);
+  @include font-size(15px);
+  @include line-height(15px);
+  color: rgba($text__color--delta, 1);
+}

@@ -1,0 +1,187 @@
+// -----------------------------------------------------------------------------
+//
+// Standard LP text treatments
+//
+// -----------------------------------------------------------------------------
+
+%heading-primary--1 {
+  @include font(1, medium);
+  @include font-size(16);
+  // color: $header-blue;
+  // line-height: 1.3em;
+
+  @include is-mobile {
+    @include font-size(20);
+  }
+}
+
+%heading-primary--2 {
+
+  @include font(1, medium, italic);
+  @include font-size(16);
+
+  // font-weight: bold;
+  // color: $header-blue;
+  // text-transform: uppercase;
+  // letter-spacing: 0.1em;
+  
+  @include is-mobile {
+    @include font-size(19);
+  }
+}
+
+%heading-primary--3 {
+  @include font(1, medium);
+  @include font-size(12);
+  // color: $header-blue;
+  // font-weight: bold;
+
+  @include is-mobile {
+    @include font-size(15);
+  }
+}
+
+%heading-primary--4 {
+  @include font(1, light);
+  @include font-size(11);
+  // font-weight: bold;
+}
+
+%heading-primary--5 {
+  @include font(1, light);
+  @include font-size(9);
+  // font-weight: bold;
+  // color: $header-blue;
+  // text-transform: uppercase;
+  // letter-spacing: 0.1em;
+}
+
+
+%heading-secondary--1 {
+  @include font(2, book);
+  @include font-size(16);
+  // color: $header-blue;
+  // line-height: 1.3em;
+  
+}
+
+%heading-secondary--2 {
+  @include font(2, book);
+  @include font-size(12);
+  // font-weight: bold;
+  // color: $header-blue;
+  // text-transform: uppercase;
+  // letter-spacing: 0.1em;
+}
+
+%heading-secondary--3 {
+  @include font(2, book);
+  @include font-size(11);
+  // color: $header-blue;
+  // font-weight: bold;
+}
+
+%heading-secondary--4 {
+  @include font(2, roman);
+  @include font-size(9);
+  // font-weight: bold;
+  @include is-mobile {
+    @include font-size(10);
+  }
+}
+
+%heading-secondary--5 {
+  @include font(2, heavy);
+  @include font-size(8);
+  // font-weight: bold;
+  // color: $header-blue;
+  // text-transform: uppercase;
+  // letter-spacing: 0.1em;
+}
+
+
+%text--footer {
+  @include font(3, $transform: uppercase);
+  @include font-size(9);
+  // color: $feature-copy;
+  // line-height: 1.3em;
+}
+
+%text--body {
+  @include font(1);
+  @include font-size(30);
+  line-height: 6.66rem;
+  text-align: justify;
+  text-indent: 6.0rem;
+
+  // margin-top: 8rem;
+  // margin-bottom: 8rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+  @include is-mobile {
+    @include font-size(18);
+    line-height: 4.0rem;
+    text-indent: 2.0rem;
+  }
+
+  @include is-tablet {
+    @include font-size(26);
+    line-height: 5.5rem;
+    text-indent: 5.0rem;
+  }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+}
+
+%text--body-stencil {
+  @extend %text--body;
+  @include font(4);
+  letter-spacing: 2px;
+}
+
+%text--body-small {
+  @include font(1);
+  @include font-size(14);
+  line-height: 3rem;
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+%text--meta {
+  @include font(2, heavy, $transform: uppercase);
+  @include font-size(8);
+  @include is-mobile {
+    @include font-size(8);
+    @include font(2, book);
+  }
+}
+
+%text--caption {
+  @include font(2, book, normal, none);
+  @include font-size(19);
+}
+
+%text-button-label {
+  @include font(2, heavy, $transform: uppercase);
+  @include font-size(8);
+  letter-spacing: 2px;
+}
+
+%text--section-break {
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 0px;
+  letter-spacing: 40px;
+  padding: 80px 0px;
+  @include is-mobile {
+    padding-top: 40px;
+    padding-bottom: 35px;
+  }
+}

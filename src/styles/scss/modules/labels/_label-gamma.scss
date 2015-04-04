@@ -1,0 +1,103 @@
+/*doc
+---
+title: Gamma Label
+name: gamma label
+category: labels
+---
+
+These are the labels used for cta and meta.
+
+```html_example_table
+  <span class="label label-gamma">Scroll to navigate</span>
+```
+
+```html_example_table
+  <blockquote class="label label-gamma label-gamma--blockquote">
+    Lorem ipsum dolor<br/>
+    sit amet, consectetur
+  </blockquote>
+```
+
+```html_example_table
+  <span class="label label-gamma label-gamma--uppercase">
+    Lorem ipsum dolor<br/>
+    sit amet, consectetur
+  </span>
+```
+```html_example_table
+  <span class="label label-gamma label-gamma--strong">
+    Lorem ipsum dolor<br/>
+    sit amet, consectetur
+  </span>
+```
+
+```html_example_table
+  <span class="label label-gamma label-gamma--uppercase label-gamma--strong">
+    Lorem ipsum dolor<br/>
+    sit amet, consectetur
+  </span>
+```
+
+```html_example_table
+  <span class="label label-gamma label-gamma--wide">
+    Lorem ipsum dolor<br/>
+    sit amet, consectetur
+  </span>
+```
+
+
+```html_example_table
+  <span class="label label-gamma label-gamma--small">
+    Lorem ipsum dolor<br/>
+    sit amet, consectetur
+  </span>
+```
+
+
+*/
+
+.label.label-gamma {
+  position: relative;
+  @include font($font-myriad-pro-light-condensed-italic, $letter-spacing: 3px);
+  @include font-size(14px);
+  @include line-height(16px);
+  color: inherit;
+  text-transform: inherit;
+  text-indent: 1px;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  &.label-gamma--blockquote {
+    padding-left: 11px;
+    overflow: visible;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 15%;
+      margin-top: -1px;
+      width: 1px;
+      height: 70%;
+      background-color: $color--beta;
+    }
+  }
+
+  &.label-gamma--uppercase {
+    text-transform: uppercase;
+  }
+
+  &.label-gamma--strong {
+    @include font($font-myriad-pro-light-condensed, $letter-spacing: 1px);
+    @include font-size(18px);
+    @include line-height(18px);
+  }
+
+  &.label-gamma--wide {
+    letter-spacing: 3px;
+  }
+
+  &.label-gamma--small {
+    @include font-size(11px);
+    @include line-height(12px);
+  }
+
+}

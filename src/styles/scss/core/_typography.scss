@@ -1,0 +1,159 @@
+// -----------------------------------------------------------------------------
+//
+// Typographic Base
+//
+// -----------------------------------------------------------------------------
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, html a, html * {
+  // -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern";
+  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern=1";
+  text-rendering: optimizeLegibility; /* optional: for older browsers */
+  -webkit-font-variant-ligatures: common-ligatures; /* for iOS and Safari 6 */
+  font-variant-ligatures: common-ligatures; /* for up-to-date browsers, including IE10 and Opera 21 */
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Typographic Element Definitions
+// -----------------------------------------------------------------------------
+
+
+/*doc
+---
+title: Typography
+name: typography
+category: Base CSS
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<h1>h1 24px</h1>
+
+<h2>h2 18px</h2>
+
+<h3>h3 16px</h3>
+
+<h4>h4 14px</h4>
+
+<h5>h5 13px</h5>
+
+<p>This is an example of our base font style 15px. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+```
+
+*/
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  overflow: visible;
+  padding: 0px;
+  margin: 0px;
+  color: $text__color--base;
+}
+
+h1{
+  @include font($font-lora, $style: italic);
+  @include font-size(24px);
+}
+
+h2{
+  @include font($font-lora);
+  @include font-size(18px);
+}
+
+h3{
+  @include font($font-lora);
+  @include font-size(16px);
+}
+
+h4{
+  @include font($font-lora);
+  @include font-size(14px);
+}
+
+h5{
+  @include font($font-lora);
+  @include font-size(13px);
+}
+
+body, p {
+  @include font($font-lora, $letter-spacing: 2px);
+  @include font-size(16px);
+  @include line-height(24px);
+  color: $text__color--beta;
+  margin: 15px 0px;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern";
+  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern=1";
+}
+
+p {
+  @include line-height(33px);
+}
+
+
+a, button {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition-property(color);
+  @include transition-duration(0.15s);
+  @include transition-timing-function(linear);
+
+  &:hover {
+    color: $text__color--base;
+  }
+}
+
+*,
+a,
+a:active
+button,
+button:active {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+  outline: none;
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
+// -----------------------------------------------------------------------------
+// Text selection
+//
+// Needs to be declared twice to work properly cross browser, not to be combined
+// -----------------------------------------------------------------------------
+
+::-moz-selection {
+  background-color: gray;
+  color: inherit;
+}
+
+::selection {
+  background-color: gray;
+  color: inherit;
+}

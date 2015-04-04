@@ -1,0 +1,26 @@
+/*doc
+---
+title: Eta Label
+name: Eta label
+category: labels
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<span class="label label-eta">Available December 24th</span>
+```
+
+*/
+
+.label.label-eta {
+  @include font($font-futura-std-book, $transform: uppercase, $letter-spacing: 0px);
+  @include font-size(18px);
+  @include line-height(24px);
+  color: inherit;
+
+  @include transition-property(color);
+  @include transition-duration(.15s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0s);
+}

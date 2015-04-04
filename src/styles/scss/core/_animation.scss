@@ -1,0 +1,88 @@
+// Global animation for React CSS Transition Group
+
+
+
+
+
+.global-animation__transition-alpha-enter {
+  opacity: 0;
+  @include transition-property(opacity);
+  @include transition-duration(.3s);
+  @include transition-timing-function(linear);
+  @include transition-delay(0s);
+  &.global-animation__transition-alpha-enter-active {
+    opacity: 1;
+  }
+}
+
+.global-animation__transition-alpha-leave {
+  opacity: 1;
+  @include transition-property(opacity);
+  @include transition-duration(.3s);
+  @include transition-timing-function(linear);
+  @include transition-delay(0s);
+  &.global-animation__transition-alpha-leave-active {
+    opacity: 0;
+  }
+}
+
+
+.global-animation__transition-beta-enter {
+  opacity: 0;
+  @include transition-property(opacity);
+  @include transition-duration(0.3s);
+  @include transition-timing-function(linear);
+  @include transition-delay(0s);
+  &.global-animation__transition-beta-enter-active {
+    @include transition-delay(0.4s);
+    opacity: 1;
+  }
+}
+
+.global-animation__transition-beta-leave {
+    opacity: 0;
+  @include transition-property(opacity);
+  @include transition-duration(0.3s);
+  @include transition-timing-function(linear);
+  @include transition-delay(0s);
+  &.global-animation__transition-beta-leave-active {
+    opacity: 0;
+    @include transition-delay(0s);
+  }
+}
+
+
+
+
+
+.animation-fade-in-alpha {
+  opacity: 0;
+  @include transition-property(opacity);
+  @include transition-duration(.3s);
+  @include transition-timing-function(linear);
+  @include transition-delay(0s);
+  &.global-animation__transition-alpha-enter-active {
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeInAlpha) {
+  0% {
+    opacity: 0;
+    @include transform(translateZ(0px));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateZ(0px));
+  }
+}
+@include keyframes(fadeOutAlpha) {
+  0% {
+    opacity: 1;
+    @include transform(translateZ(0px));
+  }
+  100% {
+    opacity: 0;
+    @include transform(translateZ(0px));
+  }
+}

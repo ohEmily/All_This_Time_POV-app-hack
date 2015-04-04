@@ -1,0 +1,964 @@
+
+<!DOCTYPE html>
+<html ng-app="cortana">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Components</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="./theme-build/css/vendors.css">
+    <link rel="stylesheet" href="./theme-build/css/cortana.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="../styles/css/base.css">
+      
+        <link rel="stylesheet" href="../styles/css/main.css">
+      
+    
+
+    <!--[if lt IE 9]>
+      <script src="theme-build/polyfill/html5shiv.js"></script>
+      <script src="theme-build/polyfill/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="cortana-body"  ng-controller="MainController">
+
+    <div class="sb-slidebar sb-left cortana-sidenav sb-style-push">
+
+      
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+
+      <nav class="cortana-nav">
+        <ul>
+          
+            <li><a href="index.html">Home</a></li>
+          
+        </ul>
+        
+          <h3>Buttons</h3>
+          <ul>
+          
+            
+              
+              
+                <li><a href="buttons.html">Buttons</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>CSS Components</h3>
+          <ul>
+          
+            
+          
+            
+              
+              
+                <li><a href="css_components.html">CSS Components</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>JS Components</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a class="active" href="js_components.html">JS Components</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>WebGL Components</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="webgl_components.html">WebGL Components</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>labels</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="labels.html">labels</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Inputs</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="inputs.html">Inputs</a></li>
+              
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Navigation</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="navigation.html">Navigation</a></li>
+              
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Base CSS</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="base_css.html">Base CSS</a></li>
+              
+            
+          
+          </ul>
+        
+      </nav>
+    </div>
+
+    <header class="cortana-header sb-slide">
+      
+        <h1>JS Components</h1>
+      
+      <div id="open-left" class="cortana-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cortana-search-wrapper" ng-controller="TypeaheadCtrl">
+        <input id="cortana-search" type="text" class="form-control cortana-search" ng-model="customSelected" placeholder="Search" typeahead="data as data.title for data in searchData | filter:{title:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-on-select="onSelect($item, $model, $label)">
+      </div>
+    </header>
+
+    <div id="sb-site">
+
+      <div class="cortana-container">
+
+        <nav id="cortana-inside-nav" class="cortana-inside-nav" bs-affix>
+          <ul bs-scrollspy-list data-offset="-30">
+            
+              
+                <li><a href="#block align JS">Block Align JS</a></li>
+              
+            
+              
+                <li><a href="#block animated home logo">Block Animated Home Logo</a></li>
+              
+            
+              
+                <li><a href="#block animated home logo lofi">Block Animated Home Logo Lofi</a></li>
+              
+            
+              
+                <li><a href="#block review carousel">Block Review Carousel</a></li>
+              
+            
+              
+                <li><a href="#block review quote">Block Review Quote</a></li>
+              
+            
+              
+                <li><a href="#block scroller">Block Scroller</a></li>
+              
+            
+              
+                <li><a href="#block star rating">Block Star Rating</a></li>
+              
+            
+              
+                <li><a href="#block tabbed pane">Block Tabbed Pane</a></li>
+              
+            
+              
+                <li><a href="#block tv filter simple">Block TV Filter Simple</a></li>
+              
+            
+          </ul>
+        </nav>
+
+        <div class="cortana-content-wrapper clearfix">
+          <div class="cortana-content">
+
+
+
+<h1 id="block align JS" class="styleguide">Block Align JS</h1>
+
+<p>Align Component. Pass the align property, with top left right or bottom to align.</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-align-example-1" style="width: 100%; height: 500px; background-color: grey">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockAlign>
+    <span className="label label-gamma">
+      Please watch in Fullscreen HD mode<br/>
+      Better experience with headphones
+    </span>
+  </Components.Blocks.BlockAlign>),
+  document.getElementById('block-align-example-1')
+);
+</script>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-align-example-1"</span> <span class="na">style=</span><span class="s">"width: 100%; height: 500px; background-color: grey"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockAlign</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"label label-gamma"</span><span class="o">&gt;</span>
+      <span class="nx">Please</span> <span class="nx">watch</span> <span class="k">in</span> <span class="nx">Fullscreen</span> <span class="nx">HD</span> <span class="nx">mode</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+      <span class="nx">Better</span> <span class="nx">experience</span> <span class="kd">with</span> <span class="nx">headphones</span>
+    <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockAlign&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-align-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div id="block-align-example-2" style="width: 100%; height: 500px; background-color: grey">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockAlign align="bottom left">
+    <span className="label label-gamma">
+      Please watch in Fullscreen HD mode<br/>
+      Better experience with headphones
+    </span>
+  </Components.Blocks.BlockAlign>),
+  document.getElementById('block-align-example-2')
+);
+</script>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-align-example-2"</span> <span class="na">style=</span><span class="s">"width: 100%; height: 500px; background-color: grey"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockAlign</span> <span class="nx">align</span><span class="o">=</span><span class="s2">"bottom left"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"label label-gamma"</span><span class="o">&gt;</span>
+      <span class="nx">Please</span> <span class="nx">watch</span> <span class="k">in</span> <span class="nx">Fullscreen</span> <span class="nx">HD</span> <span class="nx">mode</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+      <span class="nx">Better</span> <span class="nx">experience</span> <span class="kd">with</span> <span class="nx">headphones</span>
+    <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockAlign&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-align-example-2'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div id="block-align-example-3" style="width: 100%; height: 500px; background-color: grey">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockAlign align="bottom">
+    <span className="label label-gamma">
+      Please watch in Fullscreen HD mode<br/>
+      Better experience with headphones
+    </span>
+  </Components.Blocks.BlockAlign>),
+  document.getElementById('block-align-example-3')
+);
+</script>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-align-example-3"</span> <span class="na">style=</span><span class="s">"width: 100%; height: 500px; background-color: grey"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockAlign</span> <span class="nx">align</span><span class="o">=</span><span class="s2">"bottom"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"label label-gamma"</span><span class="o">&gt;</span>
+      <span class="nx">Please</span> <span class="nx">watch</span> <span class="k">in</span> <span class="nx">Fullscreen</span> <span class="nx">HD</span> <span class="nx">mode</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+      <span class="nx">Better</span> <span class="nx">experience</span> <span class="kd">with</span> <span class="nx">headphones</span>
+    <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockAlign&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-align-example-3'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div id="block-align-example-4" style="width: 100%; height: 500px; background-color: grey">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockAlign align="right">
+    <span className="label label-gamma">
+      Please watch in Fullscreen HD mode<br/>
+      Better experience with headphones
+    </span>
+  </Components.Blocks.BlockAlign>),
+  document.getElementById('block-align-example-4')
+);
+</script>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-align-example-4"</span> <span class="na">style=</span><span class="s">"width: 100%; height: 500px; background-color: grey"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockAlign</span> <span class="nx">align</span><span class="o">=</span><span class="s2">"right"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"label label-gamma"</span><span class="o">&gt;</span>
+      <span class="nx">Please</span> <span class="nx">watch</span> <span class="k">in</span> <span class="nx">Fullscreen</span> <span class="nx">HD</span> <span class="nx">mode</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+      <span class="nx">Better</span> <span class="nx">experience</span> <span class="kd">with</span> <span class="nx">headphones</span>
+    <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockAlign&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-align-example-4'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="block animated home logo" class="styleguide">Block Animated Home Logo</h1>
+
+<p>Block Home Logo Component</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-home-logo-example-1">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockHomeLogo></Components.Blocks.BlockHomeLogo>),
+  document.getElementById('block-home-logo-example-1')
+);
+</script>
+
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-home-logo-example-1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockHomeLogo</span><span class="o">&gt;&lt;</span><span class="sr">/Components.Blocks.BlockHomeLogo&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-home-logo-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+
+</pre></div></div></div><div class="cortana-content">
+<h1 id="block animated home logo lofi" class="styleguide">Block Animated Home Logo Lofi</h1>
+
+<p>Block Home Logo Lofi Component</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-home-logo-lofi-example-1">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockHomeLogoLofi animate={false}></Components.Blocks.BlockHomeLogoLofi>),
+  document.getElementById('block-home-logo-lofi-example-1')
+);
+</script>
+
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-home-logo-lofi-example-1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockHomeLogoLofi</span> <span class="nx">animate</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="sr">/Components.Blocks.BlockHomeLogoLofi&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-home-logo-lofi-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+
+</pre></div></div></div><div class="cortana-content">
+<h1 id="block review carousel" class="styleguide">Block Review Carousel</h1>
+
+<p>Review Carousel for the Review Quote component</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-review-carousel-example-1">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockReviewCarousel interval={4000}>
+      <Components.Blocks.BlockReviewQuote rating={4} source="Mr. Man">
+        One hell of a movie!
+      </Components.Blocks.BlockReviewQuote>
+      <Components.Blocks.BlockReviewQuote rating={5} source="Mr. Jobs">
+        Pretty damn good
+      </Components.Blocks.BlockReviewQuote>
+      <Components.Blocks.BlockReviewQuote rating={3} source="A guy with a really long name">
+        Best movie this year!
+      </Components.Blocks.BlockReviewQuote>
+    </Components.Blocks.BlockReviewCarousel>),
+  document.getElementById('block-review-carousel-example-1')
+);
+</script>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-review-carousel-example-1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockReviewCarousel</span> <span class="nx">interval</span><span class="o">=</span><span class="p">{</span><span class="mi">4000</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockReviewQuote</span> <span class="nx">rating</span><span class="o">=</span><span class="p">{</span><span class="mi">4</span><span class="p">}</span> <span class="nx">source</span><span class="o">=</span><span class="s2">"Mr. Man"</span><span class="o">&gt;</span>
+        <span class="nx">One</span> <span class="nx">hell</span> <span class="nx">of</span> <span class="nx">a</span> <span class="nx">movie</span><span class="o">!</span>
+      <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockReviewQuote</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockReviewQuote</span> <span class="nx">rating</span><span class="o">=</span><span class="p">{</span><span class="mi">5</span><span class="p">}</span> <span class="nx">source</span><span class="o">=</span><span class="s2">"Mr. Jobs"</span><span class="o">&gt;</span>
+        <span class="nx">Pretty</span> <span class="nx">damn</span> <span class="nx">good</span>
+      <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockReviewQuote</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockReviewQuote</span> <span class="nx">rating</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span> <span class="nx">source</span><span class="o">=</span><span class="s2">"A guy with a really long name"</span><span class="o">&gt;</span>
+        <span class="nx">Best</span> <span class="nx">movie</span> <span class="k">this</span> <span class="nx">year</span><span class="o">!</span>
+      <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockReviewQuote</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockReviewCarousel&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-review-carousel-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="block review quote" class="styleguide">Block Review Quote</h1>
+
+<p>Review Quote</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-review-quote-example-1">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockReviewQuote rating={4} source="Mr. Man">
+    One hell of a movie!
+    </Components.Blocks.BlockReviewQuote>),
+  document.getElementById('block-review-quote-example-1')
+);
+</script>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-review-quote-example-1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockReviewQuote</span> <span class="nx">rating</span><span class="o">=</span><span class="p">{</span><span class="mi">4</span><span class="p">}</span> <span class="nx">source</span><span class="o">=</span><span class="s2">"Mr. Man"</span><span class="o">&gt;</span>
+    <span class="nx">One</span> <span class="nx">hell</span> <span class="nx">of</span> <span class="nx">a</span> <span class="nx">movie</span><span class="o">!</span>
+    <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockReviewQuote&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-review-quote-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="block scroller" class="styleguide">Block Scroller</h1>
+
+<p>Scroller Component</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-scroller-example-1" style="width: 300px; height: 300px;">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockScroller style={{padding: "10px 10px"}} trackStyle={{padding: "70px 10px"}}>
+    <p>Bacon ipsum dolor amet chuck bresaola ham, frankfurter swine cupim pork loin pancetta tail pork belly tenderloin kevin drumstick jowl t-bone. Pork belly jerky pork loin boudin, pork chop cupim shoulder sausage kielbasa. Biltong hamburger fatback kielbasa porchetta swine tongue. Leberkas beef ribs t-bone short ribs, bresaola hamburger spare ribs landjaeger fatback capicola bacon shoulder pig. Porchetta short loin venison biltong flank ball tip pork cow jerky rump t-bone beef cupim. Kielbasa picanha landjaeger, shank hamburger tail prosciutto sausage turducken bresaola shankle drumstick.</p>
+    <p>Prosciutto meatloaf t-bone doner ham hock. Flank strip steak ham beef pig, landjaeger turkey tri-tip alcatra cupim salami chicken rump andouille venison. Venison ham sausage biltong boudin fatback brisket spare ribs shank ground round filet mignon cupim beef pork loin meatball. Swine pastrami short loin sirloin andouille.</p>
+    <p>Pork salami strip steak chicken cupim short ribs shoulder filet mignon picanha rump kevin swine. Shank beef ribs shoulder, beef t-bone boudin landjaeger frankfurter jowl pork ham hock flank pork belly turkey ball tip. Turducken tail boudin t-bone beef ribs ball tip alcatra andouille venison. Turducken cupim spare ribs kevin short ribs andouille. Shank bresaola short ribs venison, shoulder meatball picanha tenderloin capicola. Tenderloin cupim shoulder drumstick t-bone ham hock kielbasa pig.</p>
+    <p>Landjaeger meatball ball tip, pastrami andouille tail short ribs kielbasa beef venison ground round drumstick capicola. Andouille bresaola meatball landjaeger, porchetta jowl prosciutto turkey frankfurter pastrami short loin beef. Ham meatloaf capicola biltong pork boudin jowl strip steak shoulder cupim. Corned beef biltong tongue meatloaf turkey shankle ribeye drumstick.</p>
+  </Components.Blocks.BlockScroller>),
+  document.getElementById('block-scroller-example-1')
+);
+</script>
+
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-scroller-example-1"</span> <span class="na">style=</span><span class="s">"width: 300px; height: 300px;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockScroller</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nl">padding</span><span class="p">:</span> <span class="s2">"10px 10px"</span><span class="p">}}</span> <span class="nx">trackStyle</span><span class="o">=</span><span class="p">{{</span><span class="nl">padding</span><span class="p">:</span> <span class="s2">"70px 10px"</span><span class="p">}}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Bacon</span> <span class="nx">ipsum</span> <span class="nx">dolor</span> <span class="nx">amet</span> <span class="nx">chuck</span> <span class="nx">bresaola</span> <span class="nx">ham</span><span class="p">,</span> <span class="nx">frankfurter</span> <span class="nx">swine</span> <span class="nx">cupim</span> <span class="nx">pork</span> <span class="nx">loin</span> <span class="nx">pancetta</span> <span class="nx">tail</span> <span class="nx">pork</span> <span class="nx">belly</span> <span class="nx">tenderloin</span> <span class="nx">kevin</span> <span class="nx">drumstick</span> <span class="nx">jowl</span> <span class="nx">t</span><span class="o">-</span><span class="nx">bone</span><span class="p">.</span> <span class="nx">Pork</span> <span class="nx">belly</span> <span class="nx">jerky</span> <span class="nx">pork</span> <span class="nx">loin</span> <span class="nx">boudin</span><span class="p">,</span> <span class="nx">pork</span> <span class="nx">chop</span> <span class="nx">cupim</span> <span class="nx">shoulder</span> <span class="nx">sausage</span> <span class="nx">kielbasa</span><span class="p">.</span> <span class="nx">Biltong</span> <span class="nx">hamburger</span> <span class="nx">fatback</span> <span class="nx">kielbasa</span> <span class="nx">porchetta</span> <span class="nx">swine</span> <span class="nx">tongue</span><span class="p">.</span> <span class="nx">Leberkas</span> <span class="nx">beef</span> <span class="nx">ribs</span> <span class="nx">t</span><span class="o">-</span><span class="nx">bone</span> <span class="kr">short</span> <span class="nx">ribs</span><span class="p">,</span> <span class="nx">bresaola</span> <span class="nx">hamburger</span> <span class="nx">spare</span> <span class="nx">ribs</span> <span class="nx">landjaeger</span> <span class="nx">fatback</span> <span class="nx">capicola</span> <span class="nx">bacon</span> <span class="nx">shoulder</span> <span class="nx">pig</span><span class="p">.</span> <span class="nx">Porchetta</span> <span class="kr">short</span> <span class="nx">loin</span> <span class="nx">venison</span> <span class="nx">biltong</span> <span class="nx">flank</span> <span class="nx">ball</span> <span class="nx">tip</span> <span class="nx">pork</span> <span class="nx">cow</span> <span class="nx">jerky</span> <span class="nx">rump</span> <span class="nx">t</span><span class="o">-</span><span class="nx">bone</span> <span class="nx">beef</span> <span class="nx">cupim</span><span class="p">.</span> <span class="nx">Kielbasa</span> <span class="nx">picanha</span> <span class="nx">landjaeger</span><span class="p">,</span> <span class="nx">shank</span> <span class="nx">hamburger</span> <span class="nx">tail</span> <span class="nx">prosciutto</span> <span class="nx">sausage</span> <span class="nx">turducken</span> <span class="nx">bresaola</span> <span class="nx">shankle</span> <span class="nx">drumstick</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Prosciutto</span> <span class="nx">meatloaf</span> <span class="nx">t</span><span class="o">-</span><span class="nx">bone</span> <span class="nx">doner</span> <span class="nx">ham</span> <span class="nx">hock</span><span class="p">.</span> <span class="nx">Flank</span> <span class="nx">strip</span> <span class="nx">steak</span> <span class="nx">ham</span> <span class="nx">beef</span> <span class="nx">pig</span><span class="p">,</span> <span class="nx">landjaeger</span> <span class="nx">turkey</span> <span class="nx">tri</span><span class="o">-</span><span class="nx">tip</span> <span class="nx">alcatra</span> <span class="nx">cupim</span> <span class="nx">salami</span> <span class="nx">chicken</span> <span class="nx">rump</span> <span class="nx">andouille</span> <span class="nx">venison</span><span class="p">.</span> <span class="nx">Venison</span> <span class="nx">ham</span> <span class="nx">sausage</span> <span class="nx">biltong</span> <span class="nx">boudin</span> <span class="nx">fatback</span> <span class="nx">brisket</span> <span class="nx">spare</span> <span class="nx">ribs</span> <span class="nx">shank</span> <span class="nx">ground</span> <span class="nx">round</span> <span class="nx">filet</span> <span class="nx">mignon</span> <span class="nx">cupim</span> <span class="nx">beef</span> <span class="nx">pork</span> <span class="nx">loin</span> <span class="nx">meatball</span><span class="p">.</span> <span class="nx">Swine</span> <span class="nx">pastrami</span> <span class="kr">short</span> <span class="nx">loin</span> <span class="nx">sirloin</span> <span class="nx">andouille</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Pork</span> <span class="nx">salami</span> <span class="nx">strip</span> <span class="nx">steak</span> <span class="nx">chicken</span> <span class="nx">cupim</span> <span class="kr">short</span> <span class="nx">ribs</span> <span class="nx">shoulder</span> <span class="nx">filet</span> <span class="nx">mignon</span> <span class="nx">picanha</span> <span class="nx">rump</span> <span class="nx">kevin</span> <span class="nx">swine</span><span class="p">.</span> <span class="nx">Shank</span> <span class="nx">beef</span> <span class="nx">ribs</span> <span class="nx">shoulder</span><span class="p">,</span> <span class="nx">beef</span> <span class="nx">t</span><span class="o">-</span><span class="nx">bone</span> <span class="nx">boudin</span> <span class="nx">landjaeger</span> <span class="nx">frankfurter</span> <span class="nx">jowl</span> <span class="nx">pork</span> <span class="nx">ham</span> <span class="nx">hock</span> <span class="nx">flank</span> <span class="nx">pork</span> <span class="nx">belly</span> <span class="nx">turkey</span> <span class="nx">ball</span> <span class="nx">tip</span><span class="p">.</span> <span class="nx">Turducken</span> <span class="nx">tail</span> <span class="nx">boudin</span> <span class="nx">t</span><span class="o">-</span><span class="nx">bone</span> <span class="nx">beef</span> <span class="nx">ribs</span> <span class="nx">ball</span> <span class="nx">tip</span> <span class="nx">alcatra</span> <span class="nx">andouille</span> <span class="nx">venison</span><span class="p">.</span> <span class="nx">Turducken</span> <span class="nx">cupim</span> <span class="nx">spare</span> <span class="nx">ribs</span> <span class="nx">kevin</span> <span class="kr">short</span> <span class="nx">ribs</span> <span class="nx">andouille</span><span class="p">.</span> <span class="nx">Shank</span> <span class="nx">bresaola</span> <span class="kr">short</span> <span class="nx">ribs</span> <span class="nx">venison</span><span class="p">,</span> <span class="nx">shoulder</span> <span class="nx">meatball</span> <span class="nx">picanha</span> <span class="nx">tenderloin</span> <span class="nx">capicola</span><span class="p">.</span> <span class="nx">Tenderloin</span> <span class="nx">cupim</span> <span class="nx">shoulder</span> <span class="nx">drumstick</span> <span class="nx">t</span><span class="o">-</span><span class="nx">bone</span> <span class="nx">ham</span> <span class="nx">hock</span> <span class="nx">kielbasa</span> <span class="nx">pig</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Landjaeger</span> <span class="nx">meatball</span> <span class="nx">ball</span> <span class="nx">tip</span><span class="p">,</span> <span class="nx">pastrami</span> <span class="nx">andouille</span> <span class="nx">tail</span> <span class="kr">short</span> <span class="nx">ribs</span> <span class="nx">kielbasa</span> <span class="nx">beef</span> <span class="nx">venison</span> <span class="nx">ground</span> <span class="nx">round</span> <span class="nx">drumstick</span> <span class="nx">capicola</span><span class="p">.</span> <span class="nx">Andouille</span> <span class="nx">bresaola</span> <span class="nx">meatball</span> <span class="nx">landjaeger</span><span class="p">,</span> <span class="nx">porchetta</span> <span class="nx">jowl</span> <span class="nx">prosciutto</span> <span class="nx">turkey</span> <span class="nx">frankfurter</span> <span class="nx">pastrami</span> <span class="kr">short</span> <span class="nx">loin</span> <span class="nx">beef</span><span class="p">.</span> <span class="nx">Ham</span> <span class="nx">meatloaf</span> <span class="nx">capicola</span> <span class="nx">biltong</span> <span class="nx">pork</span> <span class="nx">boudin</span> <span class="nx">jowl</span> <span class="nx">strip</span> <span class="nx">steak</span> <span class="nx">shoulder</span> <span class="nx">cupim</span><span class="p">.</span> <span class="nx">Corned</span> <span class="nx">beef</span> <span class="nx">biltong</span> <span class="nx">tongue</span> <span class="nx">meatloaf</span> <span class="nx">turkey</span> <span class="nx">shankle</span> <span class="nx">ribeye</span> <span class="nx">drumstick</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockScroller&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-scroller-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+
+</pre></div></div></div><div class="cortana-content">
+<h1 id="block star rating" class="styleguide">Block Star Rating</h1>
+
+<p>Star ration</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-star-rating-example-1">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockStarRating rating={4} />),
+  document.getElementById('block-star-rating-example-1')
+);
+</script>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-star-rating-example-1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockStarRating</span> <span class="nx">rating</span><span class="o">=</span><span class="p">{</span><span class="mi">4</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-star-rating-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="block tabbed pane" class="styleguide">Block Tabbed Pane</h1>
+
+<p>Navigation Group. same function as a radio button in html, but set the selected button to active (via a prop)</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-tabbed-pane-example-1" style="width: 100%; height: 450px;">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockTabbedPane tabs={["one", "two", "three", "four"]}>
+    <img src="http://www.placebear.com/400/300" />
+    <img src="http://www.placebear.com/399/300" />
+    <img src="http://www.placebear.com/401/300" />
+    <img src="http://www.placebear.com/g/402/300" />
+  </Components.Blocks.BlockTabbedPane>),
+  document.getElementById('block-tabbed-pane-example-1')
+);
+</script>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-tabbed-pane-example-1"</span> <span class="na">style=</span><span class="s">"width: 100%; height: 450px;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockTabbedPane</span> <span class="nx">tabs</span><span class="o">=</span><span class="p">{[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">]}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://www.placebear.com/400/300"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://www.placebear.com/399/300"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://www.placebear.com/401/300"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://www.placebear.com/g/402/300"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockTabbedPane&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-tabbed-pane-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="block tv filter simple" class="styleguide">Block TV Filter Simple</h1>
+
+<p>Block TV Filter component</p>
+</div><div class="codeExample"><div class="exampleOutput"><div id="block-tv-filter-simple-example-1" style="display: block; width: 500px; height: 300px;">
+</div>
+<script type="text/jsx">
+React.render(
+  (<Components.Blocks.BlockTVFilterSimple
+                          srcWebM="/assets/video/homepage_vid.webm"
+                          srcMP4="/assets/video/homepage_vid.mp4">
+                        </Components.Blocks.BlockTVFilterSimple>),
+  document.getElementById('block-tv-filter-simple-example-1')
+);
+</script>
+
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"block-tv-filter-simple-example-1"</span> <span class="na">style=</span><span class="s">"display: block; width: 500px; height: 300px;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">(</span><span class="o">&lt;</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">BlockTVFilterSimple</span>
+                          <span class="nx">srcWebM</span><span class="o">=</span><span class="s2">"/assets/video/homepage_vid.webm"</span>
+                          <span class="nx">srcMP4</span><span class="o">=</span><span class="s2">"/assets/video/homepage_vid.mp4"</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="sr">/Components.Blocks.BlockTVFilterSimple&gt;</span><span class="se">)</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'block-tv-filter-simple-example-1'</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+
+</pre></div></div></div><div class="cortana-content">
+        </div>
+      </div>
+    </div>
+
+    <footer class="cortana-footer">
+      Build with love using Trulia's <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/Yago/Cortana">Cortana</a> !
+    </footer>  
+  </div>
+
+  <script src="theme-build/js/vendors.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_no_conflict = $.noConflict(true);
+  </script>
+  <script src="theme-build/js/main.js"></script>
+  <script type="text/javascript">
+    function TypeaheadCtrl($scope) {
+      $scope.selected = undefined;
+      $scope.searchData = 
+      [
+        
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Alpha Button",
+              "breadcrumb": "Buttons > Alpha Button",
+              "path": "buttons.html#alpha button"
+              },
+            
+              
+              
+              {
+              "title": "Button Cast Member",
+              "breadcrumb": "Buttons > Button Cast Member",
+              "path": "buttons.html#button cast member"
+              },
+            
+              
+              
+              {
+              "title": "Button More Info Close",
+              "breadcrumb": "Buttons > Button More Info Close",
+              "path": "buttons.html#button more info close"
+              },
+            
+              
+              
+              {
+              "title": "Media Select Button",
+              "breadcrumb": "Buttons > Media Select Button",
+              "path": "buttons.html#media select button"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Block Align",
+              "breadcrumb": "CSS Components > Block Align",
+              "path": "css_components.html#block align"
+              },
+            
+              
+              
+              {
+              "title": "Block Home Logo",
+              "breadcrumb": "CSS Components > Block Home Logo",
+              "path": "css_components.html#block home logo"
+              },
+            
+              
+              
+              {
+              "title": "Block Site Loader",
+              "breadcrumb": "CSS Components > Block Site Loader",
+              "path": "css_components.html#block site loader"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Block Align JS",
+              "breadcrumb": "JS Components > Block Align JS",
+              "path": "js_components.html#block align JS"
+              },
+            
+              
+              
+              {
+              "title": "Block Animated Home Logo",
+              "breadcrumb": "JS Components > Block Animated Home Logo",
+              "path": "js_components.html#block animated home logo"
+              },
+            
+              
+              
+              {
+              "title": "Block Animated Home Logo Lofi",
+              "breadcrumb": "JS Components > Block Animated Home Logo Lofi",
+              "path": "js_components.html#block animated home logo lofi"
+              },
+            
+              
+              
+              {
+              "title": "Block Review Carousel",
+              "breadcrumb": "JS Components > Block Review Carousel",
+              "path": "js_components.html#block review carousel"
+              },
+            
+              
+              
+              {
+              "title": "Block Review Quote",
+              "breadcrumb": "JS Components > Block Review Quote",
+              "path": "js_components.html#block review quote"
+              },
+            
+              
+              
+              {
+              "title": "Block Scroller",
+              "breadcrumb": "JS Components > Block Scroller",
+              "path": "js_components.html#block scroller"
+              },
+            
+              
+              
+              {
+              "title": "Block Star Rating",
+              "breadcrumb": "JS Components > Block Star Rating",
+              "path": "js_components.html#block star rating"
+              },
+            
+              
+              
+              {
+              "title": "Block Tabbed Pane",
+              "breadcrumb": "JS Components > Block Tabbed Pane",
+              "path": "js_components.html#block tabbed pane"
+              },
+            
+              
+              
+              {
+              "title": "Block TV Filter Simple",
+              "breadcrumb": "JS Components > Block TV Filter Simple",
+              "path": "js_components.html#block tv filter simple"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Block TV Filter",
+              "breadcrumb": "WebGL Components > Block TV Filter",
+              "path": "webgl_components.html#block tv filter"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Delta Label",
+              "breadcrumb": "labels > Delta Label",
+              "path": "labels.html#delta label"
+              },
+            
+              
+              
+              {
+              "title": "Gamma Label",
+              "breadcrumb": "labels > Gamma Label",
+              "path": "labels.html#gamma label"
+              },
+            
+              
+              
+              {
+              "title": "Logo Label",
+              "breadcrumb": "labels > Logo Label",
+              "path": "labels.html#logo label"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Input Slider",
+              "breadcrumb": "Inputs > Input Slider",
+              "path": "inputs.html#input slider"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Navigation Tab Group",
+              "breadcrumb": "Navigation > Navigation Tab Group",
+              "path": "navigation.html#navigation tab group"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Text Colors",
+              "breadcrumb": "Base CSS > Text Colors",
+              "path": "base_css.html#text colors"
+              },
+            
+              
+              
+              {
+              "title": "Typography",
+              "breadcrumb": "Base CSS > Typography",
+              "path": "base_css.html#typography"
+              },
+            
+          
+        
+          
+        
+      {}];
+      $scope.onSelect = function ($item, $model, $label) {
+        window.location.replace($item.path);
+      };
+    }
+  </script>
+  <script type="text/ng-template" id="customTemplate.html">
+    <a href="{{match.model.path}}">
+      <p class="cortana-search-title">{{match.model.title}}</p>
+      <p class="cortana-search-path">{{match.model.breadcrumb}}</p>
+    </a>
+  </script>
+  
+    
+      <script type="text/javascript" src="../assets/images/static/modernizr.js"></script>
+    
+      <script type="text/javascript" src="../assets/images/static/jsx-transformer.js"></script>
+    
+      <script type="text/javascript" src="../scripts/js/components.min.js"></script>
+    
+  
+  <!-- Source Components -->
+  
+
+
+  <!-- TYPEKIT -->
+  <!--
+  <script type="text/javascript" src="//use.typekit.net/jwq4jmh.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+
+</body>
+</html>

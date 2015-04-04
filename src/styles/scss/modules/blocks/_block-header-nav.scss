@@ -1,0 +1,51 @@
+/*doc
+---
+title: Block Header Nav
+name: block header nav
+category: CSS Components
+---
+
+The header navigation on the top right
+
+```html_example_table
+<ul class="block-header-nav">
+    <li class="block-header-nav__item">
+      <button class="button button-icon button-icon--facebook">
+      </button>
+    </li>
+    <li class="block-header-nav__item">
+      <button class="button button-icon button-icon--twitter">
+      </button>
+    </li>
+    <li class="block-header-nav__item">
+      <button class="button button-icon button-icon--gplus">
+      </button>
+    </li>
+</ul>
+```
+
+*/
+.block-header-nav {
+  display: inline-block;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+
+  .block-header-nav__item {
+    display: inline-block;
+    list-style: none;
+    float: left;
+    position: relative;
+    padding-right: 5px;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0px;
+      padding-right: 0px;
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+}

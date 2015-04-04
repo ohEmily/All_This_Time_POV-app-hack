@@ -1,0 +1,40 @@
+
+.block-scroller {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+  .block-scroller__body {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    width: calc(100% - 4px);
+    height: 100%;
+    overflow: hidden;
+
+    -webkit-mask-position: 0 0;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+       color-stop(0.00,  rgba(0,0,0,0)),
+       color-stop(0.15,  rgba(0,0,0,1)),
+       color-stop(0.85,  rgba(0,0,0,1)),
+       color-stop(1.00,  rgba(0,0,0,0)));
+
+
+    > .block-scroller__body__content {
+      margin: 0px;
+      padding: 0px;
+      overflow: hidden;
+    }
+  }
+
+  .block-scroller__track {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 4px;
+    height: 100%;
+  }
+}

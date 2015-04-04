@@ -1,0 +1,25 @@
+/*doc
+---
+title: Text Colors
+name: text colors
+category: Base CSS
+---
+
+We have a few background colors that can be used in various contexts.
+These are not for use as the entire page background but instead for
+specific components and modules on the page.
+
+```html_example_table
+<p class="text-color--base">Text Color Base</p>
+<p class="text-color--alpha">Text Color Alpha</p>
+```
+
+*/
+
+.text-color--base {
+  color: $text__color--base;
+}
+
+.text-color--alpha {
+  color: $text__color--alpha;
+}

@@ -1,0 +1,34 @@
+# Mark which category should be the index page
+# Alternatively, you may have an index.md in the documentation assets
+# folder instead of specifying this config.
+index: basics
+
+
+# Directory to parse
+source:
+  - ./src/styles/css
+  - ./src/scripts/js/components
+
+# Directory to build the styleguide
+destination: ./www-dev/styleguide
+
+# Hologram theme
+documentation_assets: ./styleguide_assets/Cortana
+custom_markdown: ./styleguide_assets/Cortana/CortanaMarkdownRenderer.rb
+
+# To have a custom index page build with your README.md
+index: README
+
+# List all css to include for the styleguide render examples (path from styleguide directory)
+css_include:
+  - '../styles/css/base.css'
+  - '../styles/css/main.css'
+
+# List all js to include for the styleguide render examples (path from styleguide directory)
+js_include:
+  - '../assets/images/static/modernizr.js'
+  - '../assets/images/static/jsx-transformer.js'
+  - '../scripts/js/components.min.js'
+
+# String who is used to split the category name and create category wrapper
+name_scope: ' - '

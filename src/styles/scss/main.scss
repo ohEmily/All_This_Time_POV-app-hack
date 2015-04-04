@@ -1,0 +1,17 @@
+@import "config";
+@import "variables/index";
+@import "mixins/index";
+
+
+@import "core/index";
+@import "core/fonts-main";
+
+// modules
+@import "modules/labels/index";
+@import "modules/buttons/index";
+@import "modules/inputs/index";
+@import "modules/navigation/index";
+@import "modules/blocks/index";
+
+// layout
+@import "layout/index";

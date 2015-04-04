@@ -1,0 +1,32 @@
+/*doc
+---
+title: Epsilon Button
+name: epsilon button
+category: Buttons
+---
+
+Used on enter page
+
+```html_example_table
+<a class="button button-epsilon">
+  <span class="label label-delta label-delta--small">Enter</span>
+</a>
+```
+
+*/
+
+.button.button-epsilon {
+
+  color: $text__color--beta;
+  position: relative;
+  text-transform: uppercase;
+
+  &.button-epsilon--active {
+    color: $text__color--base;
+  }
+
+  @include hover {
+    color: $text__color--base;
+  }
+
+}

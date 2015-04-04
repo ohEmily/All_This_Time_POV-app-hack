@@ -1,0 +1,35 @@
+/*doc
+---
+title: Block Site Loader
+name: block site loader
+category: CSS Components
+---
+
+```html_example_table
+<div class="block-site-loader">
+  <div class="block-site-loader__title">
+    <span class="label label-delta label-delta--small">Loading...</span>
+  </div>
+  <div class="block-site-loader__copyright">
+    <blockquote class="label label-gamma label-gamma--small label-gamma--uppercase label-gamma--blockquote">
+      Copyright &copy; 2015 theanomalyfilm.com<br/>
+      All Rights Reserved
+    </blockquote>
+  </div>
+</div>
+```
+
+*/
+.block-site-loader {
+  display: block;
+}
+
+.block-site-loader__title {
+  margin: 15px 0px;
+  color: $text__color--beta;
+}
+
+.block-site-loader__copyright {
+  margin: 10px 0px;
+  color: $text__color--base;
+}

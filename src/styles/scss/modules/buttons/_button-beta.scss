@@ -1,0 +1,38 @@
+/*doc
+---
+title: Beta Button
+name: beta button
+category: Buttons
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<a class="button button-beta">
+  <span class="label label-beta button-beta__label">Home</span>
+</a>
+```
+```html_example_table
+<a class="button button-beta button-beta--active">
+  <span class="label label-beta button-beta__label">Home</span>
+</a>
+```
+
+*/
+
+.button.button-beta {
+  opacity: 0.3;
+  @include transition-property(opacity);
+  @include transition-duration(.15s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0s);
+
+  &.button-beta--active {
+    opacity: 1;
+  }
+
+  @include hover {
+    opacity: 1;
+  }
+
+}

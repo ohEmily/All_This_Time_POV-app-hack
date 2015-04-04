@@ -1,0 +1,133 @@
+// [doc] Utility to simply strip units from any value. [/doc]
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// [doc] Rem with pixel fallback for font sizes. [/doc]
+@mixin font-size($sizeValue: 14) {
+  $value: strip-unit($sizeValue);
+  font-size: #{$value + px};
+  font-size: #{$value / strip-unit($base-font-size) + rem};
+}
+
+@mixin line-height($sizeValue: 14) {
+  $value: strip-unit($sizeValue);
+  line-height: #{$value + px};
+  line-height: #{$value / strip-unit($base-font-size) + rem};
+}
+
+@mixin font($font-family: "Helvetica", $weight: 400, $style: normal, $transform: null, $letter-spacing: 0px) {
+  $font-weight: $weight;
+  $font-style:  $style;
+  $text-transform: $transform;
+ 
+  // Translate Weight
+  @if ($weight == 100) or ($weight == thin) or ($weight == ultralight) {
+    $weight: 1;
+  }
+  @if ($weight == 200) or ($weight == extralight) {
+    $weight: 2;
+  }
+  @if ($weight == 300) or ($weight == light) {
+    $weight: 3;
+  }
+  @if ($weight == 400) or ($weight == normal) or ($weight == book) {
+    $weight: 4;
+  }
+  @if ($weight == 500) or ($weight == medium) or ($weight == roman) {
+    $weight: 5;
+  }
+  @if ($weight == 600) or ($weight == semibold) or ($weight == demi) {
+    $weight: 6;
+  }
+  @if ($weight == 700) or ($weight == bold) {
+    $weight: 7;
+  }
+  @if ($weight == 800) or ($weight == extrabold) {
+    $weight: 8;
+  }
+  @if ($weight == 900) or ($weight == black) or ($weight == heavy) {
+    $weight: 9;
+  }
+ 
+  // Translate Style
+  @if $style == normal {
+    $style: n;
+  }
+  @else if $style == italic {
+    $style: i;
+  }
+
+  // Set  font family
+
+  // translate font weight
+  $font-weight: $weight*100;
+
+  font-family: $font-family;
+  font-style:  $font-style;
+  font-weight: $font-weight;
+  @if $transform == null {
+  }@else{
+    text-transform: $text-transform;
+  }
+  letter-spacing: $letter-spacing;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// [doc] Vertically center using line-height (not suitable for multiple lines of text). [/doc]
+@mixin vertically-center($x: 20) {
+  $value: strip-unit($x);
+  height: #{$value + px};
+  line-height: #{$value + px};
+}
+
+// [doc] Style input placeholders (Pass in a content block). [/doc]
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// [doc] Create square dimenstions based on width, returns width & height. [/doc]
+@mixin size($w, $h: $w) {
+  height: $h;
+  width: $w;
+}
+
+@mixin hide-text() {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+// [doc] Gradient Background overlay (for images). [/doc]
+@mixin image-overlay--gradient($color-start: $darkgray, $opacity-start: 0.5, $color-end: white, $opacity-end: 0, $start: 0, $stop: 35%) {
+  .enhanced & {
+    background: linear-gradient(to top, rgba($color-start, $opacity-start) $start, rgba($color-end, $opacity-end) $stop);
+  }
+}
+
+// [doc] Flat Background overlay (for images). 35% percent. [/doc]
+@mixin image-overlay--flat($percent: 0.35, $color: $darkgray) {
+  .enhanced & {
+    background-color: rgba($darkgray, $percent);
+  }
+}
+
+// [doc] Specify user avatar size and make it round. [/doc]
+@mixin user-avatar-size($size) {
+  &, & img {
+    @include size(#{$size}px);
+    border-radius: #{$size / 2}px;
+  }
+}

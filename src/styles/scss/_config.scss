@@ -1,0 +1,64 @@
+// SCSS CONFIGURATION
+
+// @author: Erskine Design
+
+// CONTENTS ------------
+//  - BASE VARIABLES
+//      - SIZES
+//      - FONTS
+//      - SIZING
+//  - MODULE CONFIGURATION
+//      - LAYOUT
+//      - LISTS
+//      - MEDIA
+// ---------------------
+
+////////////////////////////////////////////////////////////////////////////////////
+//  1. Base Variables                                                             //
+////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////
+// 1.1 Paths   //
+/////////////////
+
+
+$ASSETS_PATH: "../../assets";
+$IMAGES_PATH: $ASSETS_PATH+"/images";
+$FONTS_PATH: $ASSETS_PATH+"/fonts";
+
+
+/////////////////
+// 1.1 Sizes   //
+/////////////////
+
+
+
+/////////////////
+// 1.2 Fonts   //
+/////////////////
+
+// Base font-sizes
+$text__size--base: 12px;
+$text__size--alpha: 24px;
+$text__size--beta: 18px;
+$text__size--gamma: 16px;
+$text__size--delta: 14px;
+$text__size--epsilon: 12px;
+$text__size--zeta: 12px;
+$text__size--eta: 10px;
+$text__size--theta: 8px;
+$text__size--iota: 7px;
+
+// Base line-heights
+$text__line--base: 18px;
+$text__line--alpha: 36px;
+$text__line--beta: 27px;
+$text__line--gamma: 24px;
+$text__line--delta: 21px;
+$text__line--epsilon: 18px;
+
+
+
+
+

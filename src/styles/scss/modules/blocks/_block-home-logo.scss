@@ -1,0 +1,45 @@
+/*doc
+---
+title: Block Home Logo
+name: block home logo
+category: CSS Components
+---
+
+```html_example_table
+  <div class="block-home-logo">
+    <span class="block-home-logo__content">
+    </span>
+  </div>
+```
+
+*/
+
+@include keyframes(blockHomeLogoFadeIn) {
+  0% {
+    opacity: 0;
+    @include transform(translateZ(0px));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateZ(0px));
+  }
+}
+
+
+.block-home-logo {
+  display: inline-block;
+  text-align: center;
+  width: 780px;
+  height: 85px;
+  position: relative;
+  @include transform(translateZ(0px));
+
+  &.block-home-logo--animate {
+    opacity: 0;
+  }
+
+  &.block-home-logo--animate-in {
+    opacity: 1;
+    @include animation-name(blockHomeLogoFadeIn);
+  }
+}

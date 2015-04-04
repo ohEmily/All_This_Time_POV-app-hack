@@ -1,0 +1,41 @@
+/*doc
+---
+title: Block Headphones
+name: block headphones
+category: CSS Components
+---
+
+```html_example_table
+<div class="block-headphones">
+  <div class="block-headphones_label">
+    <span class="label label-gamma">
+      Please watch in Fullscreen HD mode<br/>
+      Better experience with headphones
+    </span>
+  </div>
+</div>
+```
+
+*/
+.block-headphones {
+  display: block;
+  height: 65px;
+
+  .block-headphones_label {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 14px;
+      left: 50%;
+      margin-left: -10px;
+      top: 100%;
+      margin-top: 18px;
+      background-image: url("#{$IMAGES_PATH}/sprites/headphones-icon.png");
+    }
+  }
+
+}

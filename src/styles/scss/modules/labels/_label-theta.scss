@@ -1,0 +1,26 @@
+/*doc
+---
+title: Theta Label
+name: theta label
+category: labels
+---
+
+Used on the quote on the home page
+
+```html_example_table
+<span class="label label-theta">"ANOMALY is the astonishing 38 minute-long final masterpiece"</span>
+```
+
+*/
+
+.label.label-theta {
+  @include font($font-open-sans-light-italic  , $transform: uppercase, $letter-spacing: 1px);
+  @include font-size(12px);
+  @include line-height(14px);
+  color: inherit;
+
+  @include transition-property(color);
+  @include transition-duration(.15s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0s);
+}
