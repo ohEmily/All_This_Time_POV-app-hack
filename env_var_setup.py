@@ -3,9 +3,6 @@ import set_env
 from requests_oauthlib import OAuth1Session
 import webbrowser
 
-from TwitterSearch import * # search library
-from TwitterSearch import TwitterSearchException
-
 REQUEST_TOKEN_URL = 'https://api.twitter.com/oauth/request_token'
 ACCESS_TOKEN_URL = 'https://api.twitter.com/oauth/access_token'
 AUTHORIZATION_URL = 'https://api.twitter.com/oauth/authorize'
@@ -61,33 +58,7 @@ def get_access_token(consumer_key, consumer_secret):
     print ' Access Token secret: %s' % resp.get('oauth_token_secret')
     print ''
 
-
-# Python Twitter search library
-# https://github.com/ckoepp/TwitterSearch
-def search_tweets(keywords):
-    # set up TwitterSearch
-    try:
-        tso = TwitterSearchOrder()
-        tso.set_language('en')
-        tso.set_include_entities(False)
-
-        tso.set_keywords(keywords)
-        ts = TwitterSearch(
-                consumer_key = os.environ["TWITTER_CONSUMER_KEY"],
-                consumer_secret = os.environ["TWITTER_CONSUMER_SECRET"],
-                access_token = os.environ["TWITTER_OAUTH_TOKEN"],
-                access_token_secret = os.environ["TWITTER_OAUTH_TOKEN_SECRET"]
-        )
-
-        for tweet_curr in ts.search_tweets_iterable(tso):
-            print('@%s tweeted: %s' % ( tweet_curr['user']['screen_name'], tweet_curr['text']))
-
-        # take care of all those ugly errors if there are some 
-    except TwitterSearchException as e: 
-        print(e)
-   
-
-def main():
+def setup():
     try:
         os.environ["TWITTER_CONSUMER_KEY"]
         os.environ["TWITTER_CONSUMER_SECRET"]
@@ -105,8 +76,3 @@ def main():
 
     twitter_oauth_token = os.environ["TWITTER_OAUTH_TOKEN"]
     twitter_oauth_token_secret = os.environ["TWITTER_OAUTH_TOKEN_SECRET"]
-
-    search_term = raw_input('Enter a search term. ')
-    search_tweets(search_term.split())
-
-main()
