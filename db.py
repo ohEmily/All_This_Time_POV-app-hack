@@ -9,7 +9,7 @@ COLLECTIONS = [LAUGH_TERM, CRY_TERM, THINK_TERM]
 
 
 def init():
-    client = MongoClient('localhost', 8000)
+    client = MongoClient('localhost', 27017) # default Mongo port
     db = client[DB_NAME]
 
     return db

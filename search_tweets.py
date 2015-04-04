@@ -24,16 +24,22 @@ def search(keywords):
         
         tweet_list = []
 
+        count = 0
         for tweet_curr in ts.search_tweets_iterable(tso):
-            tweet = []
-            tweet['id'] = tweet_curr['id']
+            tweet = {}
+            tweet['id'] = tweet_curr['id_str']
             tweet['content'] = tweet_curr['text']
-            tweet['user'] = tweet_curr['user'['screen_name']
-            tweet['date'] = tweet_curr['date']
+            tweet['user'] = tweet_curr['user']['screen_name']
+            tweet['date'] = tweet_curr['created_at']
 
             tweet_list.append(tweet)
-            print('@%s tweeted: %s' % ( tweet_curr['user']['screen_name'], tweet_curr['text']))
+                
+            # print('@%s tweeted: %s' % ( tweet_curr['user']['screen_name'], tweet_curr['text']))
+            count += 1
 
-        # take care of all those ugly errors if there are some 
+        print 'Query returned %d tweets' % count
+        return tweet_list
+    
+    # take care of all those ugly errors if there are some 
     except TwitterSearchException as e: 
         print(e)
