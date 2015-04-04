@@ -39,12 +39,12 @@ def scrape_keyword(search_term):
 			#print(profile.get('data-screen-name')) # username
 			#print "***********************************"
 			item = {}
-			item["ID"] = profile.get('data-item-id')
+			item["id"] = profile.get('data-item-id')
 			#item["ID"] = tweettimestamp.get('href')
-			item["tweet"] = tweettext.text
+			item["content"] = tweettext.text
 			#item["time"] = timestamp.get('data-time-ms')
-			item["time"] = tweettimestamp.get('title')
-			item["username"] = profile.get('data-screen-name')
+			item["date"] = tweettimestamp.get('title')
+			item["user"] = profile.get('data-screen-name')
 			mongo_list.append(item)
 			#print len(mongo_list)
 
