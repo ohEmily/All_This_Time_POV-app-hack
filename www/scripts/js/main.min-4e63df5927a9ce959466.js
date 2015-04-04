@@ -105,7 +105,6 @@ webpackJsonp([3],[
 	  actions: null,
 	  el: null,
 
-
 	  init: function() {
 
 	    this.stores = {
@@ -602,7 +601,7 @@ webpackJsonp([3],[
 	// var Info = require("./info/info.jsx");
 	// var Watch = require("./watch/watch.jsx");
 	// var HUD   = require("./hud.jsx");
-	var Rebound = __webpack_require__(61);
+	var Rebound = __webpack_require__(68);
 	var Fluxxor = __webpack_require__(24);
 	var FluxMixin = Fluxxor.FluxMixin(React),
 	    StoreWatchMixin = Fluxxor.StoreWatchMixin;
@@ -798,6 +797,7 @@ webpackJsonp([3],[
 	    this.page = 0;
 	    this.prevPage = -1;
 	    this.ready = false;
+	    this.chapter = null;
 
 	    this.bindActions(
 	      AppConstants.SET_PAGE, this.onSetPage,
@@ -818,11 +818,17 @@ webpackJsonp([3],[
 	    this.emit("change");
 	  },
 
+	  onSetChapter: function(payload) {
+	    this.chapter = Boolean(payload.chapter);
+	    this.emit("change");
+	  },
+
 	  getState: function() {
 	    return {
 	      page: this.page,
 	      prevPage: this.prevPage,
-	      ready: this.ready
+	      ready: this.ready,
+	      chapter: this.chapter
 	    };
 	  }
 	});
@@ -906,6 +912,11 @@ webpackJsonp([3],[
 
 	  setReadyState: function(ready) {
 	    this.dispatch(AppConstants.SET_READY_STATE, {ready:ready})
+	  },
+
+	  setChapter: function(chapter) {
+	    alert("SET CHAPTER: "+chapter);
+	    this.dispatch(AppConstants.SET_CHAPTER, {chapter:chapter})
 	  },
 
 	  preloadAssets: function(assets) {
@@ -1424,12 +1435,12 @@ webpackJsonp([3],[
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Dispatcher = __webpack_require__(62),
-	    Flux = __webpack_require__(63),
-	    FluxMixin = __webpack_require__(64),
-	    FluxChildMixin = __webpack_require__(65),
-	    StoreWatchMixin = __webpack_require__(66),
-	    createStore = __webpack_require__(67);
+	var Dispatcher = __webpack_require__(61),
+	    Flux = __webpack_require__(62),
+	    FluxMixin = __webpack_require__(63),
+	    FluxChildMixin = __webpack_require__(64),
+	    StoreWatchMixin = __webpack_require__(65),
+	    createStore = __webpack_require__(66);
 
 	var Fluxxor = {
 	  Dispatcher: Dispatcher,
@@ -1438,7 +1449,7 @@ webpackJsonp([3],[
 	  FluxChildMixin: FluxChildMixin,
 	  StoreWatchMixin: StoreWatchMixin,
 	  createStore: createStore,
-	  version: __webpack_require__(68)
+	  version: __webpack_require__(67)
 	};
 
 	module.exports = Fluxxor;
@@ -3548,6 +3559,10 @@ webpackJsonp([3],[
 	    })
 	  },
 
+	  onChapterSelect: function(chapter) {
+	    this.props.flux.actions.setChapter(chapter);
+	  },
+
 	  // --------------------------------------------------
 	  // LIFECYCLE
 
@@ -3726,7 +3741,7 @@ webpackJsonp([3],[
 	    //                  </Components.Blocks.BlockAlign>
 	    //               </div>);
 
-	    bodyPartial = (this.state.displayContentMenu) ? React.createElement(HomeContentMenu, {key: "menu"}): React.createElement(HomeContentStart, {key: "start"});
+	    bodyPartial = (this.state.displayContentMenu) ? React.createElement(HomeContentMenu, {key: "menu", onChapterSelect: this.onChapterSelect}): React.createElement(HomeContentStart, {key: "start"});
 
 	    // var loaderPartial = (<div className={React.addons.classSet(loadingClassSet)}>
 	    //             <div className="home-page__loading__loader">
@@ -3771,6 +3786,7 @@ webpackJsonp([3],[
 	module.exports = {
 	  SET_PAGE              : "SET_PAGE",
 	  SET_READY_STATE       : "SET_READY_STATE",
+	  SET_CHAPTER           : "SET_CHAPTER",
 	  LOAD_ASSETS           : "LOAD_ASSETS",
 	  LOAD_ASSETS_PROGRESS  : "LOAD_ASSETS_PROGRESS",
 	  LOAD_ASSETS_SUCCESS   : "LOAD_ASSETS_SUCCESS",
@@ -17853,6 +17869,451 @@ webpackJsonp([3],[
 /* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var _clone = __webpack_require__(195),
+	    _mapValues = __webpack_require__(198),
+	    _forOwn = __webpack_require__(199),
+	    _intersection = __webpack_require__(202),
+	    _keys = __webpack_require__(200),
+	    _map = __webpack_require__(204),
+	    _each = __webpack_require__(205),
+	    _size = __webpack_require__(206),
+	    _findKey = __webpack_require__(201),
+	    _uniq = __webpack_require__(203);
+
+	var Dispatcher = function(stores) {
+	  this.stores = {};
+	  this.currentDispatch = null;
+	  this.currentActionType = null;
+	  this.waitingToDispatch = [];
+
+	  for (var key in stores) {
+	    if (stores.hasOwnProperty(key)) {
+	      this.addStore(key, stores[key]);
+	    }
+	  }
+	};
+
+	Dispatcher.prototype.addStore = function(name, store) {
+	  store.dispatcher = this;
+	  this.stores[name] = store;
+	};
+
+	Dispatcher.prototype.dispatch = function(action) {
+	  if (!action || !action.type) {
+	    throw new Error("Can only dispatch actions with a 'type' property");
+	  }
+
+	  if (this.currentDispatch) {
+	    var complaint = "Cannot dispatch an action ('" + action.type + "') while another action ('" +
+	                    this.currentActionType + "') is being dispatched";
+	    throw new Error(complaint);
+	  }
+
+	  this.waitingToDispatch = _clone(this.stores);
+
+	  this.currentActionType = action.type;
+	  this.currentDispatch = _mapValues(this.stores, function() {
+	    return { resolved: false, waitingOn: [], waitCallback: null };
+	  });
+
+	  try {
+	    this.doDispatchLoop(action);
+	  } finally {
+	    this.currentActionType = null;
+	    this.currentDispatch = null;
+	  }
+	};
+
+	Dispatcher.prototype.doDispatchLoop = function(action) {
+	  var dispatch, canBeDispatchedTo, wasHandled = false,
+	      removeFromDispatchQueue = [], dispatchedThisLoop = [];
+
+	  _forOwn(this.waitingToDispatch, function(value, key) {
+	    dispatch = this.currentDispatch[key];
+	    canBeDispatchedTo = !dispatch.waitingOn.length ||
+	      !_intersection(dispatch.waitingOn, _keys(this.waitingToDispatch)).length;
+	    if (canBeDispatchedTo) {
+	      if (dispatch.waitCallback) {
+	        var stores = _map(dispatch.waitingOn, function(key) {
+	          return this.stores[key];
+	        }, this);
+	        var fn = dispatch.waitCallback;
+	        dispatch.waitCallback = null;
+	        dispatch.waitingOn = [];
+	        dispatch.resolved = true;
+	        fn.apply(null, stores);
+	        wasHandled = true;
+	      } else {
+	        dispatch.resolved = true;
+	        var handled = this.stores[key].__handleAction__(action);
+	        if (handled) {
+	          wasHandled = true;
+	        }
+	      }
+
+	      dispatchedThisLoop.push(key);
+
+	      if (this.currentDispatch[key].resolved) {
+	        removeFromDispatchQueue.push(key);
+	      }
+	    }
+	  }, this);
+
+	  if (_keys(this.waitingToDispatch).length && !dispatchedThisLoop.length) {
+	    var storesWithCircularWaits = _keys(this.waitingToDispatch).join(", ");
+	    throw new Error("Indirect circular wait detected among: " + storesWithCircularWaits);
+	  }
+
+	  _each(removeFromDispatchQueue, function(key) {
+	    delete this.waitingToDispatch[key];
+	  }, this);
+
+	  if (_size(this.waitingToDispatch)) {
+	    this.doDispatchLoop(action);
+	  }
+
+	  if (!wasHandled && console && console.warn) {
+	    console.warn("An action of type " + action.type + " was dispatched, but no store handled it");
+	  }
+
+	};
+
+	Dispatcher.prototype.waitForStores = function(store, stores, fn) {
+	  if (!this.currentDispatch) {
+	    throw new Error("Cannot wait unless an action is being dispatched");
+	  }
+
+	  var waitingStoreName = _findKey(this.stores, function(val) {
+	    return val === store;
+	  });
+
+	  if (stores.indexOf(waitingStoreName) > -1) {
+	    throw new Error("A store cannot wait on itself");
+	  }
+
+	  var dispatch = this.currentDispatch[waitingStoreName];
+
+	  if (dispatch.waitingOn.length) {
+	    throw new Error(waitingStoreName + " already waiting on stores");
+	  }
+
+	  _each(stores, function(storeName) {
+	    var storeDispatch = this.currentDispatch[storeName];
+	    if (!this.stores[storeName]) {
+	      throw new Error("Cannot wait for non-existent store " + storeName);
+	    }
+	    if (storeDispatch.waitingOn.indexOf(waitingStoreName) > -1) {
+	      throw new Error("Circular wait detected between " + waitingStoreName + " and " + storeName);
+	    }
+	  }, this);
+
+	  dispatch.resolved = false;
+	  dispatch.waitingOn = _uniq(dispatch.waitingOn.concat(stores));
+	  dispatch.waitCallback = fn;
+	};
+
+	module.exports = Dispatcher;
+
+
+/***/ },
+/* 62 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var EventEmitter = __webpack_require__(192),
+	    inherits = __webpack_require__(194),
+	    objectPath = __webpack_require__(193),
+	    _each = __webpack_require__(205),
+	    _reduce = __webpack_require__(207),
+	    _isFunction = __webpack_require__(196),
+	    _isString = __webpack_require__(197);
+
+	var Dispatcher = __webpack_require__(61);
+
+	var findLeaves = function(obj, path, callback) {
+	  path = path || [];
+
+	  for (var key in obj) {
+	    if (obj.hasOwnProperty(key)) {
+	      if (_isFunction(obj[key])) {
+	        callback(path.concat(key), obj[key]);
+	      } else {
+	        findLeaves(obj[key], path.concat(key), callback);
+	      }
+	    }
+	  }
+	};
+
+	var Flux = function(stores, actions) {
+	  EventEmitter.call(this);
+	  this.dispatcher = new Dispatcher(stores);
+	  this.actions = {};
+	  this.stores = {};
+
+	  var dispatcher = this.dispatcher;
+	  var flux = this;
+	  this.dispatchBinder = {
+	    flux: flux,
+	    dispatch: function(type, payload) {
+	      try {
+	        flux.emit("dispatch", type, payload);
+	      } finally {
+	        dispatcher.dispatch({type: type, payload: payload});
+	      }
+	    }
+	  };
+
+	  this.addActions(actions);
+	  this.addStores(stores);
+	};
+
+	inherits(Flux, EventEmitter);
+
+	Flux.prototype.addActions = function(actions) {
+	  findLeaves(actions, [], this.addAction.bind(this));
+	};
+
+	// addAction has two signatures:
+	// 1: string[, string, string, string...], actionFunction
+	// 2: arrayOfStrings, actionFunction
+	Flux.prototype.addAction = function() {
+	  if (arguments.length < 2) {
+	    throw new Error("addAction requires at least two arguments, a string (or array of strings) and a function");
+	  }
+
+	  var args = Array.prototype.slice.call(arguments);
+
+	  if (!_isFunction(args[args.length - 1])) {
+	    throw new Error("The last argument to addAction must be a function");
+	  }
+
+	  var func = args.pop().bind(this.dispatchBinder);
+
+	  if (!_isString(args[0])) {
+	    args = args[0];
+	  }
+
+	  var leadingPaths = _reduce(args, function(acc, next) {
+	    if (acc) {
+	      var nextPath = acc[acc.length - 1].concat([next]);
+	      return acc.concat([nextPath]);
+	    } else {
+	      return [[next]];
+	    }
+	  }, null);
+
+	  // Detect trying to replace a function at any point in the path
+	  _each(leadingPaths, function(path) {
+	    if (_isFunction(objectPath.get(this.actions, path))) {
+	      throw new Error("An action named " + args.join(".") + " already exists");
+	    }
+	  }, this);
+
+	  // Detect trying to replace a namespace at the final point in the path
+	  if (objectPath.get(this.actions, args)) {
+	    throw new Error("A namespace named " + args.join(".") + " already exists");
+	  }
+
+	  objectPath.set(this.actions, args, func, true);
+	};
+
+	Flux.prototype.store = function(name) {
+	  return this.stores[name];
+	};
+
+	Flux.prototype.addStore = function(name, store) {
+	  if (name in this.stores) {
+	    throw new Error("A store named '" + name + "' already exists");
+	  }
+	  store.flux = this;
+	  this.stores[name] = store;
+	  this.dispatcher.addStore(name, store);
+	};
+
+	Flux.prototype.addStores = function(stores) {
+	  for (var key in stores) {
+	    if (stores.hasOwnProperty(key)) {
+	      this.addStore(key, stores[key]);
+	    }
+	  }
+	};
+
+	module.exports = Flux;
+
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var FluxMixin = function(React) {
+	  return {
+	    componentWillMount: function() {
+	      if (!this.props.flux && (!this.context || !this.context.flux)) {
+	        var namePart = this.constructor.displayName ? " of " + this.constructor.displayName : "";
+	        throw new Error("Could not find flux on this.props or this.context" + namePart);
+	      }
+	    },
+
+	    childContextTypes: {
+	      flux: React.PropTypes.object
+	    },
+
+	    contextTypes: {
+	      flux: React.PropTypes.object
+	    },
+
+	    getChildContext: function() {
+	      return {
+	        flux: this.getFlux()
+	      };
+	    },
+
+	    getFlux: function() {
+	      return this.props.flux || (this.context && this.context.flux);
+	    }
+	  };
+	};
+
+	FluxMixin.componentWillMount = function() {
+	  throw new Error("Fluxxor.FluxMixin is a function that takes React as a " +
+	    "parameter and returns the mixin, e.g.: mixins: [Fluxxor.FluxMixin(React)]");
+	};
+
+	module.exports = FluxMixin;
+
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var FluxChildMixin = function(React) {
+	  return {
+	    componentWillMount: function() {
+	      if (console && console.warn) {
+	        var namePart = this.constructor.displayName ? " in " + this.constructor.displayName : "",
+	            message = "Fluxxor.FluxChildMixin was found in use" + namePart + ", " +
+	                      "but has been deprecated. Use Fluxxor.FluxMixin instead.";
+	        console.warn(message);
+	      }
+	    },
+
+	    contextTypes: {
+	      flux: React.PropTypes.object
+	    },
+
+	    getFlux: function() {
+	      return this.context.flux;
+	    }
+	  };
+	};
+
+	FluxChildMixin.componentWillMount = function() {
+	  throw new Error("Fluxxor.FluxChildMixin is a function that takes React as a " +
+	    "parameter and returns the mixin, e.g.: mixins[Fluxxor.FluxChildMixin(React)]");
+	};
+
+	module.exports = FluxChildMixin;
+
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _each = __webpack_require__(205);
+
+	var StoreWatchMixin = function() {
+	  var storeNames = Array.prototype.slice.call(arguments);
+	  return {
+	    componentDidMount: function() {
+	      var flux = this.props.flux || this.context.flux;
+	      _each(storeNames, function(store) {
+	        flux.store(store).on("change", this._setStateFromFlux);
+	      }, this);
+	    },
+
+	    componentWillUnmount: function() {
+	      var flux = this.props.flux || this.context.flux;
+	      _each(storeNames, function(store) {
+	        flux.store(store).removeListener("change", this._setStateFromFlux);
+	      }, this);
+	    },
+
+	    _setStateFromFlux: function() {
+	      if(this.isMounted()) {
+	        this.setState(this.getStateFromFlux());
+	      }
+	    },
+
+	    getInitialState: function() {
+	      return this.getStateFromFlux();
+	    }
+	  };
+	};
+
+	StoreWatchMixin.componentWillMount = function() {
+	  throw new Error("Fluxxor.StoreWatchMixin is a function that takes one or more " +
+	    "store names as parameters and returns the mixin, e.g.: " +
+	    "mixins: [Fluxxor.StoreWatchMixin(\"Store1\", \"Store2\")]");
+	};
+
+	module.exports = StoreWatchMixin;
+
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _each = __webpack_require__(205),
+	    _isFunction = __webpack_require__(196),
+	    Store = __webpack_require__(142),
+	    inherits = __webpack_require__(194);
+
+	var RESERVED_KEYS = ["flux", "waitFor"];
+
+	var createStore = function(spec) {
+	  _each(RESERVED_KEYS, function(key) {
+	    if (spec[key]) {
+	      throw new Error("Reserved key '" + key + "' found in store definition");
+	    }
+	  });
+
+	  var constructor = function(options) {
+	    options = options || {};
+	    Store.call(this);
+
+	    for (var key in spec) {
+	      if (key === "actions") {
+	        this.bindActions(spec[key]);
+	      } else if (key === "initialize") {
+	        // do nothing
+	      } else if (_isFunction(spec[key])) {
+	        this[key] = spec[key].bind(this);
+	      } else {
+	        this[key] = spec[key];
+	      }
+	    }
+
+	    if (spec.initialize) {
+	      spec.initialize.call(this, options);
+	    }
+	  };
+
+	  inherits(constructor, Store);
+	  return constructor;
+	};
+
+	module.exports = createStore;
+
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "1.5.2"
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(process, setImmediate) {// Rebound
 	// =======
 	// **Rebound** is a simple library that models Spring dynamics for the
@@ -18878,451 +19339,6 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(60), __webpack_require__(141).setImmediate))
 
 /***/ },
-/* 62 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var _clone = __webpack_require__(195),
-	    _mapValues = __webpack_require__(198),
-	    _forOwn = __webpack_require__(199),
-	    _intersection = __webpack_require__(202),
-	    _keys = __webpack_require__(200),
-	    _map = __webpack_require__(204),
-	    _each = __webpack_require__(205),
-	    _size = __webpack_require__(206),
-	    _findKey = __webpack_require__(201),
-	    _uniq = __webpack_require__(203);
-
-	var Dispatcher = function(stores) {
-	  this.stores = {};
-	  this.currentDispatch = null;
-	  this.currentActionType = null;
-	  this.waitingToDispatch = [];
-
-	  for (var key in stores) {
-	    if (stores.hasOwnProperty(key)) {
-	      this.addStore(key, stores[key]);
-	    }
-	  }
-	};
-
-	Dispatcher.prototype.addStore = function(name, store) {
-	  store.dispatcher = this;
-	  this.stores[name] = store;
-	};
-
-	Dispatcher.prototype.dispatch = function(action) {
-	  if (!action || !action.type) {
-	    throw new Error("Can only dispatch actions with a 'type' property");
-	  }
-
-	  if (this.currentDispatch) {
-	    var complaint = "Cannot dispatch an action ('" + action.type + "') while another action ('" +
-	                    this.currentActionType + "') is being dispatched";
-	    throw new Error(complaint);
-	  }
-
-	  this.waitingToDispatch = _clone(this.stores);
-
-	  this.currentActionType = action.type;
-	  this.currentDispatch = _mapValues(this.stores, function() {
-	    return { resolved: false, waitingOn: [], waitCallback: null };
-	  });
-
-	  try {
-	    this.doDispatchLoop(action);
-	  } finally {
-	    this.currentActionType = null;
-	    this.currentDispatch = null;
-	  }
-	};
-
-	Dispatcher.prototype.doDispatchLoop = function(action) {
-	  var dispatch, canBeDispatchedTo, wasHandled = false,
-	      removeFromDispatchQueue = [], dispatchedThisLoop = [];
-
-	  _forOwn(this.waitingToDispatch, function(value, key) {
-	    dispatch = this.currentDispatch[key];
-	    canBeDispatchedTo = !dispatch.waitingOn.length ||
-	      !_intersection(dispatch.waitingOn, _keys(this.waitingToDispatch)).length;
-	    if (canBeDispatchedTo) {
-	      if (dispatch.waitCallback) {
-	        var stores = _map(dispatch.waitingOn, function(key) {
-	          return this.stores[key];
-	        }, this);
-	        var fn = dispatch.waitCallback;
-	        dispatch.waitCallback = null;
-	        dispatch.waitingOn = [];
-	        dispatch.resolved = true;
-	        fn.apply(null, stores);
-	        wasHandled = true;
-	      } else {
-	        dispatch.resolved = true;
-	        var handled = this.stores[key].__handleAction__(action);
-	        if (handled) {
-	          wasHandled = true;
-	        }
-	      }
-
-	      dispatchedThisLoop.push(key);
-
-	      if (this.currentDispatch[key].resolved) {
-	        removeFromDispatchQueue.push(key);
-	      }
-	    }
-	  }, this);
-
-	  if (_keys(this.waitingToDispatch).length && !dispatchedThisLoop.length) {
-	    var storesWithCircularWaits = _keys(this.waitingToDispatch).join(", ");
-	    throw new Error("Indirect circular wait detected among: " + storesWithCircularWaits);
-	  }
-
-	  _each(removeFromDispatchQueue, function(key) {
-	    delete this.waitingToDispatch[key];
-	  }, this);
-
-	  if (_size(this.waitingToDispatch)) {
-	    this.doDispatchLoop(action);
-	  }
-
-	  if (!wasHandled && console && console.warn) {
-	    console.warn("An action of type " + action.type + " was dispatched, but no store handled it");
-	  }
-
-	};
-
-	Dispatcher.prototype.waitForStores = function(store, stores, fn) {
-	  if (!this.currentDispatch) {
-	    throw new Error("Cannot wait unless an action is being dispatched");
-	  }
-
-	  var waitingStoreName = _findKey(this.stores, function(val) {
-	    return val === store;
-	  });
-
-	  if (stores.indexOf(waitingStoreName) > -1) {
-	    throw new Error("A store cannot wait on itself");
-	  }
-
-	  var dispatch = this.currentDispatch[waitingStoreName];
-
-	  if (dispatch.waitingOn.length) {
-	    throw new Error(waitingStoreName + " already waiting on stores");
-	  }
-
-	  _each(stores, function(storeName) {
-	    var storeDispatch = this.currentDispatch[storeName];
-	    if (!this.stores[storeName]) {
-	      throw new Error("Cannot wait for non-existent store " + storeName);
-	    }
-	    if (storeDispatch.waitingOn.indexOf(waitingStoreName) > -1) {
-	      throw new Error("Circular wait detected between " + waitingStoreName + " and " + storeName);
-	    }
-	  }, this);
-
-	  dispatch.resolved = false;
-	  dispatch.waitingOn = _uniq(dispatch.waitingOn.concat(stores));
-	  dispatch.waitCallback = fn;
-	};
-
-	module.exports = Dispatcher;
-
-
-/***/ },
-/* 63 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var EventEmitter = __webpack_require__(192),
-	    inherits = __webpack_require__(194),
-	    objectPath = __webpack_require__(193),
-	    _each = __webpack_require__(205),
-	    _reduce = __webpack_require__(207),
-	    _isFunction = __webpack_require__(196),
-	    _isString = __webpack_require__(197);
-
-	var Dispatcher = __webpack_require__(62);
-
-	var findLeaves = function(obj, path, callback) {
-	  path = path || [];
-
-	  for (var key in obj) {
-	    if (obj.hasOwnProperty(key)) {
-	      if (_isFunction(obj[key])) {
-	        callback(path.concat(key), obj[key]);
-	      } else {
-	        findLeaves(obj[key], path.concat(key), callback);
-	      }
-	    }
-	  }
-	};
-
-	var Flux = function(stores, actions) {
-	  EventEmitter.call(this);
-	  this.dispatcher = new Dispatcher(stores);
-	  this.actions = {};
-	  this.stores = {};
-
-	  var dispatcher = this.dispatcher;
-	  var flux = this;
-	  this.dispatchBinder = {
-	    flux: flux,
-	    dispatch: function(type, payload) {
-	      try {
-	        flux.emit("dispatch", type, payload);
-	      } finally {
-	        dispatcher.dispatch({type: type, payload: payload});
-	      }
-	    }
-	  };
-
-	  this.addActions(actions);
-	  this.addStores(stores);
-	};
-
-	inherits(Flux, EventEmitter);
-
-	Flux.prototype.addActions = function(actions) {
-	  findLeaves(actions, [], this.addAction.bind(this));
-	};
-
-	// addAction has two signatures:
-	// 1: string[, string, string, string...], actionFunction
-	// 2: arrayOfStrings, actionFunction
-	Flux.prototype.addAction = function() {
-	  if (arguments.length < 2) {
-	    throw new Error("addAction requires at least two arguments, a string (or array of strings) and a function");
-	  }
-
-	  var args = Array.prototype.slice.call(arguments);
-
-	  if (!_isFunction(args[args.length - 1])) {
-	    throw new Error("The last argument to addAction must be a function");
-	  }
-
-	  var func = args.pop().bind(this.dispatchBinder);
-
-	  if (!_isString(args[0])) {
-	    args = args[0];
-	  }
-
-	  var leadingPaths = _reduce(args, function(acc, next) {
-	    if (acc) {
-	      var nextPath = acc[acc.length - 1].concat([next]);
-	      return acc.concat([nextPath]);
-	    } else {
-	      return [[next]];
-	    }
-	  }, null);
-
-	  // Detect trying to replace a function at any point in the path
-	  _each(leadingPaths, function(path) {
-	    if (_isFunction(objectPath.get(this.actions, path))) {
-	      throw new Error("An action named " + args.join(".") + " already exists");
-	    }
-	  }, this);
-
-	  // Detect trying to replace a namespace at the final point in the path
-	  if (objectPath.get(this.actions, args)) {
-	    throw new Error("A namespace named " + args.join(".") + " already exists");
-	  }
-
-	  objectPath.set(this.actions, args, func, true);
-	};
-
-	Flux.prototype.store = function(name) {
-	  return this.stores[name];
-	};
-
-	Flux.prototype.addStore = function(name, store) {
-	  if (name in this.stores) {
-	    throw new Error("A store named '" + name + "' already exists");
-	  }
-	  store.flux = this;
-	  this.stores[name] = store;
-	  this.dispatcher.addStore(name, store);
-	};
-
-	Flux.prototype.addStores = function(stores) {
-	  for (var key in stores) {
-	    if (stores.hasOwnProperty(key)) {
-	      this.addStore(key, stores[key]);
-	    }
-	  }
-	};
-
-	module.exports = Flux;
-
-
-/***/ },
-/* 64 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var FluxMixin = function(React) {
-	  return {
-	    componentWillMount: function() {
-	      if (!this.props.flux && (!this.context || !this.context.flux)) {
-	        var namePart = this.constructor.displayName ? " of " + this.constructor.displayName : "";
-	        throw new Error("Could not find flux on this.props or this.context" + namePart);
-	      }
-	    },
-
-	    childContextTypes: {
-	      flux: React.PropTypes.object
-	    },
-
-	    contextTypes: {
-	      flux: React.PropTypes.object
-	    },
-
-	    getChildContext: function() {
-	      return {
-	        flux: this.getFlux()
-	      };
-	    },
-
-	    getFlux: function() {
-	      return this.props.flux || (this.context && this.context.flux);
-	    }
-	  };
-	};
-
-	FluxMixin.componentWillMount = function() {
-	  throw new Error("Fluxxor.FluxMixin is a function that takes React as a " +
-	    "parameter and returns the mixin, e.g.: mixins: [Fluxxor.FluxMixin(React)]");
-	};
-
-	module.exports = FluxMixin;
-
-
-/***/ },
-/* 65 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var FluxChildMixin = function(React) {
-	  return {
-	    componentWillMount: function() {
-	      if (console && console.warn) {
-	        var namePart = this.constructor.displayName ? " in " + this.constructor.displayName : "",
-	            message = "Fluxxor.FluxChildMixin was found in use" + namePart + ", " +
-	                      "but has been deprecated. Use Fluxxor.FluxMixin instead.";
-	        console.warn(message);
-	      }
-	    },
-
-	    contextTypes: {
-	      flux: React.PropTypes.object
-	    },
-
-	    getFlux: function() {
-	      return this.context.flux;
-	    }
-	  };
-	};
-
-	FluxChildMixin.componentWillMount = function() {
-	  throw new Error("Fluxxor.FluxChildMixin is a function that takes React as a " +
-	    "parameter and returns the mixin, e.g.: mixins[Fluxxor.FluxChildMixin(React)]");
-	};
-
-	module.exports = FluxChildMixin;
-
-
-/***/ },
-/* 66 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var _each = __webpack_require__(205);
-
-	var StoreWatchMixin = function() {
-	  var storeNames = Array.prototype.slice.call(arguments);
-	  return {
-	    componentDidMount: function() {
-	      var flux = this.props.flux || this.context.flux;
-	      _each(storeNames, function(store) {
-	        flux.store(store).on("change", this._setStateFromFlux);
-	      }, this);
-	    },
-
-	    componentWillUnmount: function() {
-	      var flux = this.props.flux || this.context.flux;
-	      _each(storeNames, function(store) {
-	        flux.store(store).removeListener("change", this._setStateFromFlux);
-	      }, this);
-	    },
-
-	    _setStateFromFlux: function() {
-	      if(this.isMounted()) {
-	        this.setState(this.getStateFromFlux());
-	      }
-	    },
-
-	    getInitialState: function() {
-	      return this.getStateFromFlux();
-	    }
-	  };
-	};
-
-	StoreWatchMixin.componentWillMount = function() {
-	  throw new Error("Fluxxor.StoreWatchMixin is a function that takes one or more " +
-	    "store names as parameters and returns the mixin, e.g.: " +
-	    "mixins: [Fluxxor.StoreWatchMixin(\"Store1\", \"Store2\")]");
-	};
-
-	module.exports = StoreWatchMixin;
-
-
-/***/ },
-/* 67 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var _each = __webpack_require__(205),
-	    _isFunction = __webpack_require__(196),
-	    Store = __webpack_require__(142),
-	    inherits = __webpack_require__(194);
-
-	var RESERVED_KEYS = ["flux", "waitFor"];
-
-	var createStore = function(spec) {
-	  _each(RESERVED_KEYS, function(key) {
-	    if (spec[key]) {
-	      throw new Error("Reserved key '" + key + "' found in store definition");
-	    }
-	  });
-
-	  var constructor = function(options) {
-	    options = options || {};
-	    Store.call(this);
-
-	    for (var key in spec) {
-	      if (key === "actions") {
-	        this.bindActions(spec[key]);
-	      } else if (key === "initialize") {
-	        // do nothing
-	      } else if (_isFunction(spec[key])) {
-	        this[key] = spec[key].bind(this);
-	      } else {
-	        this[key] = spec[key];
-	      }
-	    }
-
-	    if (spec.initialize) {
-	      spec.initialize.call(this, options);
-	    }
-	  };
-
-	  inherits(constructor, Store);
-	  return constructor;
-	};
-
-	module.exports = createStore;
-
-
-/***/ },
-/* 68 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "1.5.2"
-
-/***/ },
 /* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -19454,10 +19470,19 @@ webpackJsonp([3],[
 
 	var React = __webpack_require__(5);
 	var Components = __webpack_require__(4);
+	var AppActions = __webpack_require__(17);
 
 	module.exports = React.createClass({displayName: "exports",
 
 	  mixins: [React.addons.PureRenderMixin],
+
+	  onChapterClick: function(chapter) {
+	    console.log('this.props.onChapterSelect: '+this.props.onChapterSelect);
+	    console.log('chapter: '+chapter);
+	    if(this.props.onChapterSelect) {
+	      this.props.onChapterSelect(chapter);
+	    }
+	  },
 
 	  render: function() {
 
@@ -19465,16 +19490,16 @@ webpackJsonp([3],[
 	              React.createElement(Components.Blocks.BlockAlign, null, 
 	                React.createElement("ul", {className: "home-content-menu__list"}, 
 	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
-	                    React.createElement(Components.Buttons.ButtonBeta, null, "I want to cry")
+	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 1)}, "I want to cry")
 	                  ), 
 	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
-	                    React.createElement(Components.Buttons.ButtonBeta, null, "I want to laugh")
+	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 2)}, "I want to laugh")
 	                  ), 
 	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
-	                    React.createElement(Components.Buttons.ButtonBeta, null, "I want to think")
+	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 3)}, "I want to think")
 	                  ), 
 	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
-	                    React.createElement(Components.Buttons.ButtonBeta, null, "I want to do all these things together")
+	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 4)}, "I want to do all these things together")
 	                  )
 	                )
 	              )
@@ -32263,9 +32288,9 @@ webpackJsonp([3],[
 /* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseClone = __webpack_require__(237),
-	    bindCallback = __webpack_require__(238),
-	    isIterateeCall = __webpack_require__(239);
+	var baseClone = __webpack_require__(239),
+	    bindCallback = __webpack_require__(240),
+	    isIterateeCall = __webpack_require__(241);
 
 	/**
 	 * Creates a clone of `value`. If `isDeep` is `true` nested objects are cloned,
@@ -32338,7 +32363,7 @@ webpackJsonp([3],[
 /* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {var baseIsFunction = __webpack_require__(240),
+	/* WEBPACK VAR INJECTION */(function(global) {var baseIsFunction = __webpack_require__(237),
 	    isNative = __webpack_require__(222);
 
 	/** `Object#toString` result references. */
@@ -32387,7 +32412,7 @@ webpackJsonp([3],[
 /* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObjectLike = __webpack_require__(241);
+	var isObjectLike = __webpack_require__(238);
 
 	/** `Object#toString` result references. */
 	var stringTag = '[object String]';
@@ -32490,7 +32515,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseForOwn = __webpack_require__(224),
-	    createForOwn = __webpack_require__(225);
+	    createForOwn = __webpack_require__(227);
 
 	/**
 	 * Iterates over own enumerable properties of an object invoking `iteratee`
@@ -32528,10 +32553,10 @@ webpackJsonp([3],[
 /* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(226),
+	var isLength = __webpack_require__(225),
 	    isNative = __webpack_require__(222),
 	    isObject = __webpack_require__(208),
-	    shimKeys = __webpack_require__(227);
+	    shimKeys = __webpack_require__(226);
 
 	/* Native method references for those with the same name as other `lodash` methods. */
 	var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
@@ -32716,7 +32741,7 @@ webpackJsonp([3],[
 
 	var baseCallback = __webpack_require__(223),
 	    baseUniq = __webpack_require__(246),
-	    isIterateeCall = __webpack_require__(239),
+	    isIterateeCall = __webpack_require__(241),
 	    sortedUniq = __webpack_require__(247);
 
 	/**
@@ -32910,7 +32935,7 @@ webpackJsonp([3],[
 /* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(226),
+	var isLength = __webpack_require__(225),
 	    keys = __webpack_require__(200);
 
 	/**
@@ -34084,7 +34109,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var escapeRegExp = __webpack_require__(250),
-	    isObjectLike = __webpack_require__(241);
+	    isObjectLike = __webpack_require__(238);
 
 	/** `Object#toString` result references. */
 	var funcTag = '[object Function]';
@@ -34146,7 +34171,7 @@ webpackJsonp([3],[
 	var baseMatches = __webpack_require__(251),
 	    baseMatchesProperty = __webpack_require__(252),
 	    baseProperty = __webpack_require__(253),
-	    bindCallback = __webpack_require__(238),
+	    bindCallback = __webpack_require__(240),
 	    identity = __webpack_require__(254);
 
 	/**
@@ -34207,31 +34232,6 @@ webpackJsonp([3],[
 /* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bindCallback = __webpack_require__(238);
-
-	/**
-	 * Creates a function for `_.forOwn` or `_.forOwnRight`.
-	 *
-	 * @private
-	 * @param {Function} objectFunc The function to iterate over an object.
-	 * @returns {Function} Returns the new each function.
-	 */
-	function createForOwn(objectFunc) {
-	  return function(object, iteratee, thisArg) {
-	    if (typeof iteratee != 'function' || typeof thisArg != 'undefined') {
-	      iteratee = bindCallback(iteratee, thisArg, 3);
-	    }
-	    return objectFunc(object, iteratee);
-	  };
-	}
-
-	module.exports = createForOwn;
-
-
-/***/ },
-/* 226 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/**
 	 * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
 	 * of an array-like value.
@@ -34255,13 +34255,13 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 227 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArguments = __webpack_require__(245),
 	    isArray = __webpack_require__(229),
 	    isIndex = __webpack_require__(256),
-	    isLength = __webpack_require__(226),
+	    isLength = __webpack_require__(225),
 	    keysIn = __webpack_require__(257),
 	    support = __webpack_require__(258);
 
@@ -34303,6 +34303,31 @@ webpackJsonp([3],[
 
 
 /***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var bindCallback = __webpack_require__(240);
+
+	/**
+	 * Creates a function for `_.forOwn` or `_.forOwnRight`.
+	 *
+	 * @private
+	 * @param {Function} objectFunc The function to iterate over an object.
+	 * @returns {Function} Returns the new each function.
+	 */
+	function createForOwn(objectFunc) {
+	  return function(object, iteratee, thisArg) {
+	    if (typeof iteratee != 'function' || typeof thisArg != 'undefined') {
+	      iteratee = bindCallback(iteratee, thisArg, 3);
+	    }
+	    return objectFunc(object, iteratee);
+	  };
+	}
+
+	module.exports = createForOwn;
+
+
+/***/ },
 /* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -34330,9 +34355,9 @@ webpackJsonp([3],[
 /* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(226),
+	var isLength = __webpack_require__(225),
 	    isNative = __webpack_require__(222),
-	    isObjectLike = __webpack_require__(241);
+	    isObjectLike = __webpack_require__(238);
 
 	/** `Object#toString` result references. */
 	var arrayTag = '[object Array]';
@@ -34478,7 +34503,7 @@ webpackJsonp([3],[
 /* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bindCallback = __webpack_require__(238),
+	var bindCallback = __webpack_require__(240),
 	    isArray = __webpack_require__(229);
 
 	/**
@@ -34562,6 +34587,45 @@ webpackJsonp([3],[
 
 /***/ },
 /* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * The base implementation of `_.isFunction` without support for environments
+	 * with incorrect `typeof` results.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+	 */
+	function baseIsFunction(value) {
+	  // Avoid a Chakra JIT bug in compatibility modes of IE 11.
+	  // See https://github.com/jashkenas/underscore/issues/1621 for more details.
+	  return typeof value == 'function' || false;
+	}
+
+	module.exports = baseIsFunction;
+
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Checks if `value` is object-like.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+	 */
+	function isObjectLike(value) {
+	  return !!value && typeof value == 'object';
+	}
+
+	module.exports = isObjectLike;
+
+
+/***/ },
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var arrayCopy = __webpack_require__(262),
@@ -34696,7 +34760,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 238 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var identity = __webpack_require__(254);
@@ -34741,11 +34805,11 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 239 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isIndex = __webpack_require__(256),
-	    isLength = __webpack_require__(226),
+	    isLength = __webpack_require__(225),
 	    isObject = __webpack_require__(208);
 
 	/**
@@ -34776,45 +34840,6 @@ webpackJsonp([3],[
 	}
 
 	module.exports = isIterateeCall;
-
-
-/***/ },
-/* 240 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * The base implementation of `_.isFunction` without support for environments
-	 * with incorrect `typeof` results.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
-	 */
-	function baseIsFunction(value) {
-	  // Avoid a Chakra JIT bug in compatibility modes of IE 11.
-	  // See https://github.com/jashkenas/underscore/issues/1621 for more details.
-	  return typeof value == 'function' || false;
-	}
-
-	module.exports = baseIsFunction;
-
-
-/***/ },
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Checks if `value` is object-like.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-
-	module.exports = isObjectLike;
 
 
 /***/ },
@@ -34908,8 +34933,8 @@ webpackJsonp([3],[
 /* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(226),
-	    isObjectLike = __webpack_require__(241);
+	var isLength = __webpack_require__(225),
+	    isObjectLike = __webpack_require__(238);
 
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]';
@@ -35317,7 +35342,7 @@ webpackJsonp([3],[
 /* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseToString = __webpack_require__(279);
+	var baseToString = __webpack_require__(278);
 
 	/**
 	 * Used to match `RegExp` [special characters](http://www.regular-expressions.info/characters.html#special).
@@ -35537,7 +35562,7 @@ webpackJsonp([3],[
 	var isArguments = __webpack_require__(245),
 	    isArray = __webpack_require__(229),
 	    isIndex = __webpack_require__(256),
-	    isLength = __webpack_require__(226),
+	    isLength = __webpack_require__(225),
 	    isObject = __webpack_require__(208),
 	    support = __webpack_require__(258);
 
@@ -35713,7 +35738,7 @@ webpackJsonp([3],[
 /* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(226),
+	var isLength = __webpack_require__(225),
 	    toObject = __webpack_require__(274);
 
 	/**
@@ -35989,7 +36014,7 @@ webpackJsonp([3],[
 /* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {var cachePush = __webpack_require__(278),
+	/* WEBPACK VAR INJECTION */(function(global) {var cachePush = __webpack_require__(279),
 	    isNative = __webpack_require__(222);
 
 	/** Native method references. */
@@ -36498,6 +36523,28 @@ webpackJsonp([3],[
 /* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/**
+	 * Converts `value` to a string if it is not one. An empty string is returned
+	 * for `null` or `undefined` values.
+	 *
+	 * @private
+	 * @param {*} value The value to process.
+	 * @returns {string} Returns the string.
+	 */
+	function baseToString(value) {
+	  if (typeof value == 'string') {
+	    return value;
+	  }
+	  return value == null ? '' : (value + '');
+	}
+
+	module.exports = baseToString;
+
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var isObject = __webpack_require__(208);
 
 	/**
@@ -36518,28 +36565,6 @@ webpackJsonp([3],[
 	}
 
 	module.exports = cachePush;
-
-
-/***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Converts `value` to a string if it is not one. An empty string is returned
-	 * for `null` or `undefined` values.
-	 *
-	 * @private
-	 * @param {*} value The value to process.
-	 * @returns {string} Returns the string.
-	 */
-	function baseToString(value) {
-	  if (typeof value == 'string') {
-	    return value;
-	  }
-	  return value == null ? '' : (value + '');
-	}
-
-	module.exports = baseToString;
 
 
 /***/ },
@@ -37019,8 +37044,8 @@ webpackJsonp([3],[
 /* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(226),
-	    isObjectLike = __webpack_require__(241);
+	var isLength = __webpack_require__(225),
+	    isObjectLike = __webpack_require__(238);
 
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]',

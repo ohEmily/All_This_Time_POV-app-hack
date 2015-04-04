@@ -22,6 +22,10 @@ module.exports = React.createClass({
     })
   },
 
+  onChapterSelect: function(chapter) {
+    this.props.flux.actions.setChapter(chapter);
+  },
+
   // --------------------------------------------------
   // LIFECYCLE
 
@@ -200,7 +204,7 @@ module.exports = React.createClass({
     //                  </Components.Blocks.BlockAlign>
     //               </div>);
 
-    bodyPartial = (this.state.displayContentMenu) ? <HomeContentMenu key="menu" />: <HomeContentStart key="start" />;
+    bodyPartial = (this.state.displayContentMenu) ? <HomeContentMenu key="menu" onChapterSelect={this.onChapterSelect} />: <HomeContentStart key="start" />;
 
     // var loaderPartial = (<div className={React.addons.classSet(loadingClassSet)}>
     //             <div className="home-page__loading__loader">

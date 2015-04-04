@@ -6,6 +6,7 @@ var AppStore = Fluxxor.createStore({
     this.page = 0;
     this.prevPage = -1;
     this.ready = false;
+    this.chapter = null;
 
     this.bindActions(
       AppConstants.SET_PAGE, this.onSetPage,
@@ -26,11 +27,17 @@ var AppStore = Fluxxor.createStore({
     this.emit("change");
   },
 
+  onSetChapter: function(payload) {
+    this.chapter = Boolean(payload.chapter);
+    this.emit("change");
+  },
+
   getState: function() {
     return {
       page: this.page,
       prevPage: this.prevPage,
-      ready: this.ready
+      ready: this.ready,
+      chapter: this.chapter
     };
   }
 });

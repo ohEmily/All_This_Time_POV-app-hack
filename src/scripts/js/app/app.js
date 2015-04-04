@@ -14,7 +14,6 @@ module.exports = {
   actions: null,
   el: null,
 
-
   init: function() {
 
     this.stores = {

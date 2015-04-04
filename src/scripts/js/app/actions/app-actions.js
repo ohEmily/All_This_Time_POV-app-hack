@@ -12,6 +12,11 @@ module.exports = {
     this.dispatch(AppConstants.SET_READY_STATE, {ready:ready})
   },
 
+  setChapter: function(chapter) {
+    alert("SET CHAPTER: "+chapter);
+    this.dispatch(AppConstants.SET_CHAPTER, {chapter:chapter})
+  },
+
   preloadAssets: function(assets) {
     console.log('prealod these assets: '+assets.toString());
 
