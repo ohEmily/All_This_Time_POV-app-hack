@@ -23,11 +23,9 @@ module.exports = React.createClass({
   },
 
   componentWillMount: function () {
-    this.narration = new Audio("./assets/audio/angela.m4a");
+    this.narration = new Audio("./assets/audio/angela.mp3");
     this.narration.pause();
     this.narration.addEventListener("ended", this.onNarrationEnd);
-
-
     this.bgSound = new Audio("./assets/audio/bg.mp3");
     this.bgSound.pause();
   },
@@ -117,7 +115,7 @@ module.exports = React.createClass({
                 <Components.Blocks.BlockWatchBG media={this.state.currentMedias} progress={this.state.sentenceProgress} />
               </div>
               <div className="watch-page__body" style={bodyStyles}>
-                <Components.Blocks.BlockAlign align="left bottom">
+                <Components.Blocks.BlockAlign align="left">
                   <Components.Blocks.BlockTheaterText label={this.state.currentLabel} reset={this.state.reset} />
                 </Components.Blocks.BlockAlign>
               </div>

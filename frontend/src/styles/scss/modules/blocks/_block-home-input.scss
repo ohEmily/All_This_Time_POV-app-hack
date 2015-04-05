@@ -1,3 +1,9 @@
+.block-home-input {
+  h2 > span{
+    opacity: 0.8;
+  }
+}
+
 .react-textselect {
     border-bottom: 1px solid rgba(0, 0, 0, .33);
     overflow: visible;
@@ -5,6 +11,7 @@
     margin-right: .17em;
     cursor: pointer;
     position: relative;
+    opacity: 1!important;
     &:after {
       content: "";
       position: absolute;

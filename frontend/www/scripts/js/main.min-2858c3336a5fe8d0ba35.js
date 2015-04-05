@@ -492,15 +492,15 @@ webpackJsonp([3],[
 	    };
 
 	    var lossOptions = [
-	      'Father',
-	      'Mother',
-	      'Brother',
-	      'Sister',
-	      'Grandmother',
-	      'Grandfather',
-	      'Husband',
-	      'Wife',
-	      'Friend'
+	      'father',
+	      'mother',
+	      'brother',
+	      'sister',
+	      'grandmother',
+	      'grandfather',
+	      'husband',
+	      'wife',
+	      'friend'
 	    ];
 
 	    var monthOptions = [
@@ -4457,7 +4457,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
-	exports.push([module.id, "@charset \"UTF-8\";\n/*\n * Gridism\n * A simple, responsive, and handy CSS grid by @cobyism\n * https://github.com/cobyism/gridism\n */\n/* Preserve some sanity */\n.grid, .unit {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/* Set up some rules to govern the grid */\n.grid {\n  display: block;\n  clear: both; }\n\n.grid .unit {\n  float: left;\n  width: 100%;\n  padding: 0px; }\n\n/* This ensures the outer gutters are equal to the (doubled) inner gutters. */\n/* Nested grids already have padding though, so let’s nuke it */\n/* Let people nuke the gutters/padding completely in a couple of ways */\n.no-gutters > .unit, .unit.no-gutters {\n  padding: 0 !important; }\n\n/* Wrapping at a maximum width is optional */\n.wrap .grid, .grid.wrap {\n  max-width: 978px;\n  margin: 0 auto; }\n\n/* Width classes also have shorthand versions numbered as fractions\n * For example: for a grid unit 1/3 (one third) of the parent width,\n * simply apply class=\"w-1-3\" to the element. */\n.grid .whole, .grid .w-1-1 {\n  width: 100%; }\n\n.grid .half, .grid .w-1-2 {\n  width: 50%; }\n\n.grid .one-third, .grid .w-1-3 {\n  width: 33.3332%; }\n\n.grid .two-thirds, .grid .w-2-3 {\n  width: 66.6665%; }\n\n.grid .one-quarter, .grid .w-1-4 {\n  width: 25%; }\n\n.grid .three-quarters, .grid .w-3-4 {\n  width: 75%; }\n\n.grid .one-fifth, .grid .w-1-5 {\n  width: 20%; }\n\n.grid .two-fifths, .grid .w-2-5 {\n  width: 40%; }\n\n.grid .three-fifths, .grid .w-3-5 {\n  width: 60%; }\n\n.grid .four-fifths, .grid .w-4-5 {\n  width: 80%; }\n\n.grid .golden-small, .grid .w-g-s {\n  width: 38.2716%; }\n\n/* Golden section: smaller piece */\n.grid .golden-large, .grid .w-g-l {\n  width: 61.7283%; }\n\n/* Golden section: larger piece */\n/* Clearfix after every .grid */\n.grid {\n  *zoom: 1; }\n\n.grid:before, .grid:after {\n  display: table;\n  content: \"\";\n  line-height: 0; }\n\n.grid:after {\n  clear: both; }\n\n/* Utility classes */\n.align-center {\n  text-align: center; }\n\n.align-left {\n  text-align: left; }\n\n.align-right {\n  text-align: right; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n/* Responsive Stuff */\n@media screen and (max-width: 568px) {\n  /* Stack anything that isn’t full-width on smaller screens */\n  .grid .unit {\n    width: 100% !important;\n    padding-left: 20px;\n    padding-right: 20px; }\n  .unit .grid .unit {\n    padding-left: 0px;\n    padding-right: 0px; }\n  /* Sometimes, you just want to be different on small screens */\n  .center-on-mobiles {\n    text-align: center !important; }\n  .hide-on-mobiles {\n    display: none !important; } }\n\n/* Expand the wrap a bit further on larger screens */\n@media screen and (min-width: 1180px) {\n  .wider .grid {\n    max-width: 1180px;\n    margin: 0 auto; } }\n\n/*doc\n---\ntitle: Text Colors\nname: text colors\ncategory: Base CSS\n---\n\nWe have a few background colors that can be used in various contexts.\nThese are not for use as the entire page background but instead for\nspecific components and modules on the page.\n\n```html_example_table\n<p class=\"text-color--base\">Text Color Base</p>\n<p class=\"text-color--alpha\">Text Color Alpha</p>\n```\n\n*/\n.text-color--base {\n  color: #efefef; }\n\n.text-color--alpha {\n  color: #d2cdbf; }\n\n/* apply a natural box layout model to all elements */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nhtml {\n  font-size: 16px; }\n\nbody {\n  text-rendering: optimizeLegibility;\n  font-feature-settings: \"kern\";\n  -webkit-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern=1\";\n  text-rendering: optimizeLegibility;\n  /* optional: for older browsers */\n  -webkit-font-variant-ligatures: common-ligatures;\n  /* for iOS and Safari 6 */\n  font-variant-ligatures: common-ligatures;\n  /* for up-to-date browsers, including IE10 and Opera 21 */ }\n\n/*doc\n---\ntitle: Typography\nname: typography\ncategory: Base CSS\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<h1>h1 24px</h1>\n\n<h2>h2 18px</h2>\n\n<h3>h3 16px</h3>\n\n<h4>h4 14px</h4>\n\n<h5>h5 13px</h5>\n\n<p>This is an example of our base font style 15px. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n```\n\n*/\nh1, h2, h3, h4, h5, h6 {\n  font-weight: 500;\n  overflow: visible;\n  padding: 0px;\n  margin: 0px;\n  color: #efefef; }\n\nh1 {\n  font-family: 'Lora', serif;\n  font-style: italic;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 32px;\n  font-size: 2rem;\n  line-height: 38px;\n  line-height: 2.375rem; }\n\nh2 {\n  font-family: 'Lora', serif;\n  font-style: italic;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 24px;\n  font-size: 1.5rem;\n  line-height: 26px;\n  line-height: 1.625rem; }\n\nh3 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 16px;\n  font-size: 1rem; }\n\nh4 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 14px;\n  font-size: 0.875rem; }\n\nh5 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 13px;\n  font-size: 0.8125rem; }\n\nbody, p {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 2px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 16px;\n  font-size: 1rem;\n  line-height: 24px;\n  line-height: 1.5rem;\n  color: #ffffff;\n  margin: 15px 0px;\n  text-rendering: optimizeLegibility;\n  font-feature-settings: \"kern\";\n  -webkit-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern=1\"; }\n\np {\n  line-height: 33px;\n  line-height: 2.0625rem; }\n\na, button {\n  color: inherit;\n  cursor: pointer;\n  text-decoration: none;\n  -webkit-transition-property: color;\n  -moz-transition-property: color;\n  transition-property: color;\n  -webkit-transition-duration: 0.15s;\n  -moz-transition-duration: 0.15s;\n  transition-duration: 0.15s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear; }\n  a:hover, button:hover {\n    color: #efefef; }\n\n*, a, a:active button, button:active {\n  -webkit-tap-highlight-color: transparent;\n  -webkit-tap-highlight-color: transparent;\n  /* For some Androids */\n  outline: none;\n  text-decoration: none; }\n\nem {\n  font-style: normal; }\n\n::-moz-selection {\n  background-color: gray;\n  color: inherit; }\n\n::selection {\n  background-color: gray;\n  color: inherit; }\n\n.align-left {\n  text-align: left; }\n\n.align-right {\n  text-align: right; }\n\n.global-animation__transition-alpha-enter {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .5s;\n  -moz-transition-duration: .5s;\n  transition-duration: .5s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0.5s;\n  -moz-transition-delay: 0.5s;\n  transition-delay: 0.5s; }\n  .global-animation__transition-alpha-enter.global-animation__transition-alpha-enter-active {\n    opacity: 1; }\n\n.global-animation__transition-alpha-leave {\n  opacity: 1;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .5s;\n  -moz-transition-duration: .5s;\n  transition-duration: .5s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-alpha-leave.global-animation__transition-alpha-leave-active {\n    opacity: 0; }\n\n.global-animation__transition-beta-enter {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-beta-enter.global-animation__transition-beta-enter-active {\n    -webkit-transition-delay: 0.4s;\n    -moz-transition-delay: 0.4s;\n    transition-delay: 0.4s;\n    opacity: 1; }\n\n.global-animation__transition-beta-leave {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-beta-leave.global-animation__transition-beta-leave-active {\n    opacity: 0;\n    -webkit-transition-delay: 0s;\n    -moz-transition-delay: 0s;\n    transition-delay: 0s; }\n\n.animation-fade-in-alpha {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .3s;\n  -moz-transition-duration: .3s;\n  transition-duration: .3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .animation-fade-in-alpha.global-animation__transition-alpha-enter-active {\n    opacity: 1; }\n\n@-webkit-keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n@-webkit-keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n.label {\n  margin: 0px;\n  padding: 0px; }\n\n/*doc\n---\ntitle: Alpha Label\nname: alpha label\ncategory: labels\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<span class=\"label label-alpha\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--large\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--small\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--blockquote\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n*/\n.label.label-alpha {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 18px;\n  font-size: 1.125rem;\n  line-height: 21px;\n  line-height: 1.3125rem;\n  color: inherit;\n  vertical-align: bottom;\n  position: relative; }\n  .label.label-alpha.label-alpha--large {\n    font-size: 20px;\n    font-size: 1.25rem;\n    line-height: 23px;\n    line-height: 1.4375rem;\n    letter-spacing: 4px; }\n  .label.label-alpha.label-alpha--small {\n    font-size: 14px;\n    font-size: 0.875rem;\n    line-height: 16px;\n    line-height: 1rem;\n    letter-spacing: 2px; }\n  .label.label-alpha.label-alpha--blockquote {\n    padding-left: 14px;\n    overflow: visible; }\n    .label.label-alpha.label-alpha--blockquote:before {\n      content: \"\";\n      position: absolute;\n      left: 0px;\n      top: 15%;\n      width: 1px;\n      height: 70%;\n      background-color: #ffffff; }\n\n/*doc\n---\ntitle: Beta Label\nname: beta label\ncategory: labels\n---\n\nThese are the labels used for the top navigation.\n\n```html_example_table\n  <span class=\"label label-beta\">home</span>\n```\n\n*/\n.label.label-beta {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 18px;\n  font-size: 1.125rem;\n  line-height: 21px;\n  line-height: 1.3125rem;\n  color: inherit;\n  vertical-align: bottom;\n  position: relative; }\n\n.button {\n  display: inline-block;\n  background-color: transparent;\n  box-sizing: border-box;\n  cursor: pointer;\n  border: none;\n  padding: 0px;\n  margin: 0px;\n  text-align: left;\n  outline: none;\n  outline-offset: 0;\n  outline-color: transparent;\n  -webkit-appearance: none; }\n  .button::-moz-focus-inner, .button::-moz-focus-inner {\n    border: none;\n    padding: 0; }\n\n/*doc\n---\ntitle: Alpha Button\nname: alpha button\ncategory: Buttons\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<button class=\"button button-alpha\">\n  <span class=\"button-alpha__label\">\n    <span class=\"label label-alpha\">Button Alpha</span>\n  </span>\n</button>\n```\n\n```html_example_table\n<button class=\"button button-alpha button-alpha--large\">\n  <span class=\"button-alpha__label\">\n    <span class=\"label label-zeta button-alpha__label\">Watch the movie</span>\n    <span class=\"label label-eta button-alpha__label\">Available December 24th</span>\n  </span>\n</button>\n```\n\n*/\n.button.button-alpha {\n  padding: 10px 15px;\n  border: 1px solid #ffffff;\n  -webkit-transition-property: background-color;\n  -moz-transition-property: background-color;\n  transition-property: background-color;\n  -webkit-transition-duration: .15s;\n  -moz-transition-duration: .15s;\n  transition-duration: .15s;\n  -webkit-transition-timing-function: ease-in;\n  -moz-transition-timing-function: ease-in;\n  transition-timing-function: ease-in;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s;\n  color: #ffffff;\n  background-color: rgba(255, 255, 255, 0.1);\n  text-align: center; }\n  .button.button-alpha > .button-alpha__label > .label {\n    display: block; }\n  .no-touch .button.button-alpha:hover {\n    background-color: #ffffff;\n    color: #000000; }\n  .touch .button.button-alpha {\n    background-color: #ffffff;\n    color: #000000; }\n  .button.button-alpha.button-alpha--large {\n    padding: 20px; }\n\n/*doc\n---\ntitle: Beta Button\nname: beta button\ncategory: Buttons\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<a class=\"button button-beta\">\n  <span class=\"label label-beta button-beta__label\">Home</span>\n</a>\n```\n```html_example_table\n<a class=\"button button-beta button-beta--active\">\n  <span class=\"label label-beta button-beta__label\">Home</span>\n</a>\n```\n\n*/\n.button.button-beta {\n  opacity: 0.8;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .15s;\n  -moz-transition-duration: .15s;\n  transition-duration: .15s;\n  -webkit-transition-timing-function: ease-in;\n  -moz-transition-timing-function: ease-in;\n  transition-timing-function: ease-in;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .button.button-beta.button-beta--active {\n    opacity: 1; }\n  .no-touch .button.button-beta:hover {\n    opacity: 1; }\n  .touch .button.button-beta {\n    opacity: 1; }\n\n.input-slider {\n  background-color: rgba(255, 255, 255, 0.1);\n  width: 4px;\n  height: 100%;\n  min-height: 80px; }\n\n/*doc\n---\ntitle: Block Home Logo\nname: block home logo\ncategory: CSS Components\n---\n\n```html_example_table\n  <div class=\"block-home-logo\">\n    <span class=\"block-home-logo__content\">\n    </span>\n  </div>\n```\n\n*/\n@-webkit-keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n.block-home-logo {\n  display: inline-block;\n  text-align: center;\n  width: 780px;\n  height: 85px;\n  position: relative;\n  -webkit-transform: translateZ(0px);\n  -moz-transform: translateZ(0px);\n  -ms-transform: translateZ(0px);\n  -o-transform: translateZ(0px);\n  transform: translateZ(0px); }\n  .block-home-logo.block-home-logo--animate {\n    opacity: 0; }\n  .block-home-logo.block-home-logo--animate-in {\n    opacity: 1;\n    -webkit-animation-name: blockHomeLogoFadeIn;\n    -moz-animation-name: blockHomeLogoFadeIn;\n    animation-name: blockHomeLogoFadeIn; }\n\n/*doc\n---\ntitle: Block Align\nname: block align\ncategory: CSS Components\n---\n\n```html_example_table\n<div class=\"block-align\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n```html_example_table\n<div class=\"block-align block-align--top\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n```html_example_table\n<div class=\"block-align block-align--bottom\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n\n```html_example_table\n<div class=\"block-align block-align--left block-align--bottom\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n\n```html_example_table\n<div class=\"block-align block-align--right block-align--top\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n*/\n.block-align {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  box-align: center;\n  -webkit-align-items: center;\n  -moz-align-items: center;\n  -ms-align-items: center;\n  -o-align-items: center;\n  align-items: center;\n  -ms-flex-align: center;\n  -webkit-box-pack: center;\n  -moz-box-pack: center;\n  box-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  -ms-justify-content: center;\n  -o-justify-content: center;\n  justify-content: center;\n  -ms-flex-pack: center; }\n  .block-align > .block-align__content {\n    max-width: 100%; }\n  .block-align.block-align--left {\n    -webkit-box-pack: start;\n    -moz-box-pack: start;\n    box-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    -ms-justify-content: flex-start;\n    -o-justify-content: flex-start;\n    justify-content: flex-start;\n    -ms-flex-pack: start; }\n  .block-align.block-align--right {\n    -webkit-box-pack: end;\n    -moz-box-pack: end;\n    box-pack: end;\n    -webkit-justify-content: flex-end;\n    -moz-justify-content: flex-end;\n    -ms-justify-content: flex-end;\n    -o-justify-content: flex-end;\n    justify-content: flex-end;\n    -ms-flex-pack: end; }\n  .block-align.block-align--top > .block-align__content {\n    -webkit-align-self: flex-start;\n    -moz-align-self: flex-start;\n    align-self: flex-start;\n    -ms-flex-item-align: start; }\n  .block-align.block-align--bottom > .block-align__content {\n    -webkit-align-self: flex-end;\n    -moz-align-self: flex-end;\n    align-self: flex-end;\n    -ms-flex-item-align: end; }\n\n.block-watch-bg {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n  .block-watch-bg > img {\n    position: absolute;\n    width: 100%;\n    height: 100%; }\n  .block-watch-bg:after {\n    content: \"\";\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.4); }\n\n.block-theater-text__content, .block-theater-text__content p {\n  font-family: 'Lora', serif;\n  font-style: italic;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 32px;\n  font-size: 2rem;\n  line-height: 44px;\n  line-height: 2.75rem; }\n.block-theater-text__content p {\n  display: none; }\n  .block-theater-text__content p:last-child {\n    display: block; }\n\n.react-textselect {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.33);\n  overflow: visible;\n  padding-right: 1em;\n  margin-right: .17em;\n  cursor: pointer;\n  position: relative; }\n  .react-textselect:after {\n    content: \"\";\n    position: absolute;\n    height: 0;\n    width: 0;\n    border-left: 7.5px solid transparent;\n    border-right: 7.5px solid transparent;\n    border-top: 7.5px solid rgba(255, 255, 255, 0.5);\n    top: 50%;\n    margin-top: -2px;\n    right: 0px; }\n  .react-textselect:hover:after {\n    height: 0;\n    width: 0;\n    border-left: 7.5px solid transparent;\n    border-right: 7.5px solid transparent;\n    border-top: 7.5px solid white; }\n\n.react-textselect-input {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  -webkit-appearance: none; }\n\nbody {\n  overflow: hidden;\n  margin: 0px;\n  padding: 0px; }\n\n.app {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n\n.app__content {\n  -webkit-transition-property: -webkit-transform;\n  -moz-transition-property: -moz-transform;\n  transition-property: transform;\n  -webkit-transition-duration: .9s;\n  -moz-transition-duration: .9s;\n  transition-duration: .9s;\n  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n\n.hud {\n  position: fixed;\n  left: 0px;\n  top: 0px;\n  z-index: 99; }\n\n.hud-header {\n  position: fixed;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 0px; }\n  .hud-header.hud-header--animate {\n    -webkit-animation-name: fadeInAlpha;\n    -moz-animation-name: fadeInAlpha;\n    animation-name: fadeInAlpha;\n    -webkit-animation-duration: .3s;\n    -moz-animation-duration: .3s;\n    animation-duration: .3s;\n    -webkit-animation-timing-function: ease-in;\n    -moz-animation-timing-function: ease-in;\n    animation-timing-function: ease-in;\n    -webkit-animation-play-state: paused;\n    -moz-animation-play-state: paused;\n    animation-play-state: paused; }\n  .hud-header.hud-header--animate-in {\n    -webkit-animation-play-state: running;\n    -moz-animation-play-state: running;\n    animation-play-state: running; }\n  .hud-header .hud-header__left {\n    float: left; }\n  .hud-header .hud-header__right {\n    float: right; }\n  .hud-header .hud-header__left, .hud-header .hud-header__right {\n    margin: 26px 26px 0px 26px; }\n    @media only screen and (max-width: 1280px) and (max-height: 768px) {\n      .hud-header .hud-header__left, .hud-header .hud-header__right {\n        margin: 20px 20px 0px 20px; } }\n  .hud-header .hud-header__right__item {\n    margin: 0px 0px;\n    display: inline-block;\n    vertical-align: top; }\n\n.hud-footer {\n  position: fixed;\n  left: 0px;\n  bottom: -100px;\n  width: 100%;\n  -webkit-transition-property: -webkit-transform;\n  -moz-transition-property: -moz-transform;\n  transition-property: transform;\n  -webkit-transition-duration: .9s;\n  -moz-transition-duration: .9s;\n  transition-duration: .9s;\n  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .hud-footer.hud-footer--expanded {\n    -webkit-transform: translateY(-100px);\n    -moz-transform: translateY(-100px);\n    -ms-transform: translateY(-100px);\n    -o-transform: translateY(-100px);\n    transform: translateY(-100px); }\n  .hud-footer .hud-footer__left {\n    float: left; }\n    .hud-footer .hud-footer__left.hud-footer__left--animate {\n      -webkit-animation-name: fadeInAlpha;\n      -moz-animation-name: fadeInAlpha;\n      animation-name: fadeInAlpha;\n      -webkit-animation-duration: .3s;\n      -moz-animation-duration: .3s;\n      animation-duration: .3s;\n      -webkit-animation-timing-function: ease-in;\n      -moz-animation-timing-function: ease-in;\n      animation-timing-function: ease-in;\n      -webkit-animation-play-state: paused;\n      -moz-animation-play-state: paused;\n      animation-play-state: paused; }\n    .hud-footer .hud-footer__left.hud-footer__left--animate-in {\n      -webkit-animation-play-state: running;\n      -moz-animation-play-state: running;\n      animation-play-state: running; }\n  .hud-footer .hud-footer__right {\n    float: right; }\n    .hud-footer .hud-footer__right.hud-footer__right--animate {\n      -webkit-animation-name: fadeInAlpha;\n      -moz-animation-name: fadeInAlpha;\n      animation-name: fadeInAlpha;\n      -webkit-animation-duration: .3s;\n      -moz-animation-duration: .3s;\n      animation-duration: .3s;\n      -webkit-animation-timing-function: ease-in;\n      -moz-animation-timing-function: ease-in;\n      animation-timing-function: ease-in;\n      -webkit-animation-play-state: paused;\n      -moz-animation-play-state: paused;\n      animation-play-state: paused; }\n    .hud-footer .hud-footer__right.hud-footer__right--animate-in {\n      -webkit-animation-play-state: running;\n      -moz-animation-play-state: running;\n      animation-play-state: running; }\n  .hud-footer .hud-footer__left, .hud-footer .hud-footer__right {\n    padding: 0px 26px 26px 26px; }\n    @media only screen and (max-width: 1280px) and (max-height: 768px) {\n      .hud-footer .hud-footer__left, .hud-footer .hud-footer__right {\n        padding: 0px 20px 20px 20px; } }\n  .hud-footer .hud-footer__right__item {\n    margin: 0px 10px;\n    display: inline-block;\n    vertical-align: top; }\n    .hud-footer .hud-footer__right__item:first-child {\n      margin-left: 0px; }\n    .hud-footer .hud-footer__right__item:last-child {\n      margin-right: 0px; }\n  .hud-footer .hud-footer__end {\n    clear: both;\n    width: 100%;\n    height: 100px;\n    overflow: hidden; }\n    .hud-footer .hud-footer__end .hud-footer__end__left {\n      float: left;\n      width: 210px;\n      height: 100%;\n      padding-left: 26px; }\n      @media only screen and (max-width: 1280px) and (max-height: 768px) {\n        .hud-footer .hud-footer__end .hud-footer__end__left {\n          padding-left: 20px; } }\n    .hud-footer .hud-footer__end .hud-footer__end__right {\n      float: right;\n      display: table;\n      height: 100%; }\n    .hud-footer .hud-footer__end .hud-footer__end__copyright {\n      display: table-cell;\n      vertical-align: middle;\n      color: #ffffff;\n      padding: 0px 26px; }\n      @media only screen and (max-width: 1280px) and (max-height: 768px) {\n        .hud-footer .hud-footer__end .hud-footer__end__copyright {\n          padding: 0px 20px; } }\n\n.scroll-container {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  overflow: auto; }\n\n.pages {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 300%;\n  overflow: hidden; }\n\n.page {\n  position: relative;\n  height: 33.33333%;\n  width: 100%;\n  overflow: hidden; }\n\n.home-page {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  background-position: center center;\n  background-size: cover;\n  background-repeat: no-repeat; }\n\n.home-page__bg {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  background-image: url("+__webpack_require__(93)+");\n  background-position: center center;\n  background-size: cover;\n  background-repeat: no-repeat;\n  opacity: 0.3; }\n  .home-page__bg:after {\n    content: \"\";\n    position: absolute;\n    left: -200%;\n    top: 0px;\n    width: 400%;\n    height: 100%;\n    display: none;\n    background-color: transparent;\n    background-image: -webkit-linear-gradient(-360deg, transparent 0%, #000000 50%, #000000 100%);\n    background-image: linear-gradient(90deg,transparent 0%, black 50%, black 100%); }\n  .home-page__bg.home-page__bg--animate:after {\n    display: block;\n    -webkit-transition-property: -webkit-transform, opacity;\n    -moz-transition-property: -moz-transform, opacity;\n    transition-property: transform, opacity;\n    -webkit-transition-duration: 4s, 0.3s;\n    -moz-transition-duration: 4s, 0.3s;\n    transition-duration: 4s, 0.3s;\n    -webkit-transition-timing-function: ease-in, linear;\n    -moz-transition-timing-function: ease-in, linear;\n    transition-timing-function: ease-in, linear;\n    -webkit-transition-delay: 0s, 3.5s;\n    -moz-transition-delay: 0s, 3.5s;\n    transition-delay: 0s, 3.5s;\n    -webkit-transform: translateX(0%);\n    -moz-transform: translateX(0%);\n    -ms-transform: translateX(0%);\n    -o-transform: translateX(0%);\n    transform: translateX(0%); }\n  .home-page__bg.home-page__bg--animate-in:after {\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n    transform: translateX(100%);\n    opacity: 0; }\n  .home-page__bg video {\n    object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n.home-page__nav {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: auto;\n  margin-top: 26px;\n  text-align: center;\n  z-index: 2; }\n  @media only screen and (max-width: 1280px) and (max-height: 768px) {\n    .home-page__nav {\n      margin-top: 20px; } }\n  .home-page__nav.home-page__nav--animate {\n    opacity: 0;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 1.5s;\n    -moz-transition-duration: 1.5s;\n    transition-duration: 1.5s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 1s;\n    -moz-transition-delay: 1s;\n    transition-delay: 1s; }\n  .home-page__nav.home-page__nav--animate-in {\n    opacity: 1; }\n\n.home-page__body {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.home-page__body__input {\n  margin: 100px;\n  position: relative; }\n  .home-page__body__input:before {\n    content: \"\";\n    position: absolute;\n    top: -55px;\n    left: 50%;\n    margin-left: -100px;\n    width: 200px;\n    height: 1px;\n    background-color: rgba(255, 255, 255, 0.3); }\n\n.home-page__loading {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  z-index: 2; }\n  .home-page__loading .home-page__loading__loader {\n    position: absolute;\n    bottom: 10%;\n    left: 10%; }\n  .home-page__loading .home-page__loading__logo {\n    position: absolute;\n    bottom: 10%;\n    right: 10%;\n    height: 84px; }\n  .home-page__loading.home-page__loading--animate {\n    opacity: 1;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 0.3s;\n    -moz-transition-duration: 0.3s;\n    transition-duration: 0.3s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 0s;\n    -moz-transition-delay: 0s;\n    transition-delay: 0s; }\n  .home-page__loading.home-page__loading--animate-out {\n    opacity: 0;\n    z-index: 0; }\n\n.home-page__cta {\n  position: absolute;\n  z-index: 99;\n  bottom: 10%;\n  width: 100%;\n  height: auto;\n  text-align: center; }\n  .home-page__cta.home-page__cta--animate {\n    opacity: 0;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 1.5s;\n    -moz-transition-duration: 1.5s;\n    transition-duration: 1.5s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 1s;\n    -moz-transition-delay: 1s;\n    transition-delay: 1s; }\n  .home-page__cta.home-page__cta--animate-in {\n    opacity: 1; }\n\n.home-content-menu {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.home-content-menu__list {\n  display: block;\n  list-style: none;\n  margin: 0px;\n  padding: 0px; }\n\n.home-content-menu__list__item {\n  margin: 0px;\n  padding: 0px;\n  display: block;\n  list-style: none;\n  margin-bottom: 50px; }\n  .home-content-menu__list__item:last-child {\n    margin-bottom: 0px; }\n\n.home-content-start {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.watch-page {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%; }\n\n.watch-page__bg {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n  .watch-page__bg video {\n    object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n\n.watch-page__body {\n  position: absolute;\n  bottom: 50%;\n  left: 50%;\n  -webkit-transform: translateX(-50%) translateY(40px);\n  -moz-transform: translateX(-50%) translateY(40px);\n  -ms-transform: translateX(-50%) translateY(40px);\n  -o-transform: translateX(-50%) translateY(40px);\n  transform: translateX(-50%) translateY(40px);\n  width: 900px;\n  height: 100%; }\n\n.watch-page__player {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  height: calc(100% - 99px); }\n\n.watch-page__hud {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  margin: 26px 26px 0px 32px; }\n  .watch-page__hud .watch-page__hud__logo {\n    opacity: 0.3;\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n    transform: translateX(100%); }\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\n/*\n * Gridism\n * A simple, responsive, and handy CSS grid by @cobyism\n * https://github.com/cobyism/gridism\n */\n/* Preserve some sanity */\n.grid, .unit {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/* Set up some rules to govern the grid */\n.grid {\n  display: block;\n  clear: both; }\n\n.grid .unit {\n  float: left;\n  width: 100%;\n  padding: 0px; }\n\n/* This ensures the outer gutters are equal to the (doubled) inner gutters. */\n/* Nested grids already have padding though, so let’s nuke it */\n/* Let people nuke the gutters/padding completely in a couple of ways */\n.no-gutters > .unit, .unit.no-gutters {\n  padding: 0 !important; }\n\n/* Wrapping at a maximum width is optional */\n.wrap .grid, .grid.wrap {\n  max-width: 978px;\n  margin: 0 auto; }\n\n/* Width classes also have shorthand versions numbered as fractions\n * For example: for a grid unit 1/3 (one third) of the parent width,\n * simply apply class=\"w-1-3\" to the element. */\n.grid .whole, .grid .w-1-1 {\n  width: 100%; }\n\n.grid .half, .grid .w-1-2 {\n  width: 50%; }\n\n.grid .one-third, .grid .w-1-3 {\n  width: 33.3332%; }\n\n.grid .two-thirds, .grid .w-2-3 {\n  width: 66.6665%; }\n\n.grid .one-quarter, .grid .w-1-4 {\n  width: 25%; }\n\n.grid .three-quarters, .grid .w-3-4 {\n  width: 75%; }\n\n.grid .one-fifth, .grid .w-1-5 {\n  width: 20%; }\n\n.grid .two-fifths, .grid .w-2-5 {\n  width: 40%; }\n\n.grid .three-fifths, .grid .w-3-5 {\n  width: 60%; }\n\n.grid .four-fifths, .grid .w-4-5 {\n  width: 80%; }\n\n.grid .golden-small, .grid .w-g-s {\n  width: 38.2716%; }\n\n/* Golden section: smaller piece */\n.grid .golden-large, .grid .w-g-l {\n  width: 61.7283%; }\n\n/* Golden section: larger piece */\n/* Clearfix after every .grid */\n.grid {\n  *zoom: 1; }\n\n.grid:before, .grid:after {\n  display: table;\n  content: \"\";\n  line-height: 0; }\n\n.grid:after {\n  clear: both; }\n\n/* Utility classes */\n.align-center {\n  text-align: center; }\n\n.align-left {\n  text-align: left; }\n\n.align-right {\n  text-align: right; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n/* Responsive Stuff */\n@media screen and (max-width: 568px) {\n  /* Stack anything that isn’t full-width on smaller screens */\n  .grid .unit {\n    width: 100% !important;\n    padding-left: 20px;\n    padding-right: 20px; }\n  .unit .grid .unit {\n    padding-left: 0px;\n    padding-right: 0px; }\n  /* Sometimes, you just want to be different on small screens */\n  .center-on-mobiles {\n    text-align: center !important; }\n  .hide-on-mobiles {\n    display: none !important; } }\n\n/* Expand the wrap a bit further on larger screens */\n@media screen and (min-width: 1180px) {\n  .wider .grid {\n    max-width: 1180px;\n    margin: 0 auto; } }\n\n/*doc\n---\ntitle: Text Colors\nname: text colors\ncategory: Base CSS\n---\n\nWe have a few background colors that can be used in various contexts.\nThese are not for use as the entire page background but instead for\nspecific components and modules on the page.\n\n```html_example_table\n<p class=\"text-color--base\">Text Color Base</p>\n<p class=\"text-color--alpha\">Text Color Alpha</p>\n```\n\n*/\n.text-color--base {\n  color: #efefef; }\n\n.text-color--alpha {\n  color: #d2cdbf; }\n\n/* apply a natural box layout model to all elements */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nhtml {\n  font-size: 16px; }\n\nbody {\n  text-rendering: optimizeLegibility;\n  font-feature-settings: \"kern\";\n  -webkit-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern=1\";\n  text-rendering: optimizeLegibility;\n  /* optional: for older browsers */\n  -webkit-font-variant-ligatures: common-ligatures;\n  /* for iOS and Safari 6 */\n  font-variant-ligatures: common-ligatures;\n  /* for up-to-date browsers, including IE10 and Opera 21 */ }\n\n/*doc\n---\ntitle: Typography\nname: typography\ncategory: Base CSS\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<h1>h1 24px</h1>\n\n<h2>h2 18px</h2>\n\n<h3>h3 16px</h3>\n\n<h4>h4 14px</h4>\n\n<h5>h5 13px</h5>\n\n<p>This is an example of our base font style 15px. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n```\n\n*/\nh1, h2, h3, h4, h5, h6 {\n  font-weight: 500;\n  overflow: visible;\n  padding: 0px;\n  margin: 0px;\n  color: #efefef; }\n\nh1 {\n  font-family: 'PT Mono', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 32px;\n  font-size: 2rem;\n  line-height: 38px;\n  line-height: 2.375rem; }\n\nh2 {\n  font-family: 'PT Mono', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 24px;\n  font-size: 1.5rem;\n  line-height: 26px;\n  line-height: 1.625rem; }\n\nh3 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 16px;\n  font-size: 1rem; }\n\nh4 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 14px;\n  font-size: 0.875rem; }\n\nh5 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 13px;\n  font-size: 0.8125rem; }\n\nbody, p {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 2px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 16px;\n  font-size: 1rem;\n  line-height: 24px;\n  line-height: 1.5rem;\n  color: #ffffff;\n  margin: 15px 0px;\n  text-rendering: optimizeLegibility;\n  font-feature-settings: \"kern\";\n  -webkit-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern=1\"; }\n\np {\n  line-height: 33px;\n  line-height: 2.0625rem; }\n\na, button {\n  color: inherit;\n  cursor: pointer;\n  text-decoration: none;\n  -webkit-transition-property: color;\n  -moz-transition-property: color;\n  transition-property: color;\n  -webkit-transition-duration: 0.15s;\n  -moz-transition-duration: 0.15s;\n  transition-duration: 0.15s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear; }\n  a:hover, button:hover {\n    color: #efefef; }\n\n*, a, a:active button, button:active {\n  -webkit-tap-highlight-color: transparent;\n  -webkit-tap-highlight-color: transparent;\n  /* For some Androids */\n  outline: none;\n  text-decoration: none; }\n\nem {\n  font-style: normal; }\n\n::-moz-selection {\n  background-color: gray;\n  color: inherit; }\n\n::selection {\n  background-color: gray;\n  color: inherit; }\n\n.align-left {\n  text-align: left; }\n\n.align-right {\n  text-align: right; }\n\n.global-animation__transition-alpha-enter {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .5s;\n  -moz-transition-duration: .5s;\n  transition-duration: .5s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0.5s;\n  -moz-transition-delay: 0.5s;\n  transition-delay: 0.5s; }\n  .global-animation__transition-alpha-enter.global-animation__transition-alpha-enter-active {\n    opacity: 1; }\n\n.global-animation__transition-alpha-leave {\n  opacity: 1;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .5s;\n  -moz-transition-duration: .5s;\n  transition-duration: .5s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-alpha-leave.global-animation__transition-alpha-leave-active {\n    opacity: 0; }\n\n.global-animation__transition-beta-enter {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-beta-enter.global-animation__transition-beta-enter-active {\n    -webkit-transition-delay: 0.4s;\n    -moz-transition-delay: 0.4s;\n    transition-delay: 0.4s;\n    opacity: 1; }\n\n.global-animation__transition-beta-leave {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-beta-leave.global-animation__transition-beta-leave-active {\n    opacity: 0;\n    -webkit-transition-delay: 0s;\n    -moz-transition-delay: 0s;\n    transition-delay: 0s; }\n\n.animation-fade-in-alpha {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .3s;\n  -moz-transition-duration: .3s;\n  transition-duration: .3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .animation-fade-in-alpha.global-animation__transition-alpha-enter-active {\n    opacity: 1; }\n\n@-webkit-keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n@-webkit-keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n.label {\n  margin: 0px;\n  padding: 0px; }\n\n/*doc\n---\ntitle: Alpha Label\nname: alpha label\ncategory: labels\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<span class=\"label label-alpha\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--large\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--small\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--blockquote\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n*/\n.label.label-alpha {\n  font-family: 'PT Mono', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 18px;\n  font-size: 1.125rem;\n  line-height: 21px;\n  line-height: 1.3125rem;\n  color: inherit;\n  vertical-align: bottom;\n  position: relative; }\n  .label.label-alpha.label-alpha--large {\n    font-size: 20px;\n    font-size: 1.25rem;\n    line-height: 23px;\n    line-height: 1.4375rem;\n    letter-spacing: 4px; }\n  .label.label-alpha.label-alpha--small {\n    font-size: 14px;\n    font-size: 0.875rem;\n    line-height: 16px;\n    line-height: 1rem;\n    letter-spacing: 2px; }\n  .label.label-alpha.label-alpha--blockquote {\n    padding-left: 14px;\n    overflow: visible; }\n    .label.label-alpha.label-alpha--blockquote:before {\n      content: \"\";\n      position: absolute;\n      left: 0px;\n      top: 15%;\n      width: 1px;\n      height: 70%;\n      background-color: #ffffff; }\n\n/*doc\n---\ntitle: Beta Label\nname: beta label\ncategory: labels\n---\n\nThese are the labels used for the top navigation.\n\n```html_example_table\n  <span class=\"label label-beta\">home</span>\n```\n\n*/\n.label.label-beta {\n  font-family: 'PT Mono', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 18px;\n  font-size: 1.125rem;\n  line-height: 21px;\n  line-height: 1.3125rem;\n  color: inherit;\n  vertical-align: bottom;\n  position: relative; }\n\n.button {\n  display: inline-block;\n  background-color: transparent;\n  box-sizing: border-box;\n  cursor: pointer;\n  border: none;\n  padding: 0px;\n  margin: 0px;\n  text-align: left;\n  outline: none;\n  outline-offset: 0;\n  outline-color: transparent;\n  -webkit-appearance: none; }\n  .button::-moz-focus-inner, .button::-moz-focus-inner {\n    border: none;\n    padding: 0; }\n\n/*doc\n---\ntitle: Alpha Button\nname: alpha button\ncategory: Buttons\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<button class=\"button button-alpha\">\n  <span class=\"button-alpha__label\">\n    <span class=\"label label-alpha\">Button Alpha</span>\n  </span>\n</button>\n```\n\n```html_example_table\n<button class=\"button button-alpha button-alpha--large\">\n  <span class=\"button-alpha__label\">\n    <span class=\"label label-zeta button-alpha__label\">Watch the movie</span>\n    <span class=\"label label-eta button-alpha__label\">Available December 24th</span>\n  </span>\n</button>\n```\n\n*/\n.button.button-alpha {\n  padding: 10px 15px;\n  border: 1px solid #ffffff;\n  -webkit-transition-property: background-color;\n  -moz-transition-property: background-color;\n  transition-property: background-color;\n  -webkit-transition-duration: .15s;\n  -moz-transition-duration: .15s;\n  transition-duration: .15s;\n  -webkit-transition-timing-function: ease-in;\n  -moz-transition-timing-function: ease-in;\n  transition-timing-function: ease-in;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s;\n  color: #ffffff;\n  background-color: rgba(255, 255, 255, 0.1);\n  text-align: center; }\n  .button.button-alpha > .button-alpha__label > .label {\n    display: block; }\n  .no-touch .button.button-alpha:hover {\n    background-color: #ffffff;\n    color: #000000; }\n  .touch .button.button-alpha {\n    background-color: #ffffff;\n    color: #000000; }\n  .button.button-alpha.button-alpha--large {\n    padding: 20px; }\n\n/*doc\n---\ntitle: Beta Button\nname: beta button\ncategory: Buttons\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<a class=\"button button-beta\">\n  <span class=\"label label-beta button-beta__label\">Home</span>\n</a>\n```\n```html_example_table\n<a class=\"button button-beta button-beta--active\">\n  <span class=\"label label-beta button-beta__label\">Home</span>\n</a>\n```\n\n*/\n.button.button-beta {\n  opacity: 0.8;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .15s;\n  -moz-transition-duration: .15s;\n  transition-duration: .15s;\n  -webkit-transition-timing-function: ease-in;\n  -moz-transition-timing-function: ease-in;\n  transition-timing-function: ease-in;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .button.button-beta.button-beta--active {\n    opacity: 1; }\n  .no-touch .button.button-beta:hover {\n    opacity: 1; }\n  .touch .button.button-beta {\n    opacity: 1; }\n\n.input-slider {\n  background-color: rgba(255, 255, 255, 0.1);\n  width: 4px;\n  height: 100%;\n  min-height: 80px; }\n\n/*doc\n---\ntitle: Block Home Logo\nname: block home logo\ncategory: CSS Components\n---\n\n```html_example_table\n  <div class=\"block-home-logo\">\n    <span class=\"block-home-logo__content\">\n    </span>\n  </div>\n```\n\n*/\n@-webkit-keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n.block-home-logo {\n  display: inline-block;\n  text-align: center;\n  width: 780px;\n  height: 85px;\n  position: relative;\n  -webkit-transform: translateZ(0px);\n  -moz-transform: translateZ(0px);\n  -ms-transform: translateZ(0px);\n  -o-transform: translateZ(0px);\n  transform: translateZ(0px); }\n  .block-home-logo.block-home-logo--animate {\n    opacity: 0; }\n  .block-home-logo.block-home-logo--animate-in {\n    opacity: 1;\n    -webkit-animation-name: blockHomeLogoFadeIn;\n    -moz-animation-name: blockHomeLogoFadeIn;\n    animation-name: blockHomeLogoFadeIn; }\n\n/*doc\n---\ntitle: Block Align\nname: block align\ncategory: CSS Components\n---\n\n```html_example_table\n<div class=\"block-align\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n```html_example_table\n<div class=\"block-align block-align--top\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n```html_example_table\n<div class=\"block-align block-align--bottom\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n\n```html_example_table\n<div class=\"block-align block-align--left block-align--bottom\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n\n```html_example_table\n<div class=\"block-align block-align--right block-align--top\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n*/\n.block-align {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  box-align: center;\n  -webkit-align-items: center;\n  -moz-align-items: center;\n  -ms-align-items: center;\n  -o-align-items: center;\n  align-items: center;\n  -ms-flex-align: center;\n  -webkit-box-pack: center;\n  -moz-box-pack: center;\n  box-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  -ms-justify-content: center;\n  -o-justify-content: center;\n  justify-content: center;\n  -ms-flex-pack: center; }\n  .block-align > .block-align__content {\n    max-width: 100%; }\n  .block-align.block-align--left {\n    -webkit-box-pack: start;\n    -moz-box-pack: start;\n    box-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    -ms-justify-content: flex-start;\n    -o-justify-content: flex-start;\n    justify-content: flex-start;\n    -ms-flex-pack: start; }\n  .block-align.block-align--right {\n    -webkit-box-pack: end;\n    -moz-box-pack: end;\n    box-pack: end;\n    -webkit-justify-content: flex-end;\n    -moz-justify-content: flex-end;\n    -ms-justify-content: flex-end;\n    -o-justify-content: flex-end;\n    justify-content: flex-end;\n    -ms-flex-pack: end; }\n  .block-align.block-align--top > .block-align__content {\n    -webkit-align-self: flex-start;\n    -moz-align-self: flex-start;\n    align-self: flex-start;\n    -ms-flex-item-align: start; }\n  .block-align.block-align--bottom > .block-align__content {\n    -webkit-align-self: flex-end;\n    -moz-align-self: flex-end;\n    align-self: flex-end;\n    -ms-flex-item-align: end; }\n\n.block-watch-bg {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n  .block-watch-bg > img {\n    position: absolute;\n    width: 100%;\n    height: 100%; }\n  .block-watch-bg:after {\n    content: \"\";\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.4); }\n\n.block-theater-text__content, .block-theater-text__content p {\n  font-family: 'PT Mono', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 32px;\n  font-size: 2rem;\n  line-height: 44px;\n  line-height: 2.75rem; }\n.block-theater-text__content p {\n  display: none; }\n  .block-theater-text__content p:last-child {\n    display: block; }\n\n.block-home-input h2 > span {\n  opacity: 0.8; }\n\n.react-textselect {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.33);\n  overflow: visible;\n  padding-right: 1em;\n  margin-right: .17em;\n  cursor: pointer;\n  position: relative;\n  opacity: 1 !important; }\n  .react-textselect:after {\n    content: \"\";\n    position: absolute;\n    height: 0;\n    width: 0;\n    border-left: 7.5px solid transparent;\n    border-right: 7.5px solid transparent;\n    border-top: 7.5px solid rgba(255, 255, 255, 0.5);\n    top: 50%;\n    margin-top: -2px;\n    right: 0px; }\n  .react-textselect:hover:after {\n    height: 0;\n    width: 0;\n    border-left: 7.5px solid transparent;\n    border-right: 7.5px solid transparent;\n    border-top: 7.5px solid white; }\n\n.react-textselect-input {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  -webkit-appearance: none; }\n\nbody {\n  overflow: hidden;\n  margin: 0px;\n  padding: 0px; }\n\n.app {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n\n.app__content {\n  -webkit-transition-property: -webkit-transform;\n  -moz-transition-property: -moz-transform;\n  transition-property: transform;\n  -webkit-transition-duration: .9s;\n  -moz-transition-duration: .9s;\n  transition-duration: .9s;\n  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n\n.hud {\n  position: fixed;\n  left: 0px;\n  top: 0px;\n  z-index: 99; }\n\n.hud-header {\n  position: fixed;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 0px; }\n  .hud-header.hud-header--animate {\n    -webkit-animation-name: fadeInAlpha;\n    -moz-animation-name: fadeInAlpha;\n    animation-name: fadeInAlpha;\n    -webkit-animation-duration: .3s;\n    -moz-animation-duration: .3s;\n    animation-duration: .3s;\n    -webkit-animation-timing-function: ease-in;\n    -moz-animation-timing-function: ease-in;\n    animation-timing-function: ease-in;\n    -webkit-animation-play-state: paused;\n    -moz-animation-play-state: paused;\n    animation-play-state: paused; }\n  .hud-header.hud-header--animate-in {\n    -webkit-animation-play-state: running;\n    -moz-animation-play-state: running;\n    animation-play-state: running; }\n  .hud-header .hud-header__left {\n    float: left; }\n  .hud-header .hud-header__right {\n    float: right; }\n  .hud-header .hud-header__left, .hud-header .hud-header__right {\n    margin: 26px 26px 0px 26px; }\n    @media only screen and (max-width: 1280px) and (max-height: 768px) {\n      .hud-header .hud-header__left, .hud-header .hud-header__right {\n        margin: 20px 20px 0px 20px; } }\n  .hud-header .hud-header__right__item {\n    margin: 0px 0px;\n    display: inline-block;\n    vertical-align: top; }\n\n.hud-footer {\n  position: fixed;\n  left: 0px;\n  bottom: -100px;\n  width: 100%;\n  -webkit-transition-property: -webkit-transform;\n  -moz-transition-property: -moz-transform;\n  transition-property: transform;\n  -webkit-transition-duration: .9s;\n  -moz-transition-duration: .9s;\n  transition-duration: .9s;\n  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .hud-footer.hud-footer--expanded {\n    -webkit-transform: translateY(-100px);\n    -moz-transform: translateY(-100px);\n    -ms-transform: translateY(-100px);\n    -o-transform: translateY(-100px);\n    transform: translateY(-100px); }\n  .hud-footer .hud-footer__left {\n    float: left; }\n    .hud-footer .hud-footer__left.hud-footer__left--animate {\n      -webkit-animation-name: fadeInAlpha;\n      -moz-animation-name: fadeInAlpha;\n      animation-name: fadeInAlpha;\n      -webkit-animation-duration: .3s;\n      -moz-animation-duration: .3s;\n      animation-duration: .3s;\n      -webkit-animation-timing-function: ease-in;\n      -moz-animation-timing-function: ease-in;\n      animation-timing-function: ease-in;\n      -webkit-animation-play-state: paused;\n      -moz-animation-play-state: paused;\n      animation-play-state: paused; }\n    .hud-footer .hud-footer__left.hud-footer__left--animate-in {\n      -webkit-animation-play-state: running;\n      -moz-animation-play-state: running;\n      animation-play-state: running; }\n  .hud-footer .hud-footer__right {\n    float: right; }\n    .hud-footer .hud-footer__right.hud-footer__right--animate {\n      -webkit-animation-name: fadeInAlpha;\n      -moz-animation-name: fadeInAlpha;\n      animation-name: fadeInAlpha;\n      -webkit-animation-duration: .3s;\n      -moz-animation-duration: .3s;\n      animation-duration: .3s;\n      -webkit-animation-timing-function: ease-in;\n      -moz-animation-timing-function: ease-in;\n      animation-timing-function: ease-in;\n      -webkit-animation-play-state: paused;\n      -moz-animation-play-state: paused;\n      animation-play-state: paused; }\n    .hud-footer .hud-footer__right.hud-footer__right--animate-in {\n      -webkit-animation-play-state: running;\n      -moz-animation-play-state: running;\n      animation-play-state: running; }\n  .hud-footer .hud-footer__left, .hud-footer .hud-footer__right {\n    padding: 0px 26px 26px 26px; }\n    @media only screen and (max-width: 1280px) and (max-height: 768px) {\n      .hud-footer .hud-footer__left, .hud-footer .hud-footer__right {\n        padding: 0px 20px 20px 20px; } }\n  .hud-footer .hud-footer__right__item {\n    margin: 0px 10px;\n    display: inline-block;\n    vertical-align: top; }\n    .hud-footer .hud-footer__right__item:first-child {\n      margin-left: 0px; }\n    .hud-footer .hud-footer__right__item:last-child {\n      margin-right: 0px; }\n  .hud-footer .hud-footer__end {\n    clear: both;\n    width: 100%;\n    height: 100px;\n    overflow: hidden; }\n    .hud-footer .hud-footer__end .hud-footer__end__left {\n      float: left;\n      width: 210px;\n      height: 100%;\n      padding-left: 26px; }\n      @media only screen and (max-width: 1280px) and (max-height: 768px) {\n        .hud-footer .hud-footer__end .hud-footer__end__left {\n          padding-left: 20px; } }\n    .hud-footer .hud-footer__end .hud-footer__end__right {\n      float: right;\n      display: table;\n      height: 100%; }\n    .hud-footer .hud-footer__end .hud-footer__end__copyright {\n      display: table-cell;\n      vertical-align: middle;\n      color: #ffffff;\n      padding: 0px 26px; }\n      @media only screen and (max-width: 1280px) and (max-height: 768px) {\n        .hud-footer .hud-footer__end .hud-footer__end__copyright {\n          padding: 0px 20px; } }\n\n.scroll-container {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  overflow: auto; }\n\n.pages {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 300%;\n  overflow: hidden; }\n\n.page {\n  position: relative;\n  height: 33.33333%;\n  width: 100%;\n  overflow: hidden; }\n\n.home-page {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  background-position: center center;\n  background-size: cover;\n  background-repeat: no-repeat; }\n\n.home-page__bg {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  background-image: url("+__webpack_require__(93)+");\n  background-position: center center;\n  background-size: cover;\n  background-repeat: no-repeat;\n  opacity: 0.3; }\n  .home-page__bg:after {\n    content: \"\";\n    position: absolute;\n    left: -200%;\n    top: 0px;\n    width: 400%;\n    height: 100%;\n    display: none;\n    background-color: transparent;\n    background-image: -webkit-linear-gradient(-360deg, transparent 0%, #000000 50%, #000000 100%);\n    background-image: linear-gradient(90deg,transparent 0%, black 50%, black 100%); }\n  .home-page__bg.home-page__bg--animate:after {\n    display: block;\n    -webkit-transition-property: -webkit-transform, opacity;\n    -moz-transition-property: -moz-transform, opacity;\n    transition-property: transform, opacity;\n    -webkit-transition-duration: 4s, 0.3s;\n    -moz-transition-duration: 4s, 0.3s;\n    transition-duration: 4s, 0.3s;\n    -webkit-transition-timing-function: ease-in, linear;\n    -moz-transition-timing-function: ease-in, linear;\n    transition-timing-function: ease-in, linear;\n    -webkit-transition-delay: 0s, 3.5s;\n    -moz-transition-delay: 0s, 3.5s;\n    transition-delay: 0s, 3.5s;\n    -webkit-transform: translateX(0%);\n    -moz-transform: translateX(0%);\n    -ms-transform: translateX(0%);\n    -o-transform: translateX(0%);\n    transform: translateX(0%); }\n  .home-page__bg.home-page__bg--animate-in:after {\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n    transform: translateX(100%);\n    opacity: 0; }\n  .home-page__bg video {\n    object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n.home-page__nav {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: auto;\n  margin-top: 26px;\n  text-align: center;\n  z-index: 2; }\n  @media only screen and (max-width: 1280px) and (max-height: 768px) {\n    .home-page__nav {\n      margin-top: 20px; } }\n  .home-page__nav.home-page__nav--animate {\n    opacity: 0;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 1.5s;\n    -moz-transition-duration: 1.5s;\n    transition-duration: 1.5s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 1s;\n    -moz-transition-delay: 1s;\n    transition-delay: 1s; }\n  .home-page__nav.home-page__nav--animate-in {\n    opacity: 1; }\n\n.home-page__body {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.home-page__body__input {\n  margin: 100px;\n  position: relative; }\n  .home-page__body__input:before {\n    content: \"\";\n    position: absolute;\n    top: -55px;\n    left: 50%;\n    margin-left: -100px;\n    width: 200px;\n    height: 1px;\n    background-color: rgba(255, 255, 255, 0.3); }\n\n.home-page__loading {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  z-index: 2; }\n  .home-page__loading .home-page__loading__loader {\n    position: absolute;\n    bottom: 10%;\n    left: 10%; }\n  .home-page__loading .home-page__loading__logo {\n    position: absolute;\n    bottom: 10%;\n    right: 10%;\n    height: 84px; }\n  .home-page__loading.home-page__loading--animate {\n    opacity: 1;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 0.3s;\n    -moz-transition-duration: 0.3s;\n    transition-duration: 0.3s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 0s;\n    -moz-transition-delay: 0s;\n    transition-delay: 0s; }\n  .home-page__loading.home-page__loading--animate-out {\n    opacity: 0;\n    z-index: 0; }\n\n.home-page__cta {\n  position: absolute;\n  z-index: 99;\n  bottom: 10%;\n  width: 100%;\n  height: auto;\n  text-align: center; }\n  .home-page__cta.home-page__cta--animate {\n    opacity: 0;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 1.5s;\n    -moz-transition-duration: 1.5s;\n    transition-duration: 1.5s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 1s;\n    -moz-transition-delay: 1s;\n    transition-delay: 1s; }\n  .home-page__cta.home-page__cta--animate-in {\n    opacity: 1; }\n\n.home-content-menu {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.home-content-menu__list {\n  display: block;\n  list-style: none;\n  margin: 0px;\n  padding: 0px; }\n\n.home-content-menu__list__item {\n  margin: 0px;\n  padding: 0px;\n  display: block;\n  list-style: none;\n  margin-bottom: 50px; }\n  .home-content-menu__list__item:last-child {\n    margin-bottom: 0px; }\n\n.home-content-start {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.watch-page {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%; }\n\n.watch-page__bg {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n  .watch-page__bg video {\n    object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n\n.watch-page__body {\n  position: absolute;\n  top: 0px;\n  left: 50%;\n  -webkit-transform: translateX(-50%) translateY(40px);\n  -moz-transform: translateX(-50%) translateY(40px);\n  -ms-transform: translateX(-50%) translateY(40px);\n  -o-transform: translateX(-50%) translateY(40px);\n  transform: translateX(-50%) translateY(40px);\n  width: 900px;\n  height: 100%; }\n\n.watch-page__player {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  height: calc(100% - 99px); }\n\n.watch-page__hud {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  margin: 26px 26px 0px 32px; }\n  .watch-page__hud .watch-page__hud__logo {\n    opacity: 0.3;\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n    transform: translateX(100%); }\n", ""]);
 
 /***/ },
 /* 35 */,
@@ -4745,11 +4745,9 @@ webpackJsonp([3],[
 	  },
 
 	  componentWillMount: function () {
-	    this.narration = new Audio("./assets/audio/angela.m4a");
+	    this.narration = new Audio("./assets/audio/angela.mp3");
 	    this.narration.pause();
 	    this.narration.addEventListener("ended", this.onNarrationEnd);
-
-
 	    this.bgSound = new Audio("./assets/audio/bg.mp3");
 	    this.bgSound.pause();
 	  },
@@ -4839,7 +4837,7 @@ webpackJsonp([3],[
 	                React.createElement(Components.Blocks.BlockWatchBG, {media: this.state.currentMedias, progress: this.state.sentenceProgress})
 	              ), 
 	              React.createElement("div", {className: "watch-page__body", style: bodyStyles}, 
-	                React.createElement(Components.Blocks.BlockAlign, {align: "left bottom"}, 
+	                React.createElement(Components.Blocks.BlockAlign, {align: "left"}, 
 	                  React.createElement(Components.Blocks.BlockTheaterText, {label: this.state.currentLabel, reset: this.state.reset})
 	                )
 	              )
@@ -16732,9 +16730,9 @@ webpackJsonp([3],[
 	var ReactInstanceHandles = __webpack_require__(54);
 	var ReactPerf = __webpack_require__(58);
 
-	var containsNode = __webpack_require__(145);
+	var containsNode = __webpack_require__(143);
 	var deprecated = __webpack_require__(63);
-	var getReactRootElementInContainer = __webpack_require__(146);
+	var getReactRootElementInContainer = __webpack_require__(144);
 	var instantiateReactComponent = __webpack_require__(109);
 	var invariant = __webpack_require__(99);
 	var shouldUpdateReactComponent = __webpack_require__(113);
@@ -17427,9 +17425,9 @@ webpackJsonp([3],[
 	"use strict";
 
 	var ReactComponent = __webpack_require__(45);
-	var ReactMultiChildUpdateTypes = __webpack_require__(143);
+	var ReactMultiChildUpdateTypes = __webpack_require__(145);
 
-	var flattenChildren = __webpack_require__(144);
+	var flattenChildren = __webpack_require__(146);
 	var instantiateReactComponent = __webpack_require__(109);
 	var shouldUpdateReactComponent = __webpack_require__(113);
 
@@ -24821,7 +24819,7 @@ webpackJsonp([3],[
 	var SyntheticEvent = __webpack_require__(164);
 
 	var isEventSupported = __webpack_require__(117);
-	var isTextInputElement = __webpack_require__(178);
+	var isTextInputElement = __webpack_require__(181);
 	var keyOf = __webpack_require__(110);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -25232,10 +25230,10 @@ webpackJsonp([3],[
 	var EventConstants = __webpack_require__(98);
 	var EventPropagators = __webpack_require__(163);
 	var ExecutionEnvironment = __webpack_require__(65);
-	var ReactInputSelection = __webpack_require__(179);
-	var SyntheticCompositionEvent = __webpack_require__(180);
+	var ReactInputSelection = __webpack_require__(178);
+	var SyntheticCompositionEvent = __webpack_require__(179);
 
-	var getTextContentAccessor = __webpack_require__(181);
+	var getTextContentAccessor = __webpack_require__(180);
 	var keyOf = __webpack_require__(110);
 
 	var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
@@ -25945,7 +25943,7 @@ webpackJsonp([3],[
 	var ReactPerf = __webpack_require__(58);
 	var ReactReconcileTransaction = __webpack_require__(184);
 
-	var getReactRootElementInContainer = __webpack_require__(146);
+	var getReactRootElementInContainer = __webpack_require__(144);
 	var invariant = __webpack_require__(99);
 	var setInnerHTML = __webpack_require__(185);
 
@@ -27117,11 +27115,11 @@ webpackJsonp([3],[
 
 	var EventConstants = __webpack_require__(98);
 	var EventPropagators = __webpack_require__(163);
-	var ReactInputSelection = __webpack_require__(179);
+	var ReactInputSelection = __webpack_require__(178);
 	var SyntheticEvent = __webpack_require__(164);
 
 	var getActiveElement = __webpack_require__(192);
-	var isTextInputElement = __webpack_require__(178);
+	var isTextInputElement = __webpack_require__(181);
 	var keyOf = __webpack_require__(110);
 	var shallowEqual = __webpack_require__(155);
 
@@ -27970,6 +27968,93 @@ webpackJsonp([3],[
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
+	 * @providesModule containsNode
+	 * @typechecks
+	 */
+
+	var isTextNode = __webpack_require__(201);
+
+	/*jslint bitwise:true */
+
+	/**
+	 * Checks if a given DOM node contains or is another DOM node.
+	 *
+	 * @param {?DOMNode} outerNode Outer DOM node.
+	 * @param {?DOMNode} innerNode Inner DOM node.
+	 * @return {boolean} True if `outerNode` contains or is `innerNode`.
+	 */
+	function containsNode(outerNode, innerNode) {
+	  if (!outerNode || !innerNode) {
+	    return false;
+	  } else if (outerNode === innerNode) {
+	    return true;
+	  } else if (isTextNode(outerNode)) {
+	    return false;
+	  } else if (isTextNode(innerNode)) {
+	    return containsNode(outerNode, innerNode.parentNode);
+	  } else if (outerNode.contains) {
+	    return outerNode.contains(innerNode);
+	  } else if (outerNode.compareDocumentPosition) {
+	    return !!(outerNode.compareDocumentPosition(innerNode) & 16);
+	  } else {
+	    return false;
+	  }
+	}
+
+	module.exports = containsNode;
+
+
+/***/ },
+/* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule getReactRootElementInContainer
+	 */
+
+	"use strict";
+
+	var DOC_NODE_TYPE = 9;
+
+	/**
+	 * @param {DOMElement|DOMDocument} container DOM element that may contain
+	 *                                           a React component
+	 * @return {?*} DOM element that may have the reactRoot ID, or null.
+	 */
+	function getReactRootElementInContainer(container) {
+	  if (!container) {
+	    return null;
+	  }
+
+	  if (container.nodeType === DOC_NODE_TYPE) {
+	    return container.documentElement;
+	  } else {
+	    return container.firstChild;
+	  }
+	}
+
+	module.exports = getReactRootElementInContainer;
+
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
 	 * @providesModule ReactMultiChildUpdateTypes
 	 */
 
@@ -27996,7 +28081,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 144 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28066,93 +28151,6 @@ webpackJsonp([3],[
 	module.exports = flattenChildren;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(67)))
-
-/***/ },
-/* 145 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule containsNode
-	 * @typechecks
-	 */
-
-	var isTextNode = __webpack_require__(201);
-
-	/*jslint bitwise:true */
-
-	/**
-	 * Checks if a given DOM node contains or is another DOM node.
-	 *
-	 * @param {?DOMNode} outerNode Outer DOM node.
-	 * @param {?DOMNode} innerNode Inner DOM node.
-	 * @return {boolean} True if `outerNode` contains or is `innerNode`.
-	 */
-	function containsNode(outerNode, innerNode) {
-	  if (!outerNode || !innerNode) {
-	    return false;
-	  } else if (outerNode === innerNode) {
-	    return true;
-	  } else if (isTextNode(outerNode)) {
-	    return false;
-	  } else if (isTextNode(innerNode)) {
-	    return containsNode(outerNode, innerNode.parentNode);
-	  } else if (outerNode.contains) {
-	    return outerNode.contains(innerNode);
-	  } else if (outerNode.compareDocumentPosition) {
-	    return !!(outerNode.compareDocumentPosition(innerNode) & 16);
-	  } else {
-	    return false;
-	  }
-	}
-
-	module.exports = containsNode;
-
-
-/***/ },
-/* 146 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule getReactRootElementInContainer
-	 */
-
-	"use strict";
-
-	var DOC_NODE_TYPE = 9;
-
-	/**
-	 * @param {DOMElement|DOMDocument} container DOM element that may contain
-	 *                                           a React component
-	 * @return {?*} DOM element that may have the reactRoot ID, or null.
-	 */
-	function getReactRootElementInContainer(container) {
-	  if (!container) {
-	    return null;
-	  }
-
-	  if (container.nodeType === DOC_NODE_TYPE) {
-	    return container.documentElement;
-	  } else {
-	    return container.firstChild;
-	  }
-	}
-
-	module.exports = getReactRootElementInContainer;
-
 
 /***/ },
 /* 147 */
@@ -28450,8 +28448,8 @@ webpackJsonp([3],[
 	module.exports = {
 		"sentences": [
 			{
-				"start": 1,
-				"end": 3,
+				"start": 1.2,
+				"end": 5.2,
 				"label": "December 24, 2004.",
 				"media": [
 					"http://media.giphy.com/media/6quy6XynfaK2c/giphy.gif",
@@ -28460,8 +28458,19 @@ webpackJsonp([3],[
 				"tweets": "twittersearch/top_news"
 			},
 			{
-				"start": 5,
-				"end": 6,
+				"start": 6.5,
+				"end": 8.8,
+				"label": "This is the date my dad died",
+				"temperature": "9 °F with a chance of snow.",
+				"media": [
+					"./assets/images/content/getty_rm_photo_of_trees_in_winter.jpg",
+					"http://media.giphy.com/media/DHJmgpy2wKvOo/giphy.gif"
+				],
+				"tweets": "twittersearch/temperature"
+			},
+			{
+				"start": 9.6,
+				"end": 11.5,
 				"label": "This was the temperature.",
 				"temperature": "9 °F with a chance of snow.",
 				"media": [
@@ -28471,9 +28480,9 @@ webpackJsonp([3],[
 				"tweets": "twittersearch/temperature"
 			},
 			{
-				"start": 7,
-				"end": 8,
-				"label": "This was our President.",
+				"start": 13.7,
+				"end": 15.8,
+				"label": "This was our president.",
 				"president": "George W Bush",
 				"media": [
 					"http://media.giphy.com/media/l10qTjPo1x6zC/giphy.gif"
@@ -28481,8 +28490,8 @@ webpackJsonp([3],[
 				"tweets": "twittersearch/president"
 			},
 			{
-				"start": 9,
-				"end": 11,
+				"start": 18,
+				"end": 21,
 				"label": "This was the number one record on the radio.",
 				"number1": "'Yeah!' by Usher",
 				"media": [
@@ -28491,18 +28500,18 @@ webpackJsonp([3],[
 				"tweets": "twittersearch/number1"
 			},
 			{
-				"start": 12,
-				"end": 14,
-				"label": "This was the biggest new story.",
+				"start": 22.6,
+				"end": 25.3,
+				"label": "This was the biggest news story",
 				"media": [
-					"http://images.coveralia.com/audio/u/Usher-Yeah_(Featuring_Lil_Jon_y_Ludacris)_(Cd_Single)-Frontal.jpg?768"
+					"./assets/images/content/news.png"
 				],
 				"tweets": "twittersearch/top_news"
 			},
 			{
-				"start": 15,
-				"end": 17,
-				"label": "This was what was on television.",
+				"start": 27.3,
+				"end": 29.5,
+				"label": "This was on television.",
 				"media": [
 					"http://media.giphy.com/media/DLWURx5pn34Ji/giphy.gif",
 					"http://media.giphy.com/media/YON27KEmE27de/giphy.gif",
@@ -28511,9 +28520,9 @@ webpackJsonp([3],[
 				"tweets": "twittersearch/television"
 			},
 			{
-				"start": 18,
-				"end": 21,
-				"label": "I'd spent the night watching It's a Wonderful Life and Yule Log.",
+				"start": 32,
+				"end": 35.5,
+				"label": "I had spent the night watching It’s A Wonderful Life and Yule Log.",
 				"media": [
 					"http://media.giphy.com/media/f7d8Atz1YVAhW/giphy.gif",
 					"http://media.giphy.com/media/8qTeHKweppdbq/giphy.gif",
@@ -28522,9 +28531,9 @@ webpackJsonp([3],[
 				"tweets": "twittersearch/wonderful_life"
 			},
 			{
-				"start": 26,
-				"end": 30,
-				"label": "It was cold outside, and the first snowflakes fell to the ground.",
+				"start": 37.5,
+				"end": 44.2,
+				"label": "It was cold outside and the first snowflakes fell to the ground. And it was almost beautiful.",
 				"media": [
 					"http://giphy.com/gifs/black-and-white-snow-alHyv3MTOPFde",
 					"http://media.giphy.com/media/2JifcqvnTmwAE/giphy.gif",
@@ -28533,9 +28542,9 @@ webpackJsonp([3],[
 				"tweets": "twittersearch/snowflakes"
 			},
 			{
-				"start": 30,
-				"end": 32,
-				"label": "It was almost beautiful.",
+				"start": 47,
+				"end": 48.4,
+				"label": "And then I got the call.",
 				"media": [
 					"http://media.giphy.com/media/SqW30SzcGwnYY/giphy.gif",
 					"http://media.giphy.com/media/QLveI2VchXl2U/giphy.gif",
@@ -28544,9 +28553,152 @@ webpackJsonp([3],[
 				"tweets": "twittersearch/almost"
 			},
 			{
-				"start": 33,
-				"end": 35,
-				"label": "And then I got the call that my father died.",
+				"start": 51.6,
+				"end": 55.2,
+				"label": "On December 24th, this person died,",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/die1.jpg"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 56.2,
+				"end": 58.1,
+				"label": "and this person",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/die2.jpg"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 59.5,
+				"end": 60.8,
+				"label": "and this one",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/die3.jpg"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 63.2,
+				"end": 66.7,
+				"label": "For you the holidays might represent this",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/foryou1.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 67.9,
+				"end": 69.3,
+				"label": "or this",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/foryou2.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 70.4,
+				"end": 71.6,
+				"label": "or this",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/foryou3.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 73,
+				"end": 74.1,
+				"label": "or this",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/foryou4.jpg"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 75.5,
+				"end": 78.1,
+				"label": "For me they represent this",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/forme1.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 79.2,
+				"end": 80.6,
+				"label": "and this",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/forme2.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 82.1,
+				"end": 83.6,
+				"label": "and also this",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/forme3.jpg"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 84.5,
+				"end": 85.8,
+				"label": "and this.",
+				"reset": "true",
+				"media": [
+					"./assets/images/content/forme4.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 87.3,
+				"end": 90.4,
+				"label": "And this is how many days it’s been since my dad died.",
+				"reset": "true",
+				"media": [
+					"http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
+					"http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 92.6,
+				"end": 98.3,
+				"label": "But when I look around, I see people everywhere who have lost someone on this day.",
+				"reset": "true",
+				"media": [
+					"http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
+					"http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 102.6,
+				"end": 106.3,
+				"label": "People who have the same complex emotions that I have.",
+				"reset": "true",
+				"media": [
+					"http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
+					"http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+				],
+				"tweets": "twittersearch/father"
+			},
+			{
+				"start": 108.6,
+				"end": 111.8,
+				"label": "And I somehow feel less alone.",
 				"reset": "true",
 				"media": [
 					"http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
@@ -31182,54 +31334,6 @@ webpackJsonp([3],[
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule isTextInputElement
-	 */
-
-	"use strict";
-
-	/**
-	 * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
-	 */
-	var supportedInputTypes = {
-	  'color': true,
-	  'date': true,
-	  'datetime': true,
-	  'datetime-local': true,
-	  'email': true,
-	  'month': true,
-	  'number': true,
-	  'password': true,
-	  'range': true,
-	  'search': true,
-	  'tel': true,
-	  'text': true,
-	  'time': true,
-	  'url': true,
-	  'week': true
-	};
-
-	function isTextInputElement(elem) {
-	  return elem && (
-	    (elem.nodeName === 'INPUT' && supportedInputTypes[elem.type]) ||
-	    elem.nodeName === 'TEXTAREA'
-	  );
-	}
-
-	module.exports = isTextInputElement;
-
-
-/***/ },
-/* 179 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
 	 * @providesModule ReactInputSelection
 	 */
 
@@ -31237,7 +31341,7 @@ webpackJsonp([3],[
 
 	var ReactDOMSelection = __webpack_require__(228);
 
-	var containsNode = __webpack_require__(145);
+	var containsNode = __webpack_require__(143);
 	var focusNode = __webpack_require__(229);
 	var getActiveElement = __webpack_require__(192);
 
@@ -31359,7 +31463,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 180 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31409,7 +31513,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 181 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31447,6 +31551,54 @@ webpackJsonp([3],[
 	}
 
 	module.exports = getTextContentAccessor;
+
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule isTextInputElement
+	 */
+
+	"use strict";
+
+	/**
+	 * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
+	 */
+	var supportedInputTypes = {
+	  'color': true,
+	  'date': true,
+	  'datetime': true,
+	  'datetime-local': true,
+	  'email': true,
+	  'month': true,
+	  'number': true,
+	  'password': true,
+	  'range': true,
+	  'search': true,
+	  'tel': true,
+	  'text': true,
+	  'time': true,
+	  'url': true,
+	  'week': true
+	};
+
+	function isTextInputElement(elem) {
+	  return elem && (
+	    (elem.nodeName === 'INPUT' && supportedInputTypes[elem.type]) ||
+	    elem.nodeName === 'TEXTAREA'
+	  );
+	}
+
+	module.exports = isTextInputElement;
 
 
 /***/ },
@@ -31746,7 +31898,7 @@ webpackJsonp([3],[
 	var CallbackQueue = __webpack_require__(158);
 	var PooledClass = __webpack_require__(100);
 	var ReactBrowserEventEmitter = __webpack_require__(116);
-	var ReactInputSelection = __webpack_require__(179);
+	var ReactInputSelection = __webpack_require__(178);
 	var ReactPutListenerQueue = __webpack_require__(203);
 	var Transaction = __webpack_require__(159);
 
@@ -33862,7 +34014,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseForOwn = __webpack_require__(236),
-	    createFindKey = __webpack_require__(240);
+	    createFindKey = __webpack_require__(241);
 
 	/**
 	 * This method is like `_.find` except that it returns the key of the first
@@ -33925,7 +34077,7 @@ webpackJsonp([3],[
 	    cacheIndexOf = __webpack_require__(255),
 	    createCache = __webpack_require__(256),
 	    isArguments = __webpack_require__(257),
-	    isArray = __webpack_require__(241);
+	    isArray = __webpack_require__(240);
 
 	/**
 	 * Creates an array of unique values in all provided arrays using `SameValueZero`
@@ -34075,7 +34227,7 @@ webpackJsonp([3],[
 	var arrayMap = __webpack_require__(242),
 	    baseCallback = __webpack_require__(235),
 	    baseMap = __webpack_require__(243),
-	    isArray = __webpack_require__(241);
+	    isArray = __webpack_require__(240);
 
 	/**
 	 * Creates an array of values by running each element in `collection` through
@@ -34762,7 +34914,7 @@ webpackJsonp([3],[
 	var ExecutionEnvironment = __webpack_require__(65);
 
 	var getNodeForCharacterOffset = __webpack_require__(260);
-	var getTextContentAccessor = __webpack_require__(181);
+	var getTextContentAccessor = __webpack_require__(180);
 
 	/**
 	 * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -35058,9 +35210,9 @@ webpackJsonp([3],[
 	"use strict";
 
 	var Danger = __webpack_require__(261);
-	var ReactMultiChildUpdateTypes = __webpack_require__(143);
+	var ReactMultiChildUpdateTypes = __webpack_require__(145);
 
-	var getTextContentAccessor = __webpack_require__(181);
+	var getTextContentAccessor = __webpack_require__(180);
 	var invariant = __webpack_require__(99);
 
 	/**
@@ -35362,7 +35514,7 @@ webpackJsonp([3],[
 /* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var escapeRegExp = __webpack_require__(267),
+	var escapeRegExp = __webpack_require__(262),
 	    isObjectLike = __webpack_require__(253);
 
 	/** `Object#toString` result references. */
@@ -35463,7 +35615,7 @@ webpackJsonp([3],[
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseFor = __webpack_require__(262),
+	var baseFor = __webpack_require__(267),
 	    keys = __webpack_require__(212);
 
 	/**
@@ -35513,11 +35665,11 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArguments = __webpack_require__(257),
-	    isArray = __webpack_require__(241),
-	    isIndex = __webpack_require__(276),
+	    isArray = __webpack_require__(240),
+	    isIndex = __webpack_require__(268),
 	    isLength = __webpack_require__(237),
-	    keysIn = __webpack_require__(280),
-	    support = __webpack_require__(281);
+	    keysIn = __webpack_require__(269),
+	    support = __webpack_require__(270);
 
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -35585,30 +35737,6 @@ webpackJsonp([3],[
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseCallback = __webpack_require__(235),
-	    baseFind = __webpack_require__(268);
-
-	/**
-	 * Creates a `_.findKey` or `_.findLastKey` function.
-	 *
-	 * @private
-	 * @param {Function} objectFunc The function to iterate over an object.
-	 * @returns {Function} Returns the new find function.
-	 */
-	function createFindKey(objectFunc) {
-	  return function(object, predicate, thisArg) {
-	    predicate = baseCallback(predicate, thisArg, 3);
-	    return baseFind(object, predicate, objectFunc, true);
-	  };
-	}
-
-	module.exports = createFindKey;
-
-
-/***/ },
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
-
 	var isLength = __webpack_require__(237),
 	    isNative = __webpack_require__(234),
 	    isObjectLike = __webpack_require__(253);
@@ -35649,6 +35777,30 @@ webpackJsonp([3],[
 	};
 
 	module.exports = isArray;
+
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var baseCallback = __webpack_require__(235),
+	    baseFind = __webpack_require__(271);
+
+	/**
+	 * Creates a `_.findKey` or `_.findLastKey` function.
+	 *
+	 * @private
+	 * @param {Function} objectFunc The function to iterate over an object.
+	 * @returns {Function} Returns the new find function.
+	 */
+	function createFindKey(objectFunc) {
+	  return function(object, predicate, thisArg) {
+	    predicate = baseCallback(predicate, thisArg, 3);
+	    return baseFind(object, predicate, objectFunc, true);
+	  };
+	}
+
+	module.exports = createFindKey;
 
 
 /***/ },
@@ -35737,7 +35889,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseForOwn = __webpack_require__(236),
-	    createBaseEach = __webpack_require__(269);
+	    createBaseEach = __webpack_require__(272);
 
 	/**
 	 * The base implementation of `_.forEach` without support for callback
@@ -35758,7 +35910,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var bindCallback = __webpack_require__(250),
-	    isArray = __webpack_require__(241);
+	    isArray = __webpack_require__(240);
 
 	/**
 	 * Creates a function for `_.forEach` or `_.forEachRight`.
@@ -35816,8 +35968,8 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseCallback = __webpack_require__(235),
-	    baseReduce = __webpack_require__(270),
-	    isArray = __webpack_require__(241);
+	    baseReduce = __webpack_require__(273),
+	    isArray = __webpack_require__(240);
 
 	/**
 	 * Creates a function for `_.reduce` or `_.reduceRight`.
@@ -35843,14 +35995,14 @@ webpackJsonp([3],[
 /* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var arrayCopy = __webpack_require__(271),
+	var arrayCopy = __webpack_require__(274),
 	    arrayEach = __webpack_require__(244),
-	    baseCopy = __webpack_require__(272),
+	    baseCopy = __webpack_require__(275),
 	    baseForOwn = __webpack_require__(236),
-	    initCloneArray = __webpack_require__(273),
-	    initCloneByTag = __webpack_require__(274),
-	    initCloneObject = __webpack_require__(275),
-	    isArray = __webpack_require__(241),
+	    initCloneArray = __webpack_require__(276),
+	    initCloneByTag = __webpack_require__(277),
+	    initCloneObject = __webpack_require__(278),
+	    isArray = __webpack_require__(240),
 	    isObject = __webpack_require__(220),
 	    keys = __webpack_require__(212);
 
@@ -36023,7 +36175,7 @@ webpackJsonp([3],[
 /* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isIndex = __webpack_require__(276),
+	var isIndex = __webpack_require__(268),
 	    isLength = __webpack_require__(237),
 	    isObject = __webpack_require__(220);
 
@@ -36100,7 +36252,7 @@ webpackJsonp([3],[
 /* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var indexOfNaN = __webpack_require__(277);
+	var indexOfNaN = __webpack_require__(279);
 
 	/**
 	 * The base implementation of `_.indexOf` without support for binary searches.
@@ -36158,8 +36310,8 @@ webpackJsonp([3],[
 /* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {var SetCache = __webpack_require__(278),
-	    constant = __webpack_require__(279),
+	/* WEBPACK VAR INJECTION */(function(global) {var SetCache = __webpack_require__(280),
+	    constant = __webpack_require__(281),
 	    isNative = __webpack_require__(234);
 
 	/** Native method references. */
@@ -36596,34 +36748,49 @@ webpackJsonp([3],[
 /* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var createBaseFor = __webpack_require__(284);
+	var baseToString = __webpack_require__(291);
 
 	/**
-	 * The base implementation of `baseForIn` and `baseForOwn` which iterates
-	 * over `object` properties returned by `keysFunc` invoking `iteratee` for
-	 * each property. Iterator functions may exit iteration early by explicitly
-	 * returning `false`.
-	 *
-	 * @private
-	 * @param {Object} object The object to iterate over.
-	 * @param {Function} iteratee The function invoked per iteration.
-	 * @param {Function} keysFunc The function to get the keys of `object`.
-	 * @returns {Object} Returns `object`.
+	 * Used to match `RegExp` [special characters](http://www.regular-expressions.info/characters.html#special).
+	 * In addition to special characters the forward slash is escaped to allow for
+	 * easier `eval` use and `Function` compilation.
 	 */
-	var baseFor = createBaseFor();
+	var reRegExpChars = /[.*+?^${}()|[\]\/\\]/g,
+	    reHasRegExpChars = RegExp(reRegExpChars.source);
 
-	module.exports = baseFor;
+	/**
+	 * Escapes the `RegExp` special characters "\", "/", "^", "$", ".", "|", "?",
+	 * "*", "+", "(", ")", "[", "]", "{" and "}" in `string`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category String
+	 * @param {string} [string=''] The string to escape.
+	 * @returns {string} Returns the escaped string.
+	 * @example
+	 *
+	 * _.escapeRegExp('[lodash](https://lodash.com/)');
+	 * // => '\[lodash\]\(https:\/\/lodash\.com\/\)'
+	 */
+	function escapeRegExp(string) {
+	  string = baseToString(string);
+	  return (string && reHasRegExpChars.test(string))
+	    ? string.replace(reRegExpChars, '\\$&')
+	    : string;
+	}
+
+	module.exports = escapeRegExp;
 
 
 /***/ },
 /* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsMatch = __webpack_require__(285),
-	    constant = __webpack_require__(279),
-	    isStrictComparable = __webpack_require__(286),
+	var baseIsMatch = __webpack_require__(284),
+	    constant = __webpack_require__(281),
+	    isStrictComparable = __webpack_require__(285),
 	    keys = __webpack_require__(212),
-	    toObject = __webpack_require__(287);
+	    toObject = __webpack_require__(286);
 
 	/**
 	 * The base implementation of `_.matches` which does not clone `source`.
@@ -36670,9 +36837,9 @@ webpackJsonp([3],[
 /* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsEqual = __webpack_require__(288),
-	    isStrictComparable = __webpack_require__(286),
-	    toObject = __webpack_require__(287);
+	var baseIsEqual = __webpack_require__(287),
+	    isStrictComparable = __webpack_require__(285),
+	    toObject = __webpack_require__(286);
 
 	/**
 	 * The base implementation of `_.matchesProperty` which does not coerce `key`
@@ -36748,320 +36915,27 @@ webpackJsonp([3],[
 /* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseToString = __webpack_require__(291);
+	var createBaseFor = __webpack_require__(288);
 
 	/**
-	 * Used to match `RegExp` [special characters](http://www.regular-expressions.info/characters.html#special).
-	 * In addition to special characters the forward slash is escaped to allow for
-	 * easier `eval` use and `Function` compilation.
-	 */
-	var reRegExpChars = /[.*+?^${}()|[\]\/\\]/g,
-	    reHasRegExpChars = RegExp(reRegExpChars.source);
-
-	/**
-	 * Escapes the `RegExp` special characters "\", "/", "^", "$", ".", "|", "?",
-	 * "*", "+", "(", ")", "[", "]", "{" and "}" in `string`.
+	 * The base implementation of `baseForIn` and `baseForOwn` which iterates
+	 * over `object` properties returned by `keysFunc` invoking `iteratee` for
+	 * each property. Iterator functions may exit iteration early by explicitly
+	 * returning `false`.
 	 *
-	 * @static
-	 * @memberOf _
-	 * @category String
-	 * @param {string} [string=''] The string to escape.
-	 * @returns {string} Returns the escaped string.
-	 * @example
-	 *
-	 * _.escapeRegExp('[lodash](https://lodash.com/)');
-	 * // => '\[lodash\]\(https:\/\/lodash\.com\/\)'
+	 * @private
+	 * @param {Object} object The object to iterate over.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @param {Function} keysFunc The function to get the keys of `object`.
+	 * @returns {Object} Returns `object`.
 	 */
-	function escapeRegExp(string) {
-	  string = baseToString(string);
-	  return (string && reHasRegExpChars.test(string))
-	    ? string.replace(reRegExpChars, '\\$&')
-	    : string;
-	}
+	var baseFor = createBaseFor();
 
-	module.exports = escapeRegExp;
+	module.exports = baseFor;
 
 
 /***/ },
 /* 268 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
-	 * without support for callback shorthands and `this` binding, which iterates
-	 * over `collection` using the provided `eachFunc`.
-	 *
-	 * @private
-	 * @param {Array|Object|string} collection The collection to search.
-	 * @param {Function} predicate The function invoked per iteration.
-	 * @param {Function} eachFunc The function to iterate over `collection`.
-	 * @param {boolean} [retKey] Specify returning the key of the found element
-	 *  instead of the element itself.
-	 * @returns {*} Returns the found element or its key, else `undefined`.
-	 */
-	function baseFind(collection, predicate, eachFunc, retKey) {
-	  var result;
-	  eachFunc(collection, function(value, key, collection) {
-	    if (predicate(value, key, collection)) {
-	      result = retKey ? key : value;
-	      return false;
-	    }
-	  });
-	  return result;
-	}
-
-	module.exports = baseFind;
-
-
-/***/ },
-/* 269 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isLength = __webpack_require__(237),
-	    toObject = __webpack_require__(287);
-
-	/**
-	 * Creates a `baseEach` or `baseEachRight` function.
-	 *
-	 * @private
-	 * @param {Function} eachFunc The function to iterate over a collection.
-	 * @param {boolean} [fromRight] Specify iterating from right to left.
-	 * @returns {Function} Returns the new base function.
-	 */
-	function createBaseEach(eachFunc, fromRight) {
-	  return function(collection, iteratee) {
-	    var length = collection ? collection.length : 0;
-	    if (!isLength(length)) {
-	      return eachFunc(collection, iteratee);
-	    }
-	    var index = fromRight ? length : -1,
-	        iterable = toObject(collection);
-
-	    while ((fromRight ? index-- : ++index < length)) {
-	      if (iteratee(iterable[index], index, iterable) === false) {
-	        break;
-	      }
-	    }
-	    return collection;
-	  };
-	}
-
-	module.exports = createBaseEach;
-
-
-/***/ },
-/* 270 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * The base implementation of `_.reduce` and `_.reduceRight` without support
-	 * for callback shorthands and `this` binding, which iterates over `collection`
-	 * using the provided `eachFunc`.
-	 *
-	 * @private
-	 * @param {Array|Object|string} collection The collection to iterate over.
-	 * @param {Function} iteratee The function invoked per iteration.
-	 * @param {*} accumulator The initial value.
-	 * @param {boolean} initFromCollection Specify using the first or last element
-	 *  of `collection` as the initial value.
-	 * @param {Function} eachFunc The function to iterate over `collection`.
-	 * @returns {*} Returns the accumulated value.
-	 */
-	function baseReduce(collection, iteratee, accumulator, initFromCollection, eachFunc) {
-	  eachFunc(collection, function(value, index, collection) {
-	    accumulator = initFromCollection
-	      ? (initFromCollection = false, value)
-	      : iteratee(accumulator, value, index, collection);
-	  });
-	  return accumulator;
-	}
-
-	module.exports = baseReduce;
-
-
-/***/ },
-/* 271 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copies the values of `source` to `array`.
-	 *
-	 * @private
-	 * @param {Array} source The array to copy values from.
-	 * @param {Array} [array=[]] The array to copy values to.
-	 * @returns {Array} Returns `array`.
-	 */
-	function arrayCopy(source, array) {
-	  var index = -1,
-	      length = source.length;
-
-	  array || (array = Array(length));
-	  while (++index < length) {
-	    array[index] = source[index];
-	  }
-	  return array;
-	}
-
-	module.exports = arrayCopy;
-
-
-/***/ },
-/* 272 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copies the properties of `source` to `object`.
-	 *
-	 * @private
-	 * @param {Object} source The object to copy properties from.
-	 * @param {Object} [object={}] The object to copy properties to.
-	 * @param {Array} props The property names to copy.
-	 * @returns {Object} Returns `object`.
-	 */
-	function baseCopy(source, object, props) {
-	  if (!props) {
-	    props = object;
-	    object = {};
-	  }
-	  var index = -1,
-	      length = props.length;
-
-	  while (++index < length) {
-	    var key = props[index];
-	    object[key] = source[key];
-	  }
-	  return object;
-	}
-
-	module.exports = baseCopy;
-
-
-/***/ },
-/* 273 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** Used for native method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Initializes an array clone.
-	 *
-	 * @private
-	 * @param {Array} array The array to clone.
-	 * @returns {Array} Returns the initialized clone.
-	 */
-	function initCloneArray(array) {
-	  var length = array.length,
-	      result = new array.constructor(length);
-
-	  // Add array properties assigned by `RegExp#exec`.
-	  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
-	    result.index = array.index;
-	    result.input = array.input;
-	  }
-	  return result;
-	}
-
-	module.exports = initCloneArray;
-
-
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var bufferClone = __webpack_require__(289);
-
-	/** `Object#toString` result references. */
-	var boolTag = '[object Boolean]',
-	    dateTag = '[object Date]',
-	    numberTag = '[object Number]',
-	    regexpTag = '[object RegExp]',
-	    stringTag = '[object String]';
-
-	var arrayBufferTag = '[object ArrayBuffer]',
-	    float32Tag = '[object Float32Array]',
-	    float64Tag = '[object Float64Array]',
-	    int8Tag = '[object Int8Array]',
-	    int16Tag = '[object Int16Array]',
-	    int32Tag = '[object Int32Array]',
-	    uint8Tag = '[object Uint8Array]',
-	    uint8ClampedTag = '[object Uint8ClampedArray]',
-	    uint16Tag = '[object Uint16Array]',
-	    uint32Tag = '[object Uint32Array]';
-
-	/** Used to match `RegExp` flags from their coerced string values. */
-	var reFlags = /\w*$/;
-
-	/**
-	 * Initializes an object clone based on its `toStringTag`.
-	 *
-	 * **Note:** This function only supports cloning values with tags of
-	 * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
-	 *
-	 *
-	 * @private
-	 * @param {Object} object The object to clone.
-	 * @param {string} tag The `toStringTag` of the object to clone.
-	 * @param {boolean} [isDeep] Specify a deep clone.
-	 * @returns {Object} Returns the initialized clone.
-	 */
-	function initCloneByTag(object, tag, isDeep) {
-	  var Ctor = object.constructor;
-	  switch (tag) {
-	    case arrayBufferTag:
-	      return bufferClone(object);
-
-	    case boolTag:
-	    case dateTag:
-	      return new Ctor(+object);
-
-	    case float32Tag: case float64Tag:
-	    case int8Tag: case int16Tag: case int32Tag:
-	    case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
-	      var buffer = object.buffer;
-	      return new Ctor(isDeep ? bufferClone(buffer) : buffer, object.byteOffset, object.length);
-
-	    case numberTag:
-	    case stringTag:
-	      return new Ctor(object);
-
-	    case regexpTag:
-	      var result = new Ctor(object.source, reFlags.exec(object));
-	      result.lastIndex = object.lastIndex;
-	  }
-	  return result;
-	}
-
-	module.exports = initCloneByTag;
-
-
-/***/ },
-/* 275 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Initializes an object clone.
-	 *
-	 * @private
-	 * @param {Object} object The object to clone.
-	 * @returns {Object} Returns the initialized clone.
-	 */
-	function initCloneObject(object) {
-	  var Ctor = object.constructor;
-	  if (!(typeof Ctor == 'function' && Ctor instanceof Ctor)) {
-	    Ctor = Object;
-	  }
-	  return new Ctor;
-	}
-
-	module.exports = initCloneObject;
-
-
-/***/ },
-/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37088,109 +36962,15 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 277 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Gets the index at which the first occurrence of `NaN` is found in `array`.
-	 *
-	 * @private
-	 * @param {Array} array The array to search.
-	 * @param {number} fromIndex The index to search from.
-	 * @param {boolean} [fromRight] Specify iterating from right to left.
-	 * @returns {number} Returns the index of the matched `NaN`, else `-1`.
-	 */
-	function indexOfNaN(array, fromIndex, fromRight) {
-	  var length = array.length,
-	      index = fromIndex + (fromRight ? 0 : -1);
-
-	  while ((fromRight ? index-- : ++index < length)) {
-	    var other = array[index];
-	    if (other !== other) {
-	      return index;
-	    }
-	  }
-	  return -1;
-	}
-
-	module.exports = indexOfNaN;
-
-
-/***/ },
-/* 278 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {var cachePush = __webpack_require__(290),
-	    isNative = __webpack_require__(234);
-
-	/** Native method references. */
-	var Set = isNative(Set = global.Set) && Set;
-
-	/* Native method references for those with the same name as other `lodash` methods. */
-	var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
-
-	/**
-	 *
-	 * Creates a cache object to store unique values.
-	 *
-	 * @private
-	 * @param {Array} [values] The values to cache.
-	 */
-	function SetCache(values) {
-	  var length = values ? values.length : 0;
-
-	  this.data = { 'hash': nativeCreate(null), 'set': new Set };
-	  while (length--) {
-	    this.push(values[length]);
-	  }
-	}
-
-	// Add functions to the `Set` cache.
-	SetCache.prototype.push = cachePush;
-
-	module.exports = SetCache;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Creates a function that returns `value`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utility
-	 * @param {*} value The value to return from the new function.
-	 * @returns {Function} Returns the new function.
-	 * @example
-	 *
-	 * var object = { 'user': 'fred' };
-	 * var getter = _.constant(object);
-	 *
-	 * getter() === object;
-	 * // => true
-	 */
-	function constant(value) {
-	  return function() {
-	    return value;
-	  };
-	}
-
-	module.exports = constant;
-
-
-/***/ },
-/* 280 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArguments = __webpack_require__(257),
-	    isArray = __webpack_require__(241),
-	    isIndex = __webpack_require__(276),
+	    isArray = __webpack_require__(240),
+	    isIndex = __webpack_require__(268),
 	    isLength = __webpack_require__(237),
 	    isObject = __webpack_require__(220),
-	    support = __webpack_require__(281);
+	    support = __webpack_require__(270);
 
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -37253,7 +37033,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 281 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Used for native method references. */
@@ -37328,6 +37108,378 @@ webpackJsonp([3],[
 	module.exports = support;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
+	 * without support for callback shorthands and `this` binding, which iterates
+	 * over `collection` using the provided `eachFunc`.
+	 *
+	 * @private
+	 * @param {Array|Object|string} collection The collection to search.
+	 * @param {Function} predicate The function invoked per iteration.
+	 * @param {Function} eachFunc The function to iterate over `collection`.
+	 * @param {boolean} [retKey] Specify returning the key of the found element
+	 *  instead of the element itself.
+	 * @returns {*} Returns the found element or its key, else `undefined`.
+	 */
+	function baseFind(collection, predicate, eachFunc, retKey) {
+	  var result;
+	  eachFunc(collection, function(value, key, collection) {
+	    if (predicate(value, key, collection)) {
+	      result = retKey ? key : value;
+	      return false;
+	    }
+	  });
+	  return result;
+	}
+
+	module.exports = baseFind;
+
+
+/***/ },
+/* 272 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isLength = __webpack_require__(237),
+	    toObject = __webpack_require__(286);
+
+	/**
+	 * Creates a `baseEach` or `baseEachRight` function.
+	 *
+	 * @private
+	 * @param {Function} eachFunc The function to iterate over a collection.
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {Function} Returns the new base function.
+	 */
+	function createBaseEach(eachFunc, fromRight) {
+	  return function(collection, iteratee) {
+	    var length = collection ? collection.length : 0;
+	    if (!isLength(length)) {
+	      return eachFunc(collection, iteratee);
+	    }
+	    var index = fromRight ? length : -1,
+	        iterable = toObject(collection);
+
+	    while ((fromRight ? index-- : ++index < length)) {
+	      if (iteratee(iterable[index], index, iterable) === false) {
+	        break;
+	      }
+	    }
+	    return collection;
+	  };
+	}
+
+	module.exports = createBaseEach;
+
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * The base implementation of `_.reduce` and `_.reduceRight` without support
+	 * for callback shorthands and `this` binding, which iterates over `collection`
+	 * using the provided `eachFunc`.
+	 *
+	 * @private
+	 * @param {Array|Object|string} collection The collection to iterate over.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @param {*} accumulator The initial value.
+	 * @param {boolean} initFromCollection Specify using the first or last element
+	 *  of `collection` as the initial value.
+	 * @param {Function} eachFunc The function to iterate over `collection`.
+	 * @returns {*} Returns the accumulated value.
+	 */
+	function baseReduce(collection, iteratee, accumulator, initFromCollection, eachFunc) {
+	  eachFunc(collection, function(value, index, collection) {
+	    accumulator = initFromCollection
+	      ? (initFromCollection = false, value)
+	      : iteratee(accumulator, value, index, collection);
+	  });
+	  return accumulator;
+	}
+
+	module.exports = baseReduce;
+
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copies the values of `source` to `array`.
+	 *
+	 * @private
+	 * @param {Array} source The array to copy values from.
+	 * @param {Array} [array=[]] The array to copy values to.
+	 * @returns {Array} Returns `array`.
+	 */
+	function arrayCopy(source, array) {
+	  var index = -1,
+	      length = source.length;
+
+	  array || (array = Array(length));
+	  while (++index < length) {
+	    array[index] = source[index];
+	  }
+	  return array;
+	}
+
+	module.exports = arrayCopy;
+
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copies the properties of `source` to `object`.
+	 *
+	 * @private
+	 * @param {Object} source The object to copy properties from.
+	 * @param {Object} [object={}] The object to copy properties to.
+	 * @param {Array} props The property names to copy.
+	 * @returns {Object} Returns `object`.
+	 */
+	function baseCopy(source, object, props) {
+	  if (!props) {
+	    props = object;
+	    object = {};
+	  }
+	  var index = -1,
+	      length = props.length;
+
+	  while (++index < length) {
+	    var key = props[index];
+	    object[key] = source[key];
+	  }
+	  return object;
+	}
+
+	module.exports = baseCopy;
+
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** Used for native method references. */
+	var objectProto = Object.prototype;
+
+	/** Used to check objects for own properties. */
+	var hasOwnProperty = objectProto.hasOwnProperty;
+
+	/**
+	 * Initializes an array clone.
+	 *
+	 * @private
+	 * @param {Array} array The array to clone.
+	 * @returns {Array} Returns the initialized clone.
+	 */
+	function initCloneArray(array) {
+	  var length = array.length,
+	      result = new array.constructor(length);
+
+	  // Add array properties assigned by `RegExp#exec`.
+	  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
+	    result.index = array.index;
+	    result.input = array.input;
+	  }
+	  return result;
+	}
+
+	module.exports = initCloneArray;
+
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var bufferClone = __webpack_require__(289);
+
+	/** `Object#toString` result references. */
+	var boolTag = '[object Boolean]',
+	    dateTag = '[object Date]',
+	    numberTag = '[object Number]',
+	    regexpTag = '[object RegExp]',
+	    stringTag = '[object String]';
+
+	var arrayBufferTag = '[object ArrayBuffer]',
+	    float32Tag = '[object Float32Array]',
+	    float64Tag = '[object Float64Array]',
+	    int8Tag = '[object Int8Array]',
+	    int16Tag = '[object Int16Array]',
+	    int32Tag = '[object Int32Array]',
+	    uint8Tag = '[object Uint8Array]',
+	    uint8ClampedTag = '[object Uint8ClampedArray]',
+	    uint16Tag = '[object Uint16Array]',
+	    uint32Tag = '[object Uint32Array]';
+
+	/** Used to match `RegExp` flags from their coerced string values. */
+	var reFlags = /\w*$/;
+
+	/**
+	 * Initializes an object clone based on its `toStringTag`.
+	 *
+	 * **Note:** This function only supports cloning values with tags of
+	 * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+	 *
+	 *
+	 * @private
+	 * @param {Object} object The object to clone.
+	 * @param {string} tag The `toStringTag` of the object to clone.
+	 * @param {boolean} [isDeep] Specify a deep clone.
+	 * @returns {Object} Returns the initialized clone.
+	 */
+	function initCloneByTag(object, tag, isDeep) {
+	  var Ctor = object.constructor;
+	  switch (tag) {
+	    case arrayBufferTag:
+	      return bufferClone(object);
+
+	    case boolTag:
+	    case dateTag:
+	      return new Ctor(+object);
+
+	    case float32Tag: case float64Tag:
+	    case int8Tag: case int16Tag: case int32Tag:
+	    case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
+	      var buffer = object.buffer;
+	      return new Ctor(isDeep ? bufferClone(buffer) : buffer, object.byteOffset, object.length);
+
+	    case numberTag:
+	    case stringTag:
+	      return new Ctor(object);
+
+	    case regexpTag:
+	      var result = new Ctor(object.source, reFlags.exec(object));
+	      result.lastIndex = object.lastIndex;
+	  }
+	  return result;
+	}
+
+	module.exports = initCloneByTag;
+
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Initializes an object clone.
+	 *
+	 * @private
+	 * @param {Object} object The object to clone.
+	 * @returns {Object} Returns the initialized clone.
+	 */
+	function initCloneObject(object) {
+	  var Ctor = object.constructor;
+	  if (!(typeof Ctor == 'function' && Ctor instanceof Ctor)) {
+	    Ctor = Object;
+	  }
+	  return new Ctor;
+	}
+
+	module.exports = initCloneObject;
+
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Gets the index at which the first occurrence of `NaN` is found in `array`.
+	 *
+	 * @private
+	 * @param {Array} array The array to search.
+	 * @param {number} fromIndex The index to search from.
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {number} Returns the index of the matched `NaN`, else `-1`.
+	 */
+	function indexOfNaN(array, fromIndex, fromRight) {
+	  var length = array.length,
+	      index = fromIndex + (fromRight ? 0 : -1);
+
+	  while ((fromRight ? index-- : ++index < length)) {
+	    var other = array[index];
+	    if (other !== other) {
+	      return index;
+	    }
+	  }
+	  return -1;
+	}
+
+	module.exports = indexOfNaN;
+
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {var cachePush = __webpack_require__(290),
+	    isNative = __webpack_require__(234);
+
+	/** Native method references. */
+	var Set = isNative(Set = global.Set) && Set;
+
+	/* Native method references for those with the same name as other `lodash` methods. */
+	var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
+
+	/**
+	 *
+	 * Creates a cache object to store unique values.
+	 *
+	 * @private
+	 * @param {Array} [values] The values to cache.
+	 */
+	function SetCache(values) {
+	  var length = values ? values.length : 0;
+
+	  this.data = { 'hash': nativeCreate(null), 'set': new Set };
+	  while (length--) {
+	    this.push(values[length]);
+	  }
+	}
+
+	// Add functions to the `Set` cache.
+	SetCache.prototype.push = cachePush;
+
+	module.exports = SetCache;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Creates a function that returns `value`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utility
+	 * @param {*} value The value to return from the new function.
+	 * @returns {Function} Returns the new function.
+	 * @example
+	 *
+	 * var object = { 'user': 'fred' };
+	 * var getter = _.constant(object);
+	 *
+	 * getter() === object;
+	 * // => true
+	 */
+	function constant(value) {
+	  return function() {
+	    return value;
+	  };
+	}
+
+	module.exports = constant;
+
 
 /***/ },
 /* 282 */
@@ -37546,40 +37698,7 @@ webpackJsonp([3],[
 /* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toObject = __webpack_require__(287);
-
-	/**
-	 * Creates a base function for `_.forIn` or `_.forInRight`.
-	 *
-	 * @private
-	 * @param {boolean} [fromRight] Specify iterating from right to left.
-	 * @returns {Function} Returns the new base function.
-	 */
-	function createBaseFor(fromRight) {
-	  return function(object, iteratee, keysFunc) {
-	    var iterable = toObject(object),
-	        props = keysFunc(object),
-	        length = props.length,
-	        index = fromRight ? length : -1;
-
-	    while ((fromRight ? index-- : ++index < length)) {
-	      var key = props[index];
-	      if (iteratee(iterable[key], key, iterable) === false) {
-	        break;
-	      }
-	    }
-	    return object;
-	  };
-	}
-
-	module.exports = createBaseFor;
-
-
-/***/ },
-/* 285 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseIsEqual = __webpack_require__(288);
+	var baseIsEqual = __webpack_require__(287);
 
 	/**
 	 * The base implementation of `_.isMatch` without support for callback
@@ -37631,7 +37750,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 286 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(220);
@@ -37652,7 +37771,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 287 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(220);
@@ -37672,7 +37791,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 288 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseIsEqualDeep = __webpack_require__(293);
@@ -37712,10 +37831,43 @@ webpackJsonp([3],[
 
 
 /***/ },
+/* 288 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var toObject = __webpack_require__(286);
+
+	/**
+	 * Creates a base function for `_.forIn` or `_.forInRight`.
+	 *
+	 * @private
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {Function} Returns the new base function.
+	 */
+	function createBaseFor(fromRight) {
+	  return function(object, iteratee, keysFunc) {
+	    var iterable = toObject(object),
+	        props = keysFunc(object),
+	        length = props.length,
+	        index = fromRight ? length : -1;
+
+	    while ((fromRight ? index-- : ++index < length)) {
+	      var key = props[index];
+	      if (iteratee(iterable[key], key, iterable) === false) {
+	        break;
+	      }
+	    }
+	    return object;
+	  };
+	}
+
+	module.exports = createBaseFor;
+
+
+/***/ },
 /* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {var constant = __webpack_require__(279),
+	/* WEBPACK VAR INJECTION */(function(global) {var constant = __webpack_require__(281),
 	    isNative = __webpack_require__(234);
 
 	/** Native method references. */
@@ -37918,7 +38070,7 @@ webpackJsonp([3],[
 	var equalArrays = __webpack_require__(295),
 	    equalByTag = __webpack_require__(296),
 	    equalObjects = __webpack_require__(297),
-	    isArray = __webpack_require__(241),
+	    isArray = __webpack_require__(240),
 	    isTypedArray = __webpack_require__(298);
 
 	/** `Object#toString` result references. */

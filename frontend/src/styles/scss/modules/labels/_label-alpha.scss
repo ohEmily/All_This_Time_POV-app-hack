@@ -27,7 +27,7 @@ These are the heading sizes that you can use site wide.
 
 .label.label-alpha {
 
-  @include font($font-lora);
+  @include font($font-mono-pt);
   @include font-size(18px);
   @include line-height(21px);
   color: inherit;

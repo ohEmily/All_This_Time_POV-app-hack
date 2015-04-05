@@ -54,15 +54,15 @@ module.exports = React.createClass({
     };
 
     var lossOptions = [
-      'Father',
-      'Mother',
-      'Brother',
-      'Sister',
-      'Grandmother',
-      'Grandfather',
-      'Husband',
-      'Wife',
-      'Friend'
+      'father',
+      'mother',
+      'brother',
+      'sister',
+      'grandmother',
+      'grandfather',
+      'husband',
+      'wife',
+      'friend'
     ];
 
     var monthOptions = [

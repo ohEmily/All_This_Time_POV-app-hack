@@ -1,8 +1,8 @@
 {
   "sentences": [
     {
-      "start": 1,
-      "end": 3,
+      "start": 1.2,
+      "end": 5.2,
       "label": "December 24, 2004.",
       "media": [
         "http://media.giphy.com/media/6quy6XynfaK2c/giphy.gif",
@@ -11,8 +11,19 @@
       "tweets": "twittersearch/top_news"
     },
     {
-      "start": 5,
-      "end": 6,
+      "start": 6.5,
+      "end": 8.8,
+      "label": "This is the date my dad died",
+      "temperature": "9 °F with a chance of snow.",
+      "media": [
+        "./assets/images/content/getty_rm_photo_of_trees_in_winter.jpg",
+        "http://media.giphy.com/media/DHJmgpy2wKvOo/giphy.gif"
+      ],
+      "tweets": "twittersearch/temperature"
+    },
+    {
+      "start": 9.6,
+      "end": 11.5,
       "label": "This was the temperature.",
       "temperature": "9 °F with a chance of snow.",
       "media": [
@@ -22,9 +33,9 @@
       "tweets": "twittersearch/temperature"
     },
     {
-      "start": 7,
-      "end": 8,
-      "label": "This was our President.",
+      "start": 13.7,
+      "end": 15.8,
+      "label": "This was our president.",
       "president": "George W Bush",
       "media": [
         "http://media.giphy.com/media/l10qTjPo1x6zC/giphy.gif"
@@ -32,8 +43,8 @@
       "tweets": "twittersearch/president"
     },
     {
-      "start": 9,
-      "end": 11,
+      "start": 18,
+      "end": 21,
       "label": "This was the number one record on the radio.",
       "number1": "'Yeah!' by Usher",
       "media": [
@@ -42,18 +53,18 @@
       "tweets": "twittersearch/number1"
     },
     {
-      "start": 12,
-      "end": 14,
-      "label": "This was the biggest new story.",
+      "start": 22.6,
+      "end": 25.3,
+      "label": "This was the biggest news story",
       "media": [
-        "http://images.coveralia.com/audio/u/Usher-Yeah_(Featuring_Lil_Jon_y_Ludacris)_(Cd_Single)-Frontal.jpg?768"
+        "./assets/images/content/news.png"
       ],
       "tweets": "twittersearch/top_news"
     },
     {
-      "start": 15,
-      "end": 17,
-      "label": "This was what was on television.",
+      "start": 27.3,
+      "end": 29.5,
+      "label": "This was on television.",
       "media": [
         "http://media.giphy.com/media/DLWURx5pn34Ji/giphy.gif",
         "http://media.giphy.com/media/YON27KEmE27de/giphy.gif",
@@ -62,9 +73,9 @@
       "tweets": "twittersearch/television"
     },
     {
-      "start": 18,
-      "end": 21,
-      "label": "I'd spent the night watching It's a Wonderful Life and Yule Log.",
+      "start": 32,
+      "end": 35.5,
+      "label": "I had spent the night watching It’s A Wonderful Life and Yule Log.",
       "media": [
         "http://media.giphy.com/media/f7d8Atz1YVAhW/giphy.gif",
         "http://media.giphy.com/media/8qTeHKweppdbq/giphy.gif",
@@ -73,9 +84,9 @@
       "tweets": "twittersearch/wonderful_life"
     },
     {
-      "start": 26,
-      "end": 30,
-      "label": "It was cold outside, and the first snowflakes fell to the ground.",
+      "start": 37.5,
+      "end": 44.2,
+      "label": "It was cold outside and the first snowflakes fell to the ground. And it was almost beautiful.",
       "media": [
         "http://giphy.com/gifs/black-and-white-snow-alHyv3MTOPFde",
         "http://media.giphy.com/media/2JifcqvnTmwAE/giphy.gif",
@@ -84,9 +95,9 @@
       "tweets": "twittersearch/snowflakes"
     },
     {
-      "start": 30,
-      "end": 32,
-      "label": "It was almost beautiful.",
+      "start": 47,
+      "end": 48.4,
+      "label": "And then I got the call.",
       "media": [
         "http://media.giphy.com/media/SqW30SzcGwnYY/giphy.gif",
         "http://media.giphy.com/media/QLveI2VchXl2U/giphy.gif",
@@ -95,9 +106,152 @@
       "tweets": "twittersearch/almost"
     },
     {
-      "start": 33,
-      "end": 35,
-      "label": "And then I got the call that my father died.",
+      "start": 51.6,
+      "end": 55.2,
+      "label": "On December 24th, this person died,",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/die1.jpg"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 56.2,
+      "end": 58.1,
+      "label": "and this person",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/die2.jpg"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 59.5,
+      "end": 60.8,
+      "label": "and this one",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/die3.jpg"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 63.2,
+      "end": 66.7,
+      "label": "For you the holidays might represent this",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/foryou1.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 67.9,
+      "end": 69.3,
+      "label": "or this",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/foryou2.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 70.4,
+      "end": 71.6,
+      "label": "or this",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/foryou3.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 73.0,
+      "end": 74.1,
+      "label": "or this",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/foryou4.jpg"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 75.5,
+      "end": 78.1,
+      "label": "For me they represent this",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/forme1.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 79.2,
+      "end": 80.6,
+      "label": "and this",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/forme2.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 82.1,
+      "end": 83.6,
+      "label": "and also this",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/forme3.jpg"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 84.5,
+      "end": 85.8,
+      "label": "and this.",
+      "reset": "true",
+      "media": [
+        "./assets/images/content/forme4.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 87.3,
+      "end": 90.4,
+      "label": "And this is how many days it’s been since my dad died.",
+      "reset": "true",
+      "media": [
+        "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
+        "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 92.6,
+      "end": 98.3,
+      "label": "But when I look around, I see people everywhere who have lost someone on this day.",
+      "reset": "true",
+      "media": [
+        "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
+        "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 102.6,
+      "end": 106.3,
+      "label": "People who have the same complex emotions that I have.",
+      "reset": "true",
+      "media": [
+        "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
+        "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+      ],
+      "tweets": "twittersearch/father"
+    },
+    {
+      "start": 108.6,
+      "end": 111.8,
+      "label": "And I somehow feel less alone.",
       "reset": "true",
       "media": [
         "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",

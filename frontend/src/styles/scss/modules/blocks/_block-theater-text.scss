@@ -5,7 +5,8 @@
 .block-theater-text__content {
 
   &, p {
-    @include font($font-lora, $style: italic);
+    // @include font($font-lora, $style: italic);
+    @include font($font-mono-pt);
     @include font-size(32px);
     @include line-height(44px);
   }
