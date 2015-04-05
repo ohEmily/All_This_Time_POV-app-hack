@@ -21,9 +21,6 @@ module.exports = React.createClass({
   },
 
   onTextSelectChange: function(e, index, value) {
-    console.log("NEW INDEX: "+index);
-    console.log(index);
-    console.log(value);
     this.setState({
       selectedLossIndex: index
     })
@@ -42,6 +39,9 @@ module.exports = React.createClass({
   },
 
   onTextYearChange: function(e, index, value) {
+    console.log("NEW INDEX: "+index);
+    console.log(index);
+    console.log(value);
     this.setState({
       selectedYearIndex: index
     })
@@ -91,7 +91,7 @@ module.exports = React.createClass({
     ];
 
     for(var j = 2015; j>1955; j--) {
-      yearOptions.push(j);
+      yearOptions.push(j.toString());
     }
 
     return  (<div className={React.addons.classSet(classes)}>
