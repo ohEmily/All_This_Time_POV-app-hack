@@ -924,6 +924,41 @@ category: CSS Components
   .block-theater-text__content p:last-child {
     display: block; }
 
+.react-textselect {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.33);
+  overflow: visible;
+  padding-right: 1em;
+  margin-right: .17em;
+  cursor: pointer;
+  position: relative; }
+  .react-textselect:after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
+    border-top: 7.5px solid rgba(255, 255, 255, 0.5);
+    top: 50%;
+    margin-top: -2px;
+    right: 0px; }
+  .react-textselect:hover:after {
+    height: 0;
+    width: 0;
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
+    border-top: 7.5px solid white; }
+
+.react-textselect-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-appearance: none; }
+
 body {
   overflow: hidden;
   margin: 0px;

@@ -29,6 +29,7 @@
     "raw-loader": "^0.5.1",
     "react": "^0.12.2",
     "react-scroll-components": "^0.1.0",
+    "react-textselect": "0.0.5",
     "rebound": "0.0.10",
     "script-loader": "^0.6.1",
     "smooth-scroll": "git://github.com/cferdinandi/smooth-scroll",
