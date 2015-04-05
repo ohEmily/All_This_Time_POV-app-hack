@@ -70,7 +70,7 @@ module.exports = React.createClass({
     if(this.props.label!==nextProps.label && this.theater) {
       var that = this;
       this.theater
-        .write(nextProps.label)
+        .say(nextProps.label)
     }
   },
 

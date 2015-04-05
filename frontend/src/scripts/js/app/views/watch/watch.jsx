@@ -9,6 +9,7 @@ module.exports = React.createClass({
   mixins: [React.addons.PureRenderMixin],
 
   narration: null,
+  bgSound: null,
   raf: null,
   ended: false,
   currentTime: 0,
@@ -25,6 +26,10 @@ module.exports = React.createClass({
     this.narration = new Audio("./assets/audio/angela.m4a");
     this.narration.pause();
     this.narration.addEventListener("ended", this.onNarrationEnd);
+
+
+    this.bgSound = new Audio("./assets/audio/bg.mp3");
+    this.bgSound.pause();
   },
 
   componentDidMount: function () {
@@ -38,6 +43,7 @@ module.exports = React.createClass({
     this.ended = false;
     window.requestAnimationFrame(this.onTick);
     this.narration.play();
+    this.bgSound.play();
   },
 
   updateTime: function(value) {
@@ -112,7 +118,7 @@ module.exports = React.createClass({
               </div>
               <div className="watch-page__body" style={bodyStyles}>
                 <Components.Blocks.BlockAlign align="left bottom">
-                  <Components.Blocks.BlockTheaterText label={this.state.currentLabel} />
+                  <Components.Blocks.BlockTheaterText label={this.state.currentLabel} reset={this.state.reset} />
                 </Components.Blocks.BlockAlign>
               </div>
             </div>);

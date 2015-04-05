@@ -73,15 +73,6 @@
       "tweets": "twittersearch/wonderful_life"
     },
     {
-      "start": 22,
-      "end": 25,
-      "label": "I decided to go for a run for the first time in years.",
-      "media": [
-        "http://media.giphy.com/media/ysGYmSimCYePK/giphy.gif"
-      ],
-      "tweets": "twittersearch/run"
-    },
-    {
       "start": 26,
       "end": 30,
       "label": "It was cold outside, and the first snowflakes fell to the ground.",
@@ -107,6 +98,7 @@
       "start": 33,
       "end": 35,
       "label": "And then I got the call that my father died.",
+      "reset": "true",
       "media": [
         "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
         "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
