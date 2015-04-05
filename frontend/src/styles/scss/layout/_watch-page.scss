@@ -31,10 +31,11 @@
 .watch-page__body {
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 50%;
+  @include transform(translateX(-50%));
   // top: 50%;
   // top: calc(50% - 50px);
-  width: 100%;
+  width: 900px;
   height: 100%;
   // text-align: center;
   // @include transform(translateY(-50%));

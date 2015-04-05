@@ -1,44 +1,106 @@
 {
   "sentences": [
     {
-      "start": 0,
-      "end": 1.5,
-      "label": "December 24, 2004",
+      "start": 1,
+      "end": 3,
+      "label": "December 24, 2004.",
       "media": [
         "http://media.giphy.com/media/6quy6XynfaK2c/giphy.gif",
         "http://media.giphy.com/media/bDOwRBYykpFvy/giphy.gif"
       ]
     },
     {
-      "start": 1.5,
-      "end": 3.5,
-      "label": "This was the temperature",
+      "start": 5,
+      "end": 6,
+      "label": "This was the temperature.",
+      "temperature": "9 °F with a chance of snow.",
       "media": [
-        "http://media.giphy.com/media/6quy6XynfaK2c/giphy.gif",
-        "http://media.giphy.com/media/bDOwRBYykpFvy/giphy.gif"
-      ],
-      "temperature": "30 with a chance of snow"
+        "http://media.giphy.com/media/PRjlkPy5vB2V2/giphy.gif",
+        "http://media.giphy.com/media/DHJmgpy2wKvOo/giphy.gif"
+      ]
     },
     {
-      "start": 3.5,
-      "end": 6.5,
+      "start": 7,
+      "end": 8,
       "label": "This was our President.",
+      "president": "George W Bush",
       "media": [
-        "http://media.giphy.com/media/o0rwAoBJ1VeRa/giphy.gif"
+        "http://media.giphy.com/media/l10qTjPo1x6zC/giphy.gif"
       ]
     },
     {
-      "start": 6.5,
-      "end": 9.5,
+      "start": 9,
+      "end": 11,
       "label": "This was the number one record on the radio.",
+      "number1": "'Yeah!' by Usher",
       "media": [
-        "http://media.giphy.com/media/UVhvAht2T97hu/giphy.gif"
+        "http://images.coveralia.com/audio/u/Usher-Yeah_(Featuring_Lil_Jon_y_Ludacris)_(Cd_Single)-Frontal.jpg?768"
       ]
     },
     {
-      "start": 9.5,
-      "end": 16.5,
-      "label": "This was the biggest new story."
+      "start": 12,
+      "end": 14,
+      "label": "This was the biggest new story.",
+      "media": [
+        "http://images.coveralia.com/audio/u/Usher-Yeah_(Featuring_Lil_Jon_y_Ludacris)_(Cd_Single)-Frontal.jpg?768"
+      ]
+    },
+    {
+      "start": 15,
+      "end": 17,
+      "label": "This was what was on television.",
+      "media": [
+        "http://media.giphy.com/media/DLWURx5pn34Ji/giphy.gif",
+        "http://media.giphy.com/media/YON27KEmE27de/giphy.gif",
+        "http://media.giphy.com/media/io1dU7gHSRjAA/giphy.gif"
+      ]
+    },
+    {
+      "start": 18,
+      "end": 21,
+      "label": "I'd spent the night watching It's a Wonderful Life and Yule Log.",
+      "media": [
+        "http://media.giphy.com/media/f7d8Atz1YVAhW/giphy.gif",
+        "http://media.giphy.com/media/8qTeHKweppdbq/giphy.gif",
+        "http://media.giphy.com/media/10QdeSp2wEPxPW/giphy.gif"
+      ]
+    },
+    {
+      "start": 22,
+      "end": 25,
+      "label": "I decided to go for a run for the first time in years.",
+      "media": [
+        "http://media.giphy.com/media/ysGYmSimCYePK/giphy.gif"
+      ]
+    },
+    {
+      "start": 26,
+      "end": 30,
+      "label": "It was cold outside, and the first snowflakes fell to the ground.",
+      "media": [
+        "http://giphy.com/gifs/black-and-white-snow-alHyv3MTOPFde",
+        "http://media.giphy.com/media/2JifcqvnTmwAE/giphy.gif",
+        "http://media.giphy.com/media/ygx9cp28M41l6/giphy.gif"
+      ]
+    },
+    {
+      "start": 30,
+      "end": 32,
+      "label": "It was almost beautiful.",
+      "media": [
+        "http://media.giphy.com/media/SqW30SzcGwnYY/giphy.gif",
+        "http://media.giphy.com/media/QLveI2VchXl2U/giphy.gif",
+        "http://media.giphy.com/media/8bi25qj5LruX6/giphy.gif"
+      ]
+    },
+    {
+      "start": 33,
+      "end": 35,
+      "label": "And then I got the call that my father died.",
+      "media": [
+        "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
+        "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+      ]
     }
   ]
 }
