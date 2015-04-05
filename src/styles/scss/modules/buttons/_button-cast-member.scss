@@ -1,0 +1,52 @@
+.button.button-cast-member {
+
+  color: $text__color--alpha;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: 0px;
+    width: 1px;
+    height: 100%;
+    background-color: $color--beta;
+    opacity: 0;
+    @include transition-property(transform, opacity);
+    @include transition-duration(.3s, .3s);
+    @include transition-timing-function(ease-out, linear);
+    @include transition-delay(0s, 0s);
+    @include transform(translateX(-11px));
+  }
+
+  .button-cast-member__actor {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .button-cast-member__character {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    white-space: nowrap;
+  }
+
+  &.button-cast-member--active {
+    color: $text__color--beta;
+    @include hover {
+      color: $text__color--beta;
+    }
+    &:before {
+      @include transition-delay(0.1s, 0.1s);
+      @include transform(translateX(0px));
+      opacity: 1;
+    }
+
+  }
+
+  @include hover {
+    color: $text__color--base;
+  }
+
+}

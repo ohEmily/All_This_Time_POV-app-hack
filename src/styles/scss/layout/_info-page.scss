@@ -1,0 +1,153 @@
+.info-page {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  // background-image: url("#{$IMAGES_PATH}/info/info-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.info-page__hud {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 26px 26px 0px 32px;
+  .info-page__hud__logo {
+    opacity: 0.3;
+    @include transform(translateX(100%));
+  }
+}
+
+.info-page__body {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+
+
+
+  // &.info-page__body--cast {
+  //   .info-page__body__bg {
+  //     background-image: url("#{$IMAGES_PATH}/info/cast/cast-bg.jpg");
+  //   }
+  // }
+
+  // &.info-page__body--synopsis {
+  //   .info-page__body__bg {
+  //     background-image: url("#{$IMAGES_PATH}/info/synopsis/synopsis-bg.jpg");
+  //   }
+  // }
+
+  // &.info-page__body--downloads {
+  //   .info-page__body__bg {
+  //     background-image: url("#{$IMAGES_PATH}/info/downloads/downloads-bg.jpg");
+  //   }
+  // }
+
+  // &.info-page__body--gallery {
+  //   .info-page__body__bg {
+  //     background-image: url("#{$IMAGES_PATH}/info/gallery/gallery-bg.jpg");
+  //   }
+  // }
+
+  // &.info-page__body--videos {
+  //   .info-page__body__bg {
+  //     background-image: url("#{$IMAGES_PATH}/info/videos/videos-bg.jpg");
+  //   }
+  // }
+
+}
+
+.info-page__body__grid {
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+
+  > .info-page__body__grid__item {
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border-right: 1px solid rgba(#fff, 0.1);
+      border-bottom: 1px solid rgba(#fff, 0.1);
+      z-index: 0;
+    }
+  }
+
+}
+
+.info-page__body__grid__item {
+  height: 50%;
+  position: relative;
+
+  &.info-page__body__grid__item--tall {
+    height: 100%;
+  }
+}
+
+.info-page__body__bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+
+.info-page__body__column {
+  float: left;
+  width: 33.33333333%;
+  height: 100%;
+  display: block;
+
+  &.info-page__body__column--wide {
+    width: 66.666666%;
+  }
+}
+
+.info-page__item {
+  // float: left;
+  width: 100%;
+  height: 50%;
+  display: block;
+  border: 1px solid rgba(#fff, 0.1);
+
+  &.info-page__item--tall {
+    height: 100%;
+  }
+
+}
+
+.info-page__item__body {
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  padding: 80px 80px;
+
+  &.info-page__item__body--downloads-4 {
+    padding: 0px;
+    text-align: center;
+  }
+
+  &.info-page__item__body--downloads-5 {
+    width: 230px;
+    padding: 0px;
+    text-align: center;
+  }
+
+}

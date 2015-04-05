@@ -1,0 +1,62 @@
+/*doc
+---
+title: Alpha Label
+name: alpha label
+category: labels
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<span class="label label-alpha">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+```
+
+```html_example_table
+<span class="label label-alpha label-alpha--large">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+```
+
+```html_example_table
+<span class="label label-alpha label-alpha--small">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+```
+
+```html_example_table
+<span class="label label-alpha label-alpha--blockquote">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+```
+
+*/
+
+.label.label-alpha {
+
+  @include font($font-lora);
+  @include font-size(18px);
+  @include line-height(21px);
+  color: inherit;
+  vertical-align: bottom;
+  position: relative;
+
+  &.label-alpha--large {
+    @include font-size(20px);
+    @include line-height(23px);
+    letter-spacing: 4px;
+  }
+
+  &.label-alpha--small {
+    @include font-size(14px);
+    @include line-height(16px);
+    letter-spacing: 2px;
+  }
+
+  &.label-alpha--blockquote {
+    padding-left: 14px;
+    overflow: visible;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 15%;
+      width: 1px;
+      height: 70%;
+      background-color: $color--beta;
+    }
+  }
+}

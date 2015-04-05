@@ -1,0 +1,55 @@
+/*doc
+---
+title: Close Button
+name: close button
+category: Buttons
+---
+
+Close button, usually used in the more info section
+
+```html_example_table
+<button class="button button-close">
+</button>
+```
+
+*/
+
+.button.button-close {
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 122px;
+  opacity: 0.7;
+  @include transition-property(opacity);
+  @include transition-duration(.15s);
+  @include transition-timing-function(linear);
+  @include transition-delay(0s);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 156px;
+    height: 1px;
+    margin-left: -78px;
+    background-color: $text__color--alpha;
+  }
+
+  &:before {
+    @include transform(rotate(45deg));
+    @include transform-origin(center center);
+  }
+
+  &:after {
+    @include transform(rotate(-45deg));
+    @include transform-origin(center center);
+  }
+
+  @include hover {
+    opacity: 0.99;
+  }
+
+}

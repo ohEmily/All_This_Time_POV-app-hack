@@ -1,0 +1,5 @@
+// @include font-face("Myriad Pro Light Condensed Italic", $FONTS_PATH+'/myriadpro-lightcondit-webfont', $file-formats: woff);
+// @include font-face("FuturaStd Medium", $FONTS_PATH+'/FuturaStd-Medium', $file-formats: woff);
+
+// for some reason we need myriad pro here, even tho we dont use it till later
+// @include font-face("Myriad Pro Light Condensed", $FONTS_PATH+'/myriadpro-lightcond-webfont', $file-formats: woff);

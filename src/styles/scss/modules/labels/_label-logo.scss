@@ -1,0 +1,68 @@
+/*doc
+---
+title: Logo Label
+name: logo label
+category: labels
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<span class="label label-logo"></span>
+```
+
+```html_example_table
+<span class="label label-logo label-logo--extra-small"></span>
+```
+
+*/
+
+.label.label-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  margin-left: 30px;
+  left: 0px;
+
+  @include font($font-futura-std-medium, $transform: uppercase, $letter-spacing: 70px);
+  @include font-size(60px);
+  @include line-height(60px);
+  color: $text__color--alpha;
+  text-align: center;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    @include transform(translateX(-50%));
+    text-align: center;
+  }
+  &:after {
+    content: "ANOMALY";
+  }
+
+  &:before {
+    content: "O";
+    text-indent: -21px;
+    overflow: hidden;
+    width: 30px;
+    margin-left: -110px;
+    @include filter(blur(2px));
+    opacity: 0.5;
+    clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  }
+
+  &.label-logo--extra-small {
+    @include font-size(16px);
+    @include line-height(16px);
+    letter-spacing: 14px;
+    &:before  {
+      text-indent: -14px;
+      margin-left: -10px;
+      @include filter(blur(0px));
+    }
+  }
+}

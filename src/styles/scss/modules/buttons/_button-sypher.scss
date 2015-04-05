@@ -1,0 +1,37 @@
+/*doc
+---
+title: Sypher Button
+name: sypher button
+category: Buttons
+---
+
+Sypher Logo button use in the footer
+
+```html_example_table
+<a class="button button-sypher">
+</a>
+```
+
+*/
+
+.button.button-sypher {
+
+  display: inline-block;
+  width: 68px;
+  height: 69px;
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url("#{$IMAGES_PATH}/global/sypher-logo.png");
+
+  @include transition-property(opacity);
+  @include transition-duration(.15s);
+  @include transition-timing-function(linear);
+  @include transition-delay(0s);
+
+  @include hover {
+    opacity: 0.99;
+  }
+
+}

@@ -1,0 +1,86 @@
+@import "config";
+@import "variables/index";
+@import "mixins/index";
+@import "reset";
+
+@import "core/index";
+@import "core/fonts-base";
+
+
+@import "modules/blocks/block-site-loader";
+@import "modules/blocks/block-sypher-logo";
+@import "modules/blocks/block-home-logo";
+@import "modules/labels/label-delta";
+@import "modules/labels/label-gamma";
+@import "modules/labels/label-logo";
+
+body {
+  background-color: black;
+}
+
+iframe {
+  border: 0px;
+  outline: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.app {
+  background-color: black;
+}
+
+// APP LOADER
+.app-loader {
+  display: inline-block;
+  text-align: center;
+  width: 780px;
+  height: 85px;
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  margin-left: -391px;
+  top: 50%;
+  margin-top: -62px;
+
+  > canvas {
+    margin-top: 14px;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: 50%;
+    margin-left: -361px;
+  }
+
+  &.app-loader--animate {
+    opacity: 0;
+    @include transition-property(opacity);
+    @include transition-duration(1.5s);
+    @include transition-timing-function(ease-in);
+    @include transition-delay(0s);
+  }
+
+  &.app-loader--animate-in {
+    opacity: 1;
+  }
+}
+
+// SITE LOADER
+.site-loader {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  @include clearfix();
+
+  &.site-loader--animate {
+    opacity: 0;
+    @include transition-property(opacity);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(linear);
+    @include transition-delay(1.5s);
+  }
+
+  &.site-loader--animate-in {
+    opacity: 1;
+  }
+}

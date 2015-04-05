@@ -1,0 +1,31 @@
+/*doc
+---
+title: Epsilon Label
+name: epsilon label
+category: labels
+---
+
+These are the labels used the footer/credits notes
+
+```html_example_table
+  <span class="label label-epsilon">© COPYRIGHTS 2014 THEANOMALYFILM.COM. ALL RIGHTS RESERVED.</span>
+```
+
+```html_example_table
+  <span class="label label-epsilon label-epsilon--large">Credits</span>
+```
+
+*/
+
+.label.label-epsilon {
+  @include font($font-pf-tempesta-seven, $transform: uppercase, $letter-spacing: 1px);
+  @include font-size(7px);
+  @include line-height(7px);
+  -webkit-font-smoothing: none;
+  color: inherit;
+
+  &.label-epsilon--large {
+    @include font-size(8px);
+    @include line-height(8px);
+  }
+}

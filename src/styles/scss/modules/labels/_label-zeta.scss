@@ -1,0 +1,26 @@
+/*doc
+---
+title: Zeta Label
+name: zeta label
+category: labels
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<span class="label label-zeta">Watch the movie</span>
+```
+
+*/
+
+.label.label-zeta {
+  @include font($font-futura-std-light, $transform: uppercase, $letter-spacing: 3px);
+  @include font-size(36px);
+  @include line-height(42px);
+  color: inherit;
+
+  @include transition-property(color);
+  @include transition-duration(.15s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0s);
+}

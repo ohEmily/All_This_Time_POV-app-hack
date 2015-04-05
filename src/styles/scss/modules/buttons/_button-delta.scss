@@ -1,0 +1,45 @@
+/*doc
+---
+title: Delta Button
+name: delta button
+category: Buttons
+---
+
+Select buttons within downloads section
+
+```html_example_table
+<a class="button button-delta">
+  <span class="label label-gamma">Credits</span>
+</a>
+```
+
+```html_example_table
+<a class="button button-delta button-delta--blockquote">
+  <span class="label label-gamma label-gamma--blockquote">Credits</span>
+</a>
+```
+
+
+```html_example_table
+<a class="button button-delta button-delta--blockquote button-delta--active">
+  <span class="label label-gamma label-gamma--blockquote">Credits</span>
+</a>
+```
+
+*/
+
+.button.button-delta {
+
+  color: $text__color--beta;
+  position: relative;
+  text-transform: uppercase;
+
+  &.button-delta--active {
+    color: $text__color--alpha;
+  }
+
+  @include hover {
+    color: $text__color--alpha;
+  }
+
+}

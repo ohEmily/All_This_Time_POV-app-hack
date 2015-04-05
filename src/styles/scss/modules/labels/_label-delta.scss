@@ -1,0 +1,38 @@
+/*doc
+---
+title: Delta Label
+name: delta label
+category: labels
+---
+
+These are the labels used for cta and meta.
+
+```html_example_table
+  <span class="label label-delta">Sypnosis</span>
+```
+
+```html_example_table
+  <span class="label label-delta label-delta--light">Sypnosis</span>
+```
+
+```html_example_table
+  <span class="label label-delta label-delta--small">Sypnosis</span>
+```
+
+*/
+
+.label.label-delta {
+  @include font($font-futura-std-medium, $transform: uppercase, $letter-spacing: 4px);
+  @include font-size(25px);
+  @include line-height(25px);
+  color: inherit;
+
+  &.label-delta--light {
+    font-family: $font-futura-std-light;
+  }
+
+  &.label-delta--small {
+    @include font-size(16px);
+    @include line-height(16px);
+  }
+}

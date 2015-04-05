@@ -1,0 +1,20 @@
+.block-review-quote {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  color: $text__color--beta;
+  text-align: center;
+  line-height: 0px;
+
+  .block-review-quote__quote {
+    margin: 14px 0px;
+  }
+
+  .block-review-quote__source {
+    margin: 8px 0px;
+  }
+
+  .block-review-quote__rating {
+    margin: 8px 0px;
+  }
+}

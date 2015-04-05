@@ -1,0 +1,142 @@
+/*doc
+---
+title: Block More Info Label
+name: block more info label
+category: CSS Components
+---
+
+Label block for the more info section
+
+```html_example_table
+<div class="block-more-info-label">
+    <div class="block-more-info-label__title">
+      <span class="label label-delta">Sypnosis</span>
+    </div>
+    <div class="block-more-info-label__body">
+      <span class="label label-gamma label-gamma--blockquote">
+        Lorem ipsum dolor<br/>
+        sit amet, consectetur
+      </span>
+    </div>
+</div>
+```
+
+```html_example_table
+<div class="block-more-info-label">
+    <div class="block-more-info-label__body">
+      <p class="label label-gamma label-gamma--blockquote">
+        DIRECTORS WORDS
+      </p>
+      <p class="label label-gamma">
+        Nam eu sollicitudin tortor. Praesent ac neque justo
+        Ut pellentesque dignissim arcu, eu accumsan
+        justo imperdiet ut. Nulla ultricies et
+        turpis elementum, sit amet ornare lorem luctus.
+      </p>
+    </div>
+    <div class="block-more-info-label__footer">
+      <p class="label label-gamma label-gamma--uppercase label-gamma--white">Salomon Ligthelm</p>
+    </div>
+</div>
+```
+
+*/
+
+
+.block-more-info-label {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+  color: $text__color--base;
+
+  .block-more-info-label__title {
+    margin-bottom: 20px;
+    color: $text__color--alpha;
+  }
+
+  .block-more-info-label__body {
+    margin: 10px 0px;
+
+    p {
+      margin: 10px 0px;
+      &:first-child {
+        margin-top: 0px;
+      }
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .block-more-info-label__footer {
+    margin: 10px 0px;
+    color: $text__color--beta;
+    text-align: right;
+  }
+
+}
+
+
+/*doc
+---
+title: Block More Info Label Alpha
+name: block more info label alpha
+category: CSS Components
+---
+
+Label block for the more info section alternative
+
+```html_example_table
+<div class="block-more-info-label-alpha">
+    <div class="block-more-info-label-alpha__title">
+      <span class="label label-delta">Sypnosis</span>
+    </div>
+    <div class="block-more-info-label-alpha__body">
+      <span class="label label-delta">
+        Trailer<br/>
+        Making of<br/>
+        Pitch
+      </span>
+    </div>
+</div>
+```
+
+*/
+.block-more-info-label-alpha {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  white-space: nowrap;
+
+  .block-more-info-label-alpha__title {
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    color: $text__color--alpha;
+    white-space: nowrap;
+  }
+
+  .block-more-info-label-alpha__body {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding-left: 30px;
+    margin-left: 20px;
+    text-align: left;
+    color: $text__color--alpha;
+    width: 40%;
+    width: calc(50% - 50px);
+    white-space: normal;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      width: 1px;
+      height: 100%;
+      height: calc(100% - 3px);
+      background-color: white;
+    }
+  }
+
+}

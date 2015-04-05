@@ -1,0 +1,26 @@
+/*doc
+---
+title: Iota Label
+name: iota label
+category: labels
+---
+
+Used on the quote on the home page
+
+```html_example_table
+<span class="label label-iota">David Smith</span>
+```
+
+*/
+
+.label.label-iota {
+  @include font($font-open-sans-extra-bold, $transform: uppercase, $letter-spacing: 0px);
+  @include font-size(12px);
+  @include line-height(14px);
+  color: inherit;
+
+  @include transition-property(color);
+  @include transition-duration(.15s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0s);
+}

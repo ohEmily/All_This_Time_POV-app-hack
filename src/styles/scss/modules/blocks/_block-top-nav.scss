@@ -1,0 +1,52 @@
+/*doc
+---
+title: Block Top Nav
+name: block top nav
+category: CSS Components
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<ul class="block-top-nav">
+    <li class="block-top-nav__item">
+      <a class="button button-beta button-beta--active">
+        <span class="label label-beta button-beta__label">Home</span>
+      </a>
+    </li>
+    <li class="block-top-nav__item">
+      <a class="button button-beta">
+        <span class="label label-beta button-beta__label">More Info</span>
+      </a>
+    </li>
+    <li class="block-top-nav__item">
+      <a class="button button-beta">
+        <span class="label label-beta button-beta__label">Watch the Movie</span>
+      </a>
+    </li>
+    <li class="block-top-nav__item">
+      <a class="button button-beta">
+        <span class="label label-beta button-beta__label">Share</span>
+      </a>
+    </li>
+</ul>
+```
+
+*/
+.block-top-nav {
+  display: inline-block;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  white-space: nowrap;
+
+  .block-top-nav__item {
+    display: inline-block;
+    list-style: none;
+    margin-right: 90px;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+}
