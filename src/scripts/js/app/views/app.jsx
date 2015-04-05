@@ -1,10 +1,10 @@
-var React = require("react");
-var Home = require("./home/home.jsx");
-// var Info = require("./info/info.jsx");
-// var Watch = require("./watch/watch.jsx");
-// var HUD   = require("./hud.jsx");
-var Rebound = require("rebound");
-var Fluxxor = require("fluxxor");
+var React     = require("react");
+var Home      = require("./home/home.jsx");
+// var Info   = require("./info/info.jsx");
+// var Watch  = require("./watch/watch.jsx");
+// var HUD    = require("./hud.jsx");
+var Rebound   = require("rebound");
+var Fluxxor   = require("fluxxor");
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
