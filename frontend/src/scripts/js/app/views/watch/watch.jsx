@@ -111,7 +111,7 @@ module.exports = React.createClass({
                 <Components.Blocks.BlockWatchBG media={this.state.currentMedias} progress={this.state.sentenceProgress} />
               </div>
               <div className="watch-page__body" style={bodyStyles}>
-                <Components.Blocks.BlockAlign>
+                <Components.Blocks.BlockAlign align="left bottom">
                   <Components.Blocks.BlockTheaterText label={this.state.currentLabel} />
                 </Components.Blocks.BlockAlign>
               </div>
