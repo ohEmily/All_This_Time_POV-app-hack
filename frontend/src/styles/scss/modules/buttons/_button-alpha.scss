@@ -1,0 +1,53 @@
+/*doc
+---
+title: Alpha Button
+name: alpha button
+category: Buttons
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<button class="button button-alpha">
+  <span class="button-alpha__label">
+    <span class="label label-alpha">Button Alpha</span>
+  </span>
+</button>
+```
+
+```html_example_table
+<button class="button button-alpha button-alpha--large">
+  <span class="button-alpha__label">
+    <span class="label label-zeta button-alpha__label">Watch the movie</span>
+    <span class="label label-eta button-alpha__label">Available December 24th</span>
+  </span>
+</button>
+```
+
+*/
+
+.button.button-alpha {
+  padding: 10px 15px;
+  border: 1px solid $text__color--beta;
+  @include transition-property(background-color);
+  @include transition-duration(.15s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0s);
+  color: $text__color--beta;
+  background-color: rgba($text__color--beta, 0.1);
+  text-align: center;
+
+  > .button-alpha__label > .label {
+    display: block;
+  }
+
+  @include hover {
+    background-color: $text__color--beta;
+    color: $text__color--gamma;
+  }
+
+  &.button-alpha--large {
+    padding: 20px;
+  }
+
+}

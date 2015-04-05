@@ -1,0 +1,33 @@
+/*doc
+---
+title: Phi Label
+name: phi label
+category: labels
+---
+
+These are the labels used for end footer
+
+```html_example_table
+  <span class="label label-phi" style="color: white;">&copy; COPYRIGHTS 2014 THEANOMALYFILM.COM. ALL RIGHTS RESERVED.</span>
+```
+
+
+```html_example_table
+  <span class="label label-phi label-phi--large" style="color: white;">&copy; COPYRIGHTS 2014 THEANOMALYFILM.COM. ALL RIGHTS RESERVED.</span>
+```
+
+*/
+
+.label.label-phi {
+  position: relative;
+  @include font($font-myriad-pro-light-condensed, $transform: uppercase, $letter-spacing: 1px);
+  @include font-size(14px);
+  @include line-height(14px);
+  color: inherit;
+
+  &.label-phi--large {
+    @include font-size(16px);
+    @include line-height(16px);
+    letter-spacing: 3px;
+  }
+}

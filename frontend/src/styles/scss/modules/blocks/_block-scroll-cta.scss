@@ -1,0 +1,116 @@
+/*doc
+---
+title: Block Scroll CTA
+name: block scroll cta
+category: CSS Components
+---
+
+```html_example_table
+<div class="block-scroll-cta">
+  <div class="block-scroll-cta__label">
+    <span class="label label-gamma">Scroll to navigate</span>
+  </div>
+</div>
+```
+
+*/
+
+@include keyframes(blockScrollCTAFadeIn) {
+  0% {
+    opacity: 0;
+    @include transform(translateZ(0px));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateZ(0px));
+  }
+}
+
+@include keyframes(blockScrollCTALineIn) {
+  0% {
+    @include transform-origin(center top);
+    @include transform(scaleY(0) translate3d(0px, 0px, 0px));
+  }
+  8% {
+    @include transform-origin(center top);
+    @include transform(scaleY(2) translate3d(0px, 0px, 0px));
+  }
+  30% {
+    @include transform-origin(center top);
+    @include transform(scaleY(1) translate3d(0px, 25px, 0px));
+  }
+  75% {
+    @include transform-origin(center top);
+    @include transform(scaleY(1) translate3d(0px, 25px, 0px));
+  }
+  80% {
+    @include transform-origin(center bottom);
+    @include transform(scaleY(1) translate3d(0px, 50px, 0px));
+  }
+  100% {
+    @include transform-origin(center bottom);
+    @include transform(scaleY(1) translate3d(0px, 50px, 0px));
+  }
+}
+
+
+.block-scroll-cta {
+  display: block;
+  height: 75px;
+  overflow: hidden;
+  @include mq-max-height-480() {
+    display: 25px;
+  }
+
+  .block-scroll-cta__label {
+    display: inline-block;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 50px;
+      background-color: white;
+      top: 25px;
+      bottom: 0px;
+      left: 50%;
+      padding-top: 25px;
+      margin-top: 25px;
+      @include mq-max-height-480() {
+        display: none;
+      }
+    }
+  }
+
+  &.block-scroll-cta--animate {
+    .block-scroll-cta__label {
+      @include animation-name(blockScrollCTAFadeIn);
+      @include animation-duration(0.5s);
+      @include animation-fill-mode(both);
+      @include animation-timing-function(ease-out);
+      @include animation-play-state(paused);
+      @include animation-delay(5s);
+      &:after {
+        top: 0px;
+        height: 0px;
+        @include animation-name(blockScrollCTALineIn);
+        @include animation-duration(8s);
+        @include animation-fill-mode(both);
+        @include animation-timing-function($ease-in-out-sine);
+        @include animation-play-state(paused);
+        @include animation-delay(5.5s);
+        @include animation-iteration-count(infinite);
+      }
+    }
+  }
+
+  &.block-scroll-cta--animate.block-scroll-cta--animate-in {
+    .block-scroll-cta__label {
+      @include animation-play-state(running);
+      &:after {
+        @include animation-play-state(running);
+      }
+    }
+  }
+
+}

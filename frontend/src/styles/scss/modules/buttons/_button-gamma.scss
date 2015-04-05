@@ -1,0 +1,53 @@
+/*doc
+---
+title: Gamma Button
+name: gamma button
+category: Buttons
+---
+
+Footer buttons
+
+```html_example_table
+<a class="button button-gamma">
+  <span class="label label-epsilon">Credits</span>
+</a>
+```
+
+```html_example_table
+<a class="button button-gamma button-gamma--sound">
+  <span class="label label-epsilon">Sound|On</span>
+</a>
+```
+
+*/
+
+.button.button-gamma {
+
+  color: $text__color--beta;
+  position: relative;
+
+  &.button-gamma--active {
+    color: $text__color--base;
+  }
+
+  @include hover {
+    color: $text__color--base;
+  }
+
+  &.button-gamma--sound {
+    padding-left: 26px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 21px;
+      height: 100%;
+      background-image: url("#{$IMAGES_PATH}/sprites/sound-wave.png");
+      background-repeat: no-repeat;
+      background-position: center left;
+    }
+  }
+
+}

@@ -1,0 +1,128 @@
+.button-more-info {
+  display: inline-block;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  color: $text__color--base;
+  border: 0px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  .button-more-info__wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .button-more-info__body {
+    text-align: center;
+    margin: 0px 25% 0px 25%;
+    height: 100%;
+    display: block;
+    vertical-align: top;
+    z-index: 2;
+    @include transform(translateY(46%));
+    @include media-query-max-height(768px) {
+      @include transform(translateY(40%));
+    }
+
+    @include media-query-max-height(600px) {
+      @include transform(translateY(36%));
+    }
+  }
+
+  .button-more-info__filter {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .button-more-info__bg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+  }
+
+  &.button-more-info--alpha {
+
+    .button-more-info__body {
+      vertical-align: bottom;
+      position: absolute;
+      margin: 0px;
+      @include transform(translateY(71.5%));
+      width: 100%;
+
+      @include media-query-max-height(768px) {
+        @include transform(translateY(61.5%));
+      }
+
+      @include media-query-max-height(600px) {
+        @include transform(translateY(51.5%));
+      }
+    }
+  }
+
+  &.button-more-info--close {
+
+    .button-more-info__body {
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 156px;
+        height: 1px;
+        margin-left: -78px;
+        background-color: $text__color--alpha;
+      }
+
+      &:before {
+        @include transform(rotate(45deg));
+        @include transform-origin(center center);
+      }
+
+      &:after {
+        @include transform(rotate(-45deg));
+        @include transform-origin(center center);
+      }
+    }
+
+    &:hover {
+      .button-more-info__body {
+        &:before,
+        &:after {
+          opacity: 0.99;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .button-more-info__canvas {
+      opacity: 0.25;
+    }
+  }
+
+}

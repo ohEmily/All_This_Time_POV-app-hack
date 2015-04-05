@@ -1,0 +1,162 @@
+/*doc
+---
+title: Block Home Intro
+name: block home intro
+category: CSS Components
+---
+
+```html_example_table
+  <div class="block-home-intro">
+    <div class="block-home-intro__starring">
+      <ul class="block-home-intro__starring__list">
+        <li class="block-home-intro__starring__list__item">
+          <span class="label label-alpha label-alpha--small">Lexi</span><br/>
+          <span class="label label-alpha label-alpha--large">Johnson</span>
+        </li>
+        <li class="block-home-intro__starring__list__item">
+          <span class="label label-alpha label-alpha--small">Lexi</span><br/>
+          <span class="label label-alpha label-alpha--large">Johnson</span>
+        </li>
+        <li class="block-home-intro__starring__list__item">
+          <span class="label label-alpha label-alpha--small">Lexi</span><br/>
+          <span class="label label-alpha label-alpha--large">Johnson</span>
+        </li>
+      </ul>
+    </div>
+    <div class="block-home-intro__logo">
+      <div class="block-home-logo">
+        <span class="block-home-logo__content">
+        </span>
+      </div>
+    </div>
+    <div class="block-home-intro__directors">
+      <span class="label label-alpha">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>
+    </div>
+    <div class="block-home-intro__cta">
+      <button class="button button-alpha">
+        <span class="label label-alpha button-alpha__label">Out December 24th</span>
+      </button>
+    </div>
+  </div>
+```
+
+*/
+.block-home-intro {
+  position: relative;
+  display: block;
+  text-align: center;
+  color: $text__color--base;
+
+  .block-home-intro__starring {
+    margin: 0px 0px 5px 0px;
+
+    &.block-home-intro__starring--animate {
+      opacity: 0;
+      @include transition-property(opacity, transform);
+      @include transition-duration(.3s, 0.4s);
+      @include transition-timing-function(ease-in, ease-out);
+      @include transition-delay(0s, 0s);
+      @include transform(translateY(-10%));
+    }
+
+    &.block-home-intro__starring--animate-in {
+      opacity: 1;
+      @include transform(translateY(0%));
+    }
+  }
+
+  .block-home-intro__starring__list {
+    list-style: none;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .block-home-intro__starring__list__item {
+    padding: 0px;
+    margin: 0px 50px;
+    display: inline-block;
+    list-style: none;
+    &:first-child {
+      margin-left: 0px;
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  .block-home-intro__logo {
+    line-height: 0px;
+    margin: 0px 0px 5px 0px;
+
+    &.block-home-intro__logo--animate {
+      opacity: 0;
+      @include transition-property(opacity);
+      @include transition-duration(1s);
+      @include transition-timing-function(ease-in);
+      @include transition-delay(0s);
+    }
+
+    &.block-home-intro__logo--animate-in {
+      opacity: 1;
+    }
+  }
+
+  .block-home-intro__directors {
+    margin: 5px 0px 5px 0px;
+
+    &.block-home-intro__directors--animate {
+      opacity: 0;
+      @include transition-property(opacity, transform);
+      @include transition-duration(.3s, 0.4s);
+      @include transition-timing-function(ease-in, ease-out);
+      @include transition-delay(0s, 0s);
+      @include transform(translateY(10%));
+    }
+    &.block-home-intro__directors--animate-in {
+      opacity: 1;
+      @include transform(translateY(0%));
+    }
+  }
+
+  .block-home-intro__cta {
+    margin: 65px 0px 0px 0px;
+
+    @include mq-max-small-laptop() {
+      margin: 20px 0px 0px 0px;
+    }
+
+    &.block-home-intro__cta--animate {
+      opacity: 0;
+      @include transition-property(opacity);
+      @include transition-duration(.3s);
+      @include transition-timing-function(ease-in);
+      @include transition-delay(0s);
+    }
+    &.block-home-intro__cta--animate-in {
+      opacity: 1;
+    }
+  }
+
+  .block-home-intro__review {
+    margin: 65px 0px 0px 0px;
+    position: absolute;
+    width: 100%;
+
+    @include mq-max-small-laptop() {
+      margin: 20px 0px 0px 0px;
+    }
+
+    &.block-home-intro__review--animate {
+      opacity: 0;
+      @include transition-property(opacity);
+      @include transition-duration(.3s);
+      @include transition-timing-function(ease-in);
+      @include transition-delay(0s);
+    }
+    &.block-home-intro__review--animate-in {
+      opacity: 1;
+    }
+  }
+
+}

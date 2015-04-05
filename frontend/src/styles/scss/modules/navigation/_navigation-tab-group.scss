@@ -1,0 +1,23 @@
+.navigation-tab-group {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  white-space: nowrap;
+}
+
+.navigation-tab-group__item {
+  display: inline-block;
+  list-style: none;
+  margin: 0px 5px;
+  padding: 0px;
+  vertical-align: top;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}

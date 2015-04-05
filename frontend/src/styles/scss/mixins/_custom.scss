@@ -1,0 +1,229 @@
+@mixin abstractButton($display: inline-block, $overflow: hidden) {
+  display: $display;
+  overflow: $overflow;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-width: 0px;
+  outline: 0;
+  padding: 0px;
+  position: relative;
+  &, &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+@function z($list, $element) {
+
+   $z-index: index($list, $element);
+
+   @if $z-index {
+      @return $z-index;
+   }
+
+   @warn 'There is no item "#{$element}" in this list; choose one of: #{$list}';
+   @return null;
+}
+
+
+//============================================================
+//
+// arrow
+//
+// @param width           :  px, em
+// @param height          :  px, em
+// @param direction       :  up, down, left, right
+// @param color           :  hex, rgb
+//
+//============================================================
+
+@mixin arrow($width: 20px, $height: 20px, $direction: up, $color: red) {
+  width: 0;
+  height: 0;
+  // Right
+  @if $direction == right {
+    border-top: $height / 2 solid transparent;
+    border-bottom: $height / 2 solid transparent;
+    border-left: $width solid;
+    border-left-color: $color;
+  }
+  // Left
+  @if $direction == left {
+    border-top: $height / 2 solid transparent;
+    border-bottom: $height / 2 solid transparent;
+    border-right: $width solid;
+    border-right-color: $color;
+  }
+  // Up
+  @if $direction == up {
+    border-left: $width / 2 solid transparent;
+    border-right: $width / 2 solid transparent;
+    border-bottom: $height solid;
+    border-bottom-color: $color;
+  }
+  // Down
+  @if $direction == down {
+    border-left: $width / 2 solid transparent;
+    border-right: $width / 2 solid transparent;
+    border-top: $height solid;
+    border-top-color: $color;
+  }
+}
+
+@mixin is-mobile {
+  .mobile & { 
+    @content;
+  }
+}
+
+@mixin is-not-mobile {
+  .no-mobile & { 
+    @content;
+  }
+}
+
+@mixin is-tablet {
+  .tablet & { 
+    @content;
+  }
+}
+
+@mixin is-touch {
+  .touch & {
+    @content;
+  }
+}
+
+@mixin is-not-touch {
+  .no-touch & {
+    @content;
+  }
+}
+
+@mixin is-ios {
+  .ios & {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+          @content;
+        }
+}
+
+@mixin hover {
+  @include is-not-touch {
+    &:hover {
+      @content;
+    }
+  }
+  @include is-touch {
+    @content;
+  }
+}
+
+@mixin media-query-max($width) {
+  @media only screen and (max-width: $width) { @content; }
+}
+
+@mixin media-query-max-height($height) {
+  @media only screen and (max-height: $height) { @content; }
+}
+
+@mixin media-query-min-height($height) {
+  @media only screen and (min-height: $height) { @content; }
+}
+
+@mixin media-query-orientation($orientation: landscape) {
+    @media (orientation : $orientation) {
+        @content;
+    }
+}
+
+@mixin mq-max-small-laptop(){
+  @media only screen and (max-width: 1280px) and (max-height: 768px) { @content; }
+}
+
+@mixin mq-max-width-1024(){
+  @include media-query-max(1024px) {
+    @content;
+  }
+}
+
+@mixin mq-max-width-768(){
+  @include media-query-max(768px) {
+    @content;
+  }
+}
+
+@mixin mq-max-height-1024(){
+  @include media-query-max-height(1024px) {
+    @content;
+  }
+}
+
+@mixin mq-max-height-768(){
+  @include media-query-max-height(768px) {
+    @content;
+  }
+}
+
+@mixin mq-max-height-480(){
+  @include media-query-max-height(480px) {
+    @content;
+  }
+}
+
+@mixin translate3d($x: 0, $y: 0, $z: 0, $otherTransforms:''){
+  @include transform(translate3d($x, $y, $z) #{$otherTransforms});
+  .no-csstransforms3d &{
+    @include transform(translateX($x) translateY($y) #{$otherTransforms});
+  }
+}

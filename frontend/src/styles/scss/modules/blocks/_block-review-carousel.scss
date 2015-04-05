@@ -1,0 +1,38 @@
+.block-review-carousel {
+  position: relative;
+  min-height: 70px;
+}
+.block-review-carousel__content {
+  position: relative;
+}
+
+.block-review-carousel__content__item {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+.block-review-carousel__animation-enter {
+  opacity: 0.01;
+  position: absolute;
+  @include transition-property(opacity);
+  @include transition-duration(.3s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0.4s);
+  &.block-review-carousel__animation-enter-active {
+    opacity: 1;
+  }
+}
+
+.block-review-carousel__animation-leave {
+  opacity: 1;
+  position: absolute;
+  @include transition-property(opacity);
+  @include transition-duration(.3s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0s);
+  &.block-review-carousel__animation-leave-active {
+    opacity: 0.01;
+  }
+}
