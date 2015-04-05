@@ -117,6 +117,7 @@ def christmas_search(search_term):
 #print christmas_search('"number of days till christmas"')
 #print christmas_search('my "passed away yesterday"')
 #print christmas_search('"my father died" "days ago"')
+#print christmas_search('"the temperature was"')
 ##print christmas_search('"on this day, you are not alone"') #not so good
 
 

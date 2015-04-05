@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     tweet_list = search_tweets.search(search_term.split())
     #tweet_list = scrape2.scrape_keyword(search_term)
-    #tweet_list = scrape2.christmas_search(search_term)
+    #tweet_list = scrape2.christmas_search(twitter_queries[search_term])
 
     if (tweet_list):
         for tweet_curr in tweet_list[0:MAX_INSERTION_COUNT]:
