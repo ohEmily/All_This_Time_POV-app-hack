@@ -17,9 +17,10 @@ module.exports = React.createClass({
   // EVENTS
 
   onStartClick: function() {
-    this.setState({
-      displayContentMenu: true
-    })
+    // this.setState({
+    //   displayContentMenu: true
+    // })
+    this.props.flux.actions.setWatch(true);
   },
 
   onChapterSelect: function(chapter) {

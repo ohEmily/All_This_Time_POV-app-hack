@@ -1,5 +1,6 @@
 var React     = require("react");
 var Home      = require("./home/home.jsx");
+var Watch      = require("./watch/watch.jsx");
 // var Info   = require("./info/info.jsx");
 // var Watch  = require("./watch/watch.jsx");
 // var HUD    = require("./hud.jsx");
@@ -148,15 +149,24 @@ module.exports = React.createClass({
     // var page1Visible = (this.state.appStore.page===1 || (this.isScrolling && this.state.appStore.prevPage===1));
     // var page2Visible = (this.state.appStore.page===2 || (this.isScrolling && this.state.appStore.prevPage===2));
 
-    var page0Partial = null;
-    // var page1Partial = null;
+    var pageHomePartial = null;
+    var pageWatchPartial = null;
     // var page2Partial = null;
 
-    page0Partial = <Home
+    pageHomePartial = <Home
                       flux={this.props.flux}
                       loadingProgress={loadingProgress}
                       ready={this.state.assetStore.loaded} />;
-                      
+
+    pageWatchPartial = <Watch
+                      flux={this.props.flux} />;
+
+    var pageContentPartial = null;
+    pageContentPartial = pageHomePartial;
+    if(this.state.appStore.watch) {
+      pageContentPartial = pageWatchPartial;
+    }
+
     // page1Partial = <Info
     //                   enabled={page1Enabled}
     //                   visible={page1Visible} />;
@@ -178,7 +188,7 @@ module.exports = React.createClass({
     return <div className="app">
             <div className="app__content" style={pagesStyle} ref="page-wrapper">
               <div className="pages">
-                <div className="page">{page0Partial}</div>
+                <div className="page">{pageContentPartial}</div>
               </div>
             </div>
             {hudPartial}

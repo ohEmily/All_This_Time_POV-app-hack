@@ -7,10 +7,11 @@ var AppStore = Fluxxor.createStore({
     this.prevPage = -1;
     this.ready = false;
     this.chapter = null;
-
+    this.watch = false;
     this.bindActions(
       AppConstants.SET_PAGE, this.onSetPage,
-      AppConstants.SET_READY_STATE, this.onSetReadyState
+      AppConstants.SET_READY_STATE, this.onSetReadyState,
+      AppConstants.SET_WATCH, this.onSetWatch
     );
   },
 
@@ -32,12 +33,19 @@ var AppStore = Fluxxor.createStore({
     this.emit("change");
   },
 
+
+  onSetWatch: function(payload) {
+    this.watch = Boolean(payload.watch);
+    this.emit("change");
+  },
+
   getState: function() {
     return {
       page: this.page,
       prevPage: this.prevPage,
       ready: this.ready,
-      chapter: this.chapter
+      chapter: this.chapter,
+      watch: this.watch
     };
   }
 });

@@ -39,6 +39,8 @@ module.exports = {
     // BlockStarRating: require("./blocks/block-star-rating.js"),
     // BlockReviewQuote: require("./blocks/block-review-quote.js"),
     // BlockReviewCarousel: require("./blocks/block-review-carousel.js")
+    BlockWatchBG: require("./blocks/block-watch-bg.jsx"),
+    BlockTheaterText: require("./blocks/block-theater-text.jsx")
   },
 
   Images: {

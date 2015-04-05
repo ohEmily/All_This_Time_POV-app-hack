@@ -2,6 +2,7 @@ module.exports = {
   SET_PAGE              : "SET_PAGE",
   SET_READY_STATE       : "SET_READY_STATE",
   SET_CHAPTER           : "SET_CHAPTER",
+  SET_WATCH             : "SET_WATCH",
   LOAD_ASSETS           : "LOAD_ASSETS",
   LOAD_ASSETS_PROGRESS  : "LOAD_ASSETS_PROGRESS",
   LOAD_ASSETS_SUCCESS   : "LOAD_ASSETS_SUCCESS",

@@ -3,10 +3,10 @@ Developer: Simon Lindsay / @simonlindsay
 */
 webpackJsonp([2],{
 
-/***/ 11:
+/***/ 6:
 /***/ function(module, exports, __webpack_require__) {
 
-	var appLoaderLogo = __webpack_require__(22);
+	var appLoaderLogo = __webpack_require__(15);
 
 	module.exports = {
 
@@ -52,10 +52,10 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 22:
+/***/ 15:
 /***/ function(module, exports, __webpack_require__) {
 
-	var StackBlurRGBA = __webpack_require__(34);
+	var StackBlurRGBA = __webpack_require__(32);
 
 	module.exports = {
 
@@ -312,7 +312,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 34:
+/***/ 32:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

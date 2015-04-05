@@ -885,6 +885,17 @@ category: CSS Components
     align-self: flex-end;
     -ms-flex-item-align: end; }
 
+.block-watch-bg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%; }
+  .block-watch-bg > img {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
 body {
   overflow: hidden;
   margin: 0px;
@@ -1275,3 +1286,50 @@ body {
   height: 100%;
   text-align: center;
   z-index: 1; }
+
+.watch-page {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+
+.watch-page__bg {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%; }
+  .watch-page__bg video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px; }
+
+.watch-page__body {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+
+.watch-page__player {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  height: calc(100% - 99px); }
+
+.watch-page__hud {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 26px 26px 0px 32px; }
+  .watch-page__hud .watch-page__hud__logo {
+    opacity: 0.3;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%); }

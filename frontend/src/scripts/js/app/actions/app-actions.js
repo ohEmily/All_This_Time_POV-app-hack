@@ -12,9 +12,8 @@ module.exports = {
     this.dispatch(AppConstants.SET_READY_STATE, {ready:ready})
   },
 
-  setChapter: function(chapter) {
-    alert("SET CHAPTER: "+chapter);
-    this.dispatch(AppConstants.SET_CHAPTER, {chapter:chapter})
+  setWatch: function(watch) {
+    this.dispatch(AppConstants.SET_WATCH, {watch:watch})
   },
 
   preloadAssets: function(assets) {
