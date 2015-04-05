@@ -1,5 +1,7 @@
 from flask import Flask, render_template, send_from_directory
 import db
+import giphy_api
+import random
 
 app = Flask(__name__, static_url_path='')
 
@@ -21,14 +23,10 @@ def send_css(path):
 #  test route for searching things
 @app.route('/search/<a_string>')
 def search(a_string):
-    if a_string not in db.COLLECTIONS:
-        return 'Bad search string.'
-
-    mongo_search = db.init() 
-    retval = mongo_search.query(a_string)
-
-    return str(retval)
-
+    search_json = giphy_api.search_giphy(a_string)
+    rand_index = random.randint(0, (int(giphy_api.RESPONSE_LIMIT) - 1))
+    
+    return search_json['data'][rand_index]['bitly_gif_url']
 
 @app.route('/')
 def send_index():

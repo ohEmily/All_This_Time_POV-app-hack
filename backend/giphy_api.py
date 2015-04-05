@@ -23,14 +23,11 @@ def search_giphy(query_string):
     }
 
     request_url = SEARCH_URL + urllib.urlencode(query_dict)
-    
     return json.loads(urllib.urlopen(request_url).read())
 
 
-def main():
+if __name__== '__main__':
     query = raw_input('What would you like to search Giphy for?  ')
-    json_data = roulette_giphy(query)
+    json_data = search_giphy(query)
 
     print json.dumps(json_data, sort_keys=True, indent=4)
-
-main()
