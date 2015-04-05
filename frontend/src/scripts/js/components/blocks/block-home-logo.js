@@ -36,7 +36,9 @@ module.exports = React.createClass({
     }
 
     return  (<h1 className={React.addons.classSet(logoClassSet)}>
-              The Most Wonderful Time of the Year
+              After all this time
+              <br/>
+              I still miss you everyday.
             </h1>);
 
   }

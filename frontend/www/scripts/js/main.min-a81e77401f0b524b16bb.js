@@ -6,7 +6,7 @@ webpackJsonp([2],{
 /***/ 6:
 /***/ function(module, exports, __webpack_require__) {
 
-	var appLoaderLogo = __webpack_require__(20);
+	var appLoaderLogo = __webpack_require__(16);
 
 	module.exports = {
 
@@ -18,7 +18,7 @@ webpackJsonp([2],{
 
 	    this.logo = document.createElement('div');
 	    this.logo.className = "block-home-logo block-home-logo--animate block-home-logo--animate-in";
-	    this.logo.innerHTML = '<h1 class="block-home-logo__content">The Most Wonderful Time of the Year</h1>';
+	    this.logo.innerHTML = '<h1 class="block-home-logo__content">After all this time...</h1>';
 
 	    this.el.appendChild(this.logo);
 
@@ -52,10 +52,10 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 20:
+/***/ 16:
 /***/ function(module, exports, __webpack_require__) {
 
-	var StackBlurRGBA = __webpack_require__(35);
+	var StackBlurRGBA = __webpack_require__(33);
 
 	module.exports = {
 
@@ -312,7 +312,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 35:
+/***/ 33:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

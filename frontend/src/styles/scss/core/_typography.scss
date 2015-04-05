@@ -74,11 +74,13 @@ h1, h2, h3, h4, h5, h6 {
 h1{
   @include font($font-lora, $style: italic);
   @include font-size(32px);
+  @include line-height(38px);
 }
 
 h2{
-  @include font($font-lora);
-  @include font-size(18px);
+  @include font($font-lora, $style: italic);
+  @include font-size(24px);
+  @include line-height(26px);
 }
 
 h3{

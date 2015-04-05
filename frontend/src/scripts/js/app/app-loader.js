@@ -10,7 +10,7 @@ module.exports = {
 
     this.logo = document.createElement('div');
     this.logo.className = "block-home-logo block-home-logo--animate block-home-logo--animate-in";
-    this.logo.innerHTML = '<h1 class="block-home-logo__content">The Most Wonderful Time of the Year</h1>';
+    this.logo.innerHTML = '<h1 class="block-home-logo__content">After all this time...</h1>';
 
     this.el.appendChild(this.logo);
 
