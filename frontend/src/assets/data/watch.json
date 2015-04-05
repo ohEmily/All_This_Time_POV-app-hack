@@ -221,8 +221,7 @@
       "label": "And this is how many days it’s been since my dad died.",
       "reset": "true",
       "media": [
-        "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
-        "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+        "./assets/images/content/manydays.jpg"
       ],
       "tweets": "twittersearch/father"
     },
@@ -246,7 +245,27 @@
         "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
         "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
       ],
-      "tweets": "twittersearch/father"
+      "tweets": "twittersearch/father",
+      "twitter": [
+        {
+          "content": "Complex emotions, complex mind.",
+          "date": "1:46 PM - 24 Dec 2014",
+          "_id": {
+            "$oid": "55218928bb7bf94503da811c"
+          },
+          "id": "547871010314153987",
+          "user": "Bellazie"
+        },
+        {
+          "content": "why do humans feel such complex emotions when all we're made to do is reproduce",
+          "date": "11:39 PM - 23 Dec 2014",
+          "_id": {
+            "$oid": "55218928bb7bf94503da8121"
+          },
+          "id": "547657715523133441",
+          "user": "mintycalum"
+        }
+      ]
     },
     {
       "start": 108.6,
