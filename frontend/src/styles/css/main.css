@@ -896,7 +896,7 @@ category: CSS Components
     width: 100%;
     height: 100%; }
 
-.block-theater-text__content {
+.block-theater-text__content, .block-theater-text__content p {
   font-family: 'Lora', serif;
   font-style: italic;
   font-weight: 400;
@@ -907,6 +907,10 @@ category: CSS Components
   font-size: 2rem;
   line-height: 44px;
   line-height: 2.75rem; }
+.block-theater-text__content p {
+  display: none; }
+  .block-theater-text__content p:last-child {
+    display: block; }
 
 body {
   overflow: hidden;

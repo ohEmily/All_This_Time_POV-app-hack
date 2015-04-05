@@ -55,7 +55,7 @@ webpackJsonp([2],{
 /***/ 15:
 /***/ function(module, exports, __webpack_require__) {
 
-	var StackBlurRGBA = __webpack_require__(34);
+	var StackBlurRGBA = __webpack_require__(32);
 
 	module.exports = {
 
@@ -312,7 +312,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 34:
+/***/ 32:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

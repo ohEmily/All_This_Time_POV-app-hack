@@ -27,7 +27,6 @@ module.exports = React.createClass({
         log += ",\n      args: " + JSON.stringify(args).split(",").join(", ");
         log += "\n    }";
 
-        console.log(log);
 
         // $log.innerHTML = log;
       })
@@ -43,7 +42,6 @@ module.exports = React.createClass({
         // addClass, hasClass, removeClass, ...
         // Note: the "saying" class adds the blinking caret.
         // self.utils.addClass(current, "saying");
-        console.log("SAY START,  ERASE END");
       })
       .on("say:end, erase:end", function (eventName) {
         var self    = this,
@@ -52,10 +50,6 @@ module.exports = React.createClass({
         // When say or erase ends, remove the caret.
         // self.utils.removeClass(current, "saying");
         // that.refs.vader.getDOMNode().innerHtml += '<br />';
-        console.log("SAY END,  ERASE END");
-        console.log(that.refs.vader.getDOMNode());
-
-        console.log('inner html: '+that.refs.vader.getDOMNode().innerHTML);
 
         // that.refs.vader.getDOMNode().innerHTML += "<br />";
 
@@ -90,7 +84,7 @@ module.exports = React.createClass({
     var playerStyles = null;
 
     return (<div className="block-theater-text">
-              <p className="block-theater-text__content" id="vader" ref="vader"></p>
+              <div className="block-theater-text__content" id="vader" ref="vader"></div>
             </div>);
   }
 

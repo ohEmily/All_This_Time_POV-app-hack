@@ -12,17 +12,28 @@
     {
       "start": 1.5,
       "end": 3.5,
-      "label": "This was the temperature"
+      "label": "This was the temperature",
+      "media": [
+        "http://media.giphy.com/media/6quy6XynfaK2c/giphy.gif",
+        "http://media.giphy.com/media/bDOwRBYykpFvy/giphy.gif"
+      ],
+      "temperature": "30 with a chance of snow"
     },
     {
       "start": 3.5,
       "end": 6.5,
-      "label": "This was our President."
+      "label": "This was our President.",
+      "media": [
+        "http://media.giphy.com/media/o0rwAoBJ1VeRa/giphy.gif"
+      ]
     },
     {
       "start": 6.5,
       "end": 9.5,
-      "label": "This was the number one record on the radio."
+      "label": "This was the number one record on the radio.",
+      "media": [
+        "http://media.giphy.com/media/UVhvAht2T97hu/giphy.gif"
+      ]
     },
     {
       "start": 9.5,
