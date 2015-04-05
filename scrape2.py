@@ -77,7 +77,7 @@ def christmas_search(search_term):
 			tweettimestamp = last_a_tag.find(class_="tweet-timestamp");
 			timestamp = last_a_tag.find(class_="_timestamp");
 			#print(last_a_tag.prettify())
-			#print(tweettext.text) # tweet content
+			print(tweettext.text) # tweet content
 			#print(tweettimestamp.get('href')) # tweet permalink
 			#print(timestamp.get('data-time-ms')) # tweet unix time
 			print(tweettimestamp.get('title')) # tweet human readable time
@@ -90,6 +90,8 @@ def christmas_search(search_term):
 			item = {}
 			item["id"] = profile.get('data-item-id')
 			tweet_id = profile.get('data-item-id')
+			if tweet_id < "547366341439942656":
+				break
 			#item["ID"] = tweettimestamp.get('href')
 			item["content"] = tweettext.text
 			#item["time"] = timestamp.get('data-time-ms')
@@ -101,7 +103,21 @@ def christmas_search(search_term):
 	return mongo_list
 	
 
-print scrape_keyword("i miss you grandma")
+#print christmas_search('my "passed away yesterday"')
+#print christmas_search('"decided to go for a run"')
+#print christmas_search('"number one record"')
+#print christmas_search('"the tv was on"')
+#print christmas_search('"i spent the night watching"')
+#print christmas_search('"the biggest news story"')
+#print christmas_search('"christmas represents"')
+#print christmas_search('"For you the holidays represent"') #not so good
+#print christmas_search('"But you are not alone"')
+#print christmas_search('"But I am not alone"')
+#print christmas_search('"But we are not alone"')
+#print christmas_search('"number of days till christmas"')
+#print christmas_search('my "passed away yesterday"')
+#print christmas_search('"my father died" "days ago"')
+##print christmas_search('"on this day, you are not alone"') #not so good
 
 
 
