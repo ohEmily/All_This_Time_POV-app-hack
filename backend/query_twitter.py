@@ -20,6 +20,9 @@ if __name__ == "__main__":
 			"snowflakes" : '"the first snowflakes"',
 			"cold" : '"the temperature was"',
 			"represents" : '"christmas represents"',
+			"lost" : '"lost someone"',
+			"complex" : '"complex emotions"',
+			"almost" : '"it was almost beautiful"',
 			}
     #search_term = raw_input('Enter a search term or phrase. ')
 
