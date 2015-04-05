@@ -35,9 +35,11 @@ def insert(db, tweet, search_term):
 
     collection = db[search_term]
 
-    post_id = posts.insert_one(tweet).inserted_id
+    #post_id = collection.insert(tweet).inserted_id
+    collection.insert(tweet)
+    #print collection.find_one()
 
-    print "Inserted post %d into collection %s." % post_id, search_term
+    #print "Inserted post %d into collection %s." % collection.find_one()._id, search_term
 
 # returns the corresponding collection for that search term
 def query(db, search_term):
@@ -46,4 +48,4 @@ def query(db, search_term):
 
     collection = db[search_term]
 
-    return collection.find()
+    return list(collection.find())

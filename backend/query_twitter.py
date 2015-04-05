@@ -33,6 +33,7 @@ if __name__ == "__main__":
 
     if (tweet_list):
         for tweet_curr in tweet_list[0:MAX_INSERTION_COUNT]:
-            db.insert(db, tweet_curr, search_term)
+            db.insert(mongo_search, tweet_curr, search_term) #db.db possibly confusing or mongo_search
+	print db.query(mongo_search, search_term)
     else:
         print 'This search yielded no results. No entries added to database.'
