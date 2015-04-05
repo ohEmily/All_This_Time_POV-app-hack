@@ -7,7 +7,8 @@
       "media": [
         "http://media.giphy.com/media/6quy6XynfaK2c/giphy.gif",
         "http://media.giphy.com/media/bDOwRBYykpFvy/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/top_news"
     },
     {
       "start": 5,
@@ -17,7 +18,8 @@
       "media": [
         "http://media.giphy.com/media/PRjlkPy5vB2V2/giphy.gif",
         "http://media.giphy.com/media/DHJmgpy2wKvOo/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/temperature"
     },
     {
       "start": 7,
@@ -26,7 +28,8 @@
       "president": "George W Bush",
       "media": [
         "http://media.giphy.com/media/l10qTjPo1x6zC/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/president"
     },
     {
       "start": 9,
@@ -35,7 +38,8 @@
       "number1": "'Yeah!' by Usher",
       "media": [
         "http://images.coveralia.com/audio/u/Usher-Yeah_(Featuring_Lil_Jon_y_Ludacris)_(Cd_Single)-Frontal.jpg?768"
-      ]
+      ],
+      "tweets": "twittersearch/number1"
     },
     {
       "start": 12,
@@ -43,7 +47,8 @@
       "label": "This was the biggest new story.",
       "media": [
         "http://images.coveralia.com/audio/u/Usher-Yeah_(Featuring_Lil_Jon_y_Ludacris)_(Cd_Single)-Frontal.jpg?768"
-      ]
+      ],
+      "tweets": "twittersearch/top_news"
     },
     {
       "start": 15,
@@ -53,7 +58,8 @@
         "http://media.giphy.com/media/DLWURx5pn34Ji/giphy.gif",
         "http://media.giphy.com/media/YON27KEmE27de/giphy.gif",
         "http://media.giphy.com/media/io1dU7gHSRjAA/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/television"
     },
     {
       "start": 18,
@@ -63,7 +69,8 @@
         "http://media.giphy.com/media/f7d8Atz1YVAhW/giphy.gif",
         "http://media.giphy.com/media/8qTeHKweppdbq/giphy.gif",
         "http://media.giphy.com/media/10QdeSp2wEPxPW/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/wonderful_life"
     },
     {
       "start": 22,
@@ -71,7 +78,8 @@
       "label": "I decided to go for a run for the first time in years.",
       "media": [
         "http://media.giphy.com/media/ysGYmSimCYePK/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/run"
     },
     {
       "start": 26,
@@ -81,7 +89,8 @@
         "http://giphy.com/gifs/black-and-white-snow-alHyv3MTOPFde",
         "http://media.giphy.com/media/2JifcqvnTmwAE/giphy.gif",
         "http://media.giphy.com/media/ygx9cp28M41l6/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/snowflakes"
     },
     {
       "start": 30,
@@ -91,7 +100,8 @@
         "http://media.giphy.com/media/SqW30SzcGwnYY/giphy.gif",
         "http://media.giphy.com/media/QLveI2VchXl2U/giphy.gif",
         "http://media.giphy.com/media/8bi25qj5LruX6/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/almost"
     },
     {
       "start": 33,
@@ -100,7 +110,8 @@
       "media": [
         "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
         "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
-      ]
+      ],
+      "tweets": "twittersearch/father"
     }
   ]
 }
