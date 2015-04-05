@@ -20,16 +20,16 @@ module.exports = React.createClass({
               <Components.Blocks.BlockAlign>
                 <ul className="home-content-menu__list">
                   <li className="home-content-menu__list__item">
-                    <Components.Buttons.ButtonBeta onClick={this.onChapterClick.bind(this, 1)}>I want to cry</Components.Buttons.ButtonBeta>
+                    <Components.Buttons.ButtonBeta onClick={this.onChapterClick.bind(this, 1)}>1. I want to cry</Components.Buttons.ButtonBeta>
                   </li>
                   <li className="home-content-menu__list__item">
-                    <Components.Buttons.ButtonBeta onClick={this.onChapterClick.bind(this, 2)}>I want to laugh</Components.Buttons.ButtonBeta>
+                    <Components.Buttons.ButtonBeta onClick={this.onChapterClick.bind(this, 2)}>2. I want to laugh</Components.Buttons.ButtonBeta>
                   </li>
                   <li className="home-content-menu__list__item">
-                    <Components.Buttons.ButtonBeta onClick={this.onChapterClick.bind(this, 3)}>I want to think</Components.Buttons.ButtonBeta>
+                    <Components.Buttons.ButtonBeta onClick={this.onChapterClick.bind(this, 3)}>3. I want to think</Components.Buttons.ButtonBeta>
                   </li>
                   <li className="home-content-menu__list__item">
-                    <Components.Buttons.ButtonBeta onClick={this.onChapterClick.bind(this, 4)}>I want to do all these things together</Components.Buttons.ButtonBeta>
+                    <Components.Buttons.ButtonBeta onClick={this.onChapterClick.bind(this, 4)}>4. I want to do all these things together</Components.Buttons.ButtonBeta>
                   </li>
                 </ul>
               </Components.Blocks.BlockAlign>
