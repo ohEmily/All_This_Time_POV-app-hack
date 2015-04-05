@@ -91,14 +91,14 @@ webpackJsonp([3],[
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var css = __webpack_require__(31);
+	var css = __webpack_require__(30);
 	var React = __webpack_require__(5);
-	var App = __webpack_require__(17);
+	var App = __webpack_require__(16);
 	var Fluxxor = __webpack_require__(27);
-	var AppStore = __webpack_require__(18);
-	var AssetStore = __webpack_require__(19);
-	var AppActions = __webpack_require__(20);
-	var AssetConstants = __webpack_require__(21);
+	var AppStore = __webpack_require__(17);
+	var AssetStore = __webpack_require__(18);
+	var AppActions = __webpack_require__(19);
+	var AssetConstants = __webpack_require__(20);
 
 	module.exports = {
 
@@ -155,7 +155,7 @@ webpackJsonp([3],[
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -191,7 +191,7 @@ webpackJsonp([3],[
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -231,10 +231,10 @@ webpackJsonp([3],[
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 	__webpack_require__(37);
-	__webpack_require__(28);
-	var Q = __webpack_require__(29);
+	__webpack_require__(29);
+	var Q = __webpack_require__(28);
 	var ButtonAlpha = __webpack_require__(8);
 	var BlockHomeLogo = __webpack_require__(22);
 	var BlockReviewQuote = __webpack_require__(23);
@@ -458,7 +458,7 @@ webpackJsonp([3],[
 
 
 	*/
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -559,7 +559,7 @@ webpackJsonp([3],[
 
 	*/
 
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -722,20 +722,13 @@ webpackJsonp([3],[
 	})
 
 /***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(30);
-
-
-/***/ },
-/* 16 */,
-/* 17 */
+/* 15 */,
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React     = __webpack_require__(5);
-	var Home      = __webpack_require__(34);
-	var Watch      = __webpack_require__(35);
+	var Home      = __webpack_require__(32);
+	var Watch      = __webpack_require__(33);
 	// var Info   = require("./info/info.jsx");
 	// var Watch  = require("./watch/watch.jsx");
 	// var HUD    = require("./hud.jsx");
@@ -933,11 +926,11 @@ webpackJsonp([3],[
 	})
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Fluxxor = __webpack_require__(27);
-	var AppConstants = __webpack_require__(36);
+	var AppConstants = __webpack_require__(35);
 
 	var AppStore = Fluxxor.createStore({
 	  initialize: function() {
@@ -991,11 +984,11 @@ webpackJsonp([3],[
 	module.exports = AppStore;
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Fluxxor = __webpack_require__(27);
-	var AppConstants = __webpack_require__(36);
+	var AppConstants = __webpack_require__(35);
 
 	var AssetStore = Fluxxor.createStore({
 	  initialize: function() {
@@ -1052,11 +1045,11 @@ webpackJsonp([3],[
 	module.exports = AssetStore;
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var AppConstants = __webpack_require__(36);
-	var Q = __webpack_require__(29);
+	var AppConstants = __webpack_require__(35);
+	var Q = __webpack_require__(28);
 	var Qimage = __webpack_require__(73);
 
 	module.exports = {
@@ -1118,12 +1111,19 @@ webpackJsonp([3],[
 	}
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = [
 	  __webpack_require__(88)
 	]
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(36);
+
 
 /***/ },
 /* 22 */
@@ -1152,7 +1152,7 @@ webpackJsonp([3],[
 
 
 	*/
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 
 	module.exports = React.createClass({displayName: "exports",
 
@@ -1220,7 +1220,7 @@ webpackJsonp([3],[
 
 	*/
 
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 	var BlockStarRating = __webpack_require__(38);
 
 	module.exports = React.createClass({displayName: "exports",
@@ -1300,7 +1300,7 @@ webpackJsonp([3],[
 
 	*/
 
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 
 	module.exports = React.createClass({displayName: "exports",
 	  
@@ -2169,58 +2169,6 @@ webpackJsonp([3],[
 
 /***/ },
 /* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __hasProp = {}.hasOwnProperty;
-
-	if (window._gsQueue == null) {
-	  window._gsQueue = [];
-	}
-
-	window._gsQueue.push(function() {
-	  return window._gsDefine.plugin({
-	    propName: 'state',
-	    API: 2,
-	    version: '1.0.2',
-	    init: function(target, value, tween) {
-	      var end, p, start, _ref, _ref1, _ref2;
-	      if (typeof target.setState !== 'function') {
-	        return false;
-	      }
-	      if (target._tweenState == null) {
-	        target._tweenState = {};
-	      }
-	      this._tween = {};
-	      for (p in value) {
-	        if (!__hasProp.call(value, p)) continue;
-	        end = value[p];
-	        start = (_ref = (_ref1 = (_ref2 = target.state) != null ? _ref2[p] : void 0) != null ? _ref1 : target._tweenState[p]) != null ? _ref : end;
-	        this._tween[p] = start;
-	        this._addTween(this._tween, p, start, end, p);
-	      }
-	      this._target = target;
-	      return true;
-	    },
-	    set: function(ratio) {
-	      var k, v, _ref;
-	      this._super.setRatio.call(this, ratio);
-	      _ref = this._tween;
-	      for (k in _ref) {
-	        v = _ref[k];
-	        this._target._tweenState[k] = v;
-	      }
-	      return this._target.setState(this._tween);
-	    }
-	  });
-	});
-
-	if (window._gsDefine) {
-	  window._gsQueue.pop()();
-	}
-
-
-/***/ },
-/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process, setImmediate) {// vim:ts=4:sts=4:sw=4:
@@ -4213,78 +4161,73 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64), __webpack_require__(145).setImmediate))
 
 /***/ },
-/* 30 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactWithAddons
-	 */
+	var __hasProp = {}.hasOwnProperty;
 
-	/**
-	 * This module exists purely in the open source project, and is meant as a way
-	 * to create a separate standalone build of React. This build has "addons", or
-	 * functionality we've built and think might be useful but doesn't have a good
-	 * place to live inside React core.
-	 */
-
-	"use strict";
-
-	var LinkedStateMixin = __webpack_require__(74);
-	var React = __webpack_require__(26);
-	var ReactComponentWithPureRenderMixin =
-	  __webpack_require__(75);
-	var ReactCSSTransitionGroup = __webpack_require__(76);
-	var ReactTransitionGroup = __webpack_require__(77);
-	var ReactUpdates = __webpack_require__(78);
-
-	var cx = __webpack_require__(79);
-	var cloneWithProps = __webpack_require__(80);
-	var update = __webpack_require__(81);
-
-	React.addons = {
-	  CSSTransitionGroup: ReactCSSTransitionGroup,
-	  LinkedStateMixin: LinkedStateMixin,
-	  PureRenderMixin: ReactComponentWithPureRenderMixin,
-	  TransitionGroup: ReactTransitionGroup,
-
-	  batchedUpdates: ReactUpdates.batchedUpdates,
-	  classSet: cx,
-	  cloneWithProps: cloneWithProps,
-	  update: update
-	};
-
-	if ("production" !== process.env.NODE_ENV) {
-	  React.addons.Perf = __webpack_require__(82);
-	  React.addons.TestUtils = __webpack_require__(83);
+	if (window._gsQueue == null) {
+	  window._gsQueue = [];
 	}
 
-	module.exports = React;
+	window._gsQueue.push(function() {
+	  return window._gsDefine.plugin({
+	    propName: 'state',
+	    API: 2,
+	    version: '1.0.2',
+	    init: function(target, value, tween) {
+	      var end, p, start, _ref, _ref1, _ref2;
+	      if (typeof target.setState !== 'function') {
+	        return false;
+	      }
+	      if (target._tweenState == null) {
+	        target._tweenState = {};
+	      }
+	      this._tween = {};
+	      for (p in value) {
+	        if (!__hasProp.call(value, p)) continue;
+	        end = value[p];
+	        start = (_ref = (_ref1 = (_ref2 = target.state) != null ? _ref2[p] : void 0) != null ? _ref1 : target._tweenState[p]) != null ? _ref : end;
+	        this._tween[p] = start;
+	        this._addTween(this._tween, p, start, end, p);
+	      }
+	      this._target = target;
+	      return true;
+	    },
+	    set: function(ratio) {
+	      var k, v, _ref;
+	      this._super.setRatio.call(this, ratio);
+	      _ref = this._tween;
+	      for (k in _ref) {
+	        v = _ref[k];
+	        this._target._tweenState[k] = v;
+	      }
+	      return this._target.setState(this._tween);
+	    }
+	  });
+	});
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
+	if (window._gsDefine) {
+	  window._gsQueue.pop()();
+	}
+
 
 /***/ },
-/* 31 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(32);
+	var content = __webpack_require__(31);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(63)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/si/PROJECTS/POVHACKATHON/frontend/node_modules/css-loader/index.js!/Users/si/PROJECTS/POVHACKATHON/frontend/src/styles/css/main.css", function() {
-			var newContent = require("!!/Users/si/PROJECTS/POVHACKATHON/frontend/node_modules/css-loader/index.js!/Users/si/PROJECTS/POVHACKATHON/frontend/src/styles/css/main.css");
+		module.hot.accept("!!/Users/si/PROJECTS/POVHACKATHON/frontend/node_modules/css-loader/index.js?root=./assets!/Users/si/PROJECTS/POVHACKATHON/frontend/src/styles/css/main.css", function() {
+			var newContent = require("!!/Users/si/PROJECTS/POVHACKATHON/frontend/node_modules/css-loader/index.js?root=./assets!/Users/si/PROJECTS/POVHACKATHON/frontend/src/styles/css/main.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -4293,22 +4236,21 @@ webpackJsonp([3],[
 	}
 
 /***/ },
-/* 32 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(84)();
+	exports = module.exports = __webpack_require__(74)();
 	exports.push([module.id, "@charset \"UTF-8\";\n/*\n * Gridism\n * A simple, responsive, and handy CSS grid by @cobyism\n * https://github.com/cobyism/gridism\n */\n/* Preserve some sanity */\n.grid, .unit {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/* Set up some rules to govern the grid */\n.grid {\n  display: block;\n  clear: both; }\n\n.grid .unit {\n  float: left;\n  width: 100%;\n  padding: 0px; }\n\n/* This ensures the outer gutters are equal to the (doubled) inner gutters. */\n/* Nested grids already have padding though, so let’s nuke it */\n/* Let people nuke the gutters/padding completely in a couple of ways */\n.no-gutters > .unit, .unit.no-gutters {\n  padding: 0 !important; }\n\n/* Wrapping at a maximum width is optional */\n.wrap .grid, .grid.wrap {\n  max-width: 978px;\n  margin: 0 auto; }\n\n/* Width classes also have shorthand versions numbered as fractions\n * For example: for a grid unit 1/3 (one third) of the parent width,\n * simply apply class=\"w-1-3\" to the element. */\n.grid .whole, .grid .w-1-1 {\n  width: 100%; }\n\n.grid .half, .grid .w-1-2 {\n  width: 50%; }\n\n.grid .one-third, .grid .w-1-3 {\n  width: 33.3332%; }\n\n.grid .two-thirds, .grid .w-2-3 {\n  width: 66.6665%; }\n\n.grid .one-quarter, .grid .w-1-4 {\n  width: 25%; }\n\n.grid .three-quarters, .grid .w-3-4 {\n  width: 75%; }\n\n.grid .one-fifth, .grid .w-1-5 {\n  width: 20%; }\n\n.grid .two-fifths, .grid .w-2-5 {\n  width: 40%; }\n\n.grid .three-fifths, .grid .w-3-5 {\n  width: 60%; }\n\n.grid .four-fifths, .grid .w-4-5 {\n  width: 80%; }\n\n.grid .golden-small, .grid .w-g-s {\n  width: 38.2716%; }\n\n/* Golden section: smaller piece */\n.grid .golden-large, .grid .w-g-l {\n  width: 61.7283%; }\n\n/* Golden section: larger piece */\n/* Clearfix after every .grid */\n.grid {\n  *zoom: 1; }\n\n.grid:before, .grid:after {\n  display: table;\n  content: \"\";\n  line-height: 0; }\n\n.grid:after {\n  clear: both; }\n\n/* Utility classes */\n.align-center {\n  text-align: center; }\n\n.align-left {\n  text-align: left; }\n\n.align-right {\n  text-align: right; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n/* Responsive Stuff */\n@media screen and (max-width: 568px) {\n  /* Stack anything that isn’t full-width on smaller screens */\n  .grid .unit {\n    width: 100% !important;\n    padding-left: 20px;\n    padding-right: 20px; }\n  .unit .grid .unit {\n    padding-left: 0px;\n    padding-right: 0px; }\n  /* Sometimes, you just want to be different on small screens */\n  .center-on-mobiles {\n    text-align: center !important; }\n  .hide-on-mobiles {\n    display: none !important; } }\n\n/* Expand the wrap a bit further on larger screens */\n@media screen and (min-width: 1180px) {\n  .wider .grid {\n    max-width: 1180px;\n    margin: 0 auto; } }\n\n/*doc\n---\ntitle: Text Colors\nname: text colors\ncategory: Base CSS\n---\n\nWe have a few background colors that can be used in various contexts.\nThese are not for use as the entire page background but instead for\nspecific components and modules on the page.\n\n```html_example_table\n<p class=\"text-color--base\">Text Color Base</p>\n<p class=\"text-color--alpha\">Text Color Alpha</p>\n```\n\n*/\n.text-color--base {\n  color: #efefef; }\n\n.text-color--alpha {\n  color: #d2cdbf; }\n\n/* apply a natural box layout model to all elements */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nhtml {\n  font-size: 16px; }\n\nbody {\n  text-rendering: optimizeLegibility;\n  font-feature-settings: \"kern\";\n  -webkit-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern=1\";\n  text-rendering: optimizeLegibility;\n  /* optional: for older browsers */\n  -webkit-font-variant-ligatures: common-ligatures;\n  /* for iOS and Safari 6 */\n  font-variant-ligatures: common-ligatures;\n  /* for up-to-date browsers, including IE10 and Opera 21 */ }\n\n/*doc\n---\ntitle: Typography\nname: typography\ncategory: Base CSS\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<h1>h1 24px</h1>\n\n<h2>h2 18px</h2>\n\n<h3>h3 16px</h3>\n\n<h4>h4 14px</h4>\n\n<h5>h5 13px</h5>\n\n<p>This is an example of our base font style 15px. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n```\n\n*/\nh1, h2, h3, h4, h5, h6 {\n  font-weight: 500;\n  overflow: visible;\n  padding: 0px;\n  margin: 0px;\n  color: #efefef; }\n\nh1 {\n  font-family: 'Lora', serif;\n  font-style: italic;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 32px;\n  font-size: 2rem; }\n\nh2 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 18px;\n  font-size: 1.125rem; }\n\nh3 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 16px;\n  font-size: 1rem; }\n\nh4 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 14px;\n  font-size: 0.875rem; }\n\nh5 {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 13px;\n  font-size: 0.8125rem; }\n\nbody, p {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 2px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 16px;\n  font-size: 1rem;\n  line-height: 24px;\n  line-height: 1.5rem;\n  color: #ffffff;\n  margin: 15px 0px;\n  text-rendering: optimizeLegibility;\n  font-feature-settings: \"kern\";\n  -webkit-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern\";\n  -moz-font-feature-settings: \"kern=1\"; }\n\np {\n  line-height: 33px;\n  line-height: 2.0625rem; }\n\na, button {\n  color: inherit;\n  cursor: pointer;\n  text-decoration: none;\n  -webkit-transition-property: color;\n  -moz-transition-property: color;\n  transition-property: color;\n  -webkit-transition-duration: 0.15s;\n  -moz-transition-duration: 0.15s;\n  transition-duration: 0.15s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear; }\n  a:hover, button:hover {\n    color: #efefef; }\n\n*, a, a:active button, button:active {\n  -webkit-tap-highlight-color: transparent;\n  -webkit-tap-highlight-color: transparent;\n  /* For some Androids */\n  outline: none;\n  text-decoration: none; }\n\nem {\n  font-style: normal; }\n\n::-moz-selection {\n  background-color: gray;\n  color: inherit; }\n\n::selection {\n  background-color: gray;\n  color: inherit; }\n\n.align-left {\n  text-align: left; }\n\n.align-right {\n  text-align: right; }\n\n.global-animation__transition-alpha-enter {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .5s;\n  -moz-transition-duration: .5s;\n  transition-duration: .5s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0.5s;\n  -moz-transition-delay: 0.5s;\n  transition-delay: 0.5s; }\n  .global-animation__transition-alpha-enter.global-animation__transition-alpha-enter-active {\n    opacity: 1; }\n\n.global-animation__transition-alpha-leave {\n  opacity: 1;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .5s;\n  -moz-transition-duration: .5s;\n  transition-duration: .5s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-alpha-leave.global-animation__transition-alpha-leave-active {\n    opacity: 0; }\n\n.global-animation__transition-beta-enter {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-beta-enter.global-animation__transition-beta-enter-active {\n    -webkit-transition-delay: 0.4s;\n    -moz-transition-delay: 0.4s;\n    transition-delay: 0.4s;\n    opacity: 1; }\n\n.global-animation__transition-beta-leave {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .global-animation__transition-beta-leave.global-animation__transition-beta-leave-active {\n    opacity: 0;\n    -webkit-transition-delay: 0s;\n    -moz-transition-delay: 0s;\n    transition-delay: 0s; }\n\n.animation-fade-in-alpha {\n  opacity: 0;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .3s;\n  -moz-transition-duration: .3s;\n  transition-duration: .3s;\n  -webkit-transition-timing-function: linear;\n  -moz-transition-timing-function: linear;\n  transition-timing-function: linear;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .animation-fade-in-alpha.global-animation__transition-alpha-enter-active {\n    opacity: 1; }\n\n@-webkit-keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes fadeInAlpha {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n@-webkit-keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes fadeOutAlpha {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n.label {\n  margin: 0px;\n  padding: 0px; }\n\n/*doc\n---\ntitle: Alpha Label\nname: alpha label\ncategory: labels\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<span class=\"label label-alpha\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--large\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--small\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n```html_example_table\n<span class=\"label label-alpha label-alpha--blockquote\">A FILM BY DAN DIFELICE & SALOMON LIGTHELM</span>\n```\n\n*/\n.label.label-alpha {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 18px;\n  font-size: 1.125rem;\n  line-height: 21px;\n  line-height: 1.3125rem;\n  color: inherit;\n  vertical-align: bottom;\n  position: relative; }\n  .label.label-alpha.label-alpha--large {\n    font-size: 20px;\n    font-size: 1.25rem;\n    line-height: 23px;\n    line-height: 1.4375rem;\n    letter-spacing: 4px; }\n  .label.label-alpha.label-alpha--small {\n    font-size: 14px;\n    font-size: 0.875rem;\n    line-height: 16px;\n    line-height: 1rem;\n    letter-spacing: 2px; }\n  .label.label-alpha.label-alpha--blockquote {\n    padding-left: 14px;\n    overflow: visible; }\n    .label.label-alpha.label-alpha--blockquote:before {\n      content: \"\";\n      position: absolute;\n      left: 0px;\n      top: 15%;\n      width: 1px;\n      height: 70%;\n      background-color: #ffffff; }\n\n/*doc\n---\ntitle: Beta Label\nname: beta label\ncategory: labels\n---\n\nThese are the labels used for the top navigation.\n\n```html_example_table\n  <span class=\"label label-beta\">home</span>\n```\n\n*/\n.label.label-beta {\n  font-family: 'Lora', serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 18px;\n  font-size: 1.125rem;\n  line-height: 21px;\n  line-height: 1.3125rem;\n  color: inherit;\n  vertical-align: bottom;\n  position: relative; }\n\n.button {\n  display: inline-block;\n  background-color: transparent;\n  box-sizing: border-box;\n  cursor: pointer;\n  border: none;\n  padding: 0px;\n  margin: 0px;\n  text-align: left;\n  outline: none;\n  outline-offset: 0;\n  outline-color: transparent;\n  -webkit-appearance: none; }\n  .button::-moz-focus-inner, .button::-moz-focus-inner {\n    border: none;\n    padding: 0; }\n\n/*doc\n---\ntitle: Alpha Button\nname: alpha button\ncategory: Buttons\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<button class=\"button button-alpha\">\n  <span class=\"button-alpha__label\">\n    <span class=\"label label-alpha\">Button Alpha</span>\n  </span>\n</button>\n```\n\n```html_example_table\n<button class=\"button button-alpha button-alpha--large\">\n  <span class=\"button-alpha__label\">\n    <span class=\"label label-zeta button-alpha__label\">Watch the movie</span>\n    <span class=\"label label-eta button-alpha__label\">Available December 24th</span>\n  </span>\n</button>\n```\n\n*/\n.button.button-alpha {\n  padding: 10px 15px;\n  border: 1px solid #ffffff;\n  -webkit-transition-property: background-color;\n  -moz-transition-property: background-color;\n  transition-property: background-color;\n  -webkit-transition-duration: .15s;\n  -moz-transition-duration: .15s;\n  transition-duration: .15s;\n  -webkit-transition-timing-function: ease-in;\n  -moz-transition-timing-function: ease-in;\n  transition-timing-function: ease-in;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s;\n  color: #ffffff;\n  background-color: rgba(255, 255, 255, 0.1);\n  text-align: center; }\n  .button.button-alpha > .button-alpha__label > .label {\n    display: block; }\n  .no-touch .button.button-alpha:hover {\n    background-color: #ffffff;\n    color: #000000; }\n  .touch .button.button-alpha {\n    background-color: #ffffff;\n    color: #000000; }\n  .button.button-alpha.button-alpha--large {\n    padding: 20px; }\n\n/*doc\n---\ntitle: Beta Button\nname: beta button\ncategory: Buttons\n---\n\nThese are the heading sizes that you can use site wide.\n\n```html_example_table\n<a class=\"button button-beta\">\n  <span class=\"label label-beta button-beta__label\">Home</span>\n</a>\n```\n```html_example_table\n<a class=\"button button-beta button-beta--active\">\n  <span class=\"label label-beta button-beta__label\">Home</span>\n</a>\n```\n\n*/\n.button.button-beta {\n  opacity: 0.8;\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: .15s;\n  -moz-transition-duration: .15s;\n  transition-duration: .15s;\n  -webkit-transition-timing-function: ease-in;\n  -moz-transition-timing-function: ease-in;\n  transition-timing-function: ease-in;\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .button.button-beta.button-beta--active {\n    opacity: 1; }\n  .no-touch .button.button-beta:hover {\n    opacity: 1; }\n  .touch .button.button-beta {\n    opacity: 1; }\n\n.input-slider {\n  background-color: rgba(255, 255, 255, 0.1);\n  width: 4px;\n  height: 100%;\n  min-height: 80px; }\n\n/*doc\n---\ntitle: Block Home Logo\nname: block home logo\ncategory: CSS Components\n---\n\n```html_example_table\n  <div class=\"block-home-logo\">\n    <span class=\"block-home-logo__content\">\n    </span>\n  </div>\n```\n\n*/\n@-webkit-keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px); } }\n\n@-moz-keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -moz-transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -moz-transform: translateZ(0px); } }\n\n@keyframes blockHomeLogoFadeIn {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n  100% {\n    opacity: 1;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); } }\n\n.block-home-logo {\n  display: inline-block;\n  text-align: center;\n  width: 780px;\n  height: 85px;\n  position: relative;\n  -webkit-transform: translateZ(0px);\n  -moz-transform: translateZ(0px);\n  -ms-transform: translateZ(0px);\n  -o-transform: translateZ(0px);\n  transform: translateZ(0px); }\n  .block-home-logo.block-home-logo--animate {\n    opacity: 0; }\n  .block-home-logo.block-home-logo--animate-in {\n    opacity: 1;\n    -webkit-animation-name: blockHomeLogoFadeIn;\n    -moz-animation-name: blockHomeLogoFadeIn;\n    animation-name: blockHomeLogoFadeIn; }\n\n/*doc\n---\ntitle: Block Align\nname: block align\ncategory: CSS Components\n---\n\n```html_example_table\n<div class=\"block-align\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n```html_example_table\n<div class=\"block-align block-align--top\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n```html_example_table\n<div class=\"block-align block-align--bottom\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n\n```html_example_table\n<div class=\"block-align block-align--left block-align--bottom\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n\n```html_example_table\n<div class=\"block-align block-align--right block-align--top\" style=\"width: 100%; height: 500px; background-color: grey;\">\n  <div class=\"block-align__content\">\n    <span class=\"label label-gamma\">\n      Please watch in Fullscreen HD mode<br/>\n      Better experience with headphones\n    </span>\n  </div>\n</div>\n```\n\n*/\n.block-align {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  box-align: center;\n  -webkit-align-items: center;\n  -moz-align-items: center;\n  -ms-align-items: center;\n  -o-align-items: center;\n  align-items: center;\n  -ms-flex-align: center;\n  -webkit-box-pack: center;\n  -moz-box-pack: center;\n  box-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  -ms-justify-content: center;\n  -o-justify-content: center;\n  justify-content: center;\n  -ms-flex-pack: center; }\n  .block-align > .block-align__content {\n    max-width: 100%; }\n  .block-align.block-align--left {\n    -webkit-box-pack: start;\n    -moz-box-pack: start;\n    box-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    -ms-justify-content: flex-start;\n    -o-justify-content: flex-start;\n    justify-content: flex-start;\n    -ms-flex-pack: start; }\n  .block-align.block-align--right {\n    -webkit-box-pack: end;\n    -moz-box-pack: end;\n    box-pack: end;\n    -webkit-justify-content: flex-end;\n    -moz-justify-content: flex-end;\n    -ms-justify-content: flex-end;\n    -o-justify-content: flex-end;\n    justify-content: flex-end;\n    -ms-flex-pack: end; }\n  .block-align.block-align--top > .block-align__content {\n    -webkit-align-self: flex-start;\n    -moz-align-self: flex-start;\n    align-self: flex-start;\n    -ms-flex-item-align: start; }\n  .block-align.block-align--bottom > .block-align__content {\n    -webkit-align-self: flex-end;\n    -moz-align-self: flex-end;\n    align-self: flex-end;\n    -ms-flex-item-align: end; }\n\n.block-watch-bg {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n  .block-watch-bg > img {\n    position: absolute;\n    width: 100%;\n    height: 100%; }\n\n.block-theater-text__content {\n  font-family: 'Lora', serif;\n  font-style: italic;\n  font-weight: 400;\n  letter-spacing: 0px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-size: 32px;\n  font-size: 2rem;\n  line-height: 44px;\n  line-height: 2.75rem; }\n\nbody {\n  overflow: hidden;\n  margin: 0px;\n  padding: 0px; }\n\n.app {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n\n.app__content {\n  -webkit-transition-property: -webkit-transform;\n  -moz-transition-property: -moz-transform;\n  transition-property: transform;\n  -webkit-transition-duration: .9s;\n  -moz-transition-duration: .9s;\n  transition-duration: .9s;\n  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n\n.hud {\n  position: fixed;\n  left: 0px;\n  top: 0px;\n  z-index: 99; }\n\n.hud-header {\n  position: fixed;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 0px; }\n  .hud-header.hud-header--animate {\n    -webkit-animation-name: fadeInAlpha;\n    -moz-animation-name: fadeInAlpha;\n    animation-name: fadeInAlpha;\n    -webkit-animation-duration: .3s;\n    -moz-animation-duration: .3s;\n    animation-duration: .3s;\n    -webkit-animation-timing-function: ease-in;\n    -moz-animation-timing-function: ease-in;\n    animation-timing-function: ease-in;\n    -webkit-animation-play-state: paused;\n    -moz-animation-play-state: paused;\n    animation-play-state: paused; }\n  .hud-header.hud-header--animate-in {\n    -webkit-animation-play-state: running;\n    -moz-animation-play-state: running;\n    animation-play-state: running; }\n  .hud-header .hud-header__left {\n    float: left; }\n  .hud-header .hud-header__right {\n    float: right; }\n  .hud-header .hud-header__left, .hud-header .hud-header__right {\n    margin: 26px 26px 0px 26px; }\n    @media only screen and (max-width: 1280px) and (max-height: 768px) {\n      .hud-header .hud-header__left, .hud-header .hud-header__right {\n        margin: 20px 20px 0px 20px; } }\n  .hud-header .hud-header__right__item {\n    margin: 0px 0px;\n    display: inline-block;\n    vertical-align: top; }\n\n.hud-footer {\n  position: fixed;\n  left: 0px;\n  bottom: -100px;\n  width: 100%;\n  -webkit-transition-property: -webkit-transform;\n  -moz-transition-property: -moz-transform;\n  transition-property: transform;\n  -webkit-transition-duration: .9s;\n  -moz-transition-duration: .9s;\n  transition-duration: .9s;\n  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);\n  -webkit-transition-delay: 0s;\n  -moz-transition-delay: 0s;\n  transition-delay: 0s; }\n  .hud-footer.hud-footer--expanded {\n    -webkit-transform: translateY(-100px);\n    -moz-transform: translateY(-100px);\n    -ms-transform: translateY(-100px);\n    -o-transform: translateY(-100px);\n    transform: translateY(-100px); }\n  .hud-footer .hud-footer__left {\n    float: left; }\n    .hud-footer .hud-footer__left.hud-footer__left--animate {\n      -webkit-animation-name: fadeInAlpha;\n      -moz-animation-name: fadeInAlpha;\n      animation-name: fadeInAlpha;\n      -webkit-animation-duration: .3s;\n      -moz-animation-duration: .3s;\n      animation-duration: .3s;\n      -webkit-animation-timing-function: ease-in;\n      -moz-animation-timing-function: ease-in;\n      animation-timing-function: ease-in;\n      -webkit-animation-play-state: paused;\n      -moz-animation-play-state: paused;\n      animation-play-state: paused; }\n    .hud-footer .hud-footer__left.hud-footer__left--animate-in {\n      -webkit-animation-play-state: running;\n      -moz-animation-play-state: running;\n      animation-play-state: running; }\n  .hud-footer .hud-footer__right {\n    float: right; }\n    .hud-footer .hud-footer__right.hud-footer__right--animate {\n      -webkit-animation-name: fadeInAlpha;\n      -moz-animation-name: fadeInAlpha;\n      animation-name: fadeInAlpha;\n      -webkit-animation-duration: .3s;\n      -moz-animation-duration: .3s;\n      animation-duration: .3s;\n      -webkit-animation-timing-function: ease-in;\n      -moz-animation-timing-function: ease-in;\n      animation-timing-function: ease-in;\n      -webkit-animation-play-state: paused;\n      -moz-animation-play-state: paused;\n      animation-play-state: paused; }\n    .hud-footer .hud-footer__right.hud-footer__right--animate-in {\n      -webkit-animation-play-state: running;\n      -moz-animation-play-state: running;\n      animation-play-state: running; }\n  .hud-footer .hud-footer__left, .hud-footer .hud-footer__right {\n    padding: 0px 26px 26px 26px; }\n    @media only screen and (max-width: 1280px) and (max-height: 768px) {\n      .hud-footer .hud-footer__left, .hud-footer .hud-footer__right {\n        padding: 0px 20px 20px 20px; } }\n  .hud-footer .hud-footer__right__item {\n    margin: 0px 10px;\n    display: inline-block;\n    vertical-align: top; }\n    .hud-footer .hud-footer__right__item:first-child {\n      margin-left: 0px; }\n    .hud-footer .hud-footer__right__item:last-child {\n      margin-right: 0px; }\n  .hud-footer .hud-footer__end {\n    clear: both;\n    width: 100%;\n    height: 100px;\n    overflow: hidden; }\n    .hud-footer .hud-footer__end .hud-footer__end__left {\n      float: left;\n      width: 210px;\n      height: 100%;\n      padding-left: 26px; }\n      @media only screen and (max-width: 1280px) and (max-height: 768px) {\n        .hud-footer .hud-footer__end .hud-footer__end__left {\n          padding-left: 20px; } }\n    .hud-footer .hud-footer__end .hud-footer__end__right {\n      float: right;\n      display: table;\n      height: 100%; }\n    .hud-footer .hud-footer__end .hud-footer__end__copyright {\n      display: table-cell;\n      vertical-align: middle;\n      color: #ffffff;\n      padding: 0px 26px; }\n      @media only screen and (max-width: 1280px) and (max-height: 768px) {\n        .hud-footer .hud-footer__end .hud-footer__end__copyright {\n          padding: 0px 20px; } }\n\n.scroll-container {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  overflow: auto; }\n\n.pages {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 300%;\n  overflow: hidden; }\n\n.page {\n  position: relative;\n  height: 33.33333%;\n  width: 100%;\n  overflow: hidden; }\n\n.home-page {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  background-position: center center;\n  background-size: cover;\n  background-repeat: no-repeat; }\n\n.home-page__bg {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  background-image: url("+__webpack_require__(88)+");\n  background-position: center center;\n  background-size: cover;\n  background-repeat: no-repeat;\n  opacity: 0.3; }\n  .home-page__bg:after {\n    content: \"\";\n    position: absolute;\n    left: -200%;\n    top: 0px;\n    width: 400%;\n    height: 100%;\n    display: none;\n    background-color: transparent;\n    background-image: -webkit-linear-gradient(-360deg, transparent 0%, #000000 50%, #000000 100%);\n    background-image: linear-gradient(90deg,transparent 0%, black 50%, black 100%); }\n  .home-page__bg.home-page__bg--animate:after {\n    display: block;\n    -webkit-transition-property: -webkit-transform, opacity;\n    -moz-transition-property: -moz-transform, opacity;\n    transition-property: transform, opacity;\n    -webkit-transition-duration: 4s, 0.3s;\n    -moz-transition-duration: 4s, 0.3s;\n    transition-duration: 4s, 0.3s;\n    -webkit-transition-timing-function: ease-in, linear;\n    -moz-transition-timing-function: ease-in, linear;\n    transition-timing-function: ease-in, linear;\n    -webkit-transition-delay: 0s, 3.5s;\n    -moz-transition-delay: 0s, 3.5s;\n    transition-delay: 0s, 3.5s;\n    -webkit-transform: translateX(0%);\n    -moz-transform: translateX(0%);\n    -ms-transform: translateX(0%);\n    -o-transform: translateX(0%);\n    transform: translateX(0%); }\n  .home-page__bg.home-page__bg--animate-in:after {\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n    transform: translateX(100%);\n    opacity: 0; }\n  .home-page__bg video {\n    object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    -webkit-transform: translateZ(0px);\n    -moz-transform: translateZ(0px);\n    -ms-transform: translateZ(0px);\n    -o-transform: translateZ(0px);\n    transform: translateZ(0px); }\n\n.home-page__nav {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: auto;\n  margin-top: 26px;\n  text-align: center;\n  z-index: 2; }\n  @media only screen and (max-width: 1280px) and (max-height: 768px) {\n    .home-page__nav {\n      margin-top: 20px; } }\n  .home-page__nav.home-page__nav--animate {\n    opacity: 0;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 1.5s;\n    -moz-transition-duration: 1.5s;\n    transition-duration: 1.5s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 1s;\n    -moz-transition-delay: 1s;\n    transition-delay: 1s; }\n  .home-page__nav.home-page__nav--animate-in {\n    opacity: 1; }\n\n.home-page__body {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.home-page__loading {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  z-index: 2; }\n  .home-page__loading .home-page__loading__loader {\n    position: absolute;\n    bottom: 10%;\n    left: 10%; }\n  .home-page__loading .home-page__loading__logo {\n    position: absolute;\n    bottom: 10%;\n    right: 10%;\n    height: 84px; }\n  .home-page__loading.home-page__loading--animate {\n    opacity: 1;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 0.3s;\n    -moz-transition-duration: 0.3s;\n    transition-duration: 0.3s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 0s;\n    -moz-transition-delay: 0s;\n    transition-delay: 0s; }\n  .home-page__loading.home-page__loading--animate-out {\n    opacity: 0;\n    z-index: 0; }\n\n.home-page__cta {\n  position: absolute;\n  z-index: 99;\n  bottom: 10%;\n  width: 100%;\n  height: auto;\n  text-align: center; }\n  .home-page__cta.home-page__cta--animate {\n    opacity: 0;\n    -webkit-transition-property: opacity;\n    -moz-transition-property: opacity;\n    transition-property: opacity;\n    -webkit-transition-duration: 1.5s;\n    -moz-transition-duration: 1.5s;\n    transition-duration: 1.5s;\n    -webkit-transition-timing-function: ease-in;\n    -moz-transition-timing-function: ease-in;\n    transition-timing-function: ease-in;\n    -webkit-transition-delay: 1s;\n    -moz-transition-delay: 1s;\n    transition-delay: 1s; }\n  .home-page__cta.home-page__cta--animate-in {\n    opacity: 1; }\n\n.home-content-menu {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.home-content-menu__list {\n  display: block;\n  list-style: none;\n  margin: 0px;\n  padding: 0px; }\n\n.home-content-menu__list__item {\n  margin: 0px;\n  padding: 0px;\n  display: block;\n  list-style: none;\n  margin-bottom: 50px; }\n  .home-content-menu__list__item:last-child {\n    margin-bottom: 0px; }\n\n.home-content-start {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  z-index: 1; }\n\n.watch-page {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%; }\n\n.watch-page__bg {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%; }\n  .watch-page__bg video {\n    object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n\n.watch-page__body {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%; }\n\n.watch-page__player {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  height: calc(100% - 99px); }\n\n.watch-page__hud {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  margin: 26px 26px 0px 32px; }\n  .watch-page__hud .watch-page__hud__logo {\n    opacity: 0.3;\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n    transform: translateX(100%); }\n", ""]);
 
 /***/ },
-/* 33 */,
-/* 34 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(5);
-	var HomeNav = __webpack_require__(85);
-	var HomeContentStart = __webpack_require__(86);
-	var HomeContentMenu = __webpack_require__(87);
-	var Q = __webpack_require__(29);
+	var HomeNav = __webpack_require__(75);
+	var HomeContentStart = __webpack_require__(76);
+	var HomeContentMenu = __webpack_require__(77);
+	var Q = __webpack_require__(28);
 	var Components = __webpack_require__(4);
 	var HomePageBackground = __webpack_require__(88);
 
@@ -4550,7 +4492,7 @@ webpackJsonp([3],[
 	})
 
 /***/ },
-/* 35 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(5);
@@ -4654,7 +4596,8 @@ webpackJsonp([3],[
 	})
 
 /***/ },
-/* 36 */
+/* 34 */,
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -4667,6 +4610,63 @@ webpackJsonp([3],[
 	  LOAD_ASSETS_SUCCESS   : "LOAD_ASSETS_SUCCESS",
 	  LOAD_ASSETS_FAIL      : "LOAD_ASSETS_FAIL"
 	}
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactWithAddons
+	 */
+
+	/**
+	 * This module exists purely in the open source project, and is meant as a way
+	 * to create a separate standalone build of React. This build has "addons", or
+	 * functionality we've built and think might be useful but doesn't have a good
+	 * place to live inside React core.
+	 */
+
+	"use strict";
+
+	var LinkedStateMixin = __webpack_require__(78);
+	var React = __webpack_require__(26);
+	var ReactComponentWithPureRenderMixin =
+	  __webpack_require__(79);
+	var ReactCSSTransitionGroup = __webpack_require__(80);
+	var ReactTransitionGroup = __webpack_require__(81);
+	var ReactUpdates = __webpack_require__(82);
+
+	var cx = __webpack_require__(83);
+	var cloneWithProps = __webpack_require__(84);
+	var update = __webpack_require__(85);
+
+	React.addons = {
+	  CSSTransitionGroup: ReactCSSTransitionGroup,
+	  LinkedStateMixin: LinkedStateMixin,
+	  PureRenderMixin: ReactComponentWithPureRenderMixin,
+	  TransitionGroup: ReactTransitionGroup,
+
+	  batchedUpdates: ReactUpdates.batchedUpdates,
+	  classSet: cx,
+	  cloneWithProps: cloneWithProps,
+	  update: update
+	};
+
+	if ("production" !== process.env.NODE_ENV) {
+	  React.addons.Perf = __webpack_require__(86);
+	  React.addons.TestUtils = __webpack_require__(87);
+	}
+
+	module.exports = React;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
 /* 37 */
@@ -11921,7 +11921,7 @@ webpackJsonp([3],[
 
 	*/
 
-	var React = __webpack_require__(15);
+	var React = __webpack_require__(21);
 
 	module.exports = React.createClass({displayName: "exports",
 	  
@@ -12551,7 +12551,7 @@ webpackJsonp([3],[
 
 	var ReactElement = __webpack_require__(46);
 	var ReactOwner = __webpack_require__(97);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 
 	var assign = __webpack_require__(59);
 	var invariant = __webpack_require__(94);
@@ -13008,7 +13008,7 @@ webpackJsonp([3],[
 	var ReactPropTransferer = __webpack_require__(101);
 	var ReactPropTypeLocations = __webpack_require__(102);
 	var ReactPropTypeLocationNames = __webpack_require__(103);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 
 	var assign = __webpack_require__(59);
 	var instantiateReactComponent = __webpack_require__(104);
@@ -15752,37 +15752,37 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var BeforeInputEventPlugin = __webpack_require__(113);
-	var ChangeEventPlugin = __webpack_require__(114);
-	var ClientReactRootIndex = __webpack_require__(115);
-	var CompositionEventPlugin = __webpack_require__(116);
-	var DefaultEventPluginOrder = __webpack_require__(117);
-	var EnterLeaveEventPlugin = __webpack_require__(118);
+	var BeforeInputEventPlugin = __webpack_require__(114);
+	var ChangeEventPlugin = __webpack_require__(115);
+	var ClientReactRootIndex = __webpack_require__(116);
+	var CompositionEventPlugin = __webpack_require__(117);
+	var DefaultEventPluginOrder = __webpack_require__(118);
+	var EnterLeaveEventPlugin = __webpack_require__(119);
 	var ExecutionEnvironment = __webpack_require__(62);
-	var HTMLDOMPropertyConfig = __webpack_require__(119);
-	var MobileSafariClickEventPlugin = __webpack_require__(120);
+	var HTMLDOMPropertyConfig = __webpack_require__(120);
+	var MobileSafariClickEventPlugin = __webpack_require__(121);
 	var ReactBrowserComponentMixin = __webpack_require__(110);
 	var ReactComponentBrowserEnvironment =
-	  __webpack_require__(121);
-	var ReactDefaultBatchingStrategy = __webpack_require__(122);
+	  __webpack_require__(122);
+	var ReactDefaultBatchingStrategy = __webpack_require__(123);
 	var ReactDOMComponent = __webpack_require__(49);
-	var ReactDOMButton = __webpack_require__(123);
-	var ReactDOMForm = __webpack_require__(124);
-	var ReactDOMImg = __webpack_require__(125);
-	var ReactDOMInput = __webpack_require__(126);
-	var ReactDOMOption = __webpack_require__(127);
-	var ReactDOMSelect = __webpack_require__(128);
-	var ReactDOMTextarea = __webpack_require__(129);
-	var ReactEventListener = __webpack_require__(130);
-	var ReactInjection = __webpack_require__(131);
+	var ReactDOMButton = __webpack_require__(124);
+	var ReactDOMForm = __webpack_require__(125);
+	var ReactDOMImg = __webpack_require__(126);
+	var ReactDOMInput = __webpack_require__(127);
+	var ReactDOMOption = __webpack_require__(128);
+	var ReactDOMSelect = __webpack_require__(129);
+	var ReactDOMTextarea = __webpack_require__(130);
+	var ReactEventListener = __webpack_require__(131);
+	var ReactInjection = __webpack_require__(132);
 	var ReactInstanceHandles = __webpack_require__(51);
 	var ReactMount = __webpack_require__(53);
-	var SelectEventPlugin = __webpack_require__(132);
-	var ServerReactRootIndex = __webpack_require__(133);
-	var SimpleEventPlugin = __webpack_require__(134);
-	var SVGDOMPropertyConfig = __webpack_require__(135);
+	var SelectEventPlugin = __webpack_require__(133);
+	var ServerReactRootIndex = __webpack_require__(134);
+	var SimpleEventPlugin = __webpack_require__(135);
+	var SVGDOMPropertyConfig = __webpack_require__(136);
 
-	var createFullPageComponent = __webpack_require__(136);
+	var createFullPageComponent = __webpack_require__(137);
 
 	function inject() {
 	  ReactInjection.EventEmitter.injectReactEventListener(
@@ -15855,7 +15855,7 @@ webpackJsonp([3],[
 	  if ("production" !== process.env.NODE_ENV) {
 	    var url = (ExecutionEnvironment.canUseDOM && window.location.href) || '';
 	    if ((/[?&]react_perf\b/).test(url)) {
-	      var ReactDefaultPerf = __webpack_require__(82);
+	      var ReactDefaultPerf = __webpack_require__(86);
 	      ReactDefaultPerf.start();
 	    }
 	  }
@@ -15885,7 +15885,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var ReactRootIndex = __webpack_require__(137);
+	var ReactRootIndex = __webpack_require__(113);
 
 	var invariant = __webpack_require__(94);
 
@@ -17696,7 +17696,7 @@ webpackJsonp([3],[
 	var ReactPropTypeLocationNames = __webpack_require__(103);
 
 	var deprecated = __webpack_require__(60);
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 
 	/**
 	 * Collection of methods that allow declaration and validation of props that are
@@ -18052,9 +18052,9 @@ webpackJsonp([3],[
 
 	var ReactElement = __webpack_require__(46);
 	var ReactInstanceHandles = __webpack_require__(51);
-	var ReactMarkupChecksum = __webpack_require__(143);
+	var ReactMarkupChecksum = __webpack_require__(142);
 	var ReactServerRenderingTransaction =
-	  __webpack_require__(144);
+	  __webpack_require__(143);
 
 	var instantiateReactComponent = __webpack_require__(104);
 	var invariant = __webpack_require__(94);
@@ -20165,7 +20165,7 @@ webpackJsonp([3],[
 	 */
 	(function (definition) {
 	    if (true) {
-	        module.exports = definition(__webpack_require__(29));
+	        module.exports = definition(__webpack_require__(28));
 	    } else {
 	        window.Qimage = definition(window.Q);
 	    }
@@ -20226,6 +20226,110 @@ webpackJsonp([3],[
 /* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = function() {
+		var list = [];
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+		return list;
+	}
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(5);
+	var Components = __webpack_require__(4);
+
+	module.exports = React.createClass({displayName: "exports",
+
+	  render: function() {
+	    return (React.createElement("div", {className: "home-nav"}, 
+	              React.createElement(Components.Blocks.BlockTopNav, null)
+	            ));
+	  }
+
+	})
+
+/***/ },
+/* 76 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(5);
+	var Components = __webpack_require__(4);
+
+	module.exports = React.createClass({displayName: "exports",
+
+	  mixins: [React.addons.PureRenderMixin],
+
+	  render: function() {
+
+	    return  (React.createElement("div", {className: "home-content-start"}, 
+	              React.createElement(Components.Blocks.BlockAlign, null, 
+	                React.createElement(Components.Blocks.BlockHomeLogo, null)
+	              )
+	            ));
+	  }
+
+	})
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(5);
+	var Components = __webpack_require__(4);
+	var AppActions = __webpack_require__(19);
+
+	module.exports = React.createClass({displayName: "exports",
+
+	  mixins: [React.addons.PureRenderMixin],
+
+	  onChapterClick: function(chapter) {
+	    console.log('this.props.onChapterSelect: '+this.props.onChapterSelect);
+	    console.log('chapter: '+chapter);
+	    if(this.props.onChapterSelect) {
+	      this.props.onChapterSelect(chapter);
+	    }
+	  },
+
+	  render: function() {
+
+	    return  (React.createElement("div", {className: "home-content-menu"}, 
+	              React.createElement(Components.Blocks.BlockAlign, null, 
+	                React.createElement("ul", {className: "home-content-menu__list"}, 
+	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
+	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 1)}, "1. I want to cry")
+	                  ), 
+	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
+	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 2)}, "2. I want to laugh")
+	                  ), 
+	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
+	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 3)}, "3. I want to think")
+	                  ), 
+	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
+	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 4)}, "4. I want to do all these things together")
+	                  )
+	                )
+	              )
+	            ));
+	  }
+
+	})
+
+/***/ },
+/* 78 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -20268,7 +20372,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 75 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20284,7 +20388,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var shallowEqual = __webpack_require__(151);
+	var shallowEqual = __webpack_require__(152);
 
 	/**
 	 * If your React component's render function is "pure", e.g. it will render the
@@ -20321,7 +20425,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 76 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20343,10 +20447,10 @@ webpackJsonp([3],[
 	var assign = __webpack_require__(59);
 
 	var ReactTransitionGroup = React.createFactory(
-	  __webpack_require__(77)
+	  __webpack_require__(81)
 	);
 	var ReactCSSTransitionGroupChild = React.createFactory(
-	  __webpack_require__(152)
+	  __webpack_require__(151)
 	);
 
 	var ReactCSSTransitionGroup = React.createClass({
@@ -20392,7 +20496,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 77 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20412,8 +20516,8 @@ webpackJsonp([3],[
 	var ReactTransitionChildMapping = __webpack_require__(153);
 
 	var assign = __webpack_require__(59);
-	var cloneWithProps = __webpack_require__(80);
-	var emptyFunction = __webpack_require__(142);
+	var cloneWithProps = __webpack_require__(84);
+	var emptyFunction = __webpack_require__(144);
 
 	var ReactTransitionGroup = React.createClass({
 	  displayName: 'ReactTransitionGroup',
@@ -20585,7 +20689,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 78 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -20878,7 +20982,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
-/* 79 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20921,7 +21025,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 80 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -20983,7 +21087,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
-/* 81 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -21154,7 +21258,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
-/* 82 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21418,7 +21522,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 83 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21442,7 +21546,7 @@ webpackJsonp([3],[
 	var ReactBrowserEventEmitter = __webpack_require__(111);
 	var ReactMount = __webpack_require__(53);
 	var ReactTextComponent = __webpack_require__(58);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 	var SyntheticEvent = __webpack_require__(160);
 
 	var assign = __webpack_require__(59);
@@ -21834,114 +21938,10 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function() {
-		var list = [];
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-		return list;
-	}
-
-/***/ },
-/* 85 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(5);
-	var Components = __webpack_require__(4);
-
-	module.exports = React.createClass({displayName: "exports",
-
-	  render: function() {
-	    return (React.createElement("div", {className: "home-nav"}, 
-	              React.createElement(Components.Blocks.BlockTopNav, null)
-	            ));
-	  }
-
-	})
-
-/***/ },
-/* 86 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(5);
-	var Components = __webpack_require__(4);
-
-	module.exports = React.createClass({displayName: "exports",
-
-	  mixins: [React.addons.PureRenderMixin],
-
-	  render: function() {
-
-	    return  (React.createElement("div", {className: "home-content-start"}, 
-	              React.createElement(Components.Blocks.BlockAlign, null, 
-	                React.createElement(Components.Blocks.BlockHomeLogo, null)
-	              )
-	            ));
-	  }
-
-	})
-
-/***/ },
-/* 87 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(5);
-	var Components = __webpack_require__(4);
-	var AppActions = __webpack_require__(20);
-
-	module.exports = React.createClass({displayName: "exports",
-
-	  mixins: [React.addons.PureRenderMixin],
-
-	  onChapterClick: function(chapter) {
-	    console.log('this.props.onChapterSelect: '+this.props.onChapterSelect);
-	    console.log('chapter: '+chapter);
-	    if(this.props.onChapterSelect) {
-	      this.props.onChapterSelect(chapter);
-	    }
-	  },
-
-	  render: function() {
-
-	    return  (React.createElement("div", {className: "home-content-menu"}, 
-	              React.createElement(Components.Blocks.BlockAlign, null, 
-	                React.createElement("ul", {className: "home-content-menu__list"}, 
-	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
-	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 1)}, "1. I want to cry")
-	                  ), 
-	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
-	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 2)}, "2. I want to laugh")
-	                  ), 
-	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
-	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 3)}, "3. I want to think")
-	                  ), 
-	                  React.createElement("li", {className: "home-content-menu__list__item"}, 
-	                    React.createElement(Components.Buttons.ButtonBeta, {onClick: this.onChapterClick.bind(this, 4)}, "4. I want to do all these things together")
-	                  )
-	                )
-	              )
-	            ));
-	  }
-
-	})
-
-/***/ },
 /* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "840b06d2d9dcca1cbc6ac077b3f2e963.jpg"
+	module.exports = __webpack_require__.p + "assets/camoVVg.jpg"
 
 /***/ },
 /* 89 */
@@ -22345,7 +22345,7 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 
 	/**
 	 * Similar to invariant but only logs a warning if the condition is not met.
@@ -23168,7 +23168,7 @@ webpackJsonp([3],[
 	"use strict";
 
 	var assign = __webpack_require__(59);
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 	var invariant = __webpack_require__(94);
 	var joinClasses = __webpack_require__(162);
 	var warning = __webpack_require__(92);
@@ -24289,6 +24289,41 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactRootIndex
+	 * @typechecks
+	 */
+
+	"use strict";
+
+	var ReactRootIndexInjection = {
+	  /**
+	   * @param {function} _createReactRootIndex
+	   */
+	  injectCreateReactRootIndex: function(_createReactRootIndex) {
+	    ReactRootIndex.createReactRootIndex = _createReactRootIndex;
+	  }
+	};
+
+	var ReactRootIndex = {
+	  createReactRootIndex: null,
+	  injection: ReactRootIndexInjection
+	};
+
+	module.exports = ReactRootIndex;
+
+
+/***/ },
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
 	 * Copyright 2013 Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -24511,7 +24546,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 114 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24531,7 +24566,7 @@ webpackJsonp([3],[
 	var EventPluginHub = __webpack_require__(158);
 	var EventPropagators = __webpack_require__(159);
 	var ExecutionEnvironment = __webpack_require__(62);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 	var SyntheticEvent = __webpack_require__(160);
 
 	var isEventSupported = __webpack_require__(112);
@@ -24897,7 +24932,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 115 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24926,7 +24961,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25189,7 +25224,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25233,7 +25268,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25377,7 +25412,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25573,7 +25608,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25592,7 +25627,7 @@ webpackJsonp([3],[
 
 	var EventConstants = __webpack_require__(93);
 
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -25635,7 +25670,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -25654,7 +25689,7 @@ webpackJsonp([3],[
 	"use strict";
 
 	var ReactDOMIDOperations = __webpack_require__(177);
-	var ReactMarkupChecksum = __webpack_require__(143);
+	var ReactMarkupChecksum = __webpack_require__(142);
 	var ReactMount = __webpack_require__(53);
 	var ReactPerf = __webpack_require__(55);
 	var ReactReconcileTransaction = __webpack_require__(178);
@@ -25760,7 +25795,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25776,11 +25811,11 @@ webpackJsonp([3],[
 
 	"use strict";
 
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 	var Transaction = __webpack_require__(155);
 
 	var assign = __webpack_require__(59);
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 
 	var RESET_BATCHED_UPDATES = {
 	  initialize: emptyFunction,
@@ -25837,7 +25872,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25906,7 +25941,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25960,7 +25995,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 125 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26012,7 +26047,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 126 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -26036,7 +26071,7 @@ webpackJsonp([3],[
 	var ReactElement = __webpack_require__(46);
 	var ReactDOM = __webpack_require__(48);
 	var ReactMount = __webpack_require__(53);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 
 	var assign = __webpack_require__(59);
 	var invariant = __webpack_require__(94);
@@ -26193,7 +26228,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
-/* 127 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -26249,7 +26284,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
-/* 128 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26271,7 +26306,7 @@ webpackJsonp([3],[
 	var ReactCompositeComponent = __webpack_require__(43);
 	var ReactElement = __webpack_require__(46);
 	var ReactDOM = __webpack_require__(48);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 
 	var assign = __webpack_require__(59);
 
@@ -26437,7 +26472,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 129 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -26460,7 +26495,7 @@ webpackJsonp([3],[
 	var ReactCompositeComponent = __webpack_require__(43);
 	var ReactElement = __webpack_require__(46);
 	var ReactDOM = __webpack_require__(48);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 
 	var assign = __webpack_require__(59);
 	var invariant = __webpack_require__(94);
@@ -26581,7 +26616,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
-/* 130 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26603,7 +26638,7 @@ webpackJsonp([3],[
 	var PooledClass = __webpack_require__(95);
 	var ReactInstanceHandles = __webpack_require__(51);
 	var ReactMount = __webpack_require__(53);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactUpdates = __webpack_require__(82);
 
 	var assign = __webpack_require__(59);
 	var getEventTarget = __webpack_require__(184);
@@ -26769,7 +26804,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 131 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26793,8 +26828,8 @@ webpackJsonp([3],[
 	var ReactBrowserEventEmitter = __webpack_require__(111);
 	var ReactNativeComponent = __webpack_require__(163);
 	var ReactPerf = __webpack_require__(55);
-	var ReactRootIndex = __webpack_require__(137);
-	var ReactUpdates = __webpack_require__(78);
+	var ReactRootIndex = __webpack_require__(113);
+	var ReactUpdates = __webpack_require__(82);
 
 	var ReactInjection = {
 	  Component: ReactComponent.injection,
@@ -26813,7 +26848,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 132 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26837,7 +26872,7 @@ webpackJsonp([3],[
 	var getActiveElement = __webpack_require__(186);
 	var isTextInputElement = __webpack_require__(172);
 	var keyOf = __webpack_require__(105);
-	var shallowEqual = __webpack_require__(151);
+	var shallowEqual = __webpack_require__(152);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -27012,7 +27047,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27047,7 +27082,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27478,7 +27513,7 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27574,7 +27609,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27636,41 +27671,6 @@ webpackJsonp([3],[
 	module.exports = createFullPageComponent;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
-
-/***/ },
-/* 137 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactRootIndex
-	 * @typechecks
-	 */
-
-	"use strict";
-
-	var ReactRootIndexInjection = {
-	  /**
-	   * @param {function} _createReactRootIndex
-	   */
-	  injectCreateReactRootIndex: function(_createReactRootIndex) {
-	    ReactRootIndex.createReactRootIndex = _createReactRootIndex;
-	  }
-	};
-
-	var ReactRootIndex = {
-	  createReactRootIndex: null,
-	  injection: ReactRootIndexInjection
-	};
-
-	module.exports = ReactRootIndex;
-
 
 /***/ },
 /* 138 */
@@ -27880,44 +27880,6 @@ webpackJsonp([3],[
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule emptyFunction
-	 */
-
-	function makeEmptyFunction(arg) {
-	  return function() {
-	    return arg;
-	  };
-	}
-
-	/**
-	 * This function accepts and discards inputs; it has no side effects. This is
-	 * primarily useful idiomatically for overridable function endpoints which
-	 * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
-	 */
-	function emptyFunction() {}
-
-	emptyFunction.thatReturns = makeEmptyFunction;
-	emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-	emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-	emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-	emptyFunction.thatReturnsThis = function() { return this; };
-	emptyFunction.thatReturnsArgument = function(arg) { return arg; };
-
-	module.exports = emptyFunction;
-
-
-/***/ },
-/* 143 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
 	 * @providesModule ReactMarkupChecksum
 	 */
 
@@ -27959,7 +27921,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 144 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27982,7 +27944,7 @@ webpackJsonp([3],[
 	var Transaction = __webpack_require__(155);
 
 	var assign = __webpack_require__(59);
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 
 	/**
 	 * Provides a `CallbackQueue` queue for collecting `onDOMReady` callbacks
@@ -28076,6 +28038,44 @@ webpackJsonp([3],[
 
 
 /***/ },
+/* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule emptyFunction
+	 */
+
+	function makeEmptyFunction(arg) {
+	  return function() {
+	    return arg;
+	  };
+	}
+
+	/**
+	 * This function accepts and discards inputs; it has no side effects. This is
+	 * primarily useful idiomatically for overridable function endpoints which
+	 * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+	 */
+	function emptyFunction() {}
+
+	emptyFunction.thatReturns = makeEmptyFunction;
+	emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+	emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+	emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+	emptyFunction.thatReturnsThis = function() { return this; };
+	emptyFunction.thatReturnsArgument = function(arg) { return arg; };
+
+	module.exports = emptyFunction;
+
+
+/***/ },
 /* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -28166,7 +28166,11 @@ webpackJsonp([3],[
 			{
 				"start": 0,
 				"end": 1.5,
-				"label": "December 24, 2004"
+				"label": "December 24, 2004",
+				"media": [
+					"http://media.giphy.com/media/6quy6XynfaK2c/giphy.gif",
+					"http://media.giphy.com/media/bDOwRBYykpFvy/giphy.gif"
+				]
 			},
 			{
 				"start": 1.5,
@@ -28475,54 +28479,6 @@ webpackJsonp([3],[
 /* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule shallowEqual
-	 */
-
-	"use strict";
-
-	/**
-	 * Performs equality by iterating through keys on an object and returning
-	 * false when any key has values which are not strictly equal between
-	 * objA and objB. Returns true when the values of all keys are strictly equal.
-	 *
-	 * @return {boolean}
-	 */
-	function shallowEqual(objA, objB) {
-	  if (objA === objB) {
-	    return true;
-	  }
-	  var key;
-	  // Test for A's keys different from B.
-	  for (key in objA) {
-	    if (objA.hasOwnProperty(key) &&
-	        (!objB.hasOwnProperty(key) || objA[key] !== objB[key])) {
-	      return false;
-	    }
-	  }
-	  // Test for B's keys missing from A.
-	  for (key in objB) {
-	    if (objB.hasOwnProperty(key) && !objA.hasOwnProperty(key)) {
-	      return false;
-	    }
-	  }
-	  return true;
-	}
-
-	module.exports = shallowEqual;
-
-
-/***/ },
-/* 152 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -28656,6 +28612,54 @@ webpackJsonp([3],[
 	module.exports = ReactCSSTransitionGroupChild;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
+
+/***/ },
+/* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule shallowEqual
+	 */
+
+	"use strict";
+
+	/**
+	 * Performs equality by iterating through keys on an object and returning
+	 * false when any key has values which are not strictly equal between
+	 * objA and objB. Returns true when the values of all keys are strictly equal.
+	 *
+	 * @return {boolean}
+	 */
+	function shallowEqual(objA, objB) {
+	  if (objA === objB) {
+	    return true;
+	  }
+	  var key;
+	  // Test for A's keys different from B.
+	  for (key in objA) {
+	    if (objA.hasOwnProperty(key) &&
+	        (!objB.hasOwnProperty(key) || objA[key] !== objB[key])) {
+	      return false;
+	    }
+	  }
+	  // Test for B's keys missing from A.
+	  for (key in objB) {
+	    if (objB.hasOwnProperty(key) && !objA.hasOwnProperty(key)) {
+	      return false;
+	    }
+	  }
+	  return true;
+	}
+
+	module.exports = shallowEqual;
+
 
 /***/ },
 /* 153 */
@@ -29796,7 +29800,7 @@ webpackJsonp([3],[
 	var PooledClass = __webpack_require__(95);
 
 	var assign = __webpack_require__(59);
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 	var getEventTarget = __webpack_require__(184);
 
 	/**
@@ -31868,7 +31872,7 @@ webpackJsonp([3],[
 	 * @typechecks
 	 */
 
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 
 	/**
 	 * Upstream version of event listener. Does not take into account specific
@@ -33157,9 +33161,9 @@ webpackJsonp([3],[
 /* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseClone = __webpack_require__(245),
-	    bindCallback = __webpack_require__(246),
-	    isIterateeCall = __webpack_require__(247);
+	var baseClone = __webpack_require__(244),
+	    bindCallback = __webpack_require__(245),
+	    isIterateeCall = __webpack_require__(246);
 
 	/**
 	 * Creates a clone of `value`. If `isDeep` is `true` nested objects are cloned,
@@ -33281,7 +33285,7 @@ webpackJsonp([3],[
 /* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObjectLike = __webpack_require__(244);
+	var isObjectLike = __webpack_require__(247);
 
 	/** `Object#toString` result references. */
 	var stringTag = '[object String]';
@@ -33422,10 +33426,10 @@ webpackJsonp([3],[
 /* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(232),
+	var isLength = __webpack_require__(233),
 	    isNative = __webpack_require__(228),
 	    isObject = __webpack_require__(214),
-	    shimKeys = __webpack_require__(233);
+	    shimKeys = __webpack_require__(234);
 
 	/* Native method references for those with the same name as other `lodash` methods. */
 	var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
@@ -33477,7 +33481,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseForOwn = __webpack_require__(230),
-	    createFindKey = __webpack_require__(234);
+	    createFindKey = __webpack_require__(232);
 
 	/**
 	 * This method is like `_.find` except that it returns the key of the first
@@ -33610,7 +33614,7 @@ webpackJsonp([3],[
 
 	var baseCallback = __webpack_require__(229),
 	    baseUniq = __webpack_require__(252),
-	    isIterateeCall = __webpack_require__(247),
+	    isIterateeCall = __webpack_require__(246),
 	    sortedUniq = __webpack_require__(253);
 
 	/**
@@ -33804,7 +33808,7 @@ webpackJsonp([3],[
 /* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(232),
+	var isLength = __webpack_require__(233),
 	    keys = __webpack_require__(206);
 
 	/**
@@ -34978,7 +34982,7 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var escapeRegExp = __webpack_require__(256),
-	    isObjectLike = __webpack_require__(244);
+	    isObjectLike = __webpack_require__(247);
 
 	/** `Object#toString` result references. */
 	var funcTag = '[object Function]';
@@ -35040,7 +35044,7 @@ webpackJsonp([3],[
 	var baseMatches = __webpack_require__(257),
 	    baseMatchesProperty = __webpack_require__(258),
 	    baseProperty = __webpack_require__(259),
-	    bindCallback = __webpack_require__(246),
+	    bindCallback = __webpack_require__(245),
 	    identity = __webpack_require__(260);
 
 	/**
@@ -35101,7 +35105,7 @@ webpackJsonp([3],[
 /* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bindCallback = __webpack_require__(246);
+	var bindCallback = __webpack_require__(245);
 
 	/**
 	 * Creates a function for `_.forOwn` or `_.forOwnRight`.
@@ -35124,6 +35128,30 @@ webpackJsonp([3],[
 
 /***/ },
 /* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var baseCallback = __webpack_require__(229),
+	    baseFind = __webpack_require__(262);
+
+	/**
+	 * Creates a `_.findKey` or `_.findLastKey` function.
+	 *
+	 * @private
+	 * @param {Function} objectFunc The function to iterate over an object.
+	 * @returns {Function} Returns the new find function.
+	 */
+	function createFindKey(objectFunc) {
+	  return function(object, predicate, thisArg) {
+	    predicate = baseCallback(predicate, thisArg, 3);
+	    return baseFind(object, predicate, objectFunc, true);
+	  };
+	}
+
+	module.exports = createFindKey;
+
+
+/***/ },
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -35149,15 +35177,15 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArguments = __webpack_require__(251),
 	    isArray = __webpack_require__(235),
-	    isIndex = __webpack_require__(262),
-	    isLength = __webpack_require__(232),
-	    keysIn = __webpack_require__(263),
-	    support = __webpack_require__(264);
+	    isIndex = __webpack_require__(263),
+	    isLength = __webpack_require__(233),
+	    keysIn = __webpack_require__(264),
+	    support = __webpack_require__(265);
 
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -35197,36 +35225,12 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 234 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseCallback = __webpack_require__(229),
-	    baseFind = __webpack_require__(265);
-
-	/**
-	 * Creates a `_.findKey` or `_.findLastKey` function.
-	 *
-	 * @private
-	 * @param {Function} objectFunc The function to iterate over an object.
-	 * @returns {Function} Returns the new find function.
-	 */
-	function createFindKey(objectFunc) {
-	  return function(object, predicate, thisArg) {
-	    predicate = baseCallback(predicate, thisArg, 3);
-	    return baseFind(object, predicate, objectFunc, true);
-	  };
-	}
-
-	module.exports = createFindKey;
-
-
-/***/ },
 /* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(232),
+	var isLength = __webpack_require__(233),
 	    isNative = __webpack_require__(228),
-	    isObjectLike = __webpack_require__(244);
+	    isObjectLike = __webpack_require__(247);
 
 	/** `Object#toString` result references. */
 	var arrayTag = '[object Array]';
@@ -35372,7 +35376,7 @@ webpackJsonp([3],[
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bindCallback = __webpack_require__(246),
+	var bindCallback = __webpack_require__(245),
 	    isArray = __webpack_require__(235);
 
 	/**
@@ -35477,24 +35481,6 @@ webpackJsonp([3],[
 
 /***/ },
 /* 244 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Checks if `value` is object-like.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-
-	module.exports = isObjectLike;
-
-
-/***/ },
-/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var arrayCopy = __webpack_require__(268),
@@ -35629,7 +35615,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 246 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var identity = __webpack_require__(260);
@@ -35674,11 +35660,11 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 247 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isIndex = __webpack_require__(262),
-	    isLength = __webpack_require__(232),
+	var isIndex = __webpack_require__(263),
+	    isLength = __webpack_require__(233),
 	    isObject = __webpack_require__(214);
 
 	/**
@@ -35709,6 +35695,24 @@ webpackJsonp([3],[
 	}
 
 	module.exports = isIterateeCall;
+
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Checks if `value` is object-like.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+	 */
+	function isObjectLike(value) {
+	  return !!value && typeof value == 'object';
+	}
+
+	module.exports = isObjectLike;
 
 
 /***/ },
@@ -35802,8 +35806,8 @@ webpackJsonp([3],[
 /* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(232),
-	    isObjectLike = __webpack_require__(244);
+	var isLength = __webpack_require__(233),
+	    isObjectLike = __webpack_require__(247);
 
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]';
@@ -36041,7 +36045,7 @@ webpackJsonp([3],[
 	var ExecutionEnvironment = __webpack_require__(62);
 
 	var createNodesFromMarkup = __webpack_require__(276);
-	var emptyFunction = __webpack_require__(142);
+	var emptyFunction = __webpack_require__(144);
 	var getMarkupWrap = __webpack_require__(277);
 	var invariant = __webpack_require__(94);
 
@@ -36402,6 +36406,37 @@ webpackJsonp([3],[
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
+	 * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
+	 * without support for callback shorthands and `this` binding, which iterates
+	 * over `collection` using the provided `eachFunc`.
+	 *
+	 * @private
+	 * @param {Array|Object|string} collection The collection to search.
+	 * @param {Function} predicate The function invoked per iteration.
+	 * @param {Function} eachFunc The function to iterate over `collection`.
+	 * @param {boolean} [retKey] Specify returning the key of the found element
+	 *  instead of the element itself.
+	 * @returns {*} Returns the found element or its key, else `undefined`.
+	 */
+	function baseFind(collection, predicate, eachFunc, retKey) {
+	  var result;
+	  eachFunc(collection, function(value, key, collection) {
+	    if (predicate(value, key, collection)) {
+	      result = retKey ? key : value;
+	      return false;
+	    }
+	  });
+	  return result;
+	}
+
+	module.exports = baseFind;
+
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
 	 * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
 	 * of an array-like value.
 	 */
@@ -36425,15 +36460,15 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArguments = __webpack_require__(251),
 	    isArray = __webpack_require__(235),
-	    isIndex = __webpack_require__(262),
-	    isLength = __webpack_require__(232),
+	    isIndex = __webpack_require__(263),
+	    isLength = __webpack_require__(233),
 	    isObject = __webpack_require__(214),
-	    support = __webpack_require__(264);
+	    support = __webpack_require__(265);
 
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -36496,7 +36531,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Used for native method references. */
@@ -36573,41 +36608,10 @@ webpackJsonp([3],[
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 265 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
-	 * without support for callback shorthands and `this` binding, which iterates
-	 * over `collection` using the provided `eachFunc`.
-	 *
-	 * @private
-	 * @param {Array|Object|string} collection The collection to search.
-	 * @param {Function} predicate The function invoked per iteration.
-	 * @param {Function} eachFunc The function to iterate over `collection`.
-	 * @param {boolean} [retKey] Specify returning the key of the found element
-	 *  instead of the element itself.
-	 * @returns {*} Returns the found element or its key, else `undefined`.
-	 */
-	function baseFind(collection, predicate, eachFunc, retKey) {
-	  var result;
-	  eachFunc(collection, function(value, key, collection) {
-	    if (predicate(value, key, collection)) {
-	      result = retKey ? key : value;
-	      return false;
-	    }
-	  });
-	  return result;
-	}
-
-	module.exports = baseFind;
-
-
-/***/ },
 /* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(232),
+	var isLength = __webpack_require__(233),
 	    toObject = __webpack_require__(280);
 
 	/**
@@ -37913,8 +37917,8 @@ webpackJsonp([3],[
 /* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(232),
-	    isObjectLike = __webpack_require__(244);
+	var isLength = __webpack_require__(233),
+	    isObjectLike = __webpack_require__(247);
 
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]',

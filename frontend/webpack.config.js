@@ -16,8 +16,8 @@ module.exports = function() {
     module: {
       loaders: [
         {test: /\.(js|jsx)$/, loader: "jsx-loader"},
-        {test: /\.css$/, loader: "style!css" },
-        {test: /\.(jpg|png)$/, loader: "url?limit=10000" }
+        {test: /\.css$/, loader: "style!css?root=./assets" },
+        {test: /\.(jpg|png)$/, loader: "url?name=assets/[sha512:hash:base64:7].[ext]&limit=10000" }
       ]
     },
     plugins: [
