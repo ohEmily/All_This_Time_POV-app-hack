@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, redirect
 import db
 import giphy_api
 import random
@@ -26,7 +26,7 @@ def search(a_string):
     search_json = giphy_api.search_giphy(a_string)
     rand_index = random.randint(0, (int(giphy_api.RESPONSE_LIMIT) - 1))
     
-    return search_json['data'][rand_index]['bitly_gif_url']
+    return redirect(search_json['data'][rand_index]['embed_url'])
 
 @app.route('/')
 def send_index():
