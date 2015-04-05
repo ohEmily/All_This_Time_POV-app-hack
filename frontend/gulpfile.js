@@ -57,11 +57,6 @@ gulp.task('move', ['hologram', 'webpack:build', 'clean'], function(cb){
             'assets/fonts/**/*.*',
             'assets/images/**/*.*',
             'assets/videos/**/*.*',
-            'downloads/**/*.*',
-            '.htaccess',
-            'robots.txt',
-            'git_deploy.php',
-            'google844096eb68b48ec7.html'
             ], {base: bases.src, cwd: bases.src})
             .pipe(gulp.dest(bases.dist))
   }else{
@@ -71,10 +66,10 @@ gulp.task('move', ['hologram', 'webpack:build', 'clean'], function(cb){
         'index.html',
         'styles/css/**/*',
         'scripts/js/vendor/**/*',
+        'assets/audio/**/*.*',
         'assets/images/**/*',
         'assets/fonts/**/*',
         'assets/video/**/*',
-        'downloads/**/*.*'
       ], {base: bases.src, cwd: bases.src})
       .pipe(gulp.dest(bases.dist, cb));
   }

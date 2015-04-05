@@ -504,7 +504,7 @@
                     newValue = model += newChar;
                 }
 
-                self.set(newValue, [newValue, newChar, prevChar, speech]);
+                self.set(newValue+"<br/>", [newValue, newChar, prevChar, speech]);
 
                 if (mistakes > 0 || cursor < speech.length) timeout = setTimeout(nextChar, self.getSayingSpeed());
                 else self.next();
@@ -540,6 +540,13 @@
 
 
         wait: function (delay) {
+            var self = this;
+            setTimeout(function () { self.next(); }, delay);
+            return self;
+        },
+
+
+        newline: function (delay) {
             var self = this;
             setTimeout(function () { self.next(); }, delay);
             return self;

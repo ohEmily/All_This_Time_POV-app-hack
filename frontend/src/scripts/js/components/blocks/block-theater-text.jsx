@@ -12,10 +12,12 @@ module.exports = React.createClass({
   componentDidMount: function () {
     window.theater= this.theater =  new TheaterJS();
 
+    var that = this;
+
     // var $log = this.refs.content.getDOMNode();
 
     this.theater
-          .describe("Vader", { speed: .8, accuracy: .6, invincibility: 4 }, "#vader");
+          .describe("Vader", { speed: 1, accuracy: .6, invincibility: 4 }, "#vader");
 
     this.theater
       .on("*", function (eventName, originalEvent, sceneName, arg) {
@@ -41,6 +43,7 @@ module.exports = React.createClass({
         // addClass, hasClass, removeClass, ...
         // Note: the "saying" class adds the blinking caret.
         // self.utils.addClass(current, "saying");
+        console.log("SAY START,  ERASE END");
       })
       .on("say:end, erase:end", function (eventName) {
         var self    = this,
@@ -48,20 +51,33 @@ module.exports = React.createClass({
 
         // When say or erase ends, remove the caret.
         // self.utils.removeClass(current, "saying");
+        // that.refs.vader.getDOMNode().innerHtml += '<br />';
+        console.log("SAY END,  ERASE END");
+        console.log(that.refs.vader.getDOMNode());
+
+        console.log('inner html: '+that.refs.vader.getDOMNode().innerHTML);
+
+        // that.refs.vader.getDOMNode().innerHTML += "<br />";
+
+
+        // this.theater
+        //   .write(nextProps.label)
       });
 
 
       this.theater
-        .write("Vader: December 24, 2004")
-        .write(400)
-        .write("Vader: This was the temperature.")
-        .write(400)
-        .write("Vader: This was our President.")
-        .write(400)
-        .write("Vader: This was the number one record on the radio.")
+        .write("Vader: "+this.props.label)
 
 
 
+  },
+
+  componentWillReceiveProps: function (nextProps) {
+    if(this.props.label!==nextProps.label && this.theater) {
+      var that = this;
+      this.theater
+        .write(nextProps.label)
+    }
   },
 
   render: function() {
@@ -74,7 +90,7 @@ module.exports = React.createClass({
     var playerStyles = null;
 
     return (<div className="block-theater-text">
-              <h1 className="block-theater-text__content" id="vader">Block Theater Text</h1>
+              <p className="block-theater-text__content" id="vader" ref="vader"></p>
             </div>);
   }
 
