@@ -222,9 +222,16 @@ module.exports = React.createClass({
                 {videoPartial}
               </div>
               <div className="home-page__body">
-                <React.addons.CSSTransitionGroup transitionName="global-animation__transition-alpha">
-                  {bodyPartial}
-                </React.addons.CSSTransitionGroup>
+
+                <Components.Blocks.BlockAlign>
+                  <div className="home-page__body__title">
+                    <Components.Blocks.BlockHomeLogo></Components.Blocks.BlockHomeLogo>
+                  </div>
+                  <div className="home-page__body__input">
+                    <Components.Blocks.BlockHomeInput></Components.Blocks.BlockHomeInput>
+                  </div>
+                </Components.Blocks.BlockAlign>
+
               </div>
               <div className={React.addons.classSet(ctaClassSet)}>
                 <Components.Buttons.ButtonAlpha onClick={this.onStartClick}>Start</Components.Buttons.ButtonAlpha>

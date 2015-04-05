@@ -24,6 +24,7 @@ module.exports = {
     // BlockHeaderNav: require("./blocks/block-header-nav.jsx"),
     // BlockScrollCTA: require("./blocks/block-scroll-cta.jsx"),
     BlockHomeIntro: require("./blocks/block-home-intro.jsx"),
+    BlockHomeInput: require("./blocks/block-home-input.jsx"),
     BlockHomeLogo: require("./blocks/block-home-logo.js"),
     // BlockHomeLogoLofi: require("./blocks/block-home-logo-lofi.js"),
     // BlockHeadphones: require("./blocks/block-headphones.jsx"),

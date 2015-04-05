@@ -99,6 +99,25 @@
   z-index: 1;
 }
 
+.home-page__body__title {
+
+}
+
+.home-page__body__input {
+  margin: 100px;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
+    height: 1px;
+    background-color: rgba(#FFF, 0.3);
+  }
+}
+
 .home-page__loading {
   position: absolute;
   top: 0px;
