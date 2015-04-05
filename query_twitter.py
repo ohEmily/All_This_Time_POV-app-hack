@@ -28,9 +28,9 @@ if __name__ == "__main__":
         print 'This is not one of the collections included in this app.'
         sys.exit(0)    
 
-    tweet_list = search_tweets.search(search_term.split())
+    #tweet_list = search_tweets.search(search_term.split())
     #tweet_list = scrape2.scrape_keyword(search_term)
-    #tweet_list = scrape2.christmas_search(twitter_queries[search_term])
+    tweet_list = scrape2.christmas_search(twitter_queries[search_term])
 
     if (tweet_list):
         for tweet_curr in tweet_list[0:MAX_INSERTION_COUNT]:
