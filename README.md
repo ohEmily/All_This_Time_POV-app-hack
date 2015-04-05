@@ -4,8 +4,11 @@
 Web app built with Flask and MongoDB. Check it out [here](http://104.131.2.8:5000/).
 
 ### Setup:
- * Fill in `.config` file. Log into app on Twitter Developer website and get consumer key and consumer secret. Then use script [here](https://github.com/bear/python-twitter/blob/master/get_access_token.py) to get the access token and the access token secret.
  * Run `mongod`.
+ * Populate MongoDB collections with scripts.
+ * Run `backend/setup_script.sh` to create symlinks that match the folder structure that flask wants.
+ * Run `python backend/server.py` to start the server locally. 
+   * To make the server publicly accessible, change `app.run()` to `app.run(host=0.0.0.0)` in `backend\server.py`.
 
 ### Stack:
  * Flask
