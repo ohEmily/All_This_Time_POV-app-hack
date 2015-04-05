@@ -78,8 +78,8 @@
       "label": "I had spent the night watching It’s A Wonderful Life and Yule Log.",
       "media": [
         "http://media.giphy.com/media/f7d8Atz1YVAhW/giphy.gif",
-        "http://media.giphy.com/media/8qTeHKweppdbq/giphy.gif",
-        "http://media.giphy.com/media/10QdeSp2wEPxPW/giphy.gif"
+        "http://media.giphy.com/media/10QdeSp2wEPxPW/giphy.gif",
+        "./assets/images/content/yulelog.jpg"
       ],
       "tweets": "twittersearch/wonderful_life"
     },
@@ -88,7 +88,7 @@
       "end": 44.2,
       "label": "It was cold outside and the first snowflakes fell to the ground. And it was almost beautiful.",
       "media": [
-        "http://giphy.com/gifs/black-and-white-snow-alHyv3MTOPFde",
+        "http://media.giphy.com/media/alHyv3MTOPFde/giphy.gif",
         "http://media.giphy.com/media/2JifcqvnTmwAE/giphy.gif",
         "http://media.giphy.com/media/ygx9cp28M41l6/giphy.gif"
       ],
@@ -231,8 +231,7 @@
       "label": "But when I look around, I see people everywhere who have lost someone on this day.",
       "reset": "true",
       "media": [
-        "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
-        "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+        "./assets/images/content/snow-4.gif"
       ],
       "tweets": "twittersearch/father"
     },
@@ -242,8 +241,7 @@
       "label": "People who have the same complex emotions that I have.",
       "reset": "true",
       "media": [
-        "http://media.giphy.com/media/N9Tp4cACQ6nCw/giphy.gif",
-        "http://media0.giphy.com/media/HisLmv4txHl4s/giphy.gif"
+        "./assets/images/content/snow-1.gif"
       ],
       "tweets": "twittersearch/father",
       "twitter": [
