@@ -1,7 +1,7 @@
 # All This Time
 *Built at [PBS POV hackathon](http://www.pbs.org/pov/hackathon/) 8 (spring 2015).*
 
-Web app built with Flask and MongoDB. Check it out [here](http://104.131.2.8:5000/).
+Web app built with Flask and MongoDB. Check it out [here](http://ohemily.github.io/All_This_Time_POV-app-hack/).
 
 ### Setup:
  * Run `mongod`.
